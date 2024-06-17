@@ -1,6 +1,8 @@
-﻿namespace UNIVidaPortalWeb.Cms.Models
+﻿using UNIVidaPortalWeb.Cms.Models.RecursoModel;
+
+namespace UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel
 {
-    public class BannerPaginaDinamica
+    public class BannerPaginaDinamica : BaseDomainModel
     {
         public int Id { get; set; }
         public int PaginaDinamicaId { get; set; }

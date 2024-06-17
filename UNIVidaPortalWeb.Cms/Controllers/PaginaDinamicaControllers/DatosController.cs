@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs;
-using UNIVidaPortalWeb.Cms.Models;
+using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Services.DatoServices;
 
 
@@ -23,14 +23,14 @@ namespace UNIVidaPortalWeb.Cms.Controllers.DatoControllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Dato>>> ObtenerDatos()
         {
-            var datos = await _datoService.ObtenerTodos();
+            var datos = await _datoService.GetAllAsync();
             return Ok(datos);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Dato>> ObtenerDato(int id)
         {
-            var dato = await _datoService.ObtenerPorId(id);
+            var dato = await _datoService.GetByIdAsync(id);
             if (dato == null)
             {
                 return NotFound();
@@ -42,7 +42,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.DatoControllers
         public async Task<ActionResult<Dato>> CrearDato(DatoRequestDTO datoDto)
         {
             var dato = _mapper.Map<Dato>(datoDto);
-            var datoCreado = await _datoService.Crear(dato);
+            var datoCreado = await _datoService.AddAsync(dato);
             return CreatedAtAction(nameof(ObtenerDato), new { id = datoCreado.Id }, datoCreado);
         }
 
@@ -52,7 +52,8 @@ namespace UNIVidaPortalWeb.Cms.Controllers.DatoControllers
             try
             {
                 var dato = _mapper.Map<Dato>(datoDto);
-                await _datoService.Actualizar(id, dato);
+                dato.Id = id;
+                await _datoService.UpdateAsync(dato);
             }
             catch (NotFoundException)
             {
@@ -67,7 +68,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.DatoControllers
         {
             try
             {
-                await _datoService.Eliminar(id);
+                await _datoService.DeleteByIdAsync(id);
             }
             catch (NotFoundException)
             {

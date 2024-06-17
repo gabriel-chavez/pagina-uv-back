@@ -1,6 +1,8 @@
-﻿namespace UNIVidaPortalWeb.Cms.Models
+﻿using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
+
+namespace UNIVidaPortalWeb.Cms.Models.RecursoModel
 {
-    public class Recurso
+    public class Recurso : BaseDomainModel
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

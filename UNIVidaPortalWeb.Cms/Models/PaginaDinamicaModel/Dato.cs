@@ -1,6 +1,8 @@
-﻿namespace UNIVidaPortalWeb.Cms.Models
+﻿using UNIVidaPortalWeb.Cms.Models.RecursoModel;
+
+namespace UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel
 {
-    public class Dato
+    public class Dato : BaseDomainModel
     {
         public int Id { get; set; }
         public string DatoTexto { get; set; }

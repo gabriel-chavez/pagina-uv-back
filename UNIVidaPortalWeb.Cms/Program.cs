@@ -3,6 +3,7 @@ using Serilog;
 using UNIVidaPortalWeb.Cms.Data;
 using UNIVidaPortalWeb.Cms.Exceptions;
 using UNIVidaPortalWeb.Cms.Repositories;
+using UNIVidaPortalWeb.Cms.Services;
 using UNIVidaPortalWeb.Cms.Services.CatalogoServices;
 using UNIVidaPortalWeb.Cms.Services.DatoServices;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
@@ -59,6 +60,7 @@ builder.Services.AddScoped<IBannerPaginaDinamicaService, BannerPaginaDinamicaSer
 builder.Services.AddScoped<ICatTipoRecursoService, CatTipoRecursoService>();
 builder.Services.AddScoped<ICatTipoSeccionService, CatTipoSeccionService>();
 builder.Services.AddScoped<ISeccionService, SeccionService>();
+builder.Services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
 
 builder.Services.AddAutoMapper(typeof(Program));
 

@@ -1,4 +1,4 @@
-﻿using UNIVidaPortalWeb.Cms.Models;
+﻿using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
 using UNIVidaPortalWeb.Cms.Repositories;
 
 namespace UNIVidaPortalWeb.Cms.Data

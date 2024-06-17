@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.Models;
+using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
+using UNIVidaPortalWeb.Cms.Services;
 using UNIVidaPortalWeb.Cms.Services.CatalogoServices;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
@@ -8,12 +10,14 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
     [ApiController]
     public class CatTipoRecursoController : ControllerBase
     {
-        private readonly ICatTipoRecursoService _catTipoRecursoService;
+        private readonly ICatTipoRecursoService _catTipoRecursoService;        
 
         public CatTipoRecursoController(ICatTipoRecursoService catTipoRecursoService)
         {
             _catTipoRecursoService = catTipoRecursoService;
+          
         }
+       
         [HttpGet("no-encontrado")]
         public IActionResult ObtenerNoEncontrado()
         {
@@ -40,14 +44,14 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CatTipoRecurso>>> ObtenerTodos()
         {            
-            var recursos = await _catTipoRecursoService.ObtenerTodos();
+            var recursos = await _catTipoRecursoService.GetAllAsync();
             return Ok(recursos);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<CatTipoRecurso>> ObtenerPorId(int id)
         {
-            var recurso = await _catTipoRecursoService.ObtenerPorId(id);
+            var recurso = await _catTipoRecursoService.GetByIdAsync(id);
             if (recurso == null)
             {
                 return NotFound();
@@ -58,14 +62,14 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
         [HttpPost]
         public async Task<ActionResult<CatTipoRecurso>> Crear(CatTipoRecurso catTipoRecurso)
         {
-            var recursoCreado = await _catTipoRecursoService.Crear(catTipoRecurso);
+            var recursoCreado = await _catTipoRecursoService.AddAsync(catTipoRecurso);
             return CreatedAtAction(nameof(ObtenerPorId), new { id = recursoCreado.Id }, recursoCreado);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Actualizar(int id, CatTipoRecurso catTipoRecurso)
+        public async Task<IActionResult> Actualizar(CatTipoRecurso catTipoRecurso)
         {
-            var recursoActualizado = await _catTipoRecursoService.Actualizar(id, catTipoRecurso);
+            var recursoActualizado = await _catTipoRecursoService.UpdateAsync(catTipoRecurso);
             if (recursoActualizado == null)
             {
                 return NotFound();
@@ -76,7 +80,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Eliminar(int id)
         {
-            var resultado = await _catTipoRecursoService.Eliminar(id);
+            var resultado = await _catTipoRecursoService.DeleteByIdAsync(id);
             if (!resultado)
             {
                 return NotFound();
