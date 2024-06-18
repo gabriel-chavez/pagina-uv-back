@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs;
-using UNIVidaPortalWeb.Cms.Models;
+using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 using UNIVidaPortalWeb.Cms.Services.RecursoServices;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
@@ -22,14 +22,14 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Recurso>>> ObtenerRecursos()
         {
-            var recursos = await _recursoService.ObtenerTodos();
+            var recursos = await _recursoService.GetAllAsync();
             return Ok(recursos);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Recurso>> ObtenerRecurso(int id)
         {
-            var recurso = await _recursoService.ObtenerPorId(id);
+            var recurso = await _recursoService.GetByIdAsync(id);
             if (recurso == null)
             {
                 return NotFound();
@@ -41,7 +41,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
         public async Task<ActionResult<Recurso>> CrearRecurso(RecursoRequestDTO recursoDto)
         {
             var recurso = _mapper.Map<Recurso>(recursoDto);
-            var recursoCreado = await _recursoService.Crear(recurso);
+            var recursoCreado = await _recursoService.AddAsync(recurso);
             return CreatedAtAction(nameof(ObtenerRecurso), new { id = recursoCreado.Id }, recursoCreado);
         }
 
@@ -51,7 +51,8 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
             try
             {
                 var recurso = _mapper.Map<Recurso>(recursoDto);
-                await _recursoService.Actualizar(id, recurso);
+                recurso.Id = id;
+                await _recursoService.UpdateAsync(recurso);
             }
             catch (NotFoundException)
             {
@@ -66,7 +67,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
         {
             try
             {
-                await _recursoService.Eliminar(id);
+                await _recursoService.DeleteByIdAsync(id);
             }
             catch (NotFoundException)
             {

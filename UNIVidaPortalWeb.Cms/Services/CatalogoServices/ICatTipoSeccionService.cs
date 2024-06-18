@@ -1,14 +1,8 @@
-﻿using UNIVidaPortalWeb.Cms.Models;
+﻿using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
 
 namespace UNIVidaPortalWeb.Cms.Services.CatalogoServices
 {
-    public interface ICatTipoSeccionService
+    public interface ICatTipoSeccionService : IAsyncRepository<CatTipoSeccion>
     {
-        Task<IEnumerable<CatTipoSeccion>> ObtenerTodos();
-        Task<CatTipoSeccion> ObtenerPorId(int id);
-        Task<CatTipoSeccion> Agregar(CatTipoSeccion catTipoSeccion);
-        Task<CatTipoSeccion> Actualizar(int id, CatTipoSeccion catTipoSeccion);
-        Task<bool> Eliminar(int id);
-
     }
 }

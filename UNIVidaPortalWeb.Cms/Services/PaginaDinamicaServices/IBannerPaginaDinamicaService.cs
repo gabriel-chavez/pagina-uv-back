@@ -1,15 +1,11 @@
-﻿using UNIVidaPortalWeb.Cms.Models;
+﻿using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
+using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 
 namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
 {
-    public interface IBannerPaginaDinamicaService
+    public interface IBannerPaginaDinamicaService : IAsyncRepository<BannerPaginaDinamica>
     {
-        Task<IEnumerable<BannerPaginaDinamica>> ObtenerTodos();
-        Task<BannerPaginaDinamica> ObtenerPorId(int id);
-        Task<BannerPaginaDinamica> Crear(BannerPaginaDinamica bannerPaginaDinamica);
-        Task Actualizar(int id, BannerPaginaDinamica bannerPaginaDinamica);
-        Task Eliminar(int id);
-
+       
     }
 
 }

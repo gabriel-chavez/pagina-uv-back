@@ -1,6 +1,6 @@
-﻿namespace UNIVidaPortalWeb.Cms.Models
+﻿namespace UNIVidaPortalWeb.Cms.Models.CatalogoModel
 {
-    public class CatTipoSeccion
+    public class CatTipoSeccion : BaseDomainModel
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

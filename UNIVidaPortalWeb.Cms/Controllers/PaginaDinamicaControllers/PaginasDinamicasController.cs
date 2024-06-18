@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs;
-using UNIVidaPortalWeb.Cms.Models;
+using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
 {
@@ -25,21 +22,21 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PaginaDinamica>>> ObtenerTodos()
         {
-            var paginasDinamicas = await _paginaDinamicaService.ObtenerTodos();
+            var paginasDinamicas = await _paginaDinamicaService.GetAllAsync();
             return Ok(paginasDinamicas);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<PaginaDinamica>> ObtenerPorId(int id)
         {
-            var paginaDinamica = await _paginaDinamicaService.ObtenerPorId(id);
+            var paginaDinamica = await _paginaDinamicaService.GetByIdAsync(id);
             if (paginaDinamica == null)
             {
                 return NotFound();
             }
             return Ok(paginaDinamica);
         }
-        [HttpGet("pagina/{id}")]
+        [HttpGet("Pagina/{id}")]
         public async Task<ActionResult<PaginaDinamica>> ObtenerPagina(int id)
         {
             var paginaDinamica = await _paginaDinamicaService.ObtenerPaginaDinamicaConRelacionesAsync(id);
@@ -49,12 +46,21 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
             }
             return Ok(paginaDinamica);
         }
-
+        [HttpGet("paginaPorRuta/{ruta}")]
+        public async Task<ActionResult<PaginaDinamica>> ObtenerPaginaPorRuta(string ruta)
+        {
+            var paginaDinamica = await _paginaDinamicaService.ObtenerPaginaDinamicaConRelacionesPorRutaAsync(ruta);
+            if (paginaDinamica == null)
+            {
+                return NotFound();
+            }
+            return Ok(paginaDinamica);
+        }
         [HttpPost]
         public async Task<ActionResult<PaginaDinamica>> Crear(PaginaDinamicaRequestDTO paginaDinamicaDto)
         {
             var paginaDinamica = _mapper.Map<PaginaDinamica>(paginaDinamicaDto);
-            var nuevaPaginaDinamica = await _paginaDinamicaService.Crear(paginaDinamica);
+            var nuevaPaginaDinamica = await _paginaDinamicaService.AddAsync(paginaDinamica);
             return CreatedAtAction(nameof(ObtenerPorId), new { id = nuevaPaginaDinamica.Id }, nuevaPaginaDinamica);
         }
 
@@ -64,7 +70,8 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
             try
             {
                 var paginaDinamica = _mapper.Map<PaginaDinamica>(paginaDinamicaDto);
-                await _paginaDinamicaService.Actualizar(id, paginaDinamica);
+                paginaDinamica.Id = id;
+                await _paginaDinamicaService.UpdateAsync(paginaDinamica);
             }
             catch (NotFoundException ex)
             {
@@ -83,7 +90,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         {
             try
             {
-                await _paginaDinamicaService.Eliminar(id);
+                await _paginaDinamicaService.DeleteByIdAsync(id);
             }
             catch (NotFoundException ex)
             {

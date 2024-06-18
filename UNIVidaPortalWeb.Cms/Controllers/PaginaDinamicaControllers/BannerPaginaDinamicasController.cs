@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs;
-using UNIVidaPortalWeb.Cms.Models;
+using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
@@ -22,14 +22,14 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<BannerPaginaDinamica>>> ObtenerBannersPaginaDinamica()
         {
-            var bannerPaginaDinamicas = await _bannerPaginaDinamicaService.ObtenerTodos();
+            var bannerPaginaDinamicas = await _bannerPaginaDinamicaService.GetAllAsync();
             return Ok(bannerPaginaDinamicas);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<BannerPaginaDinamica>> ObtenerBannerPaginaDinamica(int id)
         {
-            var bannerPaginaDinamica = await _bannerPaginaDinamicaService.ObtenerPorId(id);
+            var bannerPaginaDinamica = await _bannerPaginaDinamicaService.GetByIdAsync(id);
             if (bannerPaginaDinamica == null)
             {
                 return NotFound();
@@ -41,7 +41,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         public async Task<ActionResult<BannerPaginaDinamica>> CrearBannerPaginaDinamica(BannerPaginaDinamicaRequestDTO bannerPaginaDinamicaDto)
         {
             var bannerPaginaDinamica = _mapper.Map<BannerPaginaDinamica>(bannerPaginaDinamicaDto);
-            var bannerPaginaDinamicaCreado = await _bannerPaginaDinamicaService.Crear(bannerPaginaDinamica);
+            var bannerPaginaDinamicaCreado = await _bannerPaginaDinamicaService.AddAsync(bannerPaginaDinamica);
             return CreatedAtAction(nameof(ObtenerBannerPaginaDinamica), new { id = bannerPaginaDinamicaCreado.Id }, bannerPaginaDinamicaCreado);
         }
 
@@ -51,7 +51,8 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
             try
             {
                 var bannerPaginaDinamica = _mapper.Map<BannerPaginaDinamica>(bannerPaginaDinamicaDto);
-                await _bannerPaginaDinamicaService.Actualizar(id, bannerPaginaDinamica);
+                bannerPaginaDinamica.Id = id;
+                await _bannerPaginaDinamicaService.UpdateAsync(bannerPaginaDinamica);
             }
             catch (NotFoundException)
             {
@@ -66,7 +67,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         {
             try
             {
-                await _bannerPaginaDinamicaService.Eliminar(id);
+                await _bannerPaginaDinamicaService.DeleteByIdAsync(id);
             }
             catch (NotFoundException)
             {

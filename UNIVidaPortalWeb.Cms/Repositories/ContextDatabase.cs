@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using UNIVidaPortalWeb.Cms.Models;
+using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
+using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
+using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 
 namespace UNIVidaPortalWeb.Cms.Repositories
 {
-   
+
     public class ContextDatabase : DbContext
     {
         public static readonly ILoggerFactory MyLoggerFactory

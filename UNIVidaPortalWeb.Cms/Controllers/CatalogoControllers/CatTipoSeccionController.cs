@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using UNIVidaPortalWeb.Cms.Models;
+using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
 using UNIVidaPortalWeb.Cms.Services.CatalogoServices;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
@@ -18,14 +18,14 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CatTipoSeccion>>> ObtenerTodos()
         {
-            var catTipoSecciones = await _catTipoSeccionService.ObtenerTodos();
+            var catTipoSecciones = await _catTipoSeccionService.GetAllAsync();
             return Ok(catTipoSecciones);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<CatTipoSeccion>> ObtenerPorId(int id)
         {
-            var catTipoSeccion = await _catTipoSeccionService.ObtenerPorId(id);
+            var catTipoSeccion = await _catTipoSeccionService.GetByIdAsync(id);
             if (catTipoSeccion == null)
             {
                 return NotFound();
@@ -36,7 +36,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
         [HttpPost]
         public async Task<ActionResult<CatTipoSeccion>> Agregar(CatTipoSeccion catTipoSeccion)
         {
-            var catTipoSeccionCreado = await _catTipoSeccionService.Agregar(catTipoSeccion);
+            var catTipoSeccionCreado = await _catTipoSeccionService.AddAsync(catTipoSeccion);
             return CreatedAtAction(nameof(ObtenerPorId), new { id = catTipoSeccionCreado.Id }, catTipoSeccionCreado);
         }
 
@@ -45,7 +45,8 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
         {
             try
             {
-                var catTipoSeccionActualizado = await _catTipoSeccionService.Actualizar(id, catTipoSeccion);
+                var catTipoSeccionActualizado = await _catTipoSeccionService.UpdateAsync(catTipoSeccion);
+                catTipoSeccionActualizado.Id= id;   
                 return Ok(catTipoSeccionActualizado);
             }
             catch (KeyNotFoundException)
@@ -59,7 +60,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
         {
             try
             {
-                await _catTipoSeccionService.Eliminar(id);
+                await _catTipoSeccionService.DeleteByIdAsync(id);
                 return NoContent();
             }
             catch (KeyNotFoundException)

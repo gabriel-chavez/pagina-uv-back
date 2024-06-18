@@ -1,6 +1,8 @@
-﻿namespace UNIVidaPortalWeb.Cms.Models
+﻿using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
+
+namespace UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel
 {
-    public class Seccion
+    public class Seccion : BaseDomainModel
     {
         public int Id { get; set; }
         public int CatTipoSeccionId { get; set; }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using UNIVidaPortalWeb.Cms.DTOs;
-using UNIVidaPortalWeb.Cms.Models;
+using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
+using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 
 namespace UNIVidaPortalWeb.Cms.Utilities
 {

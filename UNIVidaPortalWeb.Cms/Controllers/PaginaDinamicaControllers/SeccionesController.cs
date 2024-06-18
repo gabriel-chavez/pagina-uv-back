@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs;
-using UNIVidaPortalWeb.Cms.Models;
+using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
 {
@@ -24,14 +22,14 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Seccion>>> ObtenerSecciones()
         {
-            var secciones = await _seccionService.ObtenerTodos();
+            var secciones = await _seccionService.GetAllAsync();
             return Ok(secciones);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Seccion>> ObtenerSeccionPorId(int id)
         {
-            var seccion = await _seccionService.ObtenerPorId(id);
+            var seccion = await _seccionService.GetByIdAsync(id);
             if (seccion == null)
             {
                 return NotFound();
@@ -54,7 +52,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         public async Task<ActionResult<Seccion>> CrearSeccion(SeccionRequestDTO seccionDto)
         {
             var seccion = _mapper.Map<Seccion>(seccionDto);
-            var seccionCreada = await _seccionService.Crear(seccion);
+            var seccionCreada = await _seccionService.AddAsync(seccion);
             return CreatedAtAction(nameof(ObtenerSeccionPorId), new { id = seccionCreada.Id }, seccionCreada);
         }
 
@@ -64,7 +62,8 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
             try
             {
                 var seccion = _mapper.Map<Seccion>(seccionDto);
-                await _seccionService.Actualizar(id, seccion);
+                seccion.Id = id;
+                await _seccionService.UpdateAsync(seccion);
             }
             catch (NotFoundException)
             {
@@ -79,7 +78,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         {
             try
             {
-                await _seccionService.Eliminar(id);
+                await _seccionService.DeleteByIdAsync(id);
             }
             catch (NotFoundException)
             {
