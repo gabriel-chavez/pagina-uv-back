@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using UNIVidaPortalWeb.Cms.Models.RecursoModel;
+﻿using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 using UNIVidaPortalWeb.Cms.Repositories;
 
 
@@ -7,9 +6,9 @@ namespace UNIVidaPortalWeb.Cms.Services.RecursoServices
 {
     public class RecursoService : RepositoryBase<Recurso>, IRecursoService
     {
-        private readonly ContextDatabase _context;
+        private readonly DbContextCms _context;
 
-        public RecursoService(ContextDatabase context) : base(context)
+        public RecursoService(DbContextCms context) : base(context)
         {
         }
 

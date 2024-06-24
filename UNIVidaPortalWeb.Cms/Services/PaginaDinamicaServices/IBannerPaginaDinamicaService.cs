@@ -1,9 +1,9 @@
 ﻿using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
-using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
+using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 
 namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
 {
-    public interface IBannerPaginaDinamicaService : IAsyncRepository<BannerPaginaDinamica>
+    public interface IBannerPaginaDinamicaService : IAsyncRepository<BannerPagina>
     {
        
     }

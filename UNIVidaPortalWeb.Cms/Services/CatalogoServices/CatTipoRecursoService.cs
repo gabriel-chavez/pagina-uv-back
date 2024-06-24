@@ -6,9 +6,9 @@ namespace UNIVidaPortalWeb.Cms.Services.CatalogoServices
 {
     public class CatTipoRecursoService : RepositoryBase<CatTipoRecurso>, ICatTipoRecursoService
     {
-        private readonly ContextDatabase _context;
+        private readonly DbContextCms _context;
 
-        public CatTipoRecursoService(ContextDatabase context) : base(context)
+        public CatTipoRecursoService(DbContextCms context) : base(context)
         {
         }
     }

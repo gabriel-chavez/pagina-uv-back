@@ -8,9 +8,9 @@ namespace UNIVidaPortalWeb.Cms.Services.DatoServices
 {
     public class DatoService : RepositoryBase<Dato>, IDatoService
     {
-        private readonly ContextDatabase _contexto;
+        private readonly DbContextCms _contexto;
 
-        public DatoService(ContextDatabase context) : base(context)
+        public DatoService(DbContextCms context) : base(context)
         {
         }
 

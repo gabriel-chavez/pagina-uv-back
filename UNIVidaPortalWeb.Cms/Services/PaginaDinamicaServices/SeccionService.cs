@@ -6,9 +6,9 @@ namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
 {
     public class SeccionService : RepositoryBase<Seccion>, ISeccionService
     {
-        private readonly ContextDatabase _context;
+        private readonly DbContextCms _context;
 
-        public SeccionService(ContextDatabase context) : base(context)
+        public SeccionService(DbContextCms context) : base(context)
         {
             _context = context;
         }

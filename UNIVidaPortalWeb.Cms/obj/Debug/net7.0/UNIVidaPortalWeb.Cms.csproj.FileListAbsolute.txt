@@ -67,14 +67,7 @@ C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\bin\Debug\n
 C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\System.Text.Encodings.Web.dll
 C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\System.Text.Json.dll
 C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
-C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.csproj.AssemblyReference.cache
-C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.AssemblyInfoInputs.cache
-C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.AssemblyInfo.cs
-C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.csproj.CoreCompileInputs.cache
-C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.sourcelink.json
+C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.sourcelink.json
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\appsettings.json
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\appsettings.local.json
@@ -104,6 +97,7 @@ C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\De
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\Npgsql.dll
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\Serilog.dll
@@ -123,6 +117,14 @@ C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\De
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\System.Text.Encodings.Web.dll
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\System.Text.Json.dll
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.AssemblyInfo.cs
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.sourcelink.json
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\staticwebassets\msbuild.UNIVidaPortalWeb.Cms.Microsoft.AspNetCore.StaticWebAssets.props
@@ -137,4 +139,3 @@ C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\De
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.pdb
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.genruntimeconfig.cache
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\ref\UNIVidaPortalWeb.Cms.dll
-C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\obj\Debug\net7.0\UNIVidaPortalWeb.Cms.sourcelink.json

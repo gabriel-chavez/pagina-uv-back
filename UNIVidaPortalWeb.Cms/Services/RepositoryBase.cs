@@ -7,9 +7,9 @@ namespace UNIVidaPortalWeb.Cms.Services
 {
     public class RepositoryBase<T> : IAsyncRepository<T> where T : BaseDomainModel
     {
-        protected readonly ContextDatabase _context;
+        protected readonly DbContextCms _context;
 
-        public RepositoryBase(ContextDatabase context)
+        public RepositoryBase(DbContextCms context)
         {
             _context = context;
         }
@@ -65,40 +65,90 @@ namespace UNIVidaPortalWeb.Cms.Services
 
         public virtual async Task<T> GetByIdAsync(int id)
         {
-            return await _context.Set<T>().FindAsync(id);
+            var entity = await _context.Set<T>().FindAsync(id);
+
+            if (entity == null)
+            {
+                throw new KeyNotFoundException($"No se encontró {typeof(T).Name} con ID {id}");
+            }
+
+            return entity;
         }
 
         public async Task<T> AddAsync(T entity)
         {
-            _context.Set<T>().Add(entity);
-            await _context.SaveChangesAsync();
-            return entity;
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity), "La entidad no puede ser nula.");
+            }
+
+            try
+            {
+                _context.Set<T>().Add(entity);
+                await _context.SaveChangesAsync();
+                return entity;
+            }
+            catch (DbUpdateException ex)
+            {               
+                throw new ApplicationException("Error al intentar guardar la entidad.", ex);
+            }
         }
 
         public async Task<T> UpdateAsync(T entity)
         {
-            _context.Set<T>().Attach(entity);
-            _context.Entry(entity).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-            return entity;
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity), "La entidad no puede ser nula.");
+            }
+
+            try
+            {
+                _context.Set<T>().Attach(entity);
+                _context.Entry(entity).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+                return entity;
+            }
+            catch (DbUpdateException ex)
+            {                
+                throw new ApplicationException("Error al intentar guardar los cambios de la entidad.", ex);
+            }
         }
 
         public async Task DeleteAsync(T entity)
         {
-            _context.Set<T>().Remove(entity);
-            await _context.SaveChangesAsync();
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity), "La entidad no puede ser nula.");
+            }
+
+            try
+            {
+                _context.Set<T>().Remove(entity);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException ex)
+            {                
+                throw new ApplicationException("Error al intentar eliminar la entidad.", ex);
+            }
         }
         public async Task<bool> DeleteByIdAsync(int id)
         {
             var catTipoSeccion = await _context.CatTipoSecciones.FindAsync(id);
             if (catTipoSeccion == null)
             {
-                throw new KeyNotFoundException("CatTipoSeccion no encontrada");
+                throw new KeyNotFoundException($"CatTipoSeccion con Id {id} no encontrada");
             }
 
-            _context.CatTipoSecciones.Remove(catTipoSeccion);
-            await _context.SaveChangesAsync();
-            return true;
+            try
+            {
+                _context.CatTipoSecciones.Remove(catTipoSeccion);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (DbUpdateException ex)
+            {               
+                throw new ApplicationException($"Error al intentar eliminar CatTipoSeccion con Id {id}.", ex);
+            }
         }
 
         public void AddEntity(T entity)

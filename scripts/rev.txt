@@ -1,0 +1,8 @@
+Crear menu para :
+Nuestros Seguros
+Seguros Obligatorios
+Sobre la empresa
+
+en lugar de ruta agregar el id y relacion a menu de las tablas:
+"PaginaDinamica"."PaginasDinamicas"
+"Seguro"."Seguros"

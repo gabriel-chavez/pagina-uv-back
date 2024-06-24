@@ -5,13 +5,13 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
 {
-    public class PaginaDinamicaService : RepositoryBase<PaginaDinamica> ,IPaginaDinamicaService
+    public class PaginaDinamicaService : RepositoryBase<PaginaDinamica>, IPaginaDinamicaService
     {
-        private readonly ContextDatabase _context;
+        private readonly DbContextCms _context;
 
-        public PaginaDinamicaService(ContextDatabase context) : base(context)
+        public PaginaDinamicaService(DbContextCms context) : base(context)
         {
-            _context= context;
+            _context = context;
         }
 
         //public PaginaDinamicaService(ContextDatabase contexto)
@@ -109,7 +109,10 @@ namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
                             },
                             Datos = _context.Datos
                                 .Where(d => d.SeccionId == s.Id)
-                                .Select(d => new
+                                .OrderBy(d => d.Fila)
+                                .ThenBy(d => d.Columna)
+                                .GroupBy(d => d.Fila)
+                                .Select(g => g.Select(d => new
                                 {
                                     d.Id,
                                     d.DatoTexto,
@@ -119,7 +122,7 @@ namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
                                     d.SeccionId,
                                     d.Fila,
                                     d.Columna,
-                                    Recurso = new
+                                    Recurso = d.Recurso != null ? new
                                     {
                                         d.Recurso.Id,
                                         d.Recurso.Nombre,
@@ -131,8 +134,8 @@ namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
                                             d.Recurso.CatTipoRecurso.Id,
                                             d.Recurso.CatTipoRecurso.Nombre
                                         }
-                                    }
-                                })
+                                    } : null
+                                }))
                                 .ToList()
                         })
                         .ToList(),
@@ -143,7 +146,9 @@ namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
                             b.Id,
                             b.PaginaDinamicaId,
                             b.RecursoId,
-                            Recurso = new
+                            b.Titulo,
+                            b.SubTitulo,
+                            Recurso = b.Recurso != null ? new
                             {
                                 b.Recurso.Id,
                                 b.Recurso.Nombre,
@@ -155,7 +160,7 @@ namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
                                     b.Recurso.CatTipoRecurso.Id,
                                     b.Recurso.CatTipoRecurso.Nombre
                                 }
-                            }
+                            } : null
                         })
                         .ToList()
                 })
@@ -163,10 +168,12 @@ namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
 
             return paginaDinamica;
         }
+
+
         public async Task<object> ObtenerPaginaDinamicaConRelacionesPorRutaAsync(string ruta)
         {
-            var paginaDinamica=  await _context.PaginasDinamicas.FirstOrDefaultAsync(p => p.Ruta == ruta);     
-            if(paginaDinamica == null )
+            var paginaDinamica = await _context.PaginasDinamicas.FirstOrDefaultAsync(p => p.Ruta == ruta);
+            if (paginaDinamica == null)
                 throw new NotFoundException($"Página no encontrada");
             return await ObtenerPaginaDinamicaConRelacionesAsync(paginaDinamica.Id);
         }

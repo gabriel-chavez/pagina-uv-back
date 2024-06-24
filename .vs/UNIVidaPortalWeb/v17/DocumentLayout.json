@@ -1,26 +1,174 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lchavez\\Documents\\pag\\UNIVidaPortalWeb\\",
+  "WorkspaceRootPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\lchavez\\documents\\pag\\unividaportalweb\\unividaportalweb.cms\\controllers\\paginadinamicacontrollers\\paginasdinamicascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\controllers\\paginadinamicacontrollers\\paginasdinamicascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\repositories\\configuracion\\catalogoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\repositories\\configuracion\\catalogoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\lchavez\\documents\\pag\\unividaportalweb\\unividaportalweb.cms\\controllers\\paginadinamicacontrollers\\bannerpaginadinamicascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\controllers\\paginadinamicacontrollers\\bannerpaginadinamicascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\repositories\\configuracion\\segurosconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\repositories\\configuracion\\segurosconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\lchavez\\documents\\pag\\unividaportalweb\\unividaportalweb.cms\\services\\paginadinamicaservices\\paginadinamicaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620233310_retiro-ruta-adicion-relaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:UNIVidaPortalWeb.Cms\\Migrations\\20240620233310_retiro-ruta-adicion-relaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\models\\seguromodel\\seguro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\models\\seguromodel\\seguro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\models\\catalogomodel\\cattiposeguro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\models\\catalogomodel\\cattiposeguro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620225253_cambio-esquema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:UNIVidaPortalWeb.Cms\\Migrations\\20240620225253_cambio-esquema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\repositories\\dbcontextcms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\repositories\\dbcontextcms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620222712_campo-tiposeguro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:UNIVidaPortalWeb.Cms\\Migrations\\20240620222712_campo-tiposeguro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\repositories\\configuracion\\paginadinamicaconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\repositories\\configuracion\\paginadinamicaconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\models\\catalogomodel\\cattiposeccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\models\\catalogomodel\\cattiposeccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\models\\catalogomodel\\cattiporecurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\models\\catalogomodel\\cattiporecurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\services\\seguroservices\\seguroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\services\\seguroservices\\seguroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\controllers\\seguros\\segurocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\controllers\\seguros\\segurocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620193942_modificacion-propiedad-seguros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:UNIVidaPortalWeb.Cms\\Migrations\\20240620193942_modificacion-propiedad-seguros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\services\\paginadinamicaservices\\paginadinamicaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\services\\paginadinamicaservices\\paginadinamicaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\lchavez\\documents\\pag\\unividaportalweb\\unividaportalweb.cms\\services\\paginadinamicaservices\\ipaginadinamicaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\services\\paginadinamicaservices\\ipaginadinamicaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\services\\paginadinamicaservices\\seccionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\services\\paginadinamicaservices\\seccionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\lchavez\\documents\\pag\\unividaportalweb\\unividaportalweb.cms\\services\\recursoservices\\recursoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\services\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\services\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\services\\iasyncrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\services\\iasyncrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620145917_propiedad-ruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:UNIVidaPortalWeb.Cms\\Migrations\\20240620145917_propiedad-ruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\models\\seguromodel\\plan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\models\\seguromodel\\plan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\models\\seguromodel\\segurodetalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\models\\seguromodel\\segurodetalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620155000_propiedades-bannerpagina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:UNIVidaPortalWeb.Cms\\Migrations\\20240620155000_propiedades-bannerpagina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\models\\mymodelprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\models\\mymodelprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\models\\basedomainmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\models\\basedomainmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\services\\recursoservices\\recursoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\services\\recursoservices\\recursoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\dtos\\recursosdto\\bannerpaginadinamicarequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\dtos\\recursosdto\\bannerpaginadinamicarequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\models\\paginadinamicamodel\\seccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\models\\paginadinamicamodel\\seccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\models\\paginadinamicamodel\\paginadinamica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\models\\paginadinamicamodel\\paginadinamica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\models\\paginadinamicamodel\\dato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\models\\paginadinamicamodel\\dato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\dtos\\segurosdto\\segurorequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\dtos\\segurosdto\\segurorequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\dtos\\segurosdto\\segurodetallerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\dtos\\segurosdto\\segurodetallerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\dtos\\segurosdto\\planrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\dtos\\segurosdto\\planrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\controllers\\seguros\\segurodetallecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\controllers\\seguros\\segurodetallecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\controllers\\catalogocontrollers\\cattiposeccioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\controllers\\catalogocontrollers\\cattiposeccioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\controllers\\catalogocontrollers\\cattiporecursocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\controllers\\catalogocontrollers\\cattiporecursocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620060949_modelo-seguros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:UNIVidaPortalWeb.Cms\\Migrations\\20240620060949_modelo-seguros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\migrations\\20240620071157_adicion-campos-faltantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\migrations\\20240620071157_adicion-campos-faltantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\migrations\\20240620062614_modelo-seguros2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\migrations\\20240620062614_modelo-seguros2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|c:\\users\\usuario\\documents\\pagina web\\pagina-uv-back\\unividaportalweb.cms\\migrations\\20240620061704_modelo-seguros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F639ABC2-E2B8-432B-940A-5F0542F62CFD}|UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj|solutionrelative:unividaportalweb.cms\\migrations\\20240620061704_modelo-seguros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,73 +177,540 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 233,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BannerPaginaDinamicasController.cs",
-              "DocumentMoniker": "C:\\Users\\lchavez\\Documents\\pag\\UNIVidaPortalWeb\\UNIVidaPortalWeb.Cms\\Controllers\\PaginaDinamicaControllers\\BannerPaginaDinamicasController.cs",
-              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Controllers\\PaginaDinamicaControllers\\BannerPaginaDinamicasController.cs",
-              "ToolTip": "C:\\Users\\lchavez\\Documents\\pag\\UNIVidaPortalWeb\\UNIVidaPortalWeb.Cms\\Controllers\\PaginaDinamicaControllers\\BannerPaginaDinamicasController.cs",
-              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Controllers\\PaginaDinamicaControllers\\BannerPaginaDinamicasController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "20240620233310_retiro-ruta-adicion-relaciones.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620233310_retiro-ruta-adicion-relaciones.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Migrations\\20240620233310_retiro-ruta-adicion-relaciones.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620233310_retiro-ruta-adicion-relaciones.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Migrations\\20240620233310_retiro-ruta-adicion-relaciones.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T20:57:11.151Z",
+              "WhenOpened": "2024-06-20T23:33:10.674Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PaginaDinamicaService.cs",
-              "DocumentMoniker": "C:\\Users\\lchavez\\Documents\\pag\\UNIVidaPortalWeb\\UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\PaginaDinamicaService.cs",
-              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\PaginaDinamicaService.cs",
-              "ToolTip": "C:\\Users\\lchavez\\Documents\\pag\\UNIVidaPortalWeb\\UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\PaginaDinamicaService.cs",
-              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\PaginaDinamicaService.cs",
-              "ViewState": "AQIAAJMAAAAAAAAAAAAowKkAAABFAAAA",
+              "DocumentIndex": 7,
+              "Title": "20240620225253_cambio-esquema.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620225253_cambio-esquema.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Migrations\\20240620225253_cambio-esquema.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620225253_cambio-esquema.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Migrations\\20240620225253_cambio-esquema.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T13:24:51.368Z",
+              "WhenOpened": "2024-06-20T22:52:53.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Data\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Data\\DbInitializer.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Data\\DbInitializer.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Data\\DbInitializer.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwDEAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T06:55:25.491Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PaginasDinamicasController.cs",
-              "DocumentMoniker": "C:\\Users\\lchavez\\Documents\\pag\\UNIVidaPortalWeb\\UNIVidaPortalWeb.Cms\\Controllers\\PaginaDinamicaControllers\\PaginasDinamicasController.cs",
-              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Controllers\\PaginaDinamicaControllers\\PaginasDinamicasController.cs",
-              "ToolTip": "C:\\Users\\lchavez\\Documents\\pag\\UNIVidaPortalWeb\\UNIVidaPortalWeb.Cms\\Controllers\\PaginaDinamicaControllers\\PaginasDinamicasController.cs",
-              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Controllers\\PaginaDinamicaControllers\\PaginasDinamicasController.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAcwDMAAAAMAAAA",
+              "Title": "CatalogoConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Repositories\\Configuracion\\CatalogoConfiguration.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Repositories\\Configuracion\\CatalogoConfiguration.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Repositories\\Configuracion\\CatalogoConfiguration.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Repositories\\Configuracion\\CatalogoConfiguration.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABcAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T13:13:35.049Z",
+              "WhenOpened": "2024-06-20T06:54:57.447Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IPaginaDinamicaService.cs",
-              "DocumentMoniker": "C:\\Users\\lchavez\\Documents\\pag\\UNIVidaPortalWeb\\UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\IPaginaDinamicaService.cs",
-              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\IPaginaDinamicaService.cs",
-              "ToolTip": "C:\\Users\\lchavez\\Documents\\pag\\UNIVidaPortalWeb\\UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\IPaginaDinamicaService.cs",
-              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\IPaginaDinamicaService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Program.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Program.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Program.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Program.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAAAC4AAABYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T13:13:05.815Z",
+              "WhenOpened": "2024-06-20T06:38:13.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SegurosConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Repositories\\Configuracion\\SegurosConfiguration.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Repositories\\Configuracion\\SegurosConfiguration.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Repositories\\Configuracion\\SegurosConfiguration.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Repositories\\Configuracion\\SegurosConfiguration.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwBgAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T06:13:10.699Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "RecursoService.cs",
-              "DocumentMoniker": "C:\\Users\\lchavez\\Documents\\pag\\UNIVidaPortalWeb\\UNIVidaPortalWeb.Cms\\Services\\RecursoServices\\RecursoService.cs",
-              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Services\\RecursoServices\\RecursoService.cs",
-              "ToolTip": "C:\\Users\\lchavez\\Documents\\pag\\UNIVidaPortalWeb\\UNIVidaPortalWeb.Cms\\Services\\RecursoServices\\RecursoService.cs",
-              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Services\\RecursoServices\\RecursoService.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Title": "CatTipoSeguro.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\CatalogoModel\\CatTipoSeguro.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Models\\CatalogoModel\\CatTipoSeguro.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\CatalogoModel\\CatTipoSeguro.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Models\\CatalogoModel\\CatTipoSeguro.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T13:11:46.286Z",
+              "WhenOpened": "2024-06-20T22:11:39.643Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Seguro.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\SeguroModel\\Seguro.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Models\\SeguroModel\\Seguro.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\SeguroModel\\Seguro.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Models\\SeguroModel\\Seguro.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T22:20:05.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20240620222712_campo-tiposeguro.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620222712_campo-tiposeguro.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Migrations\\20240620222712_campo-tiposeguro.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620222712_campo-tiposeguro.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Migrations\\20240620222712_campo-tiposeguro.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T22:27:13.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DbContextCms.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Repositories\\DbContextCms.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Repositories\\DbContextCms.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Repositories\\DbContextCms.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Repositories\\DbContextCms.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAIA3wBIAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T06:15:10.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PaginaDinamicaConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Repositories\\Configuracion\\PaginaDinamicaConfiguration.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Repositories\\Configuracion\\PaginaDinamicaConfiguration.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Repositories\\Configuracion\\PaginaDinamicaConfiguration.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Repositories\\Configuracion\\PaginaDinamicaConfiguration.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwDcAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T16:07:48.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CatTipoSeccion.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\CatalogoModel\\CatTipoSeccion.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Models\\CatalogoModel\\CatTipoSeccion.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\CatalogoModel\\CatTipoSeccion.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Models\\CatalogoModel\\CatTipoSeccion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T22:12:43.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CatTipoRecurso.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\CatalogoModel\\CatTipoRecurso.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Models\\CatalogoModel\\CatTipoRecurso.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\CatalogoModel\\CatTipoRecurso.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Models\\CatalogoModel\\CatTipoRecurso.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T22:12:42.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SeguroService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Services\\SeguroServices\\SeguroService.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Services\\SeguroServices\\SeguroService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Services\\SeguroServices\\SeguroService.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Services\\SeguroServices\\SeguroService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T20:07:58.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Plan.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\SeguroModel\\Plan.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Models\\SeguroModel\\Plan.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\SeguroModel\\Plan.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Models\\SeguroModel\\Plan.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T16:09:06.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20240620193942_modificacion-propiedad-seguros.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620193942_modificacion-propiedad-seguros.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Migrations\\20240620193942_modificacion-propiedad-seguros.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620193942_modificacion-propiedad-seguros.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Migrations\\20240620193942_modificacion-propiedad-seguros.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T19:39:42.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SeccionService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\SeccionService.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\SeccionService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\SeccionService.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\SeccionService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:55:17.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PaginaDinamicaService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\PaginaDinamicaService.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\PaginaDinamicaService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\PaginaDinamicaService.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Services\\PaginaDinamicaServices\\PaginaDinamicaService.cs",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAowJUAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:51:40.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SeguroController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Controllers\\Seguros\\SeguroController.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Controllers\\Seguros\\SeguroController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Controllers\\Seguros\\SeguroController.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Controllers\\Seguros\\SeguroController.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAMwEcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T06:19:25.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IAsyncRepository.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Services\\IAsyncRepository.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Services\\IAsyncRepository.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Services\\IAsyncRepository.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Services\\IAsyncRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T16:18:32.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RepositoryBase.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Services\\RepositoryBase.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Services\\RepositoryBase.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Services\\RepositoryBase.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Services\\RepositoryBase.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T16:18:33.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20240620145917_propiedad-ruta.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620145917_propiedad-ruta.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Migrations\\20240620145917_propiedad-ruta.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620145917_propiedad-ruta.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Migrations\\20240620145917_propiedad-ruta.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T14:59:17.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "SeguroDetalle.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\SeguroModel\\SeguroDetalle.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Models\\SeguroModel\\SeguroDetalle.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\SeguroModel\\SeguroDetalle.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Models\\SeguroModel\\SeguroDetalle.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T16:01:16.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "20240620155000_propiedades-bannerpagina.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620155000_propiedades-bannerpagina.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Migrations\\20240620155000_propiedades-bannerpagina.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620155000_propiedades-bannerpagina.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Migrations\\20240620155000_propiedades-bannerpagina.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:50:00.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Exceptions\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Exceptions\\NotFoundException.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Exceptions\\NotFoundException.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Exceptions\\NotFoundException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:29:20.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "MyModelPrueba.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\MyModelPrueba.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Models\\MyModelPrueba.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\MyModelPrueba.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Models\\MyModelPrueba.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T14:58:50.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "BaseDomainModel.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\BaseDomainModel.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Models\\BaseDomainModel.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\BaseDomainModel.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Models\\BaseDomainModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T07:36:47.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "BannerPaginaDinamicaRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\DTOs\\RecursosDTO\\BannerPaginaDinamicaRequestDTO.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\DTOs\\RecursosDTO\\BannerPaginaDinamicaRequestDTO.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\DTOs\\RecursosDTO\\BannerPaginaDinamicaRequestDTO.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\DTOs\\RecursosDTO\\BannerPaginaDinamicaRequestDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T14:11:11.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "RecursoService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Services\\RecursoServices\\RecursoService.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Services\\RecursoServices\\RecursoService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Services\\RecursoServices\\RecursoService.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Services\\RecursoServices\\RecursoService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T14:24:35.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "PaginaDinamica.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\PaginaDinamicaModel\\PaginaDinamica.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Models\\PaginaDinamicaModel\\PaginaDinamica.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\PaginaDinamicaModel\\PaginaDinamica.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Models\\PaginaDinamicaModel\\PaginaDinamica.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T07:33:20.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Seccion.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\PaginaDinamicaModel\\Seccion.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Models\\PaginaDinamicaModel\\Seccion.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\PaginaDinamicaModel\\Seccion.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Models\\PaginaDinamicaModel\\Seccion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T07:33:41.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Dato.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\PaginaDinamicaModel\\Dato.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Models\\PaginaDinamicaModel\\Dato.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Models\\PaginaDinamicaModel\\Dato.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Models\\PaginaDinamicaModel\\Dato.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T06:24:33.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "SeguroRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\DTOs\\SegurosDTO\\SeguroRequestDTO.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\DTOs\\SegurosDTO\\SeguroRequestDTO.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\DTOs\\SegurosDTO\\SeguroRequestDTO.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\DTOs\\SegurosDTO\\SeguroRequestDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T07:24:17.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "20240620071157_adicion-campos-faltantes.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620071157_adicion-campos-faltantes.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Migrations\\20240620071157_adicion-campos-faltantes.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620071157_adicion-campos-faltantes.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Migrations\\20240620071157_adicion-campos-faltantes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T07:11:57.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "SeguroDetalleRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\DTOs\\SegurosDTO\\SeguroDetalleRequestDTO.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\DTOs\\SegurosDTO\\SeguroDetalleRequestDTO.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\DTOs\\SegurosDTO\\SeguroDetalleRequestDTO.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\DTOs\\SegurosDTO\\SeguroDetalleRequestDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T07:08:21.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "SeguroDetalleController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Controllers\\Seguros\\SeguroDetalleController.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Controllers\\Seguros\\SeguroDetalleController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Controllers\\Seguros\\SeguroDetalleController.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Controllers\\Seguros\\SeguroDetalleController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowCUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T06:19:26.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "PlanRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\DTOs\\SegurosDTO\\PlanRequestDTO.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\DTOs\\SegurosDTO\\PlanRequestDTO.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\DTOs\\SegurosDTO\\PlanRequestDTO.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\DTOs\\SegurosDTO\\PlanRequestDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T06:19:17.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "CatTipoRecursoController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Controllers\\CatalogoControllers\\CatTipoRecursoController.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Controllers\\CatalogoControllers\\CatTipoRecursoController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Controllers\\CatalogoControllers\\CatTipoRecursoController.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Controllers\\CatalogoControllers\\CatTipoRecursoController.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T06:35:22.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "CatTipoSeccionController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Controllers\\CatalogoControllers\\CatTipoSeccionController.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Controllers\\CatalogoControllers\\CatTipoSeccionController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Controllers\\CatalogoControllers\\CatTipoSeccionController.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Controllers\\CatalogoControllers\\CatTipoSeccionController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowCQAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T06:36:28.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "20240620062614_modelo-seguros2.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620062614_modelo-seguros2.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Migrations\\20240620062614_modelo-seguros2.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620062614_modelo-seguros2.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Migrations\\20240620062614_modelo-seguros2.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T06:26:14.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "20240620061704_modelo-seguros.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620061704_modelo-seguros.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Migrations\\20240620061704_modelo-seguros.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620061704_modelo-seguros.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Migrations\\20240620061704_modelo-seguros.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T06:17:04.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "20240620060949_modelo-seguros.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620060949_modelo-seguros.cs",
+              "RelativeDocumentMoniker": "UNIVidaPortalWeb.Cms\\Migrations\\20240620060949_modelo-seguros.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\Migrations\\20240620060949_modelo-seguros.cs",
+              "RelativeToolTip": "UNIVidaPortalWeb.Cms\\Migrations\\20240620060949_modelo-seguros.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T06:09:50.064Z"
             }
           ]
         }

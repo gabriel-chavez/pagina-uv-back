@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using UNIVidaPortalWeb.Cms.DTOs;
+using UNIVidaPortalWeb.Cms.DTOs.RecursosDTO;
 using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 using UNIVidaPortalWeb.Cms.Services.RecursoServices;
 
@@ -29,11 +29,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Recurso>> ObtenerRecurso(int id)
         {
-            var recurso = await _recursoService.GetByIdAsync(id);
-            if (recurso == null)
-            {
-                return NotFound();
-            }
+            var recurso = await _recursoService.GetByIdAsync(id);            
             return Ok(recurso);
         }
 
@@ -48,16 +44,10 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
         [HttpPut("{id}")]
         public async Task<IActionResult> ActualizarRecurso(int id, RecursoRequestDTO recursoDto)
         {
-            try
-            {
-                var recurso = _mapper.Map<Recurso>(recursoDto);
-                recurso.Id = id;
-                await _recursoService.UpdateAsync(recurso);
-            }
-            catch (NotFoundException)
-            {
-                return NotFound();
-            }
+
+            var recurso = _mapper.Map<Recurso>(recursoDto);
+            recurso.Id = id;
+            await _recursoService.UpdateAsync(recurso);
 
             return NoContent();
         }
@@ -65,14 +55,8 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> EliminarRecurso(int id)
         {
-            try
-            {
-                await _recursoService.DeleteByIdAsync(id);
-            }
-            catch (NotFoundException)
-            {
-                return NotFound();
-            }
+
+            await _recursoService.DeleteByIdAsync(id);
 
             return NoContent();
         }

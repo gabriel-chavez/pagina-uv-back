@@ -1,7 +1,10 @@
-﻿namespace UNIVidaPortalWeb.Cms.Models
+﻿using Newtonsoft.Json;
+
+namespace UNIVidaPortalWeb.Cms.Models
 {
     public abstract class BaseDomainModel
     {
+        [JsonProperty(Order = 1)]
         public int Id { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string? CreatedBy { get; set; }
