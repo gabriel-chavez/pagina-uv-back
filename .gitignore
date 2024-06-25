@@ -1,0 +1,12 @@
+# Ignorar la carpeta .vs generada por Visual Studio
+.vs/
+
+# Ignorar archivos de compilación y archivos temporales
+*.log
+*.dll
+*.exe
+/temp/
+
+# Ignorar archivos de configuración sensibles
+appsettings.json
+secret-keys.txt
