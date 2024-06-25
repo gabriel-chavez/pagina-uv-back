@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
+using UNIVidaPortalWeb.Cms.Models.MenuModel;
 using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 using UNIVidaPortalWeb.Cms.Models.SeguroModel;
@@ -30,6 +31,8 @@ namespace UNIVidaPortalWeb.Cms.Repositories
         public DbSet<Seguro> Seguros { get; set; }
         public DbSet<SeguroDetalle> SeguroDetalles { get; set; }
 
+        // Definición de DbSets, que representan la tabla de Menu
+        public DbSet<MenuPrincipal> MenuPrincipal { get; set; }
 
 
         // Constructor para pasar opciones al contexto
@@ -46,7 +49,8 @@ namespace UNIVidaPortalWeb.Cms.Repositories
         {
             modelBuilder.ConfiguracionCatalogo();
             modelBuilder.ConfiguracionPaginaDinamica();            
-            modelBuilder.ConfiguracionSeguros();            
+            modelBuilder.ConfiguracionSeguros();
+            modelBuilder.ConfiguracionMenu();
             base.OnModelCreating(modelBuilder);
 
 

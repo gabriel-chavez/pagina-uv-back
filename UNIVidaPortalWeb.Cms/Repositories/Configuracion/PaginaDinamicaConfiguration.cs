@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
+using UNIVidaPortalWeb.Cms.Models.MenuModel;
 using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 
@@ -53,7 +54,12 @@ namespace UNIVidaPortalWeb.Cms.Repositories.Configuracion
                 .WithMany(s=>s.BannerPagina)
                 .HasForeignKey(b => b.RecursoId);
 
-            
+            modelBuilder.Entity<PaginaDinamica>()
+                .HasOne(b => b.MenuPrincipal)
+                .WithMany()
+                .HasForeignKey(b => b.MenuPrincipalId);
+
+
 
         }
     }

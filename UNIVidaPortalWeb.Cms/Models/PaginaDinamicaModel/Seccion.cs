@@ -11,7 +11,7 @@ namespace UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel
         public string? Clase { get; set; }
         public int PaginaDinamicaId { get; set; }
         public int Orden { get; set; }
-        public bool Visible { get; set; } = true;
+        public bool Habilitado { get; set; } = true;
 
         public virtual CatTipoSeccion CatTipoSeccion { get; set; }
         public virtual PaginaDinamica PaginaDinamica { get; set; }

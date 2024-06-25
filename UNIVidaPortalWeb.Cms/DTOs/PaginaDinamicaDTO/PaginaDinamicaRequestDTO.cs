@@ -3,6 +3,6 @@
     public class PaginaDinamicaRequestDTO
     {
         public string Nombre { get; set; }
-        public string Ruta { get; set; }
+        public int? MenuId { get; set; }
     }
 }

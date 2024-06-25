@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using UNIVidaPortalWeb.Cms.Repositories;
@@ -11,9 +12,11 @@ using UNIVidaPortalWeb.Cms.Repositories;
 namespace UNIVidaPortalWeb.Cms.Migrations
 {
     [DbContext(typeof(DbContextCms))]
-    partial class DbContextCmsModelSnapshot : ModelSnapshot
+    [Migration("20240625095425_menu-model3")]
+    partial class menumodel3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -122,7 +125,7 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.ToTable("CatTipoSeguro", "Catalogo");
                 });
 
-            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.MenuModel.MenuPrincipal", b =>
+            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.MenuModel.Menu", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -135,9 +138,6 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<bool>("Habilitado")
-                        .HasColumnType("boolean");
 
                     b.Property<int?>("IdPadre")
                         .HasColumnType("integer");
@@ -152,20 +152,15 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Orden")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Url")
+                        .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<bool>("Visible")
-                        .HasColumnType("boolean");
 
                     b.HasKey("Id");
 
                     b.HasIndex("IdPadre");
 
-                    b.ToTable("MenuPrincipal", "Menu");
+                    b.ToTable("Menu", "Menu");
                 });
 
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.Dato", b =>
@@ -232,25 +227,25 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<bool>("Habilitado")
-                        .HasColumnType("boolean");
-
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int?>("MenuPrincipalId")
+                    b.Property<int?>("MenuId")
                         .HasColumnType("integer");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<bool>("Visible")
+                        .HasColumnType("boolean");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("MenuPrincipalId");
+                    b.HasIndex("MenuId");
 
                     b.ToTable("PaginasDinamicas", "PaginaDinamica");
                 });
@@ -275,9 +270,6 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<bool>("Habilitado")
-                        .HasColumnType("boolean");
-
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("text");
 
@@ -299,6 +291,9 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     b.Property<string>("Titulo")
                         .HasColumnType("text");
+
+                    b.Property<bool>("Visible")
+                        .HasColumnType("boolean");
 
                     b.HasKey("Id");
 
@@ -416,9 +411,6 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<bool>("Habilitado")
-                        .HasColumnType("boolean");
-
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("text");
 
@@ -441,6 +433,9 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Property<string>("Titulo")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<bool>("Visible")
+                        .HasColumnType("boolean");
 
                     b.HasKey("Id");
 
@@ -471,9 +466,6 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<bool>("Habilitado")
-                        .HasColumnType("boolean");
-
                     b.Property<string>("Icono")
                         .HasColumnType("text");
 
@@ -483,7 +475,7 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int?>("MenuPrincipalId")
+                    b.Property<int?>("MenuId")
                         .HasColumnType("integer");
 
                     b.Property<string>("Nombre")
@@ -500,11 +492,14 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Property<int?>("RecursoId")
                         .HasColumnType("integer");
 
+                    b.Property<bool>("Visible")
+                        .HasColumnType("boolean");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CatTipoSeguroId");
 
-                    b.HasIndex("MenuPrincipalId");
+                    b.HasIndex("MenuId");
 
                     b.HasIndex("RecursoId");
 
@@ -552,9 +547,9 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.ToTable("SeguroDetalles", "Seguro");
                 });
 
-            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.MenuModel.MenuPrincipal", b =>
+            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.MenuModel.Menu", b =>
                 {
-                    b.HasOne("UNIVidaPortalWeb.Cms.Models.MenuModel.MenuPrincipal", "Padre")
+                    b.HasOne("UNIVidaPortalWeb.Cms.Models.MenuModel.Menu", "Padre")
                         .WithMany("SubMenus")
                         .HasForeignKey("IdPadre")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -581,11 +576,11 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.PaginaDinamica", b =>
                 {
-                    b.HasOne("UNIVidaPortalWeb.Cms.Models.MenuModel.MenuPrincipal", "MenuPrincipal")
+                    b.HasOne("UNIVidaPortalWeb.Cms.Models.MenuModel.Menu", "Menu")
                         .WithMany()
-                        .HasForeignKey("MenuPrincipalId");
+                        .HasForeignKey("MenuId");
 
-                    b.Navigation("MenuPrincipal");
+                    b.Navigation("Menu");
                 });
 
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.Seccion", b =>
@@ -660,9 +655,9 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("UNIVidaPortalWeb.Cms.Models.MenuModel.MenuPrincipal", "MenuPrincipal")
+                    b.HasOne("UNIVidaPortalWeb.Cms.Models.MenuModel.Menu", "Menu")
                         .WithMany()
-                        .HasForeignKey("MenuPrincipalId");
+                        .HasForeignKey("MenuId");
 
                     b.HasOne("UNIVidaPortalWeb.Cms.Models.RecursoModel.Recurso", "Recurso")
                         .WithMany()
@@ -670,7 +665,7 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     b.Navigation("CatTipoSeguro");
 
-                    b.Navigation("MenuPrincipal");
+                    b.Navigation("Menu");
 
                     b.Navigation("Recurso");
                 });
@@ -686,7 +681,7 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Navigation("Seguro");
                 });
 
-            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.MenuModel.MenuPrincipal", b =>
+            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.MenuModel.Menu", b =>
                 {
                     b.Navigation("SubMenus");
                 });

@@ -8,7 +8,7 @@
         public decimal Precio { get; set; }
         public string Cobertura { get; set; } = string.Empty;
         public int Orden { get; set; }
-        public bool Visible { get; set; } = true;
+        public bool Habilitado { get; set; } = true;
 
         // Propiedad de navegación
         public virtual Seguro Seguro { get; set; }

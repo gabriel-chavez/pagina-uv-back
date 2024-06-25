@@ -19,7 +19,7 @@ namespace UNIVidaPortalWeb.Cms.Services.SeguroServices
             .Include(s => s.SeguroDetalles)
             .Include(s => s.BannerPagina)
                 .ThenInclude(bp => bp.Recurso)
-            .Where(s => s.Ruta == ruta)
+            .Where(s => s.MenuPrincipal.Nombre == ruta)
             .OrderBy(s => s.Id)
             .FirstOrDefaultAsync();
             

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using UNIVidaPortalWeb.Cms.Models.MenuModel;
 using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Repositories;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
 {
@@ -84,11 +84,12 @@ namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
         {
             var paginaDinamica = await _context.PaginasDinamicas
                 .Where(p => p.Id == id)
+                //.Include(s => s.MenuPrincipal)
                 .Select(p => new
                 {
                     p.Id,
                     p.Nombre,
-                    p.Ruta,
+                    p.MenuPrincipal,
                     Secciones = _context.Secciones
                         .Where(s => s.PaginaDinamicaId == id)
                         .Select(s => new
@@ -172,10 +173,16 @@ namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
 
         public async Task<object> ObtenerPaginaDinamicaConRelacionesPorRutaAsync(string ruta)
         {
-            var paginaDinamica = await _context.PaginasDinamicas.FirstOrDefaultAsync(p => p.Ruta == ruta);
+            ruta = Uri.UnescapeDataString(ruta);            
+            var paginaDinamica = await _context.PaginasDinamicas
+                .Include(p => p.MenuPrincipal)
+                .FirstOrDefaultAsync(p => p.MenuPrincipal.Url == ruta);
+
             if (paginaDinamica == null)
                 throw new NotFoundException($"Página no encontrada");
+
             return await ObtenerPaginaDinamicaConRelacionesAsync(paginaDinamica.Id);
+
         }
     }
 }
