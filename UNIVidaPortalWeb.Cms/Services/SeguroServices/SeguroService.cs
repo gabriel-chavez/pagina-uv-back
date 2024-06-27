@@ -14,12 +14,14 @@ namespace UNIVidaPortalWeb.Cms.Services.SeguroServices
         }
         public async Task<object> ObtenerPorRuta(string ruta)
         {
+            ruta = Uri.UnescapeDataString(ruta);
             var seguro = await _context.Seguros
             .Include(s => s.Planes)
             .Include(s => s.SeguroDetalles)
             .Include(s => s.BannerPagina)
                 .ThenInclude(bp => bp.Recurso)
-            .Where(s => s.MenuPrincipal.Nombre == ruta)
+            .Include(s=>s.MenuPrincipal)
+            .Where(s => s.MenuPrincipal.Url == ruta)
             .OrderBy(s => s.Id)
             .FirstOrDefaultAsync();
             

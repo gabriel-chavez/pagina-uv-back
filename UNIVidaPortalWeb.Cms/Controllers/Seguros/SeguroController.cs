@@ -23,10 +23,11 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Seguro>>> ObtenerSeguros()
         {
-          
+
             var includes = new List<Expression<Func<Seguro, object>>>
             {
-                s => s.Recurso!,         
+                s => s.Recurso!,
+                s => s.MenuPrincipal!,
             };
             var seguros = await _seguroService.GetAsync(
                 null,
@@ -39,7 +40,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
                 throw new NotFoundException($"No encontramos seguros o no están disponibles en este momento.");
             }
             return Ok(seguros);
-           
+
         }
 
         [HttpGet("{id}")]
@@ -48,7 +49,8 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
             var includes = new List<Expression<Func<Seguro, object>>>
             {
                 s => s.Planes,
-                s => s.SeguroDetalles
+                s => s.SeguroDetalles,
+                s => s.MenuPrincipal
             };
             var seguro = await _seguroService.GetAsync(
                 s => s.Id == id,
@@ -64,7 +66,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
         }
         [HttpGet("ObtenerPorRuta/{ruta}")]
         public async Task<ActionResult<Seguro>> ObtenerSeguroPorRuta(string ruta)
-        {           
+        {
             var seguro = await _seguroService.ObtenerPorRuta(ruta);
             if (seguro == null)
             {

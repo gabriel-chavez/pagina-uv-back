@@ -11,6 +11,7 @@ using UNIVidaPortalWeb.Cms.Services.DatoServices;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
 using UNIVidaPortalWeb.Cms.Services.RecursoServices;
 using UNIVidaPortalWeb.Cms.Services.SeguroServices;
+using UNIVidaPortalWeb.Cms.Services.MenuServices;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -65,13 +66,11 @@ builder.Services.AddScoped<IDatoService, DatoService>();
 builder.Services.AddScoped<IBannerPaginaDinamicaService, BannerPaginaService>();
 builder.Services.AddScoped<ICatTipoRecursoService, CatTipoRecursoService>();
 builder.Services.AddScoped<ICatTipoSeccionService, CatTipoSeccionService>();
-
 builder.Services.AddScoped<ISeccionService, SeccionService>();
-
-
 builder.Services.AddScoped<ISeguroService, SeguroService>();
 builder.Services.AddScoped<ISeguroDetalleService, SeguroDetalleService>();
 builder.Services.AddScoped<IPlanService, PlanService>();
+builder.Services.AddScoped<IMenuPrincipalService, MenuPrincipalService>();
 
 
 
