@@ -23,6 +23,12 @@ namespace UNIVidaPortalWeb.Cms.Controllers.MenuControllers
         public async Task<ActionResult<IEnumerable<MenuPrincipal>>> ObtenerMenus()
         {
             var menus = await _menuPrincipalService.GetAllAsync();
+            var seguro = await _menuPrincipalService.GetAsync(  
+                predicate:null,
+                orderBy:b => b.OrderBy(x => x.Orden),
+                includeString: null,
+                disableTracking:true
+                );
             return Ok(menus);
         }
 

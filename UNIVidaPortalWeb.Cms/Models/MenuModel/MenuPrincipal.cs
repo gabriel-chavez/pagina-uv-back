@@ -1,4 +1,6 @@
-﻿namespace UNIVidaPortalWeb.Cms.Models.MenuModel
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace UNIVidaPortalWeb.Cms.Models.MenuModel
 {
     public class MenuPrincipal: BaseDomainModel
     {
@@ -14,6 +16,21 @@
 
         // Propiedad de navegación para los submenús
         public virtual ICollection<MenuPrincipal>? SubMenus { get; set; }
+        //NotMapped para no mapear en la base de datos
+        [NotMapped]
+        public string UrlCompleta => ObtenerUrlCompleta();
+
+        public string ObtenerUrlCompleta()
+        {
+            if (Padre == null)
+            {
+                return $"/{Url}".TrimEnd('/');
+            }
+            else
+            {
+                return $"{Padre.UrlCompleta}/{Url}".TrimEnd('/');
+            }
+        }
     }
 
 }

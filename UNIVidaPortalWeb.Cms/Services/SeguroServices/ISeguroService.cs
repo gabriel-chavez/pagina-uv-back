@@ -4,7 +4,10 @@ namespace UNIVidaPortalWeb.Cms.Services.SeguroServices
 {
     public interface ISeguroService : IAsyncRepository<Seguro>
     {
-        Task<object> ObtenerPorRuta(string ruta);
-        
+        Task<object> ObtenerSegurosPorRuta(string ruta);
+        Task<object> ObtenerSeguros();
+        Task<object> ObtenerSegurosPorId(int id);
+
+
     }
 }

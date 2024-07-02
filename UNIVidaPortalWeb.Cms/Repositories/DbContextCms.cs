@@ -36,7 +36,10 @@ namespace UNIVidaPortalWeb.Cms.Repositories
 
 
         // Constructor para pasar opciones al contexto
-        public DbContextCms(DbContextOptions<DbContextCms> options) : base(options) { }
+        public DbContextCms(DbContextOptions<DbContextCms> options) : base(options) {
+            //this.ChangeTracker.LazyLoadingEnabled = true;
+
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder

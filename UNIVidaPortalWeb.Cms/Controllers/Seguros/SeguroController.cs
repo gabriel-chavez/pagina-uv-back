@@ -24,17 +24,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
         public async Task<ActionResult<IEnumerable<Seguro>>> ObtenerSeguros()
         {
 
-            var includes = new List<Expression<Func<Seguro, object>>>
-            {
-                s => s.Recurso!,
-                s => s.MenuPrincipal!,
-            };
-            var seguros = await _seguroService.GetAsync(
-                null,
-                b => b.OrderBy(x => x.Id),
-                includes,
-                true
-                );
+            var seguros = await _seguroService.ObtenerSeguros();
             if (seguros == null)
             {
                 throw new NotFoundException($"No encontramos seguros o no están disponibles en este momento.");
@@ -46,18 +36,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
         [HttpGet("{id}")]
         public async Task<ActionResult<Seguro>> ObtenerSeguro(int id)
         {
-            var includes = new List<Expression<Func<Seguro, object>>>
-            {
-                s => s.Planes,
-                s => s.SeguroDetalles,
-                s => s.MenuPrincipal
-            };
-            var seguro = await _seguroService.GetAsync(
-                s => s.Id == id,
-                b => b.OrderBy(x => x.Id),
-                includes,
-                true
-                );
+            var seguro = await _seguroService.ObtenerSegurosPorId(id);
             if (seguro == null)
             {
                 throw new NotFoundException($"No pudimos encontrar el seguro que busca o no está disponible en este momento.");
@@ -67,7 +46,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
         [HttpGet("ObtenerPorRuta/{ruta}")]
         public async Task<ActionResult<Seguro>> ObtenerSeguroPorRuta(string ruta)
         {
-            var seguro = await _seguroService.ObtenerPorRuta(ruta);
+            var seguro = await _seguroService.ObtenerSegurosPorRuta(ruta);
             if (seguro == null)
             {
                 throw new NotFoundException($"No pudimos encontrar el seguro que busca o no está disponible en este momento.");
