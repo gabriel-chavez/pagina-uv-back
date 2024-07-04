@@ -33,13 +33,12 @@ namespace UNIVidaPortalWeb.Cms.Services.SeguroServices
         {
             var seguro = await _context.Seguros
                 .Include(bp => bp.Recurso)
-                .Include(s => s.Planes)
-                .Include(s => s.SeguroDetalles)
-                .Include(s => s.BannerPagina)
-                    .ThenInclude(bp => bp.Recurso)
+                //.Include(s => s.Planes)
+                //.Include(s => s.SeguroDetalles)
+                //.Include(s => s.BannerPagina)
+                //    .ThenInclude(bp => bp.Recurso)
                 .Include(s => s.MenuPrincipal)
-                    .ThenInclude(m => m.Padre) // Incluyendo la propiedad Padre del MenuPrincipal
-                    //.ThenInclude(p => p.Padre) // Incluyendo el Padre del Padre si es necesario
+                    .ThenInclude(m => m.Padre) // Incluyendo la propiedad Padre del MenuPrincipal                    
                 .OrderBy(s => s.Id)
                 .ToListAsync();
 

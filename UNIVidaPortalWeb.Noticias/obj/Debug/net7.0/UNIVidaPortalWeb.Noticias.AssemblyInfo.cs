@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("UNIVidaPortalWeb.Cms")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("UNIVidaPortalWeb.Noticias")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da50c0467855085ceb22663631edcfd0606ff827")]
-[assembly: System.Reflection.AssemblyProductAttribute("UNIVidaPortalWeb.Cms")]
-[assembly: System.Reflection.AssemblyTitleAttribute("UNIVidaPortalWeb.Cms")]
+[assembly: System.Reflection.AssemblyProductAttribute("UNIVidaPortalWeb.Noticias")]
+[assembly: System.Reflection.AssemblyTitleAttribute("UNIVidaPortalWeb.Noticias")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
