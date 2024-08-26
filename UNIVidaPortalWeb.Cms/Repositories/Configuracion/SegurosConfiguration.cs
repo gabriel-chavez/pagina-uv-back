@@ -31,10 +31,7 @@ namespace UNIVidaPortalWeb.Cms.Repositories.Configuracion
             .WithMany(s => s.BannerPagina)
             .HasForeignKey(p => p.SeguroId);
 
-            modelBuilder.Entity<Seguro>()
-                .HasOne(b => b.MenuPrincipal)
-                .WithMany()
-                .HasForeignKey(b => b.MenuPrincipalId);
+            
 
         }
 

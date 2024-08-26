@@ -8,7 +8,6 @@ namespace UNIVidaPortalWeb.Cms.Models.SeguroModel
     {
         public string Nombre { get; set; } = string.Empty;
         public string NombreCorto { get; set; } = string.Empty;
-        public int? MenuPrincipalId { get; set; }
         public string DetalleAdicional { get; set; } = string.Empty;
         public int? RecursoId { get; set; }
         public string? Icono { get; set; }
@@ -18,13 +17,12 @@ namespace UNIVidaPortalWeb.Cms.Models.SeguroModel
 
         // Propiedades de navegación
         public virtual Recurso? Recurso { get; set; }
-        public virtual MenuPrincipal? MenuPrincipal { get; set; }
         public virtual CatTipoSeguro CatTipoSeguro { get; set; } = new CatTipoSeguro();
         public virtual ICollection<Plan> Planes { get; set; } = new List<Plan>();
         public virtual ICollection<SeguroDetalle> SeguroDetalles { get; set; } = new List<SeguroDetalle>();
         public virtual ICollection<BannerPagina> BannerPagina { get; set; } = new List<BannerPagina>();
-        
 
-
+        // Propiedad de navegación para los menús asociados
+        public virtual ICollection<MenuPrincipal>? MenuPrincipal { get; set; } = new List<MenuPrincipal>();
     }
 }

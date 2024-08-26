@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs.PaginaDinamicaDTO;
 using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Services.DatoServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace UNIVidaPortalWeb.Cms.Controllers.DatoControllers
@@ -26,6 +27,27 @@ namespace UNIVidaPortalWeb.Cms.Controllers.DatoControllers
             var datos = await _datoService.GetAllAsync();
             return Ok(datos);
         }
+        [HttpGet("ObtenerDatosPorSeccion/{seccionId}")]
+        public async Task<ActionResult<IEnumerable<Dato>>> ObtenerDatosPorSeccion(int seccionId)
+        {
+            var datos = await _datoService.ObtenerDatosPorSeccion(seccionId);
+            if (datos == null)
+            {
+                return NotFound();
+            }
+            return Ok(datos);
+        }
+        [HttpGet("ObtenerDatosPorSeccionArray/{seccionId}")]
+        public async Task<ActionResult<IEnumerable<Dato>>> ObtenerDatosPorSeccionArray(int seccionId)
+        {
+            var datos = await _datoService.ObtenerDatosPorSeccionArray(seccionId);
+            if (datos == null)
+            {
+                return NotFound();
+            }
+            return Ok(datos);
+        }
+
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Dato>> ObtenerDato(int id)
@@ -43,7 +65,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.DatoControllers
         {
             var dato = _mapper.Map<Dato>(datoDto);
             var datoCreado = await _datoService.AddAsync(dato);
-            return CreatedAtAction(nameof(ObtenerDato), new { id = datoCreado.Id }, datoCreado);
+            return Ok(new { mensaje = "Dato agregado correctamente" });
         }
 
         [HttpPut("{id}")]
@@ -60,7 +82,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.DatoControllers
                 return NotFound();
             }
 
-            return NoContent();
+            return Ok(new { mensaje = "Dato actualizado correctamente" });
         }
 
         [HttpDelete("{id}")]
@@ -75,7 +97,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.DatoControllers
                 return NotFound();
             }
 
-            return NoContent();
+            return Ok(new { mensaje = "Dato eliminado correctamente" });
         }
     }
 }

@@ -22,7 +22,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PaginaDinamica>>> ObtenerTodos()
         {
-            var paginasDinamicas = await _paginaDinamicaService.GetAllAsync();
+            var paginasDinamicas = await _paginaDinamicaService.ObtenerPaginasDinamicas();
             return Ok(paginasDinamicas);
         }
 
@@ -61,7 +61,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         {
             var paginaDinamica = _mapper.Map<PaginaDinamica>(paginaDinamicaDto);
             var nuevaPaginaDinamica = await _paginaDinamicaService.AddAsync(paginaDinamica);
-            return CreatedAtAction(nameof(ObtenerPorId), new { id = nuevaPaginaDinamica.Id }, nuevaPaginaDinamica);
+            return Ok(new { mensaje = "Página dinámica creada exitosamente" });
         }
 
         [HttpPut("{id}")]
@@ -82,7 +82,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
                 return StatusCode(500, "Ocurrió un error al actualizar el recurso.");
             }
 
-            return NoContent();
+            return Ok(new { mensaje = "Página dinámica actualizada exitosamente" });
         }
 
         [HttpDelete("{id}")]

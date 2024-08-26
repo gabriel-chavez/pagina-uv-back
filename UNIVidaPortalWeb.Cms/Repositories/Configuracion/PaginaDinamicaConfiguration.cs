@@ -41,7 +41,7 @@ namespace UNIVidaPortalWeb.Cms.Repositories.Configuracion
 
             modelBuilder.Entity<BannerPagina>()
                 .HasOne(b => b.PaginaDinamica)
-                .WithMany()
+                 .WithMany(p => p.BannerPaginas)
                 .HasForeignKey(b => b.PaginaDinamicaId);
 
             modelBuilder.Entity<BannerPagina>()
@@ -54,10 +54,7 @@ namespace UNIVidaPortalWeb.Cms.Repositories.Configuracion
                 .WithMany(s=>s.BannerPagina)
                 .HasForeignKey(b => b.RecursoId);
 
-            modelBuilder.Entity<PaginaDinamica>()
-                .HasOne(b => b.MenuPrincipal)
-                .WithMany()
-                .HasForeignKey(b => b.MenuPrincipalId);
+           
 
 
 

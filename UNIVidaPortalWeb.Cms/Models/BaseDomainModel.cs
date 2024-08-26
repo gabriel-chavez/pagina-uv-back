@@ -1,15 +1,18 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UNIVidaPortalWeb.Cms.Models
 {
     public abstract class BaseDomainModel
-    {
-        [JsonProperty(Order = 1)]
+    {        
         public int Id { get; set; }
-        public DateTime? CreatedDate { get; set; }
-        public string? CreatedBy { get; set; }
+        [Column(TypeName = "timestamp without time zone")]
 
-        public DateTime? LastModifiedDate { get; set; }
-        public string? LastModifiedBy { get; set; }
+        public DateTime? FechaCreacion { get; set; }
+        public string? CreadoPor { get; set; }
+        [Column(TypeName = "timestamp without time zone")]
+
+        public DateTime? FechaModificacion { get; set; }
+        public string? ModificadoPor { get; set; }
     }
 }

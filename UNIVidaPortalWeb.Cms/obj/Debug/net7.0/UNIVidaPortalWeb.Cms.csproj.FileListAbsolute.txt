@@ -98,6 +98,7 @@ C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\De
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\NodaTime.dll
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\Npgsql.dll
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\bin\Debug\net7.0\Serilog.dll

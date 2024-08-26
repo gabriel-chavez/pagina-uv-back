@@ -12,6 +12,48 @@ namespace UNIVidaPortalWeb.Cms.Services.DatoServices
 
         public DatoService(DbContextCms context) : base(context)
         {
+            _contexto = context;
+        }
+
+        public async Task<List<Dato>> ObtenerDatosPorSeccion(int seccionId)
+        {
+            return await _contexto.Datos
+                .Include(d => d.Recurso)
+                .Include(d => d.Seccion)
+                .Where(d => d.SeccionId == seccionId)
+                .ToListAsync();
+        }
+        public async Task<List<List<Dato>>> ObtenerDatosPorSeccionArray(int seccionId)
+        {
+            var datos = await _contexto.Datos
+                .Include(d => d.Recurso)
+                .Include(d => d.Seccion)
+                .Where(d => d.SeccionId == seccionId)
+                .GroupBy(d => d.Fila)
+                .ToListAsync();
+
+            // Obtener el número máximo de filas y columnas
+            int maxFila = datos.Max(g => g.Key);
+            int maxColumna = datos.Max(g => g.Max(d => d.Columna));
+
+            // Crear una lista de listas para representar la matriz
+            var resultado = new List<List<Dato>>();
+
+            for (int i = 0; i <= maxFila; i++)
+            {
+                var fila = new List<Dato>();
+                var filaDatos = datos.FirstOrDefault(g => g.Key == i)?.ToList();
+
+                for (int j = 0; j <= maxColumna; j++)
+                {
+                    var dato = filaDatos?.FirstOrDefault(d => d.Columna == j);
+                    if (dato != null)
+                        fila.Add(dato);
+                }
+                resultado.Add(fila);
+            }
+
+            return resultado;
         }
 
         //public DatoService(ContextDatabase contexto)

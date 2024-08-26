@@ -14,6 +14,16 @@ namespace UNIVidaPortalWeb.Cms.Repositories.Configuracion
             .WithMany(m => m.SubMenus)
             .HasForeignKey(m => m.IdPadre)
             .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<MenuPrincipal>()
+            .HasOne(m => m.PaginaDinamica)
+            .WithMany(p => p.MenuPrincipal)
+            .HasForeignKey(m => m.IdPaginaDinamica);
+
+            modelBuilder.Entity<MenuPrincipal>()
+                .HasOne(m => m.Seguro)
+                .WithMany(s => s.MenuPrincipal)
+                .HasForeignKey(m => m.IdSeguro);
         }
     }
 }

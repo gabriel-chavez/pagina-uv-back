@@ -2,7 +2,7 @@
 {
     public class PaginaDinamicaRequestDTO
     {
-        public string Nombre { get; set; }
-        public int? MenuId { get; set; }
+        public string Nombre { get; set; } = "";
+        public bool Habilitado { get; set; } = true;
     }
 }

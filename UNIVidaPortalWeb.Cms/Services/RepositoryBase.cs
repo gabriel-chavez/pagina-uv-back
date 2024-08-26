@@ -9,9 +9,12 @@ namespace UNIVidaPortalWeb.Cms.Services
     {
         protected readonly DbContextCms _context;
 
+
         public RepositoryBase(DbContextCms context)
         {
             _context = context;
+           
+
         }
 
         public async Task<IReadOnlyList<T>> GetAllAsync()
@@ -69,7 +72,7 @@ namespace UNIVidaPortalWeb.Cms.Services
 
             if (entity == null)
             {
-                throw new KeyNotFoundException($"No se encontró {typeof(T).Name} con ID {id}");
+                throw new NotFoundException($"No se encontró {typeof(T).Name} con ID {id}");
             }
 
             return entity;
@@ -81,7 +84,9 @@ namespace UNIVidaPortalWeb.Cms.Services
             {
                 throw new ArgumentNullException(nameof(entity), "La entidad no puede ser nula.");
             }
-
+           
+          
+            entity.FechaCreacion = DateTime.Now;
             try
             {
                 _context.Set<T>().Add(entity);
@@ -101,6 +106,7 @@ namespace UNIVidaPortalWeb.Cms.Services
                 throw new ArgumentNullException(nameof(entity), "La entidad no puede ser nula.");
             }
 
+            entity.FechaModificacion = DateTime.Now;
             try
             {
                 _context.Set<T>().Attach(entity);
@@ -136,7 +142,7 @@ namespace UNIVidaPortalWeb.Cms.Services
             var catTipoSeccion = await _context.CatTipoSecciones.FindAsync(id);
             if (catTipoSeccion == null)
             {
-                throw new KeyNotFoundException($"CatTipoSeccion con Id {id} no encontrada");
+                throw new NotFoundException($"CatTipoSeccion con Id {id} no encontrada");
             }
 
             try

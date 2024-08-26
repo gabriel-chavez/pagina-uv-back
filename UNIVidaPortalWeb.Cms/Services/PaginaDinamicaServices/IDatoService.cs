@@ -7,6 +7,7 @@ namespace UNIVidaPortalWeb.Cms.Services.DatoServices
 {
     public interface IDatoService : IAsyncRepository<Dato>
     {
-        
+        Task<List<Dato>> ObtenerDatosPorSeccion(int seccionId);
+        Task<List<List<Dato>>> ObtenerDatosPorSeccionArray(int seccionId);
     }
 }

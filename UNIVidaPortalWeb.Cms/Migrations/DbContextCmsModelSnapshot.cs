@@ -30,20 +30,20 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("CreadoPor")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("Habilitado")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("LastModifiedBy")
+                    b.Property<string>("ModificadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -62,24 +62,24 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("CreadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<bool>("Habilitado")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("LastModifiedBy")
+                    b.Property<string>("ModificadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -98,20 +98,20 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("CreadoPor")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("Habilitado")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("LastModifiedBy")
+                    b.Property<string>("ModificadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -130,11 +130,14 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("CreadoPor")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("Habilitado")
                         .HasColumnType("boolean");
@@ -142,11 +145,14 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Property<int?>("IdPadre")
                         .HasColumnType("integer");
 
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("text");
+                    b.Property<int?>("IdPaginaDinamica")
+                        .HasColumnType("integer");
 
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<int?>("IdSeguro")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("text");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -165,6 +171,10 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     b.HasIndex("IdPadre");
 
+                    b.HasIndex("IdPaginaDinamica");
+
+                    b.HasIndex("IdSeguro");
+
                     b.ToTable("MenuPrincipal", "Menu");
                 });
 
@@ -179,11 +189,8 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Property<int>("Columna")
                         .HasColumnType("integer");
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("CreadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime?>("DatoFechaHora")
                         .HasColumnType("timestamp with time zone");
@@ -194,14 +201,17 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Property<string>("DatoUrl")
                         .HasColumnType("text");
 
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<int>("Fila")
                         .HasColumnType("integer");
 
-                    b.Property<string>("LastModifiedBy")
+                    b.Property<string>("ModificadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int?>("RecursoId")
                         .HasColumnType("integer");
@@ -226,31 +236,26 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("CreadoPor")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("Habilitado")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("LastModifiedBy")
+                    b.Property<string>("ModificadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int?>("MenuPrincipalId")
-                        .HasColumnType("integer");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MenuPrincipalId");
 
                     b.ToTable("PaginasDinamicas", "PaginaDinamica");
                 });
@@ -269,20 +274,20 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Property<string>("Clase")
                         .HasColumnType("text");
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("CreadoPor")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("Habilitado")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("LastModifiedBy")
+                    b.Property<string>("ModificadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -317,17 +322,17 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("CreadoPor")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("LastModifiedBy")
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("ModificadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int?>("PaginaDinamicaId")
                         .HasColumnType("integer");
@@ -368,17 +373,17 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Property<int>("CatTipoRecursoId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("CreadoPor")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("LastModifiedBy")
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("ModificadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -410,20 +415,20 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("CreadoPor")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("Habilitado")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("LastModifiedBy")
+                    b.Property<string>("ModificadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("Orden")
                         .HasColumnType("integer");
@@ -461,15 +466,18 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                         .IsRequired()
                         .HasColumnType("integer");
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("CreadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("DetalleAdicional")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("Habilitado")
                         .HasColumnType("boolean");
@@ -477,14 +485,8 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Property<string>("Icono")
                         .HasColumnType("text");
 
-                    b.Property<string>("LastModifiedBy")
+                    b.Property<string>("ModificadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int?>("MenuPrincipalId")
-                        .HasColumnType("integer");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -504,8 +506,6 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     b.HasIndex("CatTipoSeguroId");
 
-                    b.HasIndex("MenuPrincipalId");
-
                     b.HasIndex("RecursoId");
 
                     b.ToTable("Seguros", "Seguro");
@@ -519,17 +519,17 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("CreadoPor")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("LastModifiedBy")
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("ModificadoPor")
                         .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("Orden")
                         .HasColumnType("integer");
@@ -559,7 +559,19 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                         .HasForeignKey("IdPadre")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.PaginaDinamica", "PaginaDinamica")
+                        .WithMany("MenuPrincipal")
+                        .HasForeignKey("IdPaginaDinamica");
+
+                    b.HasOne("UNIVidaPortalWeb.Cms.Models.SeguroModel.Seguro", "Seguro")
+                        .WithMany("MenuPrincipal")
+                        .HasForeignKey("IdSeguro");
+
                     b.Navigation("Padre");
+
+                    b.Navigation("PaginaDinamica");
+
+                    b.Navigation("Seguro");
                 });
 
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.Dato", b =>
@@ -577,15 +589,6 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Navigation("Recurso");
 
                     b.Navigation("Seccion");
-                });
-
-            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.PaginaDinamica", b =>
-                {
-                    b.HasOne("UNIVidaPortalWeb.Cms.Models.MenuModel.MenuPrincipal", "MenuPrincipal")
-                        .WithMany()
-                        .HasForeignKey("MenuPrincipalId");
-
-                    b.Navigation("MenuPrincipal");
                 });
 
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.Seccion", b =>
@@ -610,7 +613,7 @@ namespace UNIVidaPortalWeb.Cms.Migrations
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.RecursoModel.BannerPagina", b =>
                 {
                     b.HasOne("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.PaginaDinamica", "PaginaDinamica")
-                        .WithMany()
+                        .WithMany("BannerPaginas")
                         .HasForeignKey("PaginaDinamicaId");
 
                     b.HasOne("UNIVidaPortalWeb.Cms.Models.RecursoModel.Recurso", "Recurso")
@@ -660,17 +663,11 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("UNIVidaPortalWeb.Cms.Models.MenuModel.MenuPrincipal", "MenuPrincipal")
-                        .WithMany()
-                        .HasForeignKey("MenuPrincipalId");
-
                     b.HasOne("UNIVidaPortalWeb.Cms.Models.RecursoModel.Recurso", "Recurso")
                         .WithMany()
                         .HasForeignKey("RecursoId");
 
                     b.Navigation("CatTipoSeguro");
-
-                    b.Navigation("MenuPrincipal");
 
                     b.Navigation("Recurso");
                 });
@@ -691,6 +688,13 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Navigation("SubMenus");
                 });
 
+            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.PaginaDinamica", b =>
+                {
+                    b.Navigation("BannerPaginas");
+
+                    b.Navigation("MenuPrincipal");
+                });
+
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.RecursoModel.Recurso", b =>
                 {
                     b.Navigation("BannerPagina");
@@ -699,6 +703,8 @@ namespace UNIVidaPortalWeb.Cms.Migrations
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.SeguroModel.Seguro", b =>
                 {
                     b.Navigation("BannerPagina");
+
+                    b.Navigation("MenuPrincipal");
 
                     b.Navigation("Planes");
 

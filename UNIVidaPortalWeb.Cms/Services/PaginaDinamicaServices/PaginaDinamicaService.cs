@@ -173,25 +173,34 @@ namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
 
         public async Task<object> ObtenerPaginaDinamicaConRelacionesPorRutaAsync(string ruta)
         {
+         
             ruta = Uri.UnescapeDataString(ruta);
+
+            var menu=await _context.MenuPrincipal
+                .Include(p=>p.PaginaDinamica).ToListAsync();
+            var pagina = menu.FirstOrDefault(p => p.UrlCompleta == ruta);
+
            
 
-            var paginasDinamicas = await _context.PaginasDinamicas
-                .Include(p => p.MenuPrincipal)
-                    .ThenInclude(m => m.Padre)
-                .ToListAsync();
 
-
-
-            var paginaDinamica = paginasDinamicas.FirstOrDefault(p => p.MenuPrincipal.UrlCompleta == ruta);
-
-
-            if (paginaDinamica == null)
+            if (pagina?.IdPaginaDinamica == null)
                 throw new NotFoundException($"Página no encontrada para la ruta '{ruta}'");
 
-            return await ObtenerPaginaDinamicaConRelacionesAsync(paginaDinamica.Id);
+            return await ObtenerPaginaDinamicaConRelacionesAsync(pagina.IdPaginaDinamica.Value);
 
 
         }
+
+
+        public async Task<List<PaginaDinamica>> ObtenerPaginasDinamicas()
+        {
+            return await _context.PaginasDinamicas
+                    .Include(p => p.BannerPaginas)
+                        .ThenInclude(b => b.Recurso)
+                     .Include(p => p.MenuPrincipal)
+                    .ToListAsync();
+        }
+
+
     }
 }

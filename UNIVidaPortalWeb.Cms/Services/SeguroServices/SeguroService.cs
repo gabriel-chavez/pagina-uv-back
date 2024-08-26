@@ -15,19 +15,23 @@ namespace UNIVidaPortalWeb.Cms.Services.SeguroServices
         public async Task<object> ObtenerSegurosPorRuta(string ruta)
         {
             ruta = Uri.UnescapeDataString(ruta);
-            var seguro = await _context.Seguros
-            .Include(s => s.Planes)
-            .Include(s => s.SeguroDetalles)
-            .Include(s => s.BannerPagina)
-                .ThenInclude(bp => bp.Recurso)
-            .Include(s => s.MenuPrincipal)
-                //.ThenInclude(m => m.Padre) // Incluyendo la propiedad Padre del MenuPrincipal
-                //.ThenInclude(p => p.Padre) // Incluyendo el Padre del Padre si es necesario
-            .Where(s => s.MenuPrincipal.Url == ruta)
-            .OrderBy(s => s.Id)
-            .FirstOrDefaultAsync();
 
-            return seguro;
+            var menu = await _context.MenuPrincipal
+                .ToListAsync();
+            var seguro = menu.FirstOrDefault(p => p.UrlCompleta == ruta);
+
+
+
+
+            if (seguro?.IdSeguro == null)
+                throw new NotFoundException($"Seguro no encontrado para la ruta '{ruta}'");
+
+            return await ObtenerSegurosPorId(seguro.IdSeguro.Value);
+
+
+
+
+        
         }
         public async Task<object> ObtenerSeguros()
         {

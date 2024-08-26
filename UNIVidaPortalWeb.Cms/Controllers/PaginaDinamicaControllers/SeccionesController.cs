@@ -53,7 +53,9 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         {
             var seccion = _mapper.Map<Seccion>(seccionDto);
             var seccionCreada = await _seccionService.AddAsync(seccion);
-            return CreatedAtAction(nameof(ObtenerSeccionPorId), new { id = seccionCreada.Id }, seccionCreada);
+            return Ok(new { mensaje = "Sección creada exitosamente" });
+
+            //return CreatedAtAction(nameof(ObtenerSeccionPorId), new { id = seccionCreada.Id }, seccionCreada);
         }
 
         [HttpPut("{id}")]
@@ -70,7 +72,8 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
                 return NotFound();
             }
 
-            return NoContent();
+            return Ok(new { mensaje = "Sección actualizada exitosamente" });
+
         }
 
         [HttpDelete("{id}")]

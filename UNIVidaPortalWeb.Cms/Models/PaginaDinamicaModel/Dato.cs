@@ -13,6 +13,6 @@ namespace UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel
         public int Columna { get; set; }
 
         public virtual Recurso? Recurso { get; set; }
-        public virtual Seccion Seccion { get; set; }
+        public virtual Seccion? Seccion { get; set; }
     }
 }

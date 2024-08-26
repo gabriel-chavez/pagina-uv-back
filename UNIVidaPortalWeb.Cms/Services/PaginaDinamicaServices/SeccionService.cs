@@ -77,6 +77,7 @@ namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
                 .Include(s => s.CatTipoSeccion)
                 .Include(s => s.PaginaDinamica)
                 .Where(s => s.PaginaDinamicaId == paginaDinamicaId)
+                .OrderBy(s=>s.Orden)
                 .ToListAsync();
         }
     }
