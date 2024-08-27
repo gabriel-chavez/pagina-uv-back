@@ -139,21 +139,22 @@ namespace UNIVidaPortalWeb.Cms.Services
         }
         public async Task<bool> DeleteByIdAsync(int id)
         {
-            var catTipoSeccion = await _context.CatTipoSecciones.FindAsync(id);
-            if (catTipoSeccion == null)
+            var entity = await _context.Set<T>().FindAsync(id);
+
+            if (entity == null)
             {
-                throw new NotFoundException($"CatTipoSeccion con Id {id} no encontrada");
-            }
+                throw new NotFoundException($"No se encontró {typeof(T).Name} con ID {id}");
+            }           
 
             try
             {
-                _context.CatTipoSecciones.Remove(catTipoSeccion);
+                _context.Set<T>().Remove(entity);
                 await _context.SaveChangesAsync();
                 return true;
             }
             catch (DbUpdateException ex)
-            {               
-                throw new ApplicationException($"Error al intentar eliminar CatTipoSeccion con Id {id}.", ex);
+            {
+                throw new ApplicationException("Error al intentar eliminar la entidad.", ex);
             }
         }
 

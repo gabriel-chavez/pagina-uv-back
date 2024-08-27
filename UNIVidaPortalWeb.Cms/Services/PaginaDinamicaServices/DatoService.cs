@@ -25,6 +25,7 @@ namespace UNIVidaPortalWeb.Cms.Services.DatoServices
         }
         public async Task<List<List<Dato>>> ObtenerDatosPorSeccionArray(int seccionId)
         {
+            var resultado = new List<List<Dato>>();
             var datos = await _contexto.Datos
                 .Include(d => d.Recurso)
                 .Include(d => d.Seccion)
@@ -32,26 +33,29 @@ namespace UNIVidaPortalWeb.Cms.Services.DatoServices
                 .GroupBy(d => d.Fila)
                 .ToListAsync();
 
-            // Obtener el número máximo de filas y columnas
-            int maxFila = datos.Max(g => g.Key);
-            int maxColumna = datos.Max(g => g.Max(d => d.Columna));
-
-            // Crear una lista de listas para representar la matriz
-            var resultado = new List<List<Dato>>();
-
-            for (int i = 0; i <= maxFila; i++)
+            if (datos.Count>0)
             {
-                var fila = new List<Dato>();
-                var filaDatos = datos.FirstOrDefault(g => g.Key == i)?.ToList();
+                int maxFila = datos.Max(g => g.Key);
+                int maxColumna = datos.Max(g => g.Max(d => d.Columna));
 
-                for (int j = 0; j <= maxColumna; j++)
+                // Crear una lista de listas para representar la matriz
+
+
+                for (int i = 0; i <= maxFila; i++)
                 {
-                    var dato = filaDatos?.FirstOrDefault(d => d.Columna == j);
-                    if (dato != null)
-                        fila.Add(dato);
+                    var fila = new List<Dato>();
+                    var filaDatos = datos.FirstOrDefault(g => g.Key == i)?.ToList();
+
+                    for (int j = 0; j <= maxColumna; j++)
+                    {
+                        var dato = filaDatos?.FirstOrDefault(d => d.Columna == j);
+                        if (dato != null)
+                            fila.Add(dato);
+                    }
+                    resultado.Add(fila);
                 }
-                resultado.Add(fila);
             }
+
 
             return resultado;
         }
