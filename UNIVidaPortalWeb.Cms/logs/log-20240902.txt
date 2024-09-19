@@ -1,0 +1,62 @@
+2024-09-02 11:30:13.752 -04:00 [INF] Iniciando la aplicación...
+2024-09-02 11:30:17.387 -04:00 [INF] Iniciando la aplicación...
+2024-09-02 13:01:11.778 -04:00 [INF] Recurso no encontrado
+NotFoundException: Seguro no encontrado para la ruta '/nuestros-seguros/desgravamen'
+   at UNIVidaPortalWeb.Cms.Services.SeguroServices.SeguroService.ObtenerSegurosPorRuta(String ruta) in C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\Services\SeguroServices\SeguroService.cs:line 27
+   at UNIVidaPortalWeb.Cms.Controllers.Seguros.SeguroController.ObtenerSeguroPorRuta(String ruta) in C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\Controllers\Seguros\SeguroController.cs:line 49
+   at lambda_method857(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-09-02 13:01:14.116 -04:00 [INF] Recurso no encontrado
+NotFoundException: Seguro no encontrado para la ruta '/nuestros-seguros/cesantia'
+   at UNIVidaPortalWeb.Cms.Services.SeguroServices.SeguroService.ObtenerSegurosPorRuta(String ruta) in C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\Services\SeguroServices\SeguroService.cs:line 27
+   at UNIVidaPortalWeb.Cms.Controllers.Seguros.SeguroController.ObtenerSeguroPorRuta(String ruta) in C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\Controllers\Seguros\SeguroController.cs:line 49
+   at lambda_method857(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-09-02 13:01:19.584 -04:00 [INF] Recurso no encontrado
+NotFoundException: Página no encontrada para la ruta '/seguros-obligatorios/soatc'
+   at UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices.PaginaDinamicaService.ObtenerPaginaDinamicaConRelacionesPorRutaAsync(String ruta) in C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\Services\PaginaDinamicaServices\PaginaDinamicaService.cs:line 187
+   at UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers.PaginasDinamicasController.ObtenerPaginaPorRuta(String ruta) in C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\Controllers\PaginaDinamicaControllers\PaginasDinamicasController.cs:line 52
+   at lambda_method873(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-09-02 13:01:22.354 -04:00 [INF] Recurso no encontrado
+NotFoundException: Página no encontrada para la ruta '/seguros-obligatorios/soat/precios'
+   at UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices.PaginaDinamicaService.ObtenerPaginaDinamicaConRelacionesPorRutaAsync(String ruta) in C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\Services\PaginaDinamicaServices\PaginaDinamicaService.cs:line 187
+   at UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers.PaginasDinamicasController.ObtenerPaginaPorRuta(String ruta) in C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\Controllers\PaginaDinamicaControllers\PaginasDinamicasController.cs:line 52
+   at lambda_method873(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-09-02 13:01:31.919 -04:00 [INF] Recurso no encontrado
+NotFoundException: Página no encontrada para la ruta '/seguros-obligatorios/soat/comprar'
+   at UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices.PaginaDinamicaService.ObtenerPaginaDinamicaConRelacionesPorRutaAsync(String ruta) in C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\Services\PaginaDinamicaServices\PaginaDinamicaService.cs:line 187
+   at UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers.PaginasDinamicasController.ObtenerPaginaPorRuta(String ruta) in C:\Users\lchavez\Documents\pag\UNIVidaPortalWeb\UNIVidaPortalWeb.Cms\Controllers\PaginaDinamicaControllers\PaginasDinamicasController.cs:line 52
+   at lambda_method873(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)

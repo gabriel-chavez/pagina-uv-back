@@ -12,7 +12,7 @@ namespace UNIVidaPortalWeb.Cms.Models.RecursoModel
         public string SubTitulo { get; set; } = string.Empty;
         public virtual PaginaDinamica? PaginaDinamica { get; set; }
         public virtual Seguro? Seguro { get; set; }
-        public virtual Recurso Recurso { get; set; } = new Recurso();
+        public virtual Recurso Recurso { get; set; }
     }
 }
 

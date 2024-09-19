@@ -41,8 +41,9 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         public async Task<ActionResult<BannerPagina>> CrearBannerPaginaDinamica(BannerPaginaDinamicaRequestDTO bannerPaginaDinamicaDto)
         {
             var bannerPaginaDinamica = _mapper.Map<BannerPagina>(bannerPaginaDinamicaDto);
+
             var bannerPaginaDinamicaCreado = await _bannerPaginaDinamicaService.AddAsync(bannerPaginaDinamica);
-            return CreatedAtAction(nameof(ObtenerBannerPaginaDinamica), new { id = bannerPaginaDinamicaCreado.Id }, bannerPaginaDinamicaCreado);
+            return Ok(new { mensaje = "Se agreró el banner a la página" });
         }
 
         [HttpPut("{id}")]
@@ -59,7 +60,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
                 return NotFound();
             }
 
-            return NoContent();
+            return Ok(new { mensaje = "Banner actualizado correctamente" });
         }
 
         [HttpDelete("{id}")]

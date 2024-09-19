@@ -67,7 +67,8 @@ namespace UNIVidaPortalWeb.Cms
             // Configuración de contexto de base de datos
             services.AddDbContext<DbContextCms>(options =>
             {
-                options.UseNpgsql(Configuration["postgres:cn"]);
+                options.UseNpgsql(Configuration["postgres:cn"])
+                .LogTo(Console.WriteLine, LogLevel.Information);  // Habilita el logging de BD
             });
 
             // Registro de servicios

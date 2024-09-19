@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 using UNIVidaPortalWeb.Cms.DTOs.PaginaDinamicaDTO;
 using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
@@ -29,12 +30,18 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Seccion>> ObtenerSeccionPorId(int id)
         {
-            var seccion = await _seccionService.GetByIdAsync(id);
-            if (seccion == null)
+            var includes = new List<Expression<Func<Seccion, object>>>
             {
-                return NotFound();
+                s => s.CatTipoSeccion
+            };
+
+            var seccion = await _seccionService.GetAsync(s => s.Id == id, includes: includes);
+
+            if (seccion == null || !seccion.Any())
+            {
+                return NotFound("Sección no encontrada");
             }
-            return Ok(seccion);
+            return Ok(seccion.FirstOrDefault());
         }
 
         [HttpGet("paginadinamica/{paginaDinamicaId}")]

@@ -13,8 +13,10 @@ namespace UNIVidaPortalWeb.Cms.Utilities
     public class AutoMapperProfiles : Profile
     {
         public AutoMapperProfiles()
-        {
-            CreateMap<BannerPaginaDinamicaRequestDTO, BannerPagina>();
+        {            
+            CreateMap<BannerPaginaDinamicaRequestDTO, BannerPagina>()
+                .ForMember(dest => dest.Recurso, opt => opt.Ignore()) // Ignorar la propiedad de navegación
+                .ForMember(dest => dest.RecursoId, opt => opt.MapFrom(src => src.RecursoId)); // Mapear solo el RecursoId
             CreateMap<DatoRequestDTO, Dato>();
             CreateMap<PaginaDinamicaRequestDTO, PaginaDinamica>();
             CreateMap<RecursoRequestDTO, Recurso>();
