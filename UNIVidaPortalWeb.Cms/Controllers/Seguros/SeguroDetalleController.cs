@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs.SegurosDTO;
 using UNIVidaPortalWeb.Cms.Models.SeguroModel;
 using UNIVidaPortalWeb.Cms.Services.SeguroServices;
+using UNIVidaPortalWeb.Cms.Utilidades;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
 {
@@ -20,25 +21,28 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SeguroDetalle>>> ObtenerSeguroDetalle()
+        public async Task<ActionResult> ObtenerSeguroDetalle()
         {
             var seguros = await _seguroDetalleService.GetAllAsync();
-            return Ok(seguros);
+            var resultado = new Resultado<IEnumerable<SeguroDetalle>>(seguros, true, "Detalle de seguros obtenidos correctamente");
+            return Ok(resultado);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<SeguroDetalle>> ObtenerSeguroDetalle(int id)
+        public async Task<ActionResult> ObtenerSeguroDetalle(int id)
         {
             var seguro = await _seguroDetalleService.GetByIdAsync(id);
+            var resultado = new Resultado<SeguroDetalle>(seguro, true, "Detalle de seguro obtenido correctamente");
             return Ok(seguro);
         }
 
         [HttpPost]
-        public async Task<ActionResult<SeguroDetalle>> CrearSeguroDetalle(SeguroDetalleRequestDTO seguroDto)
+        public async Task<ActionResult> CrearSeguroDetalle(SeguroDetalleRequestDTO seguroDto)
         {
             var seguro = _mapper.Map<SeguroDetalle>(seguroDto);
             var seguroCreado = await _seguroDetalleService.AddAsync(seguro);
-            return CreatedAtAction(nameof(ObtenerSeguroDetalle), new { id = seguroCreado.Id }, seguroCreado);
+            var resultado = new Resultado<SeguroDetalle>(seguroCreado, true, "Detalle de seguro creado correctamente");
+            return CreatedAtAction(nameof(ObtenerSeguroDetalle), new { id = seguroCreado.Id }, resultado);
         }
 
         [HttpPut("{id}")]
@@ -48,14 +52,15 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
             seguro.Id = id;
             await _seguroDetalleService.UpdateAsync(seguro);
 
-            return NoContent();
+            return Ok(new Resultado(true,"Detalle de seguro actualizado correctamente"));
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> EliminarSeguroDetalle(int id)
         {
             await _seguroDetalleService.DeleteByIdAsync(id);
-            return NoContent();
+            return Ok(new Resultado(true, "Seguro eliminado correctamente"));
+
         }
     }
 

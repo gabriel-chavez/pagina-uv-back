@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using UNIVidaPortalWeb.Cms.Utilidades; // Importar la clase Resultado
 
 namespace UNIVidaPortalWeb.Cms.Exceptions
 {
@@ -9,13 +10,22 @@ namespace UNIVidaPortalWeb.Cms.Exceptions
         {
             if (!context.ModelState.IsValid)
             {
-                var problemDetails = new ValidationProblemDetails(context.ModelState)
-                {
-                    Status = StatusCodes.Status400BadRequest,
-                    Title = "Se produjeron uno o más errores de validación."
-                };
+                // Generar una lista de errores de validación
+                var errores = context.ModelState
+                    .Where(ms => ms.Value.Errors.Count > 0)
+                    .ToDictionary(
+                        ms => ms.Key,
+                        ms => ms.Value.Errors.Select(e => e.ErrorMessage).ToArray()
+                    );
 
-                context.Result = new BadRequestObjectResult(problemDetails);
+                // Crear un mensaje de error combinado
+                string mensajeError = "Se produjeron uno o más errores de validación.";
+
+                // Crear la respuesta genérica usando el objeto Resultado
+                var resultado = new Resultado<Dictionary<string, string[]>>(errores, false, mensajeError);
+
+                // Retornar el resultado con un BadRequest usando el objeto Resultado
+                context.Result = new BadRequestObjectResult(resultado);
             }
         }
 

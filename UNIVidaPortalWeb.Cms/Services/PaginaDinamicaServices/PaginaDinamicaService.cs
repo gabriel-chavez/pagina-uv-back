@@ -13,72 +13,7 @@ namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
         {
             _context = context;
         }
-
-        //public PaginaDinamicaService(ContextDatabase contexto)
-        //{
-        //    _context = contexto;
-        //}
-
-        //public async Task<List<PaginaDinamica>> ObtenerTodos()
-        //{
-        //    return await _context.PaginasDinamicas.ToListAsync();
-        //}
-
-        //public async Task<PaginaDinamica> ObtenerPorId(int id)
-        //{
-        //    return await _context.PaginasDinamicas.FindAsync(id);
-
-        //}
-
-        //public async Task<PaginaDinamica> Crear(PaginaDinamica paginaDinamica)
-        //{
-        //    _context.PaginasDinamicas.Add(paginaDinamica);
-        //    await _context.SaveChangesAsync();
-        //    return paginaDinamica;
-        //}
-
-        //public async Task Actualizar(int id, PaginaDinamica paginaDinamica)
-        //{
-        //    if (id != paginaDinamica.Id)
-        //    {
-        //        throw new ArgumentException("Los IDs no coinciden");
-        //    }
-
-        //    _context.Entry(paginaDinamica).State = EntityState.Modified;
-
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!ExistePaginaDinamica(id))
-        //        {
-        //            throw new NotFoundException($"PaginaDinamica con ID {id} no encontrada");
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
-        //}
-
-        //public async Task Eliminar(int id)
-        //{
-        //    var paginaDinamica = await _context.PaginasDinamicas.FindAsync(id);
-        //    if (paginaDinamica == null)
-        //    {
-        //        throw new NotFoundException($"PaginaDinamica con ID {id} no encontrada");
-        //    }
-
-        //    _context.PaginasDinamicas.Remove(paginaDinamica);
-        //    await _context.SaveChangesAsync();
-        //}
-
-        //private bool ExistePaginaDinamica(int id)
-        //{
-        //    return _context.PaginasDinamicas.Any(e => e.Id == id);
-        //}
+        
 
         public async Task<object> ObtenerPaginaDinamicaConRelacionesAsync(int id)
         {

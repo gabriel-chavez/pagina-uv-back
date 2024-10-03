@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
 using UNIVidaPortalWeb.Cms.Services.CatalogoServices;
+using UNIVidaPortalWeb.Cms.Utilidades;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
 {
@@ -16,42 +17,43 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CatTipoSeccion>>> ObtenerTodos()
+        public async Task<ActionResult> ObtenerTodos()
         {
             var catTipoSecciones = await _catTipoSeccionService.GetAllAsync();
-            return Ok(catTipoSecciones);
+            return Ok(new Resultado<IEnumerable<CatTipoSeccion>>(catTipoSecciones, true, "Secciones obtenidas correctamente"));
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<CatTipoSeccion>> ObtenerPorId(int id)
+        public async Task<ActionResult> ObtenerPorId(int id)
         {
             var catTipoSeccion = await _catTipoSeccionService.GetByIdAsync(id);
             if (catTipoSeccion == null)
             {
-                return NotFound();
+                return NotFound(new Resultado<CatTipoSeccion>(false, "No se encontró la sección con el ID especificado"));
             }
-            return Ok(catTipoSeccion);
+            return Ok(new Resultado<CatTipoSeccion>(catTipoSeccion, true, "Sección obtenida correctamente"));
         }
 
         [HttpPost]
-        public async Task<ActionResult<CatTipoSeccion>> Agregar(CatTipoSeccion catTipoSeccion)
+        public async Task<ActionResult> Agregar(CatTipoSeccion catTipoSeccion)
         {
             var catTipoSeccionCreado = await _catTipoSeccionService.AddAsync(catTipoSeccion);
-            return CreatedAtAction(nameof(ObtenerPorId), new { id = catTipoSeccionCreado.Id }, catTipoSeccionCreado);
+            return CreatedAtAction(nameof(ObtenerPorId), new { id = catTipoSeccionCreado.Id }, new Resultado<CatTipoSeccion>(catTipoSeccionCreado, true, "Sección creada exitosamente"));
         }
 
+
         [HttpPut("{id}")]
-        public async Task<ActionResult<CatTipoSeccion>> Actualizar(int id, CatTipoSeccion catTipoSeccion)
+        public async Task<ActionResult> Actualizar(int id, CatTipoSeccion catTipoSeccion)
         {
             try
             {
+                catTipoSeccion.Id = id; // Asegurarse de que el ID está establecido correctamente
                 var catTipoSeccionActualizado = await _catTipoSeccionService.UpdateAsync(catTipoSeccion);
-                catTipoSeccionActualizado.Id= id;   
-                return Ok(catTipoSeccionActualizado);
+                return Ok(new Resultado<CatTipoSeccion>(catTipoSeccionActualizado, true, "Sección actualizada exitosamente"));
             }
             catch (KeyNotFoundException)
             {
-                return NotFound();
+                throw new NotFoundException("No se encontró la sección con el ID especificado.");                
             }
         }
 
@@ -61,11 +63,11 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
             try
             {
                 await _catTipoSeccionService.DeleteByIdAsync(id);
-                return NoContent();
+                return Ok(new Resultado(true, "Sección eliminada exitosamente"));
             }
             catch (KeyNotFoundException)
             {
-                return NotFound();
+                throw new NotFoundException("No se encontró la sección con el ID especificado");
             }
         }
 

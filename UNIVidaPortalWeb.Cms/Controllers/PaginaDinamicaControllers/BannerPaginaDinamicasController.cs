@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs.RecursosDTO;
 using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
+using UNIVidaPortalWeb.Cms.Utilidades;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
 {
@@ -20,34 +21,38 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BannerPagina>>> ObtenerBannersPaginaDinamica()
+        public async Task<ActionResult> ObtenerBannersPaginaDinamica()
         {
             var bannerPaginaDinamicas = await _bannerPaginaDinamicaService.GetAllAsync();
-            return Ok(bannerPaginaDinamicas);
+            var resultado = new Resultado<IEnumerable<BannerPagina>>(bannerPaginaDinamicas, true, "Banners obtenidos correctamente");
+            return Ok(resultado);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<BannerPagina>> ObtenerBannerPaginaDinamica(int id)
+        public async Task<ActionResult> ObtenerBannerPaginaDinamica(int id)
         {
             var bannerPaginaDinamica = await _bannerPaginaDinamicaService.GetByIdAsync(id);
             if (bannerPaginaDinamica == null)
             {
-                return NotFound();
+                throw new NotFoundException("Banner no encontrado");
             }
-            return Ok(bannerPaginaDinamica);
+
+            var resultado = new Resultado<BannerPagina>(bannerPaginaDinamica, true, "Banner obtenido correctamente");
+            return Ok(resultado);
         }
 
         [HttpPost]
-        public async Task<ActionResult<BannerPagina>> CrearBannerPaginaDinamica(BannerPaginaDinamicaRequestDTO bannerPaginaDinamicaDto)
+        public async Task<ActionResult> CrearBannerPaginaDinamica(BannerPaginaDinamicaRequestDTO bannerPaginaDinamicaDto)
         {
             var bannerPaginaDinamica = _mapper.Map<BannerPagina>(bannerPaginaDinamicaDto);
-
             var bannerPaginaDinamicaCreado = await _bannerPaginaDinamicaService.AddAsync(bannerPaginaDinamica);
-            return Ok(new { mensaje = "Se agreró el banner a la página" });
+
+            var resultado = new Resultado<BannerPagina>(bannerPaginaDinamicaCreado, true, "Banner creado correctamente");
+            return Ok(resultado);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> ActualizarBannerPaginaDinamica(int id, BannerPaginaDinamicaRequestDTO bannerPaginaDinamicaDto)
+        public async Task<ActionResult> ActualizarBannerPaginaDinamica(int id, BannerPaginaDinamicaRequestDTO bannerPaginaDinamicaDto)
         {
             try
             {
@@ -57,14 +62,14 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
             }
             catch (NotFoundException)
             {
-                return NotFound();
+                throw new NotFoundException("Banner no encontrado");
             }
 
-            return Ok(new { mensaje = "Banner actualizado correctamente" });
+            return Ok(new Resultado(true, "Banner actualizado correctamente"));
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> EliminarBannerPaginaDinamica(int id)
+        public async Task<ActionResult> EliminarBannerPaginaDinamica(int id)
         {
             try
             {
@@ -72,10 +77,10 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
             }
             catch (NotFoundException)
             {
-                return NotFound();
+                throw new NotFoundException("Banner no encontrado");
             }
 
-            return NoContent();
+            return Ok(new Resultado(true, "Banner eliminado correctamente"));
         }
     }
 }

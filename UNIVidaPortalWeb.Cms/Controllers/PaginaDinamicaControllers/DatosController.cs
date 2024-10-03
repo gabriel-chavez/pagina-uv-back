@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs.PaginaDinamicaDTO;
 using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Services.DatoServices;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using UNIVidaPortalWeb.Cms.Utilidades;
 
 
 namespace UNIVidaPortalWeb.Cms.Controllers.DatoControllers
@@ -22,50 +22,60 @@ namespace UNIVidaPortalWeb.Cms.Controllers.DatoControllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Dato>>> ObtenerDatos()
+        public async Task<ActionResult> ObtenerDatos()
         {
             var datos = await _datoService.GetAllAsync();
-            return Ok(datos);
+            var resultado = new Resultado<IEnumerable<Dato>>(datos, true, "Datos obtenidos correctamente");
+            return Ok(resultado);
         }
         [HttpGet("ObtenerDatosPorSeccion/{seccionId}")]
-        public async Task<ActionResult<IEnumerable<Dato>>> ObtenerDatosPorSeccion(int seccionId)
+        public async Task<ActionResult> ObtenerDatosPorSeccion(int seccionId)
         {
             var datos = await _datoService.ObtenerDatosPorSeccion(seccionId);
             if (datos == null)
             {
-                return NotFound();
+                throw new NotFoundException("No se encontraron datos para esta sección");
             }
-            return Ok(datos);
+
+            var resultado = new Resultado<IEnumerable<Dato>>(datos, true, "Datos obtenidos correctamente");
+            return Ok(resultado);
         }
         [HttpGet("ObtenerDatosPorSeccionArray/{seccionId}")]
-        public async Task<ActionResult<IEnumerable<Dato>>> ObtenerDatosPorSeccionArray(int seccionId)
+        public async Task<ActionResult> ObtenerDatosPorSeccionArray(int seccionId)
         {
             var datos = await _datoService.ObtenerDatosPorSeccionArray(seccionId);
             if (datos == null)
-            {
-                return NotFound();
+            {                
+                throw new NotFoundException("No se encontraron datos para esta sección");
+
             }
-            return Ok(datos);
+            var resultado = new Resultado<List<List<Dato>>>(datos, true, "Datos obtenidos correctamente");
+            return Ok(resultado);
+        
         }
 
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Dato>> ObtenerDato(int id)
+        public async Task<ActionResult> ObtenerDato(int id)
         {
             var dato = await _datoService.GetByIdAsync(id);
             if (dato == null)
             {
-                return NotFound();
+                throw new NotFoundException("Dato no encontrado");        
             }
-            return Ok(dato);
+
+            var resultado = new Resultado<Dato>(dato, true, "Dato obtenido correctamente");
+            return Ok(resultado);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Dato>> CrearDato(DatoRequestDTO datoDto)
+        public async Task<ActionResult> CrearDato(DatoRequestDTO datoDto)
         {
             var dato = _mapper.Map<Dato>(datoDto);
             var datoCreado = await _datoService.AddAsync(dato);
-            return Ok(new { mensaje = "Dato agregado correctamente" });
+
+            var resultado = new Resultado<Dato>(datoCreado, true, "Dato agregado correctamente");
+            return Ok(resultado);
         }
 
         [HttpPut("{id}")]
@@ -79,10 +89,10 @@ namespace UNIVidaPortalWeb.Cms.Controllers.DatoControllers
             }
             catch (NotFoundException)
             {
-                return NotFound();
+                throw new NotFoundException("Dato no encontrado");                
             }
 
-            return Ok(new { mensaje = "Dato actualizado correctamente" });
+            return Ok(new Resultado(true, "Dato actualizado correctamente"));
         }
 
         [HttpDelete("{id}")]
@@ -94,10 +104,10 @@ namespace UNIVidaPortalWeb.Cms.Controllers.DatoControllers
             }
             catch (NotFoundException)
             {
-                return NotFound();
+                return NotFound(new Resultado(false, "Dato no encontrado"));
             }
 
-            return Ok(new { mensaje = "Dato eliminado correctamente" });
+            return Ok(new Resultado(true, "Dato eliminado correctamente"));
         }
     }
 }

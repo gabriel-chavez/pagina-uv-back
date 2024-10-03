@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs.PaginaDinamicaDTO;
 using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
+using UNIVidaPortalWeb.Cms.Utilidades;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
 {
@@ -20,48 +21,56 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PaginaDinamica>>> ObtenerTodos()
+        public async Task<ActionResult> ObtenerTodos()
         {
             var paginasDinamicas = await _paginaDinamicaService.ObtenerPaginasDinamicas();
-            return Ok(paginasDinamicas);
+            var resultado = new Resultado<IEnumerable<PaginaDinamica>>(paginasDinamicas, true, "Páginas dinámicas obtenidas correctamente");
+            return Ok(resultado);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<PaginaDinamica>> ObtenerPorId(int id)
+        public async Task<ActionResult> ObtenerPorId(int id)
         {
             var paginaDinamica = await _paginaDinamicaService.GetByIdAsync(id);
             if (paginaDinamica == null)
             {
-                return NotFound();
+                throw new NotFoundException("Página dinámica no encontrada");
             }
-            return Ok(paginaDinamica);
+
+            var resultado = new Resultado<PaginaDinamica>(paginaDinamica, true, "Página dinámica obtenida correctamente");
+            return Ok(resultado);
         }
         [HttpGet("Pagina/{id}")]
-        public async Task<ActionResult<PaginaDinamica>> ObtenerPagina(int id)
+        public async Task<ActionResult> ObtenerPagina(int id)
         {
             var paginaDinamica = await _paginaDinamicaService.ObtenerPaginaDinamicaConRelacionesAsync(id);
             if (paginaDinamica == null)
             {
-                return NotFound();
+                return NotFound(new Resultado<PaginaDinamica>(false, "Página dinámica no encontrada"));
             }
-            return Ok(paginaDinamica);
+
+            var resultado = new Resultado<object>(paginaDinamica, true, "Página dinámica obtenida correctamente");
+            return Ok(resultado);
         }
         [HttpGet("paginaPorRuta/{ruta}")]
-        public async Task<ActionResult<PaginaDinamica>> ObtenerPaginaPorRuta(string ruta)
+        public async Task<ActionResult> ObtenerPaginaPorRuta(string ruta)
         {
             var paginaDinamica = await _paginaDinamicaService.ObtenerPaginaDinamicaConRelacionesPorRutaAsync(ruta);
             if (paginaDinamica == null)
             {
-                return NotFound();
+                return NotFound(new Resultado<PaginaDinamica>(false, "Página dinámica no encontrada"));
             }
-            return Ok(paginaDinamica);
+
+            var resultado = new Resultado<object>(paginaDinamica, true, "Página dinámica obtenida correctamente");
+            return Ok(resultado);
         }
         [HttpPost]
         public async Task<ActionResult<PaginaDinamica>> Crear(PaginaDinamicaRequestDTO paginaDinamicaDto)
         {
             var paginaDinamica = _mapper.Map<PaginaDinamica>(paginaDinamicaDto);
-            var nuevaPaginaDinamica = await _paginaDinamicaService.AddAsync(paginaDinamica);
-            return Ok(new { mensaje = "Página dinámica creada exitosamente" });
+            await _paginaDinamicaService.AddAsync(paginaDinamica);
+
+            return Ok(new Resultado(true, "Página dinámica creada exitosamente"));
         }
 
         [HttpPut("{id}")]
@@ -75,14 +84,11 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
             }
             catch (NotFoundException ex)
             {
-                return NotFound(ex.Message);
+                throw new NotFoundException("No se pudo actualizar la página");
             }
-            catch (Exception)
-            {
-                return StatusCode(500, "Ocurrió un error al actualizar el recurso.");
-            }
+            
 
-            return Ok(new { mensaje = "Página dinámica actualizada exitosamente" });
+            return Ok(new Resultado(true, "Página dinámica actualizada exitosamente"));
         }
 
         [HttpDelete("{id}")]
@@ -94,14 +100,11 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
             }
             catch (NotFoundException ex)
             {
-                return NotFound(ex.Message);
+                throw new NotFoundException("No se pudo eliminar la página");
             }
-            catch (Exception)
-            {
-                return StatusCode(500, "Ocurrió un error al eliminar el recurso.");
-            }
+           
 
-            return NoContent();
+            return Ok(new Resultado(true, "Página dinámica eliminada exitosamente"));
         }
     }
 }

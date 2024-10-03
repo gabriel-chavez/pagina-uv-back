@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs.SegurosDTO;
 using UNIVidaPortalWeb.Cms.Models.SeguroModel;
 using UNIVidaPortalWeb.Cms.Services.SeguroServices;
+using UNIVidaPortalWeb.Cms.Utilidades;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
 {
@@ -20,42 +21,60 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Plan>>> ObtenerPlanes()
+        public async Task<ActionResult> ObtenerPlanes()
         {
             var planes = await _planService.GetAllAsync();
-            return Ok(planes);
+            var resultado = new Resultado<IEnumerable<Plan>>(planes, true, "Planes obtenidos correctamente");
+            return Ok(resultado);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Plan>> ObtenerPlan(int id)
+        public async Task<ActionResult> ObtenerPlan(int id)
         {
-            var plan = await _planService.GetByIdAsync(id);
-            return Ok(plan);
+            var plan = await _planService.GetByIdAsync(id);           
+            var resultado = new Resultado<Plan>(plan, true, "Plan obtenido correctamente");
+            return Ok(resultado);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Plan>> CrearPlan(PlanRequestDTO planDto)
+        public async Task<ActionResult> CrearPlan(PlanRequestDTO planDto)
         {
             var plan = _mapper.Map<Plan>(planDto);
             var planCreado = await _planService.AddAsync(plan);
-            return CreatedAtAction(nameof(ObtenerPlan), new { id = planCreado.Id }, planCreado);
+            var resultado = new Resultado<Plan>(planCreado, true, "Plan creado correctamente");
+            return CreatedAtAction(nameof(ObtenerPlan), new { id = planCreado.Id }, resultado);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> ActualizarPlan(int id, PlanRequestDTO planDto)
+        public async Task<ActionResult> ActualizarPlan(int id, PlanRequestDTO planDto)
         {
-            var plan = _mapper.Map<Plan>(planDto);
-            plan.Id = id;
-            await _planService.UpdateAsync(plan);
+            try
+            {
+                var plan = _mapper.Map<Plan>(planDto);
+                plan.Id = id;
+                await _planService.UpdateAsync(plan);
+            }
+            catch (NotFoundException ex)
+            {
+                throw new NotFoundException();
+            }
 
-            return NoContent();
+            return Ok(new Resultado(true, "Plan actualizado correctamente"));
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> EliminarPlan(int id)
+        public async Task<ActionResult> EliminarPlan(int id)
         {
-            await _planService.DeleteByIdAsync(id);
-            return NoContent();
+            try
+            {
+                await _planService.DeleteByIdAsync(id);
+            }
+            catch (NotFoundException ex)
+            {
+                throw new NotFoundException(ex.Message);
+            }
+
+            return Ok(new Resultado(true, "Plan eliminado correctamente"));
         }
     }
 }

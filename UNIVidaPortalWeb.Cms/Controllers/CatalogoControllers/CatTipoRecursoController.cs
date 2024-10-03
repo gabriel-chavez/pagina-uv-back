@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.Models;
 using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
-using UNIVidaPortalWeb.Cms.Services;
 using UNIVidaPortalWeb.Cms.Services.CatalogoServices;
+using UNIVidaPortalWeb.Cms.Utilidades;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
 {
@@ -27,10 +27,11 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
         [HttpPost("validacion")]
         public IActionResult Crear([FromBody] MyModelPrueba modelo)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //CON ValidationFilter Ya no es necesario esto
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
 
             return Ok(modelo);
         }
@@ -40,52 +41,59 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
         {
             throw new Exception();
         }
-
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CatTipoRecurso>>> ObtenerTodos()
-        {            
+        public async Task<ActionResult> ObtenerTodos()
+        {
             var recursos = await _catTipoRecursoService.GetAllAsync();
-            return Ok(recursos);
+            var resultado = new Resultado<IEnumerable<CatTipoRecurso>>(recursos, true, "Recursos obtenidos exitosamente.");
+            return Ok(resultado);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<CatTipoRecurso>> ObtenerPorId(int id)
+        public async Task<ActionResult> ObtenerPorId(int id)
         {
             var recurso = await _catTipoRecursoService.GetByIdAsync(id);
             if (recurso == null)
             {
-                return NotFound();
+                throw new NotFoundException("El recurso con el ID especificado no fue encontrado.");
             }
-            return Ok(recurso);
+
+            var resultado = new Resultado<CatTipoRecurso>(recurso, true, "Recurso obtenido exitosamente.");
+            return Ok(resultado);
         }
 
         [HttpPost]
-        public async Task<ActionResult<CatTipoRecurso>> Crear(CatTipoRecurso catTipoRecurso)
+        public async Task<ActionResult> Crear(CatTipoRecurso catTipoRecurso)
         {
             var recursoCreado = await _catTipoRecursoService.AddAsync(catTipoRecurso);
-            return CreatedAtAction(nameof(ObtenerPorId), new { id = recursoCreado.Id }, recursoCreado);
+            var resultado = new Resultado<CatTipoRecurso>(recursoCreado, true, "Recurso creado exitosamente.");
+            return CreatedAtAction(nameof(ObtenerPorId), new { id = recursoCreado.Id }, resultado);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Actualizar(CatTipoRecurso catTipoRecurso)
+        public async Task<IActionResult> Actualizar(int id, CatTipoRecurso catTipoRecurso)
         {
             var recursoActualizado = await _catTipoRecursoService.UpdateAsync(catTipoRecurso);
             if (recursoActualizado == null)
             {
-                return NotFound();
+                throw new NotFoundException("El recurso que intentas actualizar no fue encontrado.");
             }
-            return Ok(recursoActualizado);
+
+            var resultado = new Resultado<CatTipoRecurso>(recursoActualizado, true, "Recurso actualizado exitosamente.");
+            return Ok(resultado);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Eliminar(int id)
         {
-            var resultado = await _catTipoRecursoService.DeleteByIdAsync(id);
-            if (!resultado)
+            var eliminado = await _catTipoRecursoService.DeleteByIdAsync(id);
+            if (!eliminado)
             {
-                return NotFound();
+                throw new NotFoundException("El recurso que intentas eliminar no fue encontrado.");
             }
-            return NoContent();
+
+            var resultado = new Resultado(true, "Recurso eliminado exitosamente.");
+            return Ok(resultado);
         }
 
     }

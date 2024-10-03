@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using UNIVidaPortalWeb.Cms.DTOs.PaginaDinamicaDTO;
 using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
+using UNIVidaPortalWeb.Cms.Utilidades;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
 {
@@ -21,14 +22,15 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Seccion>>> ObtenerSecciones()
+        public async Task<ActionResult> ObtenerSecciones()
         {
             var secciones = await _seccionService.GetAllAsync();
-            return Ok(secciones);
+            var resultado = new Resultado<IEnumerable<Seccion>>(secciones, true, "Secciones obtenidas correctamente");
+            return Ok(resultado);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Seccion>> ObtenerSeccionPorId(int id)
+        public async Task<ActionResult> ObtenerSeccionPorId(int id)
         {
             var includes = new List<Expression<Func<Seccion, object>>>
             {
@@ -39,34 +41,35 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
 
             if (seccion == null || !seccion.Any())
             {
-                return NotFound("Sección no encontrada");
+                throw new NotFoundException("Sección no encontrada");
             }
-            return Ok(seccion.FirstOrDefault());
+            var resultado = new Resultado<Seccion>(seccion.FirstOrDefault(), true, "Sección obtenida correctamente");
+            return Ok(resultado);
         }
 
         [HttpGet("paginadinamica/{paginaDinamicaId}")]
-        public async Task<ActionResult<List<Seccion>>> ObtenerSeccionesPorPaginaDinamica(int paginaDinamicaId)
+        public async Task<ActionResult> ObtenerSeccionesPorPaginaDinamica(int paginaDinamicaId)
         {
             var secciones = await _seccionService.ObtenerPorIdPaginaDinamica(paginaDinamicaId);
             if (secciones == null || secciones.Count == 0)
             {
-                return NotFound();
+                throw new NotFoundException("No se encontraron secciones para esta página dinámica.");
             }
-            return Ok(secciones);
+            var resultado = new Resultado<List<Seccion>>(secciones, true, "Secciones obtenidas correctamente");
+            return Ok(resultado);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Seccion>> CrearSeccion(SeccionRequestDTO seccionDto)
+        public async Task<ActionResult> CrearSeccion(SeccionRequestDTO seccionDto)
         {
             var seccion = _mapper.Map<Seccion>(seccionDto);
             var seccionCreada = await _seccionService.AddAsync(seccion);
-            return Ok(new { mensaje = "Sección creada exitosamente" });
-
-            //return CreatedAtAction(nameof(ObtenerSeccionPorId), new { id = seccionCreada.Id }, seccionCreada);
+            var resultado = new Resultado<Seccion>(seccionCreada, true, "Sección creada exitosamente");
+            return Ok(resultado);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> ActualizarSeccion(int id, SeccionRequestDTO seccionDto)
+        public async Task<ActionResult> ActualizarSeccion(int id, SeccionRequestDTO seccionDto)
         {
             try
             {
@@ -74,28 +77,28 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
                 seccion.Id = id;
                 await _seccionService.UpdateAsync(seccion);
             }
-            catch (NotFoundException)
+            catch (NotFoundException ex)
             {
-                return NotFound();
+                throw new NotFoundException("No se encontro la sección");
             }
 
-            return Ok(new { mensaje = "Sección actualizada exitosamente" });
+            return Ok(new Resultado(true, "Sección actualizada exitosamente"));
 
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> EliminarSeccion(int id)
+        public async Task<ActionResult> EliminarSeccion(int id)
         {
             try
             {
                 await _seccionService.DeleteByIdAsync(id);
             }
-            catch (NotFoundException)
+            catch (NotFoundException ex)
             {
-                return NotFound();
+                throw new NotFoundException();
             }
 
-            return NoContent();
+            return Ok(new Resultado(true, "Sección eliminada correctamente"));
         }
     }
 }

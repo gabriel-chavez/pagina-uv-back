@@ -42,7 +42,7 @@ namespace UNIVidaPortalWeb.Cms
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowSpecificOrigin",
-                    builder => builder.WithOrigins("http://localhost:3000")
+                    builder => builder.WithOrigins("http://localhost:3000", "http://localhost:3001")
                                       .AllowAnyMethod()
                                       .AllowAnyHeader());
             });
@@ -50,8 +50,12 @@ namespace UNIVidaPortalWeb.Cms
             // Configuración de controladores y filtros
             services.AddControllers(options =>
             {
-                options.Filters.Add<GlobalExceptionFilter>();
                 options.Filters.Add<ValidationFilter>();
+                options.Filters.Add<GlobalExceptionFilter>();                
+            })
+                .ConfigureApiBehaviorOptions(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true; // Desactivar la validación predeterminada
             })
             .AddJsonOptions(options =>
             {
@@ -108,7 +112,7 @@ namespace UNIVidaPortalWeb.Cms
             }
 
             Log.Information("Iniciando la aplicación...");
-
+            app.UseMiddleware<ExceptionMiddleware>();
             if (env.IsDevelopment())
             {
                 app.UseSwagger();

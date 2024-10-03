@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs.RecursosDTO;
 using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 using UNIVidaPortalWeb.Cms.Services.RecursoServices;
+using UNIVidaPortalWeb.Cms.Utilidades;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
 {
@@ -20,45 +21,65 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Recurso>>> ObtenerRecursos()
+        public async Task<ActionResult> ObtenerRecursos()
         {
             var recursos = await _recursoService.GetAllAsync();
-            return Ok(recursos);
+            var resultado = new Resultado<IEnumerable<Recurso>>(recursos, true, "Recursos obtenidos correctamente");
+            return Ok(resultado);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Recurso>> ObtenerRecurso(int id)
+        public async Task<ActionResult> ObtenerRecurso(int id)
         {
-            var recurso = await _recursoService.GetByIdAsync(id);            
-            return Ok(recurso);
+            var recurso = await _recursoService.GetByIdAsync(id);
+            if (recurso == null)
+            {
+                throw new NotFoundException("Recurso no encontrado");
+            }
+            var resultado = new Resultado<Recurso>(recurso, true, "Recurso obtenido correctamente");
+            return Ok(resultado);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Recurso>> CrearRecurso(RecursoRequestDTO recursoDto)
+        public async Task<ActionResult> CrearRecurso(RecursoRequestDTO recursoDto)
         {
             var recurso = _mapper.Map<Recurso>(recursoDto);
             var recursoCreado = await _recursoService.AddAsync(recurso);
-            return CreatedAtAction(nameof(ObtenerRecurso), new { id = recursoCreado.Id }, recursoCreado);
+            var resultado = new Resultado<Recurso>(recursoCreado, true, "Recurso creado correctamente");
+            return CreatedAtAction(nameof(ObtenerRecurso), new { id = recursoCreado.Id }, resultado);
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> ActualizarRecurso(int id, RecursoRequestDTO recursoDto)
         {
+            try
+            {
+                var recurso = _mapper.Map<Recurso>(recursoDto);
+                recurso.Id = id;
+                await _recursoService.UpdateAsync(recurso);
+            }
+            catch (NotFoundException ex)
+            {
+                throw new NotFoundException();
+            }
 
-            var recurso = _mapper.Map<Recurso>(recursoDto);
-            recurso.Id = id;
-            await _recursoService.UpdateAsync(recurso);
-
-            return NoContent();
+            return Ok(new Resultado(true, "Recurso actualizado correctamente"));
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> EliminarRecurso(int id)
         {
 
-            await _recursoService.DeleteByIdAsync(id);
+            try
+            {
+                await _recursoService.DeleteByIdAsync(id);
+            }
+            catch (NotFoundException ex)
+            {
+                throw new NotFoundException();
+            }
 
-            return NoContent();
+            return Ok(new Resultado(true, "Recurso eliminado correctamente"));
         }
     }
 }
