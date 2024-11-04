@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs.PaginaDinamicaDTO;
 using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
+using UNIVidaPortalWeb.Cms.Services.MenuServices;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
 using UNIVidaPortalWeb.Cms.Utilidades;
 
@@ -12,11 +13,13 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
     public class PaginasDinamicasController : ControllerBase
     {
         private readonly IPaginaDinamicaService _paginaDinamicaService;
+        private readonly IMenuPrincipalService _menuPrincipalService;
         public IMapper _mapper { get; }
 
-        public PaginasDinamicasController(IPaginaDinamicaService paginaDinamicaService, IMapper mapper)
+        public PaginasDinamicasController(IPaginaDinamicaService paginaDinamicaService, IMenuPrincipalService menuPrincipalService, IMapper mapper)
         {
             _paginaDinamicaService = paginaDinamicaService;
+            _menuPrincipalService = menuPrincipalService;
             _mapper = mapper;
         }
 
@@ -96,6 +99,9 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         {
             try
             {
+                var menuConPaginaDinamica = (await _menuPrincipalService.GetAsync(m => m.IdPaginaDinamica == id)).FirstOrDefault();
+                if (menuConPaginaDinamica != null)
+                    throw new ValidationException("La página está asignada a un menú. Por favor, desasigne el menú y vuelva a intentarlo.");
                 await _paginaDinamicaService.DeleteByIdAsync(id);
             }
             catch (NotFoundException ex)

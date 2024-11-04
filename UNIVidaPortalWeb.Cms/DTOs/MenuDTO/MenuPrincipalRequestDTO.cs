@@ -8,5 +8,7 @@
         public bool Habilitado { get; set; } = true;
         public bool Visible { get; set; } = true;
         public int Orden { get; set; }
+        public int? IdPaginaDinamica { get; set; } // Permitir nulo
+        public int? IdSeguro { get; set; } // Permitir nulo
     }
 }

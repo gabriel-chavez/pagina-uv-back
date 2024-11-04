@@ -4,6 +4,9 @@ using System.Linq.Expressions;
 using System.Numerics;
 using UNIVidaPortalWeb.Cms.DTOs.SegurosDTO;
 using UNIVidaPortalWeb.Cms.Models.SeguroModel;
+using UNIVidaPortalWeb.Cms.Services.MenuServices;
+using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
+using UNIVidaPortalWeb.Cms.Services.RecursoServices;
 using UNIVidaPortalWeb.Cms.Services.SeguroServices;
 using UNIVidaPortalWeb.Cms.Utilidades;
 
@@ -14,11 +17,27 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
     public class SeguroController : ControllerBase
     {
         private readonly ISeguroService _seguroService;
+        private readonly IMenuPrincipalService _menuPrincipalService;
+        private readonly IPlanService _planService;
+        private readonly ISeguroDetalleService _seguroDetalleService;
+        private readonly IBannerPaginaDinamicaService _bannerPaginaService;
+        
+
+
         private readonly IMapper _mapper;
 
-        public SeguroController(ISeguroService seguroService, IMapper mapper)
+        public SeguroController(ISeguroService seguroService, 
+            IMenuPrincipalService menuPrincipalService, 
+            IPlanService planService, 
+            ISeguroDetalleService seguroDetalleService,
+            IBannerPaginaDinamicaService bannerPaginaService,
+            IMapper mapper)
         {
+            _seguroDetalleService = seguroDetalleService;
+            _bannerPaginaService = bannerPaginaService;
+            _planService = planService;
             _seguroService = seguroService;
+            _menuPrincipalService = menuPrincipalService;
             _mapper = mapper;
         }
 
@@ -64,7 +83,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
         {
             var seguro = _mapper.Map<Seguro>(seguroDto);
             var seguroCreado = await _seguroService.AddAsync(seguro);
-            var resultado = new Resultado<Seguro>(seguroCreado, true, "Seguro obtenido correctamente");
+            var resultado = new Resultado<Seguro>(seguroCreado, true, "Seguro creado correctamente");
             return CreatedAtAction(nameof(ObtenerSeguro), new { id = seguroCreado.Id }, resultado);
         }
         [HttpPut("{id}")]
@@ -78,9 +97,33 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
         [HttpDelete("{id}")]
         public async Task<ActionResult> EliminarSeguro(int id)
         {
-            await _seguroService.DeleteByIdAsync(id);
-            return Ok(new Resultado(true, "Seguro eliminado correctamente"));
+            var tienePlanes = (await _planService.GetAsync(p => p.SeguroId == id)).Any();
+            if (tienePlanes)
+                throw new ValidationException("El seguro está asociado a uno o más planes. Por favor, elimine o reasigne los planes antes de intentar eliminar el seguro.");
 
+            var tieneDetalles = (await _seguroDetalleService.GetAsync(d => d.SeguroId == id)).Any();
+            if (tieneDetalles)
+                throw new ValidationException("El seguro tiene detalles asociados. Por favor, elimine o reasigne estos detalles antes de intentar eliminar el seguro.");
+
+            var bannerConSeguro = (await _bannerPaginaService.GetAsync(b => b.SeguroId == id)).Any();
+            if (bannerConSeguro)
+                throw new ValidationException("El seguro está asignado a un banner. Por favor, desasigne el banner antes de intentar eliminar el seguro.");
+
+            var menuConSeguro = (await _menuPrincipalService.GetAsync(m => m.IdSeguro == id)).FirstOrDefault();
+            if (menuConSeguro != null)
+                throw new ValidationException("El seguro está asignado a un menú. Por favor, desasigne el menú y vuelva a intentarlo.");
+            try
+            {
+                
+                await _seguroService.DeleteByIdAsync(id);
+            }
+            catch (NotFoundException ex)
+            {
+                throw new NotFoundException("No se pudo eliminar la página");
+            }
+
+
+            return Ok(new Resultado(true, "Seguro eliminado correctamente"));
         }
     }
 

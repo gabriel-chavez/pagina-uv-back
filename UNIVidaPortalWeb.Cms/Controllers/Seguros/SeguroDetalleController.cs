@@ -35,7 +35,13 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
             var resultado = new Resultado<SeguroDetalle>(seguro, true, "Detalle de seguro obtenido correctamente");
             return Ok(seguro);
         }
-
+        [HttpGet("ObtenerPorSeguro/{id}")]
+        public async Task<ActionResult> ObtenerDetallePorSeguro(int id)
+        {
+            var seguro = await _seguroDetalleService.GetAsync(s => s.SeguroId == id);
+            var resultado = new Resultado<IEnumerable<SeguroDetalle>>(seguro, true, "Detalle obtenido correctamente");
+            return Ok(resultado);
+        }
         [HttpPost]
         public async Task<ActionResult> CrearSeguroDetalle(SeguroDetalleRequestDTO seguroDto)
         {
@@ -59,7 +65,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
         public async Task<IActionResult> EliminarSeguroDetalle(int id)
         {
             await _seguroDetalleService.DeleteByIdAsync(id);
-            return Ok(new Resultado(true, "Seguro eliminado correctamente"));
+            return Ok(new Resultado(true, "Detalle de seguro eliminado correctamente"));
 
         }
     }

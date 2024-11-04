@@ -17,7 +17,7 @@ namespace UNIVidaPortalWeb.Cms.Models.SeguroModel
 
         // Propiedades de navegación
         public virtual Recurso? Recurso { get; set; }
-        public virtual CatTipoSeguro CatTipoSeguro { get; set; } = new CatTipoSeguro();
+        public virtual CatTipoSeguro? CatTipoSeguro { get; set; }
         public virtual ICollection<Plan> Planes { get; set; } = new List<Plan>();
         public virtual ICollection<SeguroDetalle> SeguroDetalles { get; set; } = new List<SeguroDetalle>();
         public virtual ICollection<BannerPagina> BannerPagina { get; set; } = new List<BannerPagina>();

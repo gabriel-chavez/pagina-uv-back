@@ -87,6 +87,7 @@ namespace UNIVidaPortalWeb.Cms
             services.AddScoped<ISeguroDetalleService, SeguroDetalleService>();
             services.AddScoped<IPlanService, PlanService>();
             services.AddScoped<IMenuPrincipalService, MenuPrincipalService>();
+            services.AddScoped<ICatTipoSeguroService, CatTipoSeguroService>();
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
             
 

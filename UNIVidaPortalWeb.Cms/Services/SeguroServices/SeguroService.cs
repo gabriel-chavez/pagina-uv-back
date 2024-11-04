@@ -37,6 +37,7 @@ namespace UNIVidaPortalWeb.Cms.Services.SeguroServices
         {
             var seguro = await _context.Seguros
                 .Include(bp => bp.Recurso)
+                .Include(bp => bp.CatTipoSeguro)
                 //.Include(s => s.Planes)
                 //.Include(s => s.SeguroDetalles)
                 //.Include(s => s.BannerPagina)

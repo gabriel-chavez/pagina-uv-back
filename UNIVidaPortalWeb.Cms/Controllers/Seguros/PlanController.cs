@@ -27,6 +27,13 @@ namespace UNIVidaPortalWeb.Cms.Controllers.Seguros
             var resultado = new Resultado<IEnumerable<Plan>>(planes, true, "Planes obtenidos correctamente");
             return Ok(resultado);
         }
+        [HttpGet("ObtenerPorSeguro/{id}")]
+        public async Task<ActionResult> ObtenerPlanesPorSeguro(int id)
+        {            
+            var planes = await _planService.GetAsync(s => s.SeguroId == id);
+            var resultado = new Resultado<IEnumerable<Plan>>(planes, true, "Planes obtenidos correctamente");
+            return Ok(resultado);
+        }
 
         [HttpGet("{id}")]
         public async Task<ActionResult> ObtenerPlan(int id)

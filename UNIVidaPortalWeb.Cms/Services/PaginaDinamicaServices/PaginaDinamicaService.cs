@@ -128,7 +128,7 @@ namespace UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices
 
 
         public async Task<List<PaginaDinamica>> ObtenerPaginasDinamicas()
-        {
+        {            
             return await _context.PaginasDinamicas
                     .Include(p => p.BannerPaginas)
                         .ThenInclude(b => b.Recurso)

@@ -23,25 +23,28 @@ namespace UNIVidaPortalWeb.Cms.Exceptions
             // Manejar diferentes tipos de excepciones
             if (context.Exception is NotFoundException)
             {
-                _logger.LogInformation(context.Exception, "Recurso no encontrado");
-                statusCode = StatusCodes.Status404NotFound;
                 mensaje = "Recurso no encontrado";
+                _logger.LogInformation(context.Exception, string.IsNullOrWhiteSpace(context.Exception.Message) ? mensaje : context.Exception.Message);
+                statusCode = StatusCodes.Status404NotFound;
+                
             }
             else if (context.Exception is ValidationException)
             {
-                _logger.LogInformation(context.Exception, "Error de validación");
-                statusCode = StatusCodes.Status400BadRequest;
                 mensaje = "Error de validación";
+                _logger.LogInformation(context.Exception, string.IsNullOrWhiteSpace(context.Exception.Message) ? mensaje : context.Exception.Message);
+                statusCode = StatusCodes.Status400BadRequest;
+                
             }
             else if (context.Exception is ArgumentNullException)
             {
+                mensaje = "Argumento nulo detectado";
                 _logger.LogError(context.Exception, "Argumento nulo detectado");
                 statusCode = StatusCodes.Status400BadRequest;
-                mensaje = "Argumento nulo detectado";
+                
             }
             else
             {
-                _logger.LogError(context.Exception, "Ocurrió una excepción no controlada.");
+                _logger.LogError(context.Exception, string.IsNullOrWhiteSpace(context.Exception.Message) ? mensaje : context.Exception.Message);                
             }
 
             // Si la excepción tiene un mensaje, mantenerlo; de lo contrario, usar el mensaje por defecto
