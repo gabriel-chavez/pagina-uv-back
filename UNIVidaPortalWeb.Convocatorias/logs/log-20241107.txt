@@ -1,0 +1,207 @@
+2024-11-07 05:55:08.158 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 05:55:30.599 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 05:59:18.046 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 05:59:18.647 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:34:43.545 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:34:52.164 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:41:48.450 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:41:48.719 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:44:21.754 -04:00 [ERR] Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+System.InvalidOperationException: Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method31(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:45:06.100 -04:00 [ERR] Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+System.InvalidOperationException: Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method31(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:45:07.171 -04:00 [ERR] Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+System.InvalidOperationException: Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method31(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:45:07.699 -04:00 [ERR] Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+System.InvalidOperationException: Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method31(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:45:08.151 -04:00 [ERR] Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+System.InvalidOperationException: Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method31(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:45:08.554 -04:00 [ERR] Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+System.InvalidOperationException: Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method31(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:45:08.722 -04:00 [ERR] Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+System.InvalidOperationException: Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method31(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:45:08.985 -04:00 [ERR] Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+System.InvalidOperationException: Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method31(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:45:09.174 -04:00 [ERR] Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+System.InvalidOperationException: Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method31(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:45:09.439 -04:00 [ERR] Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+System.InvalidOperationException: Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method31(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:45:09.602 -04:00 [ERR] Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+System.InvalidOperationException: Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method31(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:45:09.847 -04:00 [ERR] Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+System.InvalidOperationException: Unable to resolve service for type 'UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices.IExperienciaLaboralService' while attempting to activate 'UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method31(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:45:43.877 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:45:44.143 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:46:29.053 -04:00 [ERR] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ExperienciaLaboralRequestDTO -> ExperienciaLaboral
+UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs.ExperienciaLaboralRequestDTO -> UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel.ExperienciaLaboral
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ExperienciaLaboralRequestDTO -> ExperienciaLaboral
+UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs.ExperienciaLaboralRequestDTO -> UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel.ExperienciaLaboral
+   at lambda_method49(Closure, Object, ExperienciaLaboral, ResolutionContext)
+   at UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers.ExperienciaLaboralController.CrearExperienciaLaboral(ExperienciaLaboralRequestDTO experienciaLaboralDto) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\Controllers\PostulantesControllers\ExperienciaLaboralController.cs:line 50
+   at lambda_method27(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:47:29.023 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:47:29.315 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:55:18.343 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:55:18.607 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:55:40.327 -04:00 [ERR] El postulante ya está registrado en esta convocatoria.
+System.InvalidOperationException: El postulante ya está registrado en esta convocatoria.
+   at UNIVidaPortalWeb.Convocatorias.Services.ConvocatoriasServices.PostulacionService.PostularAConvocatoria(PostulacionRequestDTO postulacionRequestDTO) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\Services\ConvocatoriasServices\PostulacionService.cs:line 27
+   at UNIVidaPortalWeb.Convocatorias.Controllers.ConvocatoriasControllers.PostulacionController.CrearPostulacion(PostulacionRequestDTO postulacionDto) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\Controllers\ConvocatoriasControllers\PostulacionController.cs:line 50
+   at lambda_method27(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:56:19.350 -04:00 [ERR] El postulante no existe.
+System.ArgumentException: El postulante no existe.
+   at UNIVidaPortalWeb.Convocatorias.Services.ConvocatoriasServices.PostulacionService.PostularAConvocatoria(PostulacionRequestDTO postulacionRequestDTO) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\Services\ConvocatoriasServices\PostulacionService.cs:line 57
+   at UNIVidaPortalWeb.Convocatorias.Controllers.ConvocatoriasControllers.PostulacionController.CrearPostulacion(PostulacionRequestDTO postulacionDto) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\Controllers\ConvocatoriasControllers\PostulacionController.cs:line 50
+   at lambda_method27(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:56:32.498 -04:00 [ERR] El postulante ya está registrado en esta convocatoria.
+System.InvalidOperationException: El postulante ya está registrado en esta convocatoria.
+   at UNIVidaPortalWeb.Convocatorias.Services.ConvocatoriasServices.PostulacionService.PostularAConvocatoria(PostulacionRequestDTO postulacionRequestDTO) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\Services\ConvocatoriasServices\PostulacionService.cs:line 27
+   at UNIVidaPortalWeb.Convocatorias.Controllers.ConvocatoriasControllers.PostulacionController.CrearPostulacion(PostulacionRequestDTO postulacionDto) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\Controllers\ConvocatoriasControllers\PostulacionController.cs:line 50
+   at lambda_method27(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:56:51.526 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:56:51.775 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:57:13.280 -04:00 [ERR] El postulante ya se encuentra registrado en esta convocatoria.
+System.ComponentModel.DataAnnotations.ValidationException: El postulante ya se encuentra registrado en esta convocatoria.
+   at UNIVidaPortalWeb.Convocatorias.Services.ConvocatoriasServices.PostulacionService.PostularAConvocatoria(PostulacionRequestDTO postulacionRequestDTO) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\Services\ConvocatoriasServices\PostulacionService.cs:line 28
+   at UNIVidaPortalWeb.Convocatorias.Controllers.ConvocatoriasControllers.PostulacionController.CrearPostulacion(PostulacionRequestDTO postulacionDto) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\Controllers\ConvocatoriasControllers\PostulacionController.cs:line 50
+   at lambda_method27(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-07 06:57:59.034 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:57:59.295 -04:00 [INF] Iniciando la aplicación...
+2024-11-07 06:58:06.093 -04:00 [INF] El postulante ya se encuentra registrado en esta convocatoria.
+UNIVidaPortalWeb.Convocatorias.Exceptions.ValidationException: El postulante ya se encuentra registrado en esta convocatoria.
+   at UNIVidaPortalWeb.Convocatorias.Services.ConvocatoriasServices.PostulacionService.PostularAConvocatoria(PostulacionRequestDTO postulacionRequestDTO) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\Services\ConvocatoriasServices\PostulacionService.cs:line 28
+   at UNIVidaPortalWeb.Convocatorias.Controllers.ConvocatoriasControllers.PostulacionController.CrearPostulacion(PostulacionRequestDTO postulacionDto) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\Controllers\ConvocatoriasControllers\PostulacionController.cs:line 50
+   at lambda_method27(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)

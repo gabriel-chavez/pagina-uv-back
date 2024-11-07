@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNIVidaPortalWeb.Noticias",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Convocatorias", "Convocatorias", "{981B52EF-EB28-48F8-A057-82196A731C37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNIVidaPortalWeb.Convocatorias", "UNIVidaPortalWeb.Convocatorias\UNIVidaPortalWeb.Convocatorias.csproj", "{95B708EC-8521-40C8-8186-2B788402E91B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{897A3F8E-8280-4BC0-B438-5ABCFDF0CB84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{897A3F8E-8280-4BC0-B438-5ABCFDF0CB84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{897A3F8E-8280-4BC0-B438-5ABCFDF0CB84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B708EC-8521-40C8-8186-2B788402E91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B708EC-8521-40C8-8186-2B788402E91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B708EC-8521-40C8-8186-2B788402E91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B708EC-8521-40C8-8186-2B788402E91B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{00BBF017-63CB-482F-BD53-B6B29CFEC036} = {9CA936D3-E40F-4765-A476-600BAFE14968}
 		{897A3F8E-8280-4BC0-B438-5ABCFDF0CB84} = {00BBF017-63CB-482F-BD53-B6B29CFEC036}
 		{981B52EF-EB28-48F8-A057-82196A731C37} = {9CA936D3-E40F-4765-A476-600BAFE14968}
+		{95B708EC-8521-40C8-8186-2B788402E91B} = {981B52EF-EB28-48F8-A057-82196A731C37}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C492E30-637D-4AF2-B48E-843EA91B422D}

@@ -1,0 +1,49 @@
+2024-11-04 09:20:53.422 -04:00 [INF] Iniciando la aplicación...
+2024-11-04 09:20:58.815 -04:00 [ERR] An error occurred creating the DB.
+Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5434
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at Npgsql.Internal.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|216_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.UnpooledDataSource.Get(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlDatabaseCreator.Exists(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlDatabaseCreator.Exists(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlDatabaseCreator.Exists()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator.EnsureCreated()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()
+   at UNIVidaPortalWeb.Cms.Data.DbInitializer.Initialize(DbContextCms context) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\Data\DbInitializer.cs:line 10
+   at UNIVidaPortalWeb.Cms.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\Startup.cs:line 106
+2024-11-04 09:20:58.839 -04:00 [INF] Iniciando la aplicación...
+2024-11-04 16:02:14.307 -04:00 [INF] Iniciando la aplicación...
+2024-11-04 16:02:15.782 -04:00 [INF] Iniciando la aplicación...
+2024-11-04 16:02:57.019 -04:00 [INF] No se encontró MenuPrincipal con ID 1
+NotFoundException: No se encontró MenuPrincipal con ID 1
+   at UNIVidaPortalWeb.Cms.Services.RepositoryBase`1.GetByIdAsync(Int32 id) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\Services\RepositoryBase.cs:line 75
+   at UNIVidaPortalWeb.Cms.Controllers.MenuControllers.MenuPrincipalController.ObtenerMenu(Int32 id) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\Controllers\MenuControllers\MenuPrincipalController.cs:line 57
+   at lambda_method32(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-11-04 16:03:00.592 -04:00 [INF] No se encontró MenuPrincipal con ID 2
+NotFoundException: No se encontró MenuPrincipal con ID 2
+   at UNIVidaPortalWeb.Cms.Services.RepositoryBase`1.GetByIdAsync(Int32 id) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\Services\RepositoryBase.cs:line 75
+   at UNIVidaPortalWeb.Cms.Controllers.MenuControllers.MenuPrincipalController.ObtenerMenu(Int32 id) in C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Cms\Controllers\MenuControllers\MenuPrincipalController.cs:line 57
+   at lambda_method32(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
