@@ -1,0 +1,98 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\SOURCE\\NET\\OWN\\Aforo255\\src\\trainer\\micronet5\\cross\\Aforo255.Cross\\Aforo255.Cross.Event\\Aforo255.Cross.Event.csproj": {}
+  },
+  "projects": {
+    "D:\\SOURCE\\NET\\OWN\\Aforo255\\src\\trainer\\micronet5\\cross\\Aforo255.Cross\\Aforo255.Cross.Event\\Aforo255.Cross.Event.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SOURCE\\NET\\OWN\\Aforo255\\src\\trainer\\micronet5\\cross\\Aforo255.Cross\\Aforo255.Cross.Event\\Aforo255.Cross.Event.csproj",
+        "projectName": "Aforo255.Cross.Event",
+        "projectPath": "D:\\SOURCE\\NET\\OWN\\Aforo255\\src\\trainer\\micronet5\\cross\\Aforo255.Cross\\Aforo255.Cross.Event\\Aforo255.Cross.Event.csproj",
+        "packagesPath": "C:\\Users\\Ivan Cuadros\\.nuget\\packages\\",
+        "outputPath": "D:\\SOURCE\\NET\\OWN\\Aforo255\\src\\trainer\\micronet5\\cross\\Aforo255.Cross\\Aforo255.Cross.Event\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ivan Cuadros\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.2.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

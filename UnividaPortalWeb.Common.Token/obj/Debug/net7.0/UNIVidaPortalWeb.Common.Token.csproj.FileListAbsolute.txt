@@ -1,0 +1,13 @@
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UnividaPortalWeb.Common.Token\bin\Debug\net7.0\UNIVidaPortalWeb.Common.Token.deps.json
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UnividaPortalWeb.Common.Token\bin\Debug\net7.0\UNIVidaPortalWeb.Common.Token.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UnividaPortalWeb.Common.Token\bin\Debug\net7.0\UNIVidaPortalWeb.Common.Token.pdb
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UnividaPortalWeb.Common.Token\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Token.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UnividaPortalWeb.Common.Token\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Token.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UnividaPortalWeb.Common.Token\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Token.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UnividaPortalWeb.Common.Token\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Token.AssemblyInfo.cs
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UnividaPortalWeb.Common.Token\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Token.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UnividaPortalWeb.Common.Token\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Token.sourcelink.json
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UnividaPortalWeb.Common.Token\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Token.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UnividaPortalWeb.Common.Token\obj\Debug\net7.0\refint\UNIVidaPortalWeb.Common.Token.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UnividaPortalWeb.Common.Token\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Token.pdb
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UnividaPortalWeb.Common.Token\obj\Debug\net7.0\ref\UNIVidaPortalWeb.Common.Token.dll
