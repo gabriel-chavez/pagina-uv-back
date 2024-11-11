@@ -1,0 +1,13 @@
+CREATE DATABASE db_security;
+ 
+USE db_security;
+ 
+CREATE TABLE IF NOT EXISTS Access(
+UserId INT AUTO_INCREMENT PRIMARY KEY,
+Fullname VARCHAR(255) NOT NULL,
+Username VARCHAR(50) NOT NULL,
+Password VARCHAR(50) NOT NULL
+);
+ 
+INSERT INTO Access(Fullname, Username, PASSWORD)
+VALUES('Admin', 'Admin','123456');

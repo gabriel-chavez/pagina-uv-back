@@ -1,5 +1,4 @@
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\bin\Debug\net7.0\appsettings.Development.json
-C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\bin\Debug\net7.0\appsettings.json
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\bin\Debug\net7.0\UNIVidaPortalWeb.Convocatorias.exe
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\bin\Debug\net7.0\UNIVidaPortalWeb.Convocatorias.deps.json
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Convocatorias\bin\Debug\net7.0\UNIVidaPortalWeb.Convocatorias.runtimeconfig.json

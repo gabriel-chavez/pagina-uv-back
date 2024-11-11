@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UNIVidaPortalWeb.Cms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34ec92bba2ca0df489cbb6888698915e29102e10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15d24bc7c4c809e831f8077602086b23a7f1269d")]
 [assembly: System.Reflection.AssemblyProductAttribute("UNIVidaPortalWeb.Cms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UNIVidaPortalWeb.Cms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

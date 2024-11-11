@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using UNIVidaPortalWeb.Common.Token.Src;
 using UNIVidaPortalWeb.Seguridad.Models;
 using UNIVidaPortalWeb.Seguridad.Services;
+using UNIVidaPortalWeb.Seguridad.Utilities;
 
 namespace UNIVidaPortalWeb.Seguridad.Controllers
 {
@@ -11,36 +12,74 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IAccessService _accessService;
-        private readonly JwtOptions _jwtOption;
+        private readonly IAccessService _servicioAcceso;
+        private readonly JwtOptions _opcionesJwt;
 
-        public AuthController(IAccessService accessService,
-            IOptionsSnapshot<JwtOptions> jwtOption)
+        public AuthController(IAccessService servicioAcceso,
+            IOptionsSnapshot<JwtOptions> opcionesJwt)
         {
-            _accessService = accessService;
-            _jwtOption = jwtOption.Value;
+            _servicioAcceso = servicioAcceso;
+            _opcionesJwt = opcionesJwt.Value;
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult ObtenerUsuarios()
         {
-            return Ok(_accessService.GetAll());
+            var usuarios = _servicioAcceso.ObtenerTodos();
+            var resultado = new Resultado<IEnumerable<AccessModel>>(usuarios, true, "Usuarios obtenidos correctamente");
+            return Ok(resultado);
         }
 
-        [HttpPost]
-        public IActionResult Post([FromBody] AuthRequest request)
+        [HttpPost("login")]
+        public IActionResult IniciarSesion([FromBody] AuthRequest solicitud)
         {
-            if (!_accessService.Validate(request.UserName, request.Password))
+            if (!_servicioAcceso.Validar(solicitud.UserName, solicitud.Password))
             {
-                return Unauthorized();
+                return Unauthorized(new Resultado(false, "Credenciales incorrectas"));
             }
 
+            var token = JwtToken.Create(_opcionesJwt);
             Response.Headers.Add("access-control-expose-headers", "Authorization");
-            Response.Headers.Add("Authorization", JwtToken.Create(_jwtOption));
+            Response.Headers.Add("Authorization", token);
 
-            return Ok();
-            //return Ok(new { token =  JwtToken.Create(_jwtOption) });
+            var datos = new { token };
+            var resultado = new Resultado<object>(datos, true, "Inicio de sesión exitoso");
+            return Ok(resultado);
         }
 
+        [HttpPost("registrar")]
+        public IActionResult RegistrarUsuario([FromBody] AccessModel nuevoUsuario)
+        {
+            if (!_servicioAcceso.RegistrarUsuario(nuevoUsuario))
+            {
+                return BadRequest(new Resultado(false, "El usuario ya existe"));
+            }
+
+            return Ok(new Resultado(true, "Usuario registrado exitosamente"));
+        }
+
+        [HttpPost("cambiar-contraseña")]
+        public IActionResult CambiarContraseña([FromBody] ChangePasswordRequest solicitud)
+        {
+            if (!_servicioAcceso.CambiarContraseña(solicitud.UserName, solicitud.NewPassword))
+            {
+                return NotFound(new Resultado(false, "Usuario no encontrado"));
+            }
+
+            return Ok(new Resultado(true, "Contraseña cambiada exitosamente"));
+        }
+
+        [HttpGet("perfil")]
+        public IActionResult ObtenerPerfilUsuario(string nombreUsuario)
+        {
+            var perfil = _servicioAcceso.ObtenerPerfilUsuario(nombreUsuario);
+            if (perfil == null)
+            {
+                return NotFound(new Resultado(false, "Usuario no encontrado"));
+            }
+
+            var resultado = new Resultado<AccessModel>(perfil, true, "Perfil obtenido correctamente");
+            return Ok(resultado);
+        }
     }
 }

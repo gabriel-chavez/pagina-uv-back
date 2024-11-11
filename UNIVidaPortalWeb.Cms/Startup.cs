@@ -12,7 +12,6 @@ using UNIVidaPortalWeb.Cms.Services.MenuServices;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
 using UNIVidaPortalWeb.Cms.Services.RecursoServices;
 using UNIVidaPortalWeb.Cms.Services.SeguroServices;
-using UNIVidaPortalWeb.Cms.Utilities;
 
 namespace UNIVidaPortalWeb.Cms
 {

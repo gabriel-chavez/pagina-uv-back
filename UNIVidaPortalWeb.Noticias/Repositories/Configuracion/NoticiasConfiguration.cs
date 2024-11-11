@@ -16,6 +16,11 @@ namespace UNIVidaPortalWeb.Noticias.Repositories.Configuracion
                .HasForeignKey(r => r.ParCategoriaId);
 
             modelBuilder.Entity<NoticiaModel>()
+               .HasOne(r => r.ParEstado)
+               .WithMany()
+               .HasForeignKey(r => r.ParEstadoId);
+
+            modelBuilder.Entity<NoticiaModel>()
               .HasOne(r => r.Recurso)
               .WithMany(c => c.Noticia)
               .HasForeignKey(r => r.RecursoId_ImagenPrincipal);

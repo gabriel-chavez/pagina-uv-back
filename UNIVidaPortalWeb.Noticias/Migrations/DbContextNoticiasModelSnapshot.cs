@@ -38,20 +38,20 @@ namespace UNIVidaPortalWeb.Noticias.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Etiquetas")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime>("Fecha")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("Orden")
                         .HasColumnType("integer");
@@ -59,10 +59,10 @@ namespace UNIVidaPortalWeb.Noticias.Migrations
                     b.Property<int>("ParCategoriaId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("ParEstado")
+                    b.Property<int>("ParEstadoId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("RecursoId_ImagenPrincipal")
+                    b.Property<int?>("RecursoId_ImagenPrincipal")
                         .HasColumnType("integer");
 
                     b.Property<string>("Resumen")
@@ -81,6 +81,8 @@ namespace UNIVidaPortalWeb.Noticias.Migrations
 
                     b.HasIndex("ParCategoriaId");
 
+                    b.HasIndex("ParEstadoId");
+
                     b.HasIndex("RecursoId_ImagenPrincipal");
 
                     b.ToTable("Noticia", "Noticias");
@@ -98,13 +100,13 @@ namespace UNIVidaPortalWeb.Noticias.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -139,7 +141,7 @@ namespace UNIVidaPortalWeb.Noticias.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("Habilitado")
                         .HasColumnType("boolean");
@@ -148,7 +150,7 @@ namespace UNIVidaPortalWeb.Noticias.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -171,7 +173,7 @@ namespace UNIVidaPortalWeb.Noticias.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("Habilitado")
                         .HasColumnType("boolean");
@@ -180,7 +182,7 @@ namespace UNIVidaPortalWeb.Noticias.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -203,7 +205,7 @@ namespace UNIVidaPortalWeb.Noticias.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("Habilitado")
                         .HasColumnType("boolean");
@@ -212,7 +214,7 @@ namespace UNIVidaPortalWeb.Noticias.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -231,13 +233,19 @@ namespace UNIVidaPortalWeb.Noticias.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("UNIVidaPortalWeb.Noticias.Models.Noticias.RecursoModel", "Recurso")
-                        .WithMany("Noticia")
-                        .HasForeignKey("RecursoId_ImagenPrincipal")
+                    b.HasOne("UNIVidaPortalWeb.Noticias.Models.Parametricas.ParEstadoModel", "ParEstado")
+                        .WithMany()
+                        .HasForeignKey("ParEstadoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("UNIVidaPortalWeb.Noticias.Models.Noticias.RecursoModel", "Recurso")
+                        .WithMany("Noticia")
+                        .HasForeignKey("RecursoId_ImagenPrincipal");
+
                     b.Navigation("ParCategoria");
+
+                    b.Navigation("ParEstado");
 
                     b.Navigation("Recurso");
                 });

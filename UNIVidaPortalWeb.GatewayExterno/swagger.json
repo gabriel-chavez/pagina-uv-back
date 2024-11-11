@@ -1,0 +1,197 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Ocelot Gateway API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/PaginasDinamicas/paginaPorRuta/{ruta}": {
+      "get": {
+        "tags": [ "PaginasDinamicas" ],
+        "summary": "Get Pagina Dinamica by Ruta",
+        "parameters": [
+          {
+            "name": "ruta",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/PaginasDinamicas": {
+      "get": {
+        "tags": [ "PaginasDinamicas" ],
+        "summary": "Get all Paginas Dinamicas",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Seguro": {
+      "get": {
+        "tags": [ "Seguro" ],
+        "summary": "Get Seguro",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Seguro/ObtenerPorRuta/{ruta}": {
+      "get": {
+        "tags": [ "Seguro" ],
+        "summary": "Get Seguro by Ruta",
+        "parameters": [
+          {
+            "name": "ruta",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/MenuPrincipal": {
+      "get": {
+        "tags": [ "MenuPrincipal" ],
+        "summary": "Get Menu Principal",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth": {
+      "post": {
+        "tags": [ "Auth" ],
+        "summary": "Authenticate User",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": { "type": "string" },
+                  "password": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Authentication success"
+          }
+        }
+      }
+    },
+    "/api/Convocatoria": {
+      "get": {
+        "tags": [ "Convocatoria" ],
+        "summary": "Get Convocatoria",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Convocatoria/{id}": {
+      "get": {
+        "tags": [ "Convocatoria" ],
+        "summary": "Get Convocatoria by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Capacitacion{everything}": {
+      "get": {
+        "tags": [ "Capacitacion" ],
+        "summary": "Get Capacitacion",
+        "security": [
+          { "BearerAuth": [] }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [ "Capacitacion" ],
+        "summary": "Create Capacitacion",
+        "security": [
+          { "BearerAuth": [] }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "type": "object" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/ConocimientoIdioma{everything}": {
+      "get": {
+        "tags": [ "ConocimientoIdioma" ],
+        "summary": "Get Conocimiento Idioma",
+        "security": [
+          { "BearerAuth": [] }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

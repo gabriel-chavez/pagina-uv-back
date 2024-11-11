@@ -30,6 +30,14 @@ namespace UNIVidaPortalWeb.Noticias
             // Usar Serilog como el proveedor de logging
             services.AddLogging(loggingBuilder =>
                 loggingBuilder.ClearProviders().AddSerilog());
+            //CORS
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins("http://localhost:3000", "http://localhost:3001")
+                                      .AllowAnyMethod()
+                                      .AllowAnyHeader());
+            });
 
             // Configuración de controladores y filtros
             services.AddControllers(options =>
@@ -37,6 +45,10 @@ namespace UNIVidaPortalWeb.Noticias
                 options.Filters.Add<GlobalExceptionFilter>();
                 options.Filters.Add<ValidationFilter>();
             })
+                .ConfigureApiBehaviorOptions(options =>
+                {
+                    options.SuppressModelStateInvalidFilter = true; // Desactivar la validación predeterminada
+                })
             .AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
@@ -84,13 +96,15 @@ namespace UNIVidaPortalWeb.Noticias
             //}
 
             Log.Information("Iniciando la aplicación...");
-
+            app.UseMiddleware<ExceptionMiddleware>();
             if (env.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
             app.UseRouting();
+            app.UseCors("AllowSpecificOrigin");
+
 
             app.UseAuthorization();
 

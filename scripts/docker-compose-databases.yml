@@ -1,0 +1,28 @@
+﻿version: "3.5"
+
+services:
+  mysql:
+    image: mysql:8.0.26
+    container_name: mysql-database
+    restart: always
+    environment:
+    - MYSQL_ROOT_PASSWORD=Aforo255#2019
+    ports:
+    - 3307:3306
+    - 33061:33060
+    networks:
+    - unividaportalweb
+  
+  postgres:
+    image: postgres:alpine3.14
+    container_name: postgres-database
+    environment:
+    - POSTGRES_PASSWORD=Aforo255#2019
+    ports:
+    - 5434:5432
+    networks:
+    - unividaportalweb 
+
+networks:
+  unividaportalweb:
+    name: portalweb

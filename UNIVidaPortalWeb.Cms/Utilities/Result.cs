@@ -23,7 +23,7 @@
 
     public class Resultado<T> : Resultado
     {
-        // Propiedad de solo lectura
+      
         public T? Datos { get; }
 
         public Resultado(bool exito, string mensaje) : base(exito, mensaje)

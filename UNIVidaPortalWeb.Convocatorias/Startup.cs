@@ -40,13 +40,13 @@ namespace UNIVidaPortalWeb.Convocatorias
                 loggingBuilder.ClearProviders().AddSerilog());
 
             //CORS
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowSpecificOrigin",
-                    builder => builder.WithOrigins("http://localhost:3000", "http://localhost:3001")
-                                      .AllowAnyMethod()
-                                      .AllowAnyHeader());
-            });
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy("AllowSpecificOrigin",
+            //        builder => builder.WithOrigins("http://localhost:3000", "http://localhost:3001")
+            //                          .AllowAnyMethod()
+            //                          .AllowAnyHeader());
+            //});
 
             // Configuración de controladores y filtros
             services.AddControllers(options =>
@@ -139,7 +139,7 @@ namespace UNIVidaPortalWeb.Convocatorias
             }
             app.UseRouting();
 
-            app.UseCors("AllowSpecificOrigin");
+            //app.UseCors("AllowSpecificOrigin");
 
 
             app.UseAuthorization();

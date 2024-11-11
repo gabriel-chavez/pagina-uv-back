@@ -1,5 +1,5 @@
 ﻿using System.Net;
-using UNIVidaPortalWeb.Cms.Utilidades; // Importar tu clase Resultado
+using UNIVidaPortalWeb.Cms.Utilidades; 
 
 namespace UNIVidaPortalWeb.Cms.Exceptions
 {

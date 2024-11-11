@@ -9,9 +9,9 @@ namespace UNIVidaPortalWeb.Noticias.Models.Noticias
         public string RecursoEscritorio { get; set; } = "";
         public string? RecursoMovil { get; set; }
 
-        public virtual ParTipoRecursoModel ParTipoRecurso { get; set; }= new ParTipoRecursoModel();
+        public virtual ParTipoRecursoModel ParTipoRecurso { get; set; }
         // Relación inversa
-        public virtual ICollection<NoticiaModel> Noticia { get; set; } = new List<NoticiaModel>();
+        public virtual ICollection<NoticiaModel> Noticia { get; set; }
 
     }
 }
