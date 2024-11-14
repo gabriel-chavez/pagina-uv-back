@@ -45,6 +45,21 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
             return CreatedAtAction(nameof(ObtenerPostulante), new { id = postulanteCreado.Id }, resultado);
         }
 
+        
+        [HttpPost("guardar-imagen")]
+        public async Task<ActionResult> GuardarImagen([FromForm] IFormFile fotografia)
+        {
+            if (fotografia == null || fotografia.Length == 0)
+            {
+                return BadRequest("Debe subir una imagen válida.");
+            }
+
+            // Llama al servicio para guardar la imagen
+            var imageUrl = await _postulanteService.GuardarImagenAsync(fotografia);
+            var resultado = new Resultado<string>(imageUrl, true, "Fotograía registrada correctamente");
+            return Ok(resultado);
+        }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> ActualizarPostulante(int id, PostulanteRequestDTO postulanteDto)
         {

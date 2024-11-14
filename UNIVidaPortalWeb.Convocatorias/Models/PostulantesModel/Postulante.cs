@@ -20,6 +20,7 @@ namespace UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel
         public string Zona { get; set; }
         public string Telefono { get; set; }
         public string TelefonoMovil { get; set; }
+        public string Fotogria { get; set; }
 
         // Relaciones
         public ICollection<FormacionAcademica> FormacionesAcademicas { get; set; }

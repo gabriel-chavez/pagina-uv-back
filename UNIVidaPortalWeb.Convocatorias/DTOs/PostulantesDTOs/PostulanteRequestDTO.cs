@@ -17,6 +17,7 @@
         public string Zona { get; set; }
         public string Telefono { get; set; }
         public string TelefonoMovil { get; set; }
+        public string Fotogria { get; set; }
 
     }
 }
