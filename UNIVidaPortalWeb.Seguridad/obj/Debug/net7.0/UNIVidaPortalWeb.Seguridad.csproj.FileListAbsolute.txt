@@ -93,3 +93,12 @@ C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\obj\Debug\net7.0\UNIVidaPortalWeb.Seguridad.pdb
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\obj\Debug\net7.0\UNIVidaPortalWeb.Seguridad.genruntimeconfig.cache
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\obj\Debug\net7.0\ref\UNIVidaPortalWeb.Seguridad.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\bin\Debug\net7.0\Grpc.Core.Api.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\bin\Debug\net7.0\Nacos.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\bin\Debug\net7.0\Nacos.Microsoft.Extensions.Configuration.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\bin\Debug\net7.0\Grpc.Core.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\bin\Debug\net7.0\runtimes\linux-x64\native\libgrpc_csharp_ext.x64.so
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\bin\Debug\net7.0\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\bin\Debug\net7.0\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\bin\Debug\net7.0\runtimes\win-x86\native\grpc_csharp_ext.x86.dll

@@ -44,7 +44,7 @@ namespace UNIVidaPortalWeb.Seguridad
             services.AddDbContext<ContextDatabase>(
                opt =>
                {
-                   opt.UseMySQL(Configuration["mysql:cn"]);
+                   opt.UseMySQL(Configuration["cn:mysql"]);
                });
             services.AddScoped<IAccessService, AccessService>();
             services.Configure<JwtOptions>(Configuration.GetSection("jwt"));
@@ -68,6 +68,7 @@ namespace UNIVidaPortalWeb.Seguridad
                 endpoints.MapControllers();
             });
         }
+
     }
 
 }

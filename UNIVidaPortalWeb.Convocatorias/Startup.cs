@@ -78,7 +78,7 @@ namespace UNIVidaPortalWeb.Convocatorias
             // Configuración de contexto de base de datos
             services.AddDbContext<DbContextConvocatorias>(options =>
             {
-                options.UseNpgsql(Configuration["postgres:cn"])
+                options.UseNpgsql(Configuration["cn:postgresConvocatorias"])
                 .LogTo(Console.WriteLine, LogLevel.Information);  // Habilita el logging de BD
             });
 

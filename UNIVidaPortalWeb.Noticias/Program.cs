@@ -1,6 +1,8 @@
 using UNIVidaPortalWeb.Noticias;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddNacosConfiguration(builder.Configuration.GetSection("nacosConfig"));
+
 
 // Crear instancia de Startup
 var startup = new Startup(builder.Configuration);

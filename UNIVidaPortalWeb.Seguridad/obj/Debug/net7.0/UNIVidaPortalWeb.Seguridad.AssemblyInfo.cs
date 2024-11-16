@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UNIVidaPortalWeb.Seguridad")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47800bc0e3151338af456c1f5e8436b2c5c4d08d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ff0148bb82c43e66b6c537888dba6e69fe53301")]
 [assembly: System.Reflection.AssemblyProductAttribute("UNIVidaPortalWeb.Seguridad")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UNIVidaPortalWeb.Seguridad")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

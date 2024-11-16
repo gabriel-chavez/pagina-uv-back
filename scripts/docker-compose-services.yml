@@ -1,0 +1,18 @@
+﻿
+version: "3.5"
+ 
+services:
+
+  config:
+    image: nacos/nacos-server:v2.0.3
+    container_name: service-config 
+    environment:
+    - MODE=standalone
+    ports:
+    - 8848:8848
+    networks:
+    - unividaportalweb
+ 
+networks:
+  unividaportalweb:
+    name: portalweb

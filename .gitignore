@@ -6,6 +6,7 @@
 *.dll
 *.exe
 /temp/
+logs/
 
 # Ignorar archivos de configuración sensibles
 appsettings.json

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Serilog;
+
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using UNIVidaPortalWeb.Cms.Data;
@@ -12,6 +13,7 @@ using UNIVidaPortalWeb.Cms.Services.MenuServices;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
 using UNIVidaPortalWeb.Cms.Services.RecursoServices;
 using UNIVidaPortalWeb.Cms.Services.SeguroServices;
+using UNIVidaPortalWeb.Common.Tracing.Src;
 
 namespace UNIVidaPortalWeb.Cms
 {
@@ -29,7 +31,7 @@ namespace UNIVidaPortalWeb.Cms
             // Configurar Serilog
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(Configuration)
-                .CreateLogger();
+                         .CreateLogger();
 
             Log.Information("Iniciando la aplicación...");
 
@@ -38,13 +40,13 @@ namespace UNIVidaPortalWeb.Cms
                 loggingBuilder.ClearProviders().AddSerilog());
 
             //CORS
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowSpecificOrigin",
-                    builder => builder.WithOrigins("http://localhost:3000", "http://localhost:3001")
-                                      .AllowAnyMethod()
-                                      .AllowAnyHeader());
-            });
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy("AllowSpecificOrigin",
+            //        builder => builder.WithOrigins("http://localhost:3000", "http://localhost:3001")
+            //                          .AllowAnyMethod()
+            //                          .AllowAnyHeader());
+            //});
 
             // Configuración de controladores y filtros
             services.AddControllers(options =>
@@ -70,9 +72,13 @@ namespace UNIVidaPortalWeb.Cms
             // Configuración de contexto de base de datos
             services.AddDbContext<DbContextCms>(options =>
             {
-                options.UseNpgsql(Configuration["postgres:cn"])
+                options.UseNpgsql(Configuration["cn:postgresCms"])
                 .LogTo(Console.WriteLine, LogLevel.Information);  // Habilita el logging de BD
             });
+            /*Start - Tracer distributed*/
+            services.AddJaeger();
+            services.AddOpenTracing();
+            /*End - Tracer distributed*/
 
             // Registro de servicios
             services.AddScoped<IPaginaDinamicaService, PaginaDinamicaService>();
@@ -120,7 +126,7 @@ namespace UNIVidaPortalWeb.Cms
             }
             app.UseRouting();
 
-            app.UseCors("AllowSpecificOrigin");
+            //app.UseCors("AllowSpecificOrigin");
 
 
             app.UseAuthorization();

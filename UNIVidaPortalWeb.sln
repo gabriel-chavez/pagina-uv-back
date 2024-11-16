@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{484E16E5-D730-47DC-9C35-2AD04B2AC45E}"
 	ProjectSection(SolutionItems) = preProject
 		scripts\docker-compose-databases.yml = scripts\docker-compose-databases.yml
+		scripts\docker-compose-services.yml = scripts\docker-compose-services.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cms", "Cms", "{C9B991C4-B978-423E-9901-41102E6FCBF7}"
@@ -36,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNIVidaPortalWeb.Convocator
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNIVidaPortalWeb.GatewayExterno", "UNIVidaPortalWeb.GatewayExterno\UNIVidaPortalWeb.GatewayExterno.csproj", "{DF896B01-44BD-4F3E-A4A0-F81521306062}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNIVidaPortalWeb.GatewayInterno", "UNIVidaPortalWeb.GatewayInterno\UNIVidaPortalWeb.GatewayInterno.csproj", "{2D8B1235-B106-4CC0-A3BE-3D5EFFDB1B66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNIVidaPortalWeb.GatewayInterno", "UNIVidaPortalWeb.GatewayInterno\UNIVidaPortalWeb.GatewayInterno.csproj", "{2D8B1235-B106-4CC0-A3BE-3D5EFFDB1B66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNIVidaPortalWeb.Common.Tracing", "UNIVidaPortalWeb.Common.Tracing\UNIVidaPortalWeb.Common.Tracing.csproj", "{69501999-307A-4FEB-BC20-568CFB13FB49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,6 +75,10 @@ Global
 		{2D8B1235-B106-4CC0-A3BE-3D5EFFDB1B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D8B1235-B106-4CC0-A3BE-3D5EFFDB1B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D8B1235-B106-4CC0-A3BE-3D5EFFDB1B66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69501999-307A-4FEB-BC20-568CFB13FB49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69501999-307A-4FEB-BC20-568CFB13FB49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69501999-307A-4FEB-BC20-568CFB13FB49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69501999-307A-4FEB-BC20-568CFB13FB49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,6 +96,7 @@ Global
 		{CB7E405E-ACC3-4850-A210-2334C2090A77} = {981B52EF-EB28-48F8-A057-82196A731C37}
 		{DF896B01-44BD-4F3E-A4A0-F81521306062} = {9609080D-7D0C-4D9F-943E-478A5691FCCA}
 		{2D8B1235-B106-4CC0-A3BE-3D5EFFDB1B66} = {9609080D-7D0C-4D9F-943E-478A5691FCCA}
+		{69501999-307A-4FEB-BC20-568CFB13FB49} = {8606145B-DFA1-4C6F-8A87-2A7878E3BAEC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C492E30-637D-4AF2-B48E-843EA91B422D}

@@ -31,13 +31,13 @@ namespace UNIVidaPortalWeb.Noticias
             services.AddLogging(loggingBuilder =>
                 loggingBuilder.ClearProviders().AddSerilog());
             //CORS
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowSpecificOrigin",
-                    builder => builder.WithOrigins("http://localhost:3000", "http://localhost:3001")
-                                      .AllowAnyMethod()
-                                      .AllowAnyHeader());
-            });
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy("AllowSpecificOrigin",
+            //        builder => builder.WithOrigins("http://localhost:3000", "http://localhost:3001")
+            //                          .AllowAnyMethod()
+            //                          .AllowAnyHeader());
+            //});
 
             // Configuración de controladores y filtros
             services.AddControllers(options =>
@@ -63,7 +63,7 @@ namespace UNIVidaPortalWeb.Noticias
             // Configuración de contexto de base de datos
             services.AddDbContext<DbContextNoticias>(options =>
             {
-                options.UseNpgsql(Configuration["postgres:cn"]);
+                options.UseNpgsql(Configuration["cn:postgresNoticias"]);
             });
 
             // Registro de servicios
@@ -103,7 +103,7 @@ namespace UNIVidaPortalWeb.Noticias
                 app.UseSwaggerUI();
             }
             app.UseRouting();
-            app.UseCors("AllowSpecificOrigin");
+           // app.UseCors("AllowSpecificOrigin");
 
 
             app.UseAuthorization();
