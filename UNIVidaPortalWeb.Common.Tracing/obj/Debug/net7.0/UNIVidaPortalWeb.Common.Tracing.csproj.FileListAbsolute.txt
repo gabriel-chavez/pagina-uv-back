@@ -1,0 +1,13 @@
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Common.Tracing\bin\Debug\net7.0\UNIVidaPortalWeb.Common.Tracing.deps.json
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Common.Tracing\bin\Debug\net7.0\UNIVidaPortalWeb.Common.Tracing.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Common.Tracing\bin\Debug\net7.0\UNIVidaPortalWeb.Common.Tracing.pdb
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Common.Tracing\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Tracing.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Common.Tracing\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Tracing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Common.Tracing\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Tracing.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Common.Tracing\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Tracing.AssemblyInfo.cs
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Common.Tracing\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Tracing.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Common.Tracing\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Tracing.sourcelink.json
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Common.Tracing\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Tracing.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Common.Tracing\obj\Debug\net7.0\refint\UNIVidaPortalWeb.Common.Tracing.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Common.Tracing\obj\Debug\net7.0\UNIVidaPortalWeb.Common.Tracing.pdb
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Common.Tracing\obj\Debug\net7.0\ref\UNIVidaPortalWeb.Common.Tracing.dll

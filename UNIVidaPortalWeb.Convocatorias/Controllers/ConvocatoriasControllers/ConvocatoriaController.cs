@@ -27,6 +27,15 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.ConvocatoriasControllers
             var resultado = new Resultado<IEnumerable<Convocatoria>>(convocatorias, true, "Convocatorias obtenidas correctamente");
             return Ok(resultado);
         }
+        [HttpGet("vigentes")]
+        public async Task<ActionResult> ObtenerConvocatoriasVigentes()
+        {
+            var hoy = DateOnly.FromDateTime(DateTime.Today);
+            var convocatorias = await _convocatoriaService.GetAsync(s => s.FechaInicio <= hoy && s.FechaFin >= hoy);
+                        
+            var resultado = new Resultado<IEnumerable<Convocatoria>>(convocatorias, true, "Convocatorias obtenidas correctamente");
+            return Ok(resultado);
+        }
 
         [HttpGet("{id}")]
         public async Task<ActionResult> ObtenerConvocatoria(int id)
