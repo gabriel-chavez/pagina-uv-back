@@ -17,6 +17,7 @@ namespace UNIVidaPortalWeb.GatewayExterno
         // Configuración de servicios
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddJwtCustomized("MY-KEY-JWT");
             /*Start - Cors*/
             services.AddCors(o => o.AddPolicy(clientPolicy, builder =>
             {
