@@ -11,7 +11,7 @@ namespace UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel
         public DateOnly FechaPostulacion { get; set; }
         public int PuntajeObtenido { get; set; }
         public int ParEstadoPostulacionId { get; set; }
-        public string PostulanteDatosJSON { get; set; } // Campo JSON para almacenar datos históricos
+        public string PostulanteDatosJSON { get; set; } 
 
         public decimal PretensionSalarial { get; set; } 
         public bool DisponibilidadInmediata { get; set; } 

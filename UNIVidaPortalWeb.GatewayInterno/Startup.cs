@@ -7,6 +7,8 @@ namespace UNIVidaPortalWeb.GatewayInterno
     public class Startup
     {
         private readonly IConfiguration _configuration;
+        readonly string clientPolicy = "_clientPolicy";
+
 
         public Startup(IConfiguration configuration)
         {
@@ -19,6 +21,17 @@ namespace UNIVidaPortalWeb.GatewayInterno
             services.AddJwtCustomized("MY-KEY-JWT");
 
             services.AddOcelot();
+
+            /*Start - Cors*/
+            services.AddCors(o => o.AddPolicy(clientPolicy, builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+
+            }));
+            services.AddRouting(r => r.SuppressCheckForUnhandledSecurityMetadata = true);
+            /*End - Cors*/
 
         }
 
@@ -41,6 +54,14 @@ namespace UNIVidaPortalWeb.GatewayInterno
 
             // Habilitar Ocelot
             app.UseRouting();
+            /*Start - Cors*/
+            app.UseCors(clientPolicy);
+            app.Use((context, next) =>
+            {
+                context.Items["__CorsMiddlewareInvoked"] = true;
+                return next();
+            });
+            /*End - Cors*/
 
             app.UseOcelot().Wait();
 
