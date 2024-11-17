@@ -7,6 +7,9 @@
 *.exe
 /temp/
 logs/
+bin/
+obj/
+
 
 # Ignorar archivos de configuración sensibles
 appsettings.json
