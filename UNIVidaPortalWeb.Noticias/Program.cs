@@ -1,18 +1,25 @@
 using UNIVidaPortalWeb.Noticias;
+using UNIVidaPortalWeb.Common.Metric.Metrics;
 
-var builder = WebApplication.CreateBuilder(args);
-builder.Configuration.AddNacosConfiguration(builder.Configuration.GetSection("nacosConfig"));
+Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration((context, config) =>
+    {
+        //// Configurar configuraciones adicionales (opcional)
+        //config
+        //    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+        //    .AddJsonFile($"appsettings.{context.HostingEnvironment.EnvironmentName}.json", optional: true)
+        //    .AddEnvironmentVariables();
 
 
-// Crear instancia de Startup
-var startup = new Startup(builder.Configuration);
+        config.AddNacosConfiguration(config.Build().GetSection("nacosConfig"));
+    })
+    .ConfigureWebHostDefaults(webHostBuilder =>
+    {
+        // Llamar explícitamente a UseAppMetrics
+        webHostBuilder.UseAppMetrics();
 
-// Llamar a ConfigureServices
-startup.ConfigureServices(builder.Services);
-
-var app = builder.Build();
-
-// Llamar a Configure
-startup.Configure(app, app.Environment);
-
-app.Run();
+        // Vincular Startup para configurar servicios y middlewares
+        webHostBuilder.UseStartup<Startup>();
+    })
+    .Build()
+    .Run();

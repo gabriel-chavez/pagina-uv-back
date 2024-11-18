@@ -6,6 +6,8 @@ using UNIVidaPortalWeb.Noticias.Exceptions;
 using UNIVidaPortalWeb.Noticias.Repositories;
 using UNIVidaPortalWeb.Noticias.Services.NoticiasServices;
 using UNIVidaPortalWeb.Noticias.Services.ParametricasServices;
+using UNIVidaPortalWeb.Common.Tracing.Src;
+using UNIVidaPortalWeb.Common.Metric.Registry;
 
 namespace UNIVidaPortalWeb.Noticias
 {
@@ -65,6 +67,13 @@ namespace UNIVidaPortalWeb.Noticias
             {
                 options.UseNpgsql(Configuration["cn:postgresNoticias"]);
             });
+            /*Start - Tracer distributed*/
+            services.AddJaeger();
+            services.AddOpenTracing();
+            /*End - Tracer distributed*/
+            /*Start Metrics*/
+            services.AddTransient<IMetricsRegistry, MetricsRegistry>();
+            /*End Metrics*/
 
             // Registro de servicios
             services.AddScoped<INoticiaService, NoticiaService>();

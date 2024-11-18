@@ -13,6 +13,7 @@ using UNIVidaPortalWeb.Cms.Services.MenuServices;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
 using UNIVidaPortalWeb.Cms.Services.RecursoServices;
 using UNIVidaPortalWeb.Cms.Services.SeguroServices;
+using UNIVidaPortalWeb.Common.Metric.Registry;
 using UNIVidaPortalWeb.Common.Tracing.Src;
 
 namespace UNIVidaPortalWeb.Cms
@@ -79,6 +80,9 @@ namespace UNIVidaPortalWeb.Cms
             services.AddJaeger();
             services.AddOpenTracing();
             /*End - Tracer distributed*/
+            /*Start Metrics*/
+            services.AddTransient<IMetricsRegistry, MetricsRegistry>();
+            /*End Metrics*/
 
             // Registro de servicios
             services.AddScoped<IPaginaDinamicaService, PaginaDinamicaService>();

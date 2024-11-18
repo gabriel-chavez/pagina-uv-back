@@ -1,19 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
-
 using Newtonsoft.Json;
-
-//using Newtonsoft.Json;
-//using Newtonsoft.Json.Serialization;
 using Serilog;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using UNIVidaPortalWeb.Common.Tracing.Src;
 using UNIVidaPortalWeb.Convocatorias.Exceptions;
 using UNIVidaPortalWeb.Convocatorias.Repositories;
 using UNIVidaPortalWeb.Convocatorias.Services;
 using UNIVidaPortalWeb.Convocatorias.Services.ConvocatoriasServices;
 using UNIVidaPortalWeb.Convocatorias.Services.ParametricasServices;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
+using UNIVidaPortalWeb.Common.Metric.Registry;
 
 
 namespace UNIVidaPortalWeb.Convocatorias
@@ -77,10 +73,17 @@ namespace UNIVidaPortalWeb.Convocatorias
 
             // Configuración de contexto de base de datos
             services.AddDbContext<DbContextConvocatorias>(options =>
-            {
+            {                
                 options.UseNpgsql(Configuration["cn:postgresConvocatorias"])
                 .LogTo(Console.WriteLine, LogLevel.Information);  // Habilita el logging de BD
             });
+            /*Start - Tracer distributed*/
+            services.AddJaeger();
+            services.AddOpenTracing();
+            /*End - Tracer distributed*/
+            /*Start Metrics*/
+           // services.AddTransient<IMetricsRegistry, MetricsRegistry>();
+            /*End Metrics*/
 
             // Registro de servicios
             //Postulantes

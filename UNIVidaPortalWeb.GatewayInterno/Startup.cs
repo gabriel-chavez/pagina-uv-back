@@ -1,6 +1,8 @@
 ﻿using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using UNIVidaPortalWeb.Common.Metric.Registry;
 using UNIVidaPortalWeb.Common.Token.Src;
+using UNIVidaPortalWeb.Common.Tracing.Src;
 
 namespace UNIVidaPortalWeb.GatewayInterno
 {
@@ -32,7 +34,13 @@ namespace UNIVidaPortalWeb.GatewayInterno
             }));
             services.AddRouting(r => r.SuppressCheckForUnhandledSecurityMetadata = true);
             /*End - Cors*/
-
+            /*Start - Tracer distributed*/
+            services.AddJaeger();
+            services.AddOpenTracing();
+            /*End - Tracer distributed*/
+            /*Start Metrics*/
+            services.AddTransient<IMetricsRegistry, MetricsRegistry>();
+            /*End Metrics*/
         }
 
         // Configuración del pipeline de middleware

@@ -25,5 +25,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
   
+   <ItemGroup>
+     <ProjectReference Include="..\UNIVidaPortalWeb.Common.Metric\UNIVidaPortalWeb.Common.Metric.csproj" />
+     <ProjectReference Include="..\UNIVidaPortalWeb.Common.Tracing\UNIVidaPortalWeb.Common.Tracing.csproj" />
+   </ItemGroup>
+  
 
 </Project>

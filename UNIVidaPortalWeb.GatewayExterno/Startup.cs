@@ -1,6 +1,8 @@
 ﻿using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using UNIVidaPortalWeb.Common.Metric.Registry;
 using UNIVidaPortalWeb.Common.Token.Src;
+using UNIVidaPortalWeb.Common.Tracing.Src;
 
 namespace UNIVidaPortalWeb.GatewayExterno
 {
@@ -28,6 +30,13 @@ namespace UNIVidaPortalWeb.GatewayExterno
             }));
             services.AddRouting(r => r.SuppressCheckForUnhandledSecurityMetadata = true);
             /*End - Cors*/
+            /*Start - Tracer distributed*/
+            services.AddJaeger();
+            services.AddOpenTracing();
+            /*End - Tracer distributed*/
+            /*Start Metrics*/
+            services.AddTransient<IMetricsRegistry, MetricsRegistry>();
+            /*End Metrics*/
 
             services.AddOcelot();
 
@@ -64,27 +73,7 @@ namespace UNIVidaPortalWeb.GatewayExterno
 
             app.UseOcelot().Wait();
 
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
-            //else
-            //{
-            //    app.UseExceptionHandler("/Home/Error");
-            //    app.UseHsts();
-            //}
-
-            //app.UseHttpsRedirection();
-            //app.UseStaticFiles();
-
-            //app.UseRouting();
-
-            //app.UseAuthorization();
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllers();
-            //});
+          
         }
     }
 

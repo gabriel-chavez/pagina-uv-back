@@ -1,22 +1,25 @@
-using Microsoft.Extensions.Configuration;
 using UNIVidaPortalWeb.Seguridad;
+using UNIVidaPortalWeb.Common.Metric.Metrics;
 
-var builder = WebApplication.CreateBuilder(args);
+Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration((context, config) =>
+    {
+        //// Configurar configuraciones adicionales (opcional)
+        //config
+        //    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+        //    .AddJsonFile($"appsettings.{context.HostingEnvironment.EnvironmentName}.json", optional: true)
+        //    .AddEnvironmentVariables();
 
 
-builder.Configuration.AddNacosConfiguration(builder.Configuration.GetSection("nacosConfig"));
+        config.AddNacosConfiguration(config.Build().GetSection("nacosConfig"));
+    })
+    .ConfigureWebHostDefaults(webHostBuilder =>
+    {
+        // Llamar explícitamente a UseAppMetrics
+        webHostBuilder.UseAppMetrics();
 
-
-
-// Crear instancia de Startup
-var startup = new Startup(builder.Configuration);
-
-// Llamar a ConfigureServices
-startup.ConfigureServices(builder.Services);
-
-var app = builder.Build();
-
-// Llamar a Configure
-startup.Configure(app, app.Environment);
-
-app.Run();
+        // Vincular Startup para configurar servicios y middlewares
+        webHostBuilder.UseStartup<Startup>();
+    })
+    .Build()
+    .Run();

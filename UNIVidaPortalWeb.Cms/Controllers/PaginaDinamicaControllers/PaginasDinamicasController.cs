@@ -5,6 +5,7 @@ using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Services.MenuServices;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
 using UNIVidaPortalWeb.Cms.Utilidades;
+using UNIVidaPortalWeb.Common.Metric.Registry;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
 {
@@ -14,18 +15,21 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
     {
         private readonly IPaginaDinamicaService _paginaDinamicaService;
         private readonly IMenuPrincipalService _menuPrincipalService;
+        private readonly IMetricsRegistry _metricsRegistry;
         public IMapper _mapper { get; }
 
-        public PaginasDinamicasController(IPaginaDinamicaService paginaDinamicaService, IMenuPrincipalService menuPrincipalService, IMapper mapper)
+        public PaginasDinamicasController(IPaginaDinamicaService paginaDinamicaService, IMenuPrincipalService menuPrincipalService, IMapper mapper, IMetricsRegistry metricsRegistry)
         {
             _paginaDinamicaService = paginaDinamicaService;
             _menuPrincipalService = menuPrincipalService;
             _mapper = mapper;
+            _metricsRegistry = metricsRegistry;
         }
 
         [HttpGet]
         public async Task<ActionResult> ObtenerTodos()
         {
+            _metricsRegistry.IncrementFindQuery();
             var paginasDinamicas = await _paginaDinamicaService.ObtenerPaginasDinamicas();
             var resultado = new Resultado<IEnumerable<PaginaDinamica>>(paginasDinamicas, true, "Páginas dinámicas obtenidas correctamente");
             return Ok(resultado);
@@ -34,6 +38,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         [HttpGet("{id}")]
         public async Task<ActionResult> ObtenerPorId(int id)
         {
+            _metricsRegistry.IncrementFindQuery();
             var paginaDinamica = await _paginaDinamicaService.GetByIdAsync(id);
             if (paginaDinamica == null)
             {

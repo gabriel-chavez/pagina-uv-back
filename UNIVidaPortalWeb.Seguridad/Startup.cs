@@ -4,6 +4,8 @@ using UNIVidaPortalWeb.Common.Token.Src;
 using UNIVidaPortalWeb.Seguridad.Exceptions;
 using UNIVidaPortalWeb.Seguridad.Respositories;
 using UNIVidaPortalWeb.Seguridad.Services;
+using UNIVidaPortalWeb.Common.Tracing.Src;
+using UNIVidaPortalWeb.Common.Metric.Registry;
 
 namespace UNIVidaPortalWeb.Seguridad
 {
@@ -40,7 +42,13 @@ namespace UNIVidaPortalWeb.Seguridad
             {
                 options.SuppressModelStateInvalidFilter = true; // Desactivar la validación predeterminada
             });
-
+            /*Start - Tracer distributed*/
+            services.AddJaeger();
+            services.AddOpenTracing();
+            /*End - Tracer distributed*/
+            /*Start Metrics*/
+            services.AddTransient<IMetricsRegistry, MetricsRegistry>();
+            /*End Metrics*/
             services.AddDbContext<ContextDatabase>(
                opt =>
                {

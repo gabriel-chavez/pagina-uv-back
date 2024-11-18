@@ -1,7 +1,7 @@
 ﻿version: "3.5"
 
 services:
-  config:
+  service-config:
     image: nacos/nacos-server:v2.0.3
     container_name: service-config
     environment:
@@ -24,6 +24,24 @@ services:
       - 16686:16686
       - 14268:14268
       - 9411:9411
+    networks:
+      - unividaportalweb
+
+  service-metrics:
+    image: prom/prometheus:v2.31.1
+    container_name: service-metrics
+    ports:
+      - 9090:9090
+    volumes:
+      - c:/Users/USUARIO/documents/02.- prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - unividaportalweb
+
+  service-analytics:
+    image: grafana/grafana:8.2.3
+    container_name: service-analytics
+    ports:
+      - 3100:3000
     networks:
       - unividaportalweb
 

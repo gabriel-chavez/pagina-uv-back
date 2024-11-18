@@ -1,23 +1,24 @@
 using UNIVidaPortalWeb.GatewayExterno;
+using UNIVidaPortalWeb.Common.Metric.Metrics;
 
-var builder = WebApplication.CreateBuilder(args);
+Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration((hostingContext, config) =>
+    {
+        var env = hostingContext.HostingEnvironment;
 
-// Configurar archivos de configuración
-builder.Configuration
-    
-    .AddJsonFile($"ocelot.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
-    .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true)
-    .AddEnvironmentVariables();
+        // Configurar archivos de configuración
+        config
+            .AddJsonFile($"ocelot.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
+            .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true)
+            .AddEnvironmentVariables();
+    })
+    .ConfigureWebHostDefaults(webHostBuilder =>
+    {
+        // Configurar AppMetrics
+        webHostBuilder.UseAppMetrics();
 
-// Crear una instancia de la clase Startup
-var startup = new Startup(builder.Configuration);
-
-// Llamar a ConfigureServices para configurar los servicios
-startup.ConfigureServices(builder.Services);
-
-var app = builder.Build();
-
-// Llamar a Configure para configurar el middleware
-startup.Configure(app, app.Environment);
-
-app.Run();
+        // Configurar la clase Startup
+        webHostBuilder.UseStartup<Startup>();
+    })
+    .Build()
+    .Run();
