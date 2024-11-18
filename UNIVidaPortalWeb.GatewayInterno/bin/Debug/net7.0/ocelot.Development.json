@@ -1,98 +1,302 @@
 {
   "Routes": [
     // --- Paginas Dinamicas ---
-    {
-      "DownstreamPathTemplate": "/api/PaginasDinamicas/paginaPorRuta/{ruta}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5003
-        }
-      ],
-      "UpstreamPathTemplate": "/api/PaginasDinamicas/paginaPorRuta/{ruta}",
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/PaginasDinamicas",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5003
-        }
-      ],
-      "UpstreamPathTemplate": "/api/PaginasDinamicas",
-      "UpstreamHttpMethod": [ "GET" ]
-    },
+    //    {
+    //      "DownstreamPathTemplate": "/api/PaginasDinamicas/paginaPorRuta/{ruta}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5003
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/PaginasDinamicas/paginaPorRuta/{ruta}",
+    //      "UpstreamHttpMethod": [ "GET" ]
+    //    },
+    //    {
+    //      "DownstreamPathTemplate": "/api/PaginasDinamicas/",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5003
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/PaginasDinamicas/",
+    //      "UpstreamHttpMethod": [ "GET" ]
+    //    },
 
-    // --- Nuestros Seguros ---
-    {
-      "DownstreamPathTemplate": "/api/Seguro",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5003
-        }
-      ],
-      "UpstreamPathTemplate": "/api/Seguro",
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/Seguro/ObtenerPorRuta/{ruta}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5003
-        }
-      ],
-      "UpstreamPathTemplate": "/api/Seguro/ObtenerPorRuta/{ruta}",
-      "UpstreamHttpMethod": [ "GET" ]
-    },
+    //    // --- Nuestros Seguros ---
+    //    {
+    //      "DownstreamPathTemplate": "/api/Seguro",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5003
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/Seguro",
+    //      "UpstreamHttpMethod": [ "GET" ]
+    //    },
+    //    {
+    //      "DownstreamPathTemplate": "/api/Seguro/ObtenerPorRuta/{ruta}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5003
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/Seguro/ObtenerPorRuta/{ruta}",
+    //      "UpstreamHttpMethod": [ "GET" ]
+    //    },
+    //    {
+    //      "DownstreamPathTemplate": "/api/Plan/ObtenerPorSeguro/{id}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5003
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/Plan/ObtenerPorSeguro/{id}",
+    //      "UpstreamHttpMethod": [ "GET" ]
+    //    },
+    //    {
+    //      "DownstreamPathTemplate": "/api/SeguroDetalle/ObtenerPorSeguro/{id}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5003
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/SeguroDetalle/ObtenerPorSeguro/{id}",
+    //      "UpstreamHttpMethod": [ "GET" ]
+    //    },
 
-    // --- Menu ---
-    {
-      "DownstreamPathTemplate": "/api/MenuPrincipal",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5003
-        }
-      ],
-      "UpstreamPathTemplate": "/api/MenuPrincipal",
-      "UpstreamHttpMethod": [ "GET" ]
 
-    },
 
-    // --- Convocatorias ---
-    {
-      "DownstreamPathTemplate": "/api/Convocatoria",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5005
-        }
-      ],
-      "UpstreamPathTemplate": "/api/Convocatoria",
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/Convocatoria/{id}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5005
-        }
-      ],
-      "UpstreamPathTemplate": "/api/Convocatoria/{id}",
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    // --- Seguridad ---
+    //    // --- Menu ---
+    //    {
+    //      "DownstreamPathTemplate": "/api/MenuPrincipal",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5003
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/MenuPrincipal",
+    //      "UpstreamHttpMethod": [ "GET" ]
+
+    //    },
+
+    //    // --- Convocatorias ---
+    //    {
+    //      "DownstreamPathTemplate": "/api/Convocatoria",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5005
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/Convocatoria",
+    //      "UpstreamHttpMethod": [ "GET" ]
+    //    },
+    //    {
+    //      "DownstreamPathTemplate": "/api/Convocatoria/{id}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5005
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/Convocatoria/{id}",
+    //      "UpstreamHttpMethod": [ "GET" ]
+    //    },
+    //    
+    //    /************************************************************
+    //     --- CON SEGURIDAD --
+    //***********************************************************/
+
+
+    //    //--- Capacitación ---
+    //    {
+    //      "DownstreamPathTemplate": "/api/Capacitacion/{everything}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5005
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/Capacitacion/{everything}",
+    //      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+    //      "AuthenticationOptions": {
+    //        "AuthenticationProviderKey": "MY-KEY-JWT",
+    //        "AllowedScopes": []
+    //      }
+    //    },
+    //    //--- Conocimiento idioma ---
+    //    {
+    //      "DownstreamPathTemplate": "/api/ConocimientoIdioma/{everything}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5005
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/ConocimientoIdioma/{everything}",
+    //      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+    //      "AuthenticationOptions": {
+    //        "AuthenticationProviderKey": "MY-KEY-JWT",
+    //        "AllowedScopes": []
+    //      }
+    //    },
+    //    //--- Conocimiento sistemas ---
+    //    {
+    //      "DownstreamPathTemplate": "/api/ConocimientoSistemas/{everything}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5005
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/ConocimientoSistemas/{everything}",
+    //      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+    //      "AuthenticationOptions": {
+    //        "AuthenticationProviderKey": "MY-KEY-JWT",
+    //        "AllowedScopes": []
+    //      }
+    //    },
+    //    //--- Experiencia laboral ---
+    //    {
+    //      "DownstreamPathTemplate": "/api/ExperienciaLaboral/{everything}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5005
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/ExperienciaLaboral/{everything}",
+    //      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+    //      "AuthenticationOptions": {
+    //        "AuthenticationProviderKey": "MY-KEY-JWT",
+    //        "AllowedScopes": []
+    //      }
+    //    },
+    //    //--- Formación académica ---
+    //    {
+    //      "DownstreamPathTemplate": "/api/FormacionAcademica/{everything}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5005
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/FormacionAcademica/{everything}",
+    //      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+    //      "AuthenticationOptions": {
+    //        "AuthenticationProviderKey": "MY-KEY-JWT",
+    //        "AllowedScopes": []
+    //      }
+    //    },
+    //    //--- Referencia Laboral ---
+    //    {
+    //      "DownstreamPathTemplate": "/api/ReferenciaLaboral/{everything}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5005
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/ReferenciaLaboral/{everything}",
+    //      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+    //      "AuthenticationOptions": {
+    //        "AuthenticationProviderKey": "MY-KEY-JWT",
+    //        "AllowedScopes": []
+    //      }
+    //    },
+    //    //--- Referencia Personal ---
+    //    {
+    //      "DownstreamPathTemplate": "/api/ReferenciaPersonal/{everything}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5005
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/ReferenciaPersonal/{everything}",
+    //      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+    //      "AuthenticationOptions": {
+    //        "AuthenticationProviderKey": "MY-KEY-JWT",
+    //        "AllowedScopes": []
+    //      }
+    //    },
+    //    //--- Postulante ---
+    //    {
+    //      "DownstreamPathTemplate": "/api/Postulante/{everything}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5005
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/Postulante/{everything}",
+
+    //      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+    //      "AuthenticationOptions": {
+    //        "AuthenticationProviderKey": "MY-KEY-JWT",
+    //        "AllowedScopes": []
+    //      }
+    //    },
+    //    //--- POSTULACION ---
+    //    {
+    //      "DownstreamPathTemplate": "/api/Postulacion",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5005
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/Postulacion",
+    //      "UpstreamHttpMethod": [ "POST" ],
+    //      "AuthenticationOptions": {
+    //        "AuthenticationProviderKey": "MY-KEY-JWT",
+    //        "AllowedScopes": []
+    //      }
+    //    },
+    //    //--- PARAMETRICAS ---
+    //    {
+    //      "DownstreamPathTemplate": "/api/Par{everything}",
+    //      "DownstreamScheme": "http",
+    //      "DownstreamHostAndPorts": [
+    //        {
+    //          "Host": "localhost",
+    //          "Port": 5005
+    //        }
+    //      ],
+    //      "UpstreamPathTemplate": "/api/Par{everything}",
+    //      "UpstreamHttpMethod": [ "GET" ],
+    //      "AuthenticationOptions": {
+    //        "AuthenticationProviderKey": "MY-KEY-JWT",
+    //        "AllowedScopes": []
+    //      }
+    //    }
+
+    //--- Seguridad ---
     {
       "DownstreamPathTemplate": "/api/auth/login",
       "DownstreamScheme": "http",
@@ -141,12 +345,216 @@
       "UpstreamPathTemplate": "/api/auth/perfil",
       "UpstreamHttpMethod": [ "GET" ]
     },
-    /************************************************************
-     --- CON SEGURIDAD --
-***********************************************************/
-
-
-    //--- Capacitación ---
+    //--- FIN Seguridad ---
+    //-- CMS--
+    {
+      "DownstreamPathTemplate": "/api/BannerPaginaDinamicas/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/api/BannerPaginaDinamicas/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/CatTipoRecurso/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/api/CatTipoRecurso/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/CatTipoSeccion/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/api/CatTipoSeccion/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/CatTipoSeguro/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/api/CatTipoSeguro/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Datos/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Datos/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/MenuPrincipal/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/api/MenuPrincipal/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/PaginasDinamicas/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/api/PaginasDinamicas/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Plan/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Plan/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Recurso/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Recurso/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Secciones/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Secciones/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Seguro/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Seguro/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/SeguroDetalle/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/api/SeguroDetalle/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    //-- FIN CMS--
+    //-- NOTICIAS
+    {
+      "DownstreamPathTemplate": "/api/Noticia/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Noticia/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ParCategoria/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ParCategoria/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ParEstado/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ParEstado/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ParTipoRecurso/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ParTipoRecurso/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Recurso/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Recursov2/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    //-- FIN NOTICIAS
+    //-- CONVOCATORIAS
     {
       "DownstreamPathTemplate": "/api/Capacitacion/{everything}",
       "DownstreamScheme": "http",
@@ -157,13 +565,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Capacitacion/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
-    //--- Conocimiento idioma ---
     {
       "DownstreamPathTemplate": "/api/ConocimientoIdioma/{everything}",
       "DownstreamScheme": "http",
@@ -174,13 +577,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ConocimientoIdioma/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
-    //--- Conocimiento sistemas ---
     {
       "DownstreamPathTemplate": "/api/ConocimientoSistemas/{everything}",
       "DownstreamScheme": "http",
@@ -191,13 +589,20 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ConocimientoSistemas/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
-    //--- Experiencia laboral ---
+    {
+      "DownstreamPathTemplate": "/api/Convocatoria/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Convocatoria/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
     {
       "DownstreamPathTemplate": "/api/ExperienciaLaboral/{everything}",
       "DownstreamScheme": "http",
@@ -208,13 +613,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ExperienciaLaboral/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
-    //--- Formación académica ---
     {
       "DownstreamPathTemplate": "/api/FormacionAcademica/{everything}",
       "DownstreamScheme": "http",
@@ -225,15 +625,10 @@
         }
       ],
       "UpstreamPathTemplate": "/api/FormacionAcademica/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
-    //--- Referencia Laboral ---
     {
-      "DownstreamPathTemplate": "/api/ReferenciaLaboral/{everything}",
+      "DownstreamPathTemplate": "/api/Notificacion/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -241,16 +636,11 @@
           "Port": 5005
         }
       ],
-      "UpstreamPathTemplate": "/api/ReferenciaLaboral/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamPathTemplate": "/api/Notificacion/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
-    //--- Referencia Personal ---
     {
-      "DownstreamPathTemplate": "/api/ReferenciaPersonal/{everything}",
+      "DownstreamPathTemplate": "/api/ParEstadoConvocatoria/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -258,14 +648,105 @@
           "Port": 5005
         }
       ],
-      "UpstreamPathTemplate": "/api/ReferenciaPersonal/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamPathTemplate": "/api/ParEstadoConvocatoria/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
-    //--- Postulante ---
+    {
+      "DownstreamPathTemplate": "/api/ParEstadoPostulacion/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ParEstadoPostulacion/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ParIdioma/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ParIdioma/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ParNivelConocimiento/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ParNivelConocimiento/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ParNivelFormacion/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ParNivelFormacion/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ParParentesco/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ParParentesco/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ParPrograma/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ParPrograma/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ParTipoCapacitacion/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ParTipoCapacitacion/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Postulacion/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Postulacion/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
     {
       "DownstreamPathTemplate": "/api/Postulante/{everything}",
       "DownstreamScheme": "http",
@@ -276,16 +757,10 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Postulante/{everything}",
-
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
-    //--- POSTULACION ---
     {
-      "DownstreamPathTemplate": "/api/Postulacion",
+      "DownstreamPathTemplate": "/api/ReferenciaLaboral/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -293,16 +768,11 @@
           "Port": 5005
         }
       ],
-      "UpstreamPathTemplate": "/api/Postulacion",
-      "UpstreamHttpMethod": [ "POST" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamPathTemplate": "/api/ReferenciaLaboral/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
-    //--- PARAMETRICAS ---
     {
-      "DownstreamPathTemplate": "/api/Par{everything}",
+      "DownstreamPathTemplate": "/api/ReferenciaPersonal/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -310,39 +780,12 @@
           "Port": 5005
         }
       ],
-      "UpstreamPathTemplate": "/api/Par{everything}",
-      "UpstreamHttpMethod": [ "GET" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
-    },
-    {
-      "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5002
-        },
-        {
-          "Host": "localhost",
-          "Port": 5003
-        },
-        {
-          "Host": "localhost",
-          "Port": 5004
-        },
-        {
-          "Host": "localhost",
-          "Port": 5005
-        }
-      ],
-      "UpstreamPathTemplate": "/api/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD" ],
-      
+      "UpstreamPathTemplate": "/api/ReferenciaPersonal/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     }
 
+
+    //-- FIN CONVOCATORIAS
   ],
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:5001"
