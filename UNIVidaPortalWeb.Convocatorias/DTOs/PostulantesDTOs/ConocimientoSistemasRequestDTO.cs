@@ -5,5 +5,6 @@
         public int PostulanteId { get; set; }
         public int ParProgramaId { get; set; }
         public int ParNivelConocimientoId { get; set; }
+        public string? Otro { get; set; }
     }
 }

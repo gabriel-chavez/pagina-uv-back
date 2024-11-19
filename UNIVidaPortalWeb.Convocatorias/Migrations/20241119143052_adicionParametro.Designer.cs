@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using UNIVidaPortalWeb.Convocatorias.Repositories;
@@ -11,9 +12,11 @@ using UNIVidaPortalWeb.Convocatorias.Repositories;
 namespace UNIVidaPortalWeb.Convocatorias.Migrations
 {
     [DbContext(typeof(DbContextConvocatorias))]
-    partial class DbContextConvocatoriasModelSnapshot : ModelSnapshot
+    [Migration("20241119143052_adicionParametro")]
+    partial class adicionParametro
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
