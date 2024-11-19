@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 using UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs;
 using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
@@ -23,7 +24,12 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet]
         public async Task<ActionResult> ObtenerConocimientosSistemas()
         {
-            var conocimientos = await _conocimientoSistemasService.GetAllAsync();
+            var incluir = new List<Expression<Func<ConocimientoSistemas, object>>>
+            {
+                c => c.ParPrograma,
+                c => c.ParNivelConocimiento,
+            };
+            var conocimientos = await _conocimientoSistemasService.GetAllAsync(incluir);
             var resultado = new Resultado<IEnumerable<ConocimientoSistemas>>(conocimientos, true, "Conocimientos de sistemas obtenidos correctamente");
             return Ok(resultado);
         }
@@ -31,7 +37,12 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet("{id}")]
         public async Task<ActionResult> ObtenerConocimientoSistemas(int id)
         {
-            var conocimiento = await _conocimientoSistemasService.GetByIdAsync(id);
+            var incluir = new List<Expression<Func<ConocimientoSistemas, object>>>
+            {
+                c => c.ParPrograma,
+                c => c.ParNivelConocimiento,
+            };
+            var conocimiento = await _conocimientoSistemasService.GetByIdAsync(id, incluir);
             var resultado = new Resultado<ConocimientoSistemas>(conocimiento, true, "Conocimiento de sistemas obtenido correctamente");
             return Ok(resultado);
         }
@@ -39,7 +50,12 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet("ObtenerPorPostulante/{id}")]
         public async Task<ActionResult> ObtenerConocimientosPorPostulante(int id)
         {
-            var conocimientos = await _conocimientoSistemasService.GetAsync(c => c.PostulanteId == id);
+            var incluir = new List<Expression<Func<ConocimientoSistemas, object>>>
+            {
+                c => c.ParPrograma,
+                c => c.ParNivelConocimiento,                
+            };
+            var conocimientos = await _conocimientoSistemasService.GetAsync(c => c.PostulanteId == id, includes: incluir);
             var resultado = new Resultado<IEnumerable<ConocimientoSistemas>>(conocimientos, true, "Conocimientos de sistemas del postulante obtenidos correctamente");
             return Ok(resultado);
         }

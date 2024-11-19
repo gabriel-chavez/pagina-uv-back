@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 using UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs;
+using UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel;
 using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
 using UNIVidaPortalWeb.Convocatorias.Utilidades;
@@ -23,15 +25,23 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet]
         public async Task<ActionResult> ObtenerCapacitaciones()
         {
-            var capacitaciones = await _capacitacionService.GetAllAsync();
+            var incluir = new List<Expression<Func<Capacitacion, object>>>
+            {
+                c => c.ParTipoCapacitacion,
+            };
+            var capacitaciones = await _capacitacionService.GetAllAsync(incluir);
             var resultado = new Resultado<IEnumerable<Capacitacion>>(capacitaciones, true, "Capacitaciones obtenidas correctamente");
             return Ok(resultado);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult> ObtenerCapacitacion(int id)
-        {
-            var capacitacion = await _capacitacionService.GetByIdAsync(id);
+        {            
+            var incluir = new List<Expression<Func<Capacitacion, object>>>
+            {
+                c => c.ParTipoCapacitacion,
+            };
+            var capacitacion = await _capacitacionService.GetByIdAsync(id, incluir);
             var resultado = new Resultado<Capacitacion>(capacitacion, true, "Capacitación obtenida correctamente");
             return Ok(resultado);
         }
@@ -39,7 +49,11 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet("ObtenerPorPostulante/{id}")]
         public async Task<ActionResult> ObtenerCapacitacionesPorPostulante(int id)
         {
-            var capacitaciones = await _capacitacionService.GetAsync(c => c.PostulanteId == id);
+            var incluir = new List<Expression<Func<Capacitacion, object>>>
+            {
+                c => c.ParTipoCapacitacion,
+            };
+            var capacitaciones = await _capacitacionService.GetAsync(c => c.PostulanteId == id, includes: incluir);
             var resultado = new Resultado<IEnumerable<Capacitacion>>(capacitaciones, true, "Capacitaciones del postulante obtenidas correctamente");
             return Ok(resultado);
         }

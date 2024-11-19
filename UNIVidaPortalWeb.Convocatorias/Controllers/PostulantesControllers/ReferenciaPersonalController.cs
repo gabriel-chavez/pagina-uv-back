@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 using UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs;
 using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
@@ -23,7 +24,11 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet]
         public async Task<ActionResult> ObtenerReferenciasPersonales()
         {
-            var referencias = await _referenciaPersonalService.GetAllAsync();
+            var incluir = new List<Expression<Func<ReferenciaPersonal, object>>>
+            {
+                c => c.ParParentesco,
+            };
+            var referencias = await _referenciaPersonalService.GetAllAsync(incluir);
             var resultado = new Resultado<IEnumerable<ReferenciaPersonal>>(referencias, true, "Referencias personales obtenidas correctamente");
             return Ok(resultado);
         }
@@ -31,7 +36,11 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet("{id}")]
         public async Task<ActionResult> ObtenerReferenciaPersonal(int id)
         {
-            var referencia = await _referenciaPersonalService.GetByIdAsync(id);
+            var incluir = new List<Expression<Func<ReferenciaPersonal, object>>>
+            {
+                c => c.ParParentesco,
+            };
+            var referencia = await _referenciaPersonalService.GetByIdAsync(id, incluir);
             var resultado = new Resultado<ReferenciaPersonal>(referencia, true, "Referencia personal obtenida correctamente");
             return Ok(resultado);
         }

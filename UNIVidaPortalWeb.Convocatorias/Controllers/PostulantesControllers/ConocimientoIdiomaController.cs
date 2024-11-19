@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 using UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs;
 using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
@@ -23,7 +24,14 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet]
         public async Task<ActionResult> ObtenerConocimientosIdiomas()
         {
-            var conocimientos = await _conocimientoIdiomaService.GetAllAsync();
+            var incluir = new List<Expression<Func<ConocimientoIdioma, object>>>
+            {
+                c => c.ParIdioma,
+                c => c.ParNivelConocimientoLectura,
+                c => c.ParNivelConocimientoEscritura,
+                c => c.ParNivelConocimientoConversacion,
+            };
+            var conocimientos = await _conocimientoIdiomaService.GetAllAsync(incluir);
             var resultado = new Resultado<IEnumerable<ConocimientoIdioma>>(conocimientos, true, "Conocimientos de idiomas obtenidos correctamente");
             return Ok(resultado);
         }
@@ -31,7 +39,14 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet("{id}")]
         public async Task<ActionResult> ObtenerConocimientoIdioma(int id)
         {
-            var conocimiento = await _conocimientoIdiomaService.GetByIdAsync(id);
+            var incluir = new List<Expression<Func<ConocimientoIdioma, object>>>
+            {
+                c => c.ParIdioma,
+                c => c.ParNivelConocimientoLectura,
+                c => c.ParNivelConocimientoEscritura,
+                c => c.ParNivelConocimientoConversacion,
+            };
+            var conocimiento = await _conocimientoIdiomaService.GetByIdAsync(id, incluir);
             var resultado = new Resultado<ConocimientoIdioma>(conocimiento, true, "Conocimiento de idioma obtenido correctamente");
             return Ok(resultado);
         }
@@ -39,7 +54,14 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet("ObtenerPorPostulante/{id}")]
         public async Task<ActionResult> ObtenerConocimientosPorPostulante(int id)
         {
-            var conocimientos = await _conocimientoIdiomaService.GetAsync(c => c.PostulanteId == id);
+            var incluir = new List<Expression<Func<ConocimientoIdioma, object>>>
+            {
+                c => c.ParIdioma,
+                c => c.ParNivelConocimientoLectura,
+                c => c.ParNivelConocimientoEscritura,
+                c => c.ParNivelConocimientoConversacion,
+            };
+            var conocimientos = await _conocimientoIdiomaService.GetAsync(c => c.PostulanteId == id, includes: incluir);
             var resultado = new Resultado<IEnumerable<ConocimientoIdioma>>(conocimientos, true, "Conocimientos de idiomas del postulante obtenidos correctamente");
             return Ok(resultado);
         }

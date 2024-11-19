@@ -18,10 +18,10 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
 
         }
 
-        public async Task<IReadOnlyList<T>> GetAllAsync()
-        {
-            return await _context.Set<T>().ToListAsync();
-        }
+        //public async Task<IReadOnlyList<T>> GetAllAsync()
+        //{
+        //    return await _context.Set<T>().ToListAsync();
+        //}
 
         public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate)
         {
@@ -67,17 +67,17 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
             return await query.ToListAsync();
         }
 
-        public virtual async Task<T> GetByIdAsync(int id)
-        {
-            var entity = await _context.Set<T>().FindAsync(id);
+        //public virtual async Task<T> GetByIdAsync(int id)
+        //{
+        //    var entity = await _context.Set<T>().FindAsync(id);
 
-            if (entity == null)
-            {
-                throw new NotFoundException($"No se encontró {typeof(T).Name} con ID {id}");
-            }
+        //    if (entity == null)
+        //    {
+        //        throw new NotFoundException($"No se encontró {typeof(T).Name} con ID {id}");
+        //    }
 
-            return entity;
-        }
+        //    return entity;
+        //}
 
         public async Task<T> AddAsync(T entity)
         {
@@ -174,7 +174,41 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
         {
             _context.Set<T>().Remove(entity);
         }
+        /*Metodos para obtener con todas sus entidades referenciadas*/
+        public async Task<IReadOnlyList<T>> GetAllAsync(List<Expression<Func<T, object>>> includes = null)
+        {
+            IQueryable<T> query = _context.Set<T>();
 
-       
+            if (includes != null)
+            {
+                query = includes.Aggregate(query, (current, include) => current.Include(include));
+            }
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<T> GetByIdAsync(int id, List<Expression<Func<T, object>>> includes = null)
+        {
+            IQueryable<T> query = _context.Set<T>();
+
+            if (includes != null)
+            {
+                query = includes.Aggregate(query, (current, include) => current.Include(include));
+            }
+
+            var entity = await query.FirstOrDefaultAsync(e => e.Id == id);
+
+            if (entity == null)
+            {
+                throw new NotFoundException($"No se encontró {typeof(T).Name} con ID {id}");
+            }
+
+            return entity;
+        }
+
+
+
+
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 using UNIVidaPortalWeb.Convocatorias.DTOs.ConvocatoriasDTOs;
 using UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel;
 using UNIVidaPortalWeb.Convocatorias.Services.ConvocatoriasServices;
@@ -23,7 +24,11 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.ConvocatoriasControllers
         [HttpGet]
         public async Task<ActionResult> ObtenerConvocatorias()
         {
-            var convocatorias = await _convocatoriaService.GetAllAsync();
+            var incluir = new List<Expression<Func<Convocatoria, object>>>
+            {
+                    c => c.ParEstadoConvocatoria
+            };
+            var convocatorias = await _convocatoriaService.GetAllAsync(incluir);
             var resultado = new Resultado<IEnumerable<Convocatoria>>(convocatorias, true, "Convocatorias obtenidas correctamente");
             return Ok(resultado);
         }
@@ -31,8 +36,13 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.ConvocatoriasControllers
         public async Task<ActionResult> ObtenerConvocatoriasVigentes()
         {
             var hoy = DateOnly.FromDateTime(DateTime.Today);
-            var convocatorias = await _convocatoriaService.GetAsync(s => s.FechaInicio <= hoy && s.FechaFin >= hoy);
-                        
+            var convocatorias = await _convocatoriaService.GetAsync(
+                s => s.FechaInicio <= hoy && s.FechaFin >= hoy,
+                includes: new List<Expression<Func<Convocatoria, object>>>
+                {
+                    c => c.ParEstadoConvocatoria
+                });
+
             var resultado = new Resultado<IEnumerable<Convocatoria>>(convocatorias, true, "Convocatorias obtenidas correctamente");
             return Ok(resultado);
         }
@@ -40,7 +50,12 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.ConvocatoriasControllers
         [HttpGet("{id}")]
         public async Task<ActionResult> ObtenerConvocatoria(int id)
         {
-            var convocatoria = await _convocatoriaService.GetByIdAsync(id);
+            var incluir = new List<Expression<Func<Convocatoria, object>>>
+            {
+                    c => c.ParEstadoConvocatoria
+            };
+
+            var convocatoria = await _convocatoriaService.GetByIdAsync(id, incluir);
             var resultado = new Resultado<Convocatoria>(convocatoria, true, "Convocatoria obtenida correctamente");
             return Ok(resultado);
         }

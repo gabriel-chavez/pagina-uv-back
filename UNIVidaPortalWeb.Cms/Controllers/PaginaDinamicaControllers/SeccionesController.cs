@@ -71,16 +71,9 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         [HttpPut("{id}")]
         public async Task<ActionResult> ActualizarSeccion(int id, SeccionRequestDTO seccionDto)
         {
-            try
-            {
-                var seccion = _mapper.Map<Seccion>(seccionDto);
-                seccion.Id = id;
-                await _seccionService.UpdateAsync(seccion);
-            }
-            catch (NotFoundException ex)
-            {
-                throw new NotFoundException("No se encontro la sección");
-            }
+            var seccion = _mapper.Map<Seccion>(seccionDto);
+            seccion.Id = id;
+            await _seccionService.UpdateAsync(seccion);
 
             return Ok(new Resultado(true, "Sección actualizada exitosamente"));
 
@@ -89,14 +82,9 @@ namespace UNIVidaPortalWeb.Cms.Controllers.PaginaDinamicaControllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> EliminarSeccion(int id)
         {
-            try
-            {
-                await _seccionService.DeleteByIdAsync(id);
-            }
-            catch (NotFoundException ex)
-            {
-                throw new NotFoundException();
-            }
+
+            await _seccionService.DeleteByIdAsync(id);
+
 
             return Ok(new Resultado(true, "Sección eliminada correctamente"));
         }

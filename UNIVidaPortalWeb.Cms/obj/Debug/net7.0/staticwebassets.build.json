@@ -1,11 +1,58 @@
 {
   "Version": 1,
-  "Hash": "n4L5kxMCRZFM7/NrMo/qnYx+4rJNSyKxL8WgvHR8XZE=",
+  "Hash": "jmZlZHovH0ZphAx/rYT67gEZX28sPaMAgv+UICr4VIk=",
   "Source": "UNIVidaPortalWeb.Cms",
   "BasePath": "_content/UNIVidaPortalWeb.Cms",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "UNIVidaPortalWeb.Cms\\wwwroot",
+      "Source": "UNIVidaPortalWeb.Cms",
+      "ContentRoot": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\",
+      "BasePath": "_content/UNIVidaPortalWeb.Cms",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\uploads\\Captura_4d5776e6-4c77-4914-9a68-c52781ef242b.PNG",
+      "SourceId": "UNIVidaPortalWeb.Cms",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\",
+      "BasePath": "_content/UNIVidaPortalWeb.Cms",
+      "RelativePath": "uploads/Captura_4d5776e6-4c77-4914-9a68-c52781ef242b.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Captura_4d5776e6-4c77-4914-9a68-c52781ef242b.PNG"
+    },
+    {
+      "Identity": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\uploads\\Captura_50128a2e.png",
+      "SourceId": "UNIVidaPortalWeb.Cms",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\",
+      "BasePath": "_content/UNIVidaPortalWeb.Cms",
+      "RelativePath": "uploads/Captura_50128a2e.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Captura_50128a2e.png"
+    }
+  ]
 }

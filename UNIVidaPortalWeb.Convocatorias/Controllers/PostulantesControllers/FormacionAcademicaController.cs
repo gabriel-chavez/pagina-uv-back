@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 using UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs;
 using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
@@ -23,7 +24,11 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet]
         public async Task<ActionResult> ObtenerFormacionesAcademicas()
         {
-            var formaciones = await _formacionAcademicaService.GetAllAsync();
+            var incluir = new List<Expression<Func<FormacionAcademica, object>>>
+            {
+                c => c.ParNivelFormacion,
+            };
+            var formaciones = await _formacionAcademicaService.GetAllAsync(incluir);
             var resultado = new Resultado<IEnumerable<FormacionAcademica>>(formaciones, true, "Formaciones académicas obtenidas correctamente");
             return Ok(resultado);
         }
@@ -31,7 +36,11 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet("{id}")]
         public async Task<ActionResult> ObtenerFormacionAcademica(int id)
         {
-            var formacion = await _formacionAcademicaService.GetByIdAsync(id);
+            var incluir = new List<Expression<Func<FormacionAcademica, object>>>
+            {
+                c => c.ParNivelFormacion,
+            };
+            var formacion = await _formacionAcademicaService.GetByIdAsync(id, incluir);
             var resultado = new Resultado<FormacionAcademica>(formacion, true, "Formación académica obtenida correctamente");
             return Ok(resultado);
         }
@@ -39,6 +48,10 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet("ObtenerPorPostulante/{id}")]
         public async Task<ActionResult> ObtenerFormacionesPorPostulante(int id)
         {
+            var incluir = new List<Expression<Func<FormacionAcademica, object>>>
+            {
+                c => c.ParNivelFormacion,                
+            };
             var formaciones = await _formacionAcademicaService.GetAsync(f => f.PostulanteId == id);
             var resultado = new Resultado<IEnumerable<FormacionAcademica>>(formaciones, true, "Formaciones académicas del postulante obtenidas correctamente");
             return Ok(resultado);
