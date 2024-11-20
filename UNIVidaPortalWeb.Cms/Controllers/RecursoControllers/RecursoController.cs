@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using UNIVidaPortalWeb.Cms.DTOs.RecursosDTO;
 using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 using UNIVidaPortalWeb.Cms.Services.DatoServices;
@@ -25,7 +26,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
             _mapper = mapper;
             _bannerPaginaDinamicaService = bannerPaginaDinamicaService;
             _datoService = datoService;
-            _configuration= configuration;
+            _configuration = configuration;
 
         }
 
@@ -65,52 +66,40 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
                 var shortGuid = Guid.NewGuid().ToString("N").Substring(0, 8); // GUID más corto
                 var uniqueFileName = $"{fileName}_{shortGuid}{extension}";
 
-                // Ruta donde se guardará el archivo
-                var nextServerBasePath = _configuration["NextServerBasePath"]
-          ?? @"C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-admin\public\assets";
+                // Obtener las rutas base de los servidores
+                    var nextServerBasePaths = new[]
+                    {
+                        _configuration["NextServerAdmin"] ?? @"C:\path\to\server1",
+                        _configuration["NextServerPagina"] ?? @"C:\path\to\server2"
+                    };
 
-                var uploadsFolder = Path.Combine(nextServerBasePath,ruta);
-                Console.WriteLine($"Ruta completa: {uploadsFolder}");
-
-
-                if (!Directory.Exists(uploadsFolder))
+                // Verificar y crear los directorios en ambos servidores
+                foreach (var basePath in nextServerBasePaths)
                 {
-                    Directory.CreateDirectory(uploadsFolder);
-                }
-                System.Diagnostics.Debug.WriteLine($"Ruta completa: {uploadsFolder}");
+                    var uploadsFolder = Path.Combine(basePath, ruta.TrimStart('/'));
+                    if (!Directory.Exists(uploadsFolder))
+                    {
+                        Directory.CreateDirectory(uploadsFolder);
+                    }
 
-                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-                // Guardar el archivo en el servidor
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await archivo.CopyToAsync(stream);
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    await GuardarArchivoAsync(archivo, filePath);  // Guardar el archivo en el servidor
                 }
 
                 // Determinar el tipo de recurso según la extensión
-                int catTipoRecursoId;
-                string[] imagenExtensiones = { ".jpg", ".jpeg", ".png", ".gif" };
-                string[] videoExtensiones = { ".mp4", ".avi", ".mov" };
-
-                if (imagenExtensiones.Contains(extension))
+                int catTipoRecursoId = extension switch
                 {
-                    catTipoRecursoId = 1; // Imagen
-                }
-                else if (videoExtensiones.Contains(extension))
-                {
-                    catTipoRecursoId = 2; // Video
-                }
-                else
-                {
-                    catTipoRecursoId = 3; // Otro
-                }
+                    var ext when new[] { ".jpg", ".jpeg", ".png", ".gif" }.Contains(ext) => 1,  // Imagen
+                    var ext when new[] { ".mp4", ".avi", ".mov" }.Contains(ext) => 2,          // Video
+                    _ => 3,  // Otro
+                };
 
                 // Crear el DTO con los valores requeridos
                 var recursoDto = new RecursoRequestDTO
                 {
                     Nombre = fileName,
                     CatTipoRecursoId = catTipoRecursoId,
-                    RecursoEscritorio = $"/{ruta}/{uniqueFileName}"
+                    RecursoEscritorio = $"/assets/{ruta}/{uniqueFileName}",
                 };
 
                 // Mapear y guardar en la base de datos
@@ -126,6 +115,16 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
                 return StatusCode(500, new { success = false, message = $"Ocurrió un error al guardar el archivo: {ex.Message}" });
             }
         }
+
+        // Método para guardar el archivo en una ubicación
+        private async Task GuardarArchivoAsync(IFormFile archivo, string filePath)
+        {
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await archivo.CopyToAsync(stream);
+            }
+        }
+
 
 
 

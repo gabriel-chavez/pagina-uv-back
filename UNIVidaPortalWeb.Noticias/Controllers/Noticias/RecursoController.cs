@@ -14,11 +14,14 @@ namespace UNIVidaPortalWeb.Noticias.Controllers.Noticias
     {
         private readonly IRecursoService _recursoService;
         private readonly IMapper _mapper;
+        IConfiguration _configuration;
 
-        public RecursoController(IRecursoService recursoService, IMapper mapper)
+
+        public RecursoController(IRecursoService recursoService, IMapper mapper, IConfiguration configuration)
         {
             _recursoService = recursoService;
             _mapper = mapper;
+            _configuration = configuration;
         }
 
         [HttpGet]
@@ -43,13 +46,76 @@ namespace UNIVidaPortalWeb.Noticias.Controllers.Noticias
         }
 
         [HttpPost]
-        public async Task<ActionResult> CrearRecurso(RecursoRequestDTO recursoDto)
+        public async Task<ActionResult> CrearRecurso([FromForm] string ruta, IFormFile archivo)
         {
-            var recurso = _mapper.Map<RecursoModel>(recursoDto);
-            var recursoCreado = await _recursoService.AddAsync(recurso);
+            if (archivo == null || archivo.Length == 0)
+            {
+                return BadRequest(new { success = false, message = "El archivo no es válido." });
+            }
 
-            var resultado = new Resultado<RecursoModel>(recursoCreado, true, "Recurso creado correctamente");
-            return CreatedAtAction(nameof(ObtenerRecurso), new { id = recursoCreado.Id }, resultado);
+            try
+            {
+                // Generar un nombre único para el archivo con un GUID más corto
+                var fileName = Path.GetFileNameWithoutExtension(archivo.FileName);
+                var extension = Path.GetExtension(archivo.FileName).ToLower();
+                var shortGuid = Guid.NewGuid().ToString("N").Substring(0, 8); // GUID más corto
+                var uniqueFileName = $"{fileName}_{shortGuid}{extension}";
+
+                // Obtener las rutas base de los servidores
+                var nextServerBasePaths = new[]
+                {
+                        _configuration["NextServerAdmin"] ?? @"C:\path\to\server1",
+                        _configuration["NextServerPagina"] ?? @"C:\path\to\server2"
+                    };
+
+                // Verificar y crear los directorios en ambos servidores
+                foreach (var basePath in nextServerBasePaths)
+                {
+                    var uploadsFolder = Path.Combine(basePath, ruta.TrimStart('/'));
+                    if (!Directory.Exists(uploadsFolder))
+                    {
+                        Directory.CreateDirectory(uploadsFolder);
+                    }
+
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    await GuardarArchivoAsync(archivo, filePath);  // Guardar el archivo en el servidor
+                }
+
+                // Determinar el tipo de recurso según la extensión
+                int catTipoRecursoId = extension switch
+                {
+                    var ext when new[] { ".jpg", ".jpeg", ".png", ".gif" }.Contains(ext) => 1,  // Imagen
+                    var ext when new[] { ".mp4", ".avi", ".mov" }.Contains(ext) => 2,          // Video
+                    _ => 3,  // Otro
+                };
+
+                // Crear el DTO con los valores requeridos
+                var recursoDto = new RecursoRequestDTO
+                {
+                    Nombre = fileName,
+                    ParTipoRecursoId = catTipoRecursoId,
+                    RecursoEscritorio = $"/assets/{ruta}/{uniqueFileName}",
+                };
+
+                // Mapear y guardar en la base de datos
+                var recurso = _mapper.Map<RecursoModel>(recursoDto);
+                var recursoCreado = await _recursoService.AddAsync(recurso);
+
+                var resultado = new Resultado<RecursoModel>(recursoCreado, true, "Recurso creado correctamente");
+
+                return CreatedAtAction(nameof(ObtenerRecurso), new { id = recursoCreado.Id }, resultado);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { success = false, message = $"Ocurrió un error al guardar el archivo: {ex.Message}" });
+            }
+        }
+        private async Task GuardarArchivoAsync(IFormFile archivo, string filePath)
+        {
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await archivo.CopyToAsync(stream);
+            }
         }
 
         [HttpPut("{id}")]

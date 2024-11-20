@@ -2,11 +2,14 @@
 {
     public class SeguroRequestDTO
     {
-        public int SeguroId { get; set; }
-
-        public string Titulo { get; set; } = string.Empty;
-        public string Respuesta { get; set; } = string.Empty;
+        public string Nombre { get; set; } = string.Empty;
+        public string NombreCorto { get; set; } = string.Empty;
+        public string DetalleAdicional { get; set; } = string.Empty;
+        public int? RecursoId { get; set; }
+        public string? Icono { get; set; }
         public int Orden { get; set; }
+        public bool Habilitado { get; set; } = true;
+        public int? CatTipoSeguroId { get; set; }
 
     }
 }
