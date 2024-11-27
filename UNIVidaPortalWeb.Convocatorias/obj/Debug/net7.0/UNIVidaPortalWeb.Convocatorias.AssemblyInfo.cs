@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UNIVidaPortalWeb.Convocatorias")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9dbcf16b94596e53c8e5d0912f7fe3d9b3421170")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27fa02c19046425bfaeda6c48db3c1df2d3dc4d2")]
 [assembly: System.Reflection.AssemblyProductAttribute("UNIVidaPortalWeb.Convocatorias")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UNIVidaPortalWeb.Convocatorias")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

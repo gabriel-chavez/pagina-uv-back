@@ -41,6 +41,8 @@ namespace UNIVidaPortalWeb.Convocatorias.Utilities
             CreateMap<ConvocatoriaRequestDTO, Convocatoria>();
             CreateMap<NotificacionRequestDTO, Notificacion>();
             CreateMap<PostulacionRequestDTO, Postulacion>();
+            CreateMap<ExperienciaPuntosRequestDTO, ExperienciaPuntos>();
+            CreateMap<NivelFormacionPuntosRequestDTO, NivelFormacionPuntos>();
 
         }
     }

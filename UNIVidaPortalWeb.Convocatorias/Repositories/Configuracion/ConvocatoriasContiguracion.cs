@@ -9,7 +9,6 @@ namespace UNIVidaPortalWeb.Convocatorias.Repositories.Configuracion
         {
             modelBuilder.Entity<Convocatoria>().ToTable("Convocatoria", "Convocatorias");
 
-
             modelBuilder.Entity<Convocatoria>()
                .HasOne(c => c.ParEstadoConvocatoria)
                .WithMany()
@@ -21,6 +20,18 @@ namespace UNIVidaPortalWeb.Convocatorias.Repositories.Configuracion
                .WithOne(p=>p.Convocatoria)
                .HasForeignKey(p=>p.ConvocatoriaId)
                .HasPrincipalKey(c=>c.Id);
+
+            modelBuilder.Entity<Convocatoria>()
+               .HasMany(c => c.NivelFormacionPuntos)
+               .WithOne(n => n.Convocatoria)
+               .HasForeignKey(n => n.ConvocatoriaId)
+               .HasPrincipalKey(c => c.Id);
+
+            modelBuilder.Entity<Convocatoria>()
+               .HasMany(c => c.ExperienciaPuntos)
+               .WithOne(e => e.Convocatoria)
+               .HasForeignKey(e => e.ConvocatoriaId)
+               .HasPrincipalKey(c => c.Id);
 
 
             modelBuilder.Entity<Postulacion>().ToTable("Postulacion", "Convocatorias");
@@ -43,8 +54,20 @@ namespace UNIVidaPortalWeb.Convocatorias.Repositories.Configuracion
                 .HasPrincipalKey(p => p.Id);
 
 
-
             modelBuilder.Entity<Notificacion>().ToTable("Notificacion", "Convocatorias");
+
+
+            modelBuilder.Entity<NivelFormacionPuntos>().ToTable("NivelFormacionPuntos", "Convocatorias");
+            modelBuilder.Entity<NivelFormacionPuntos>()
+                .HasOne(n => n.ParNivelFormacion)
+                .WithMany()
+                .HasForeignKey(p=> p.ParNivelFormacionId)
+                .HasPrincipalKey(n => n.Id);
+
+            modelBuilder.Entity<ExperienciaPuntos>().ToTable("ExperienciaPuntos", "Convocatorias");
+
+
+
 
 
         }

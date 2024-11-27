@@ -76,6 +76,86 @@ namespace UNIVidaPortalWeb.Convocatorias.Migrations
                     b.ToTable("Convocatoria", "Convocatorias");
                 });
 
+            modelBuilder.Entity("UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel.ExperienciaPuntos", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ConvocatoriaId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Desde")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("Especifica")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("Hasta")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Puntos")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConvocatoriaId");
+
+                    b.ToTable("ExperienciaPuntos", "Convocatorias");
+                });
+
+            modelBuilder.Entity("UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel.NivelFormacionPuntos", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ConvocatoriaId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<int>("ParNivelFormacionId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Puntos")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConvocatoriaId");
+
+                    b.HasIndex("ParNivelFormacionId");
+
+                    b.ToTable("NivelFormacionPuntos", "Convocatorias");
+                });
+
             modelBuilder.Entity("UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel.Notificacion", b =>
                 {
                     b.Property<int>("Id")
@@ -944,6 +1024,36 @@ namespace UNIVidaPortalWeb.Convocatorias.Migrations
                     b.Navigation("ParEstadoConvocatoria");
                 });
 
+            modelBuilder.Entity("UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel.ExperienciaPuntos", b =>
+                {
+                    b.HasOne("UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel.Convocatoria", "Convocatoria")
+                        .WithMany("ExperienciaPuntos")
+                        .HasForeignKey("ConvocatoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Convocatoria");
+                });
+
+            modelBuilder.Entity("UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel.NivelFormacionPuntos", b =>
+                {
+                    b.HasOne("UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel.Convocatoria", "Convocatoria")
+                        .WithMany("NivelFormacionPuntos")
+                        .HasForeignKey("ConvocatoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UNIVidaPortalWeb.Convocatorias.Models.ParametricasModel.ParNivelFormacion", "ParNivelFormacion")
+                        .WithMany()
+                        .HasForeignKey("ParNivelFormacionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Convocatoria");
+
+                    b.Navigation("ParNivelFormacion");
+                });
+
             modelBuilder.Entity("UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel.Notificacion", b =>
                 {
                     b.HasOne("UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel.Postulacion", "Postulacion")
@@ -1135,6 +1245,10 @@ namespace UNIVidaPortalWeb.Convocatorias.Migrations
 
             modelBuilder.Entity("UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel.Convocatoria", b =>
                 {
+                    b.Navigation("ExperienciaPuntos");
+
+                    b.Navigation("NivelFormacionPuntos");
+
                     b.Navigation("Postulaciones");
                 });
 

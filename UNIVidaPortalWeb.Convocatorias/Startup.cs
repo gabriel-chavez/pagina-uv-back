@@ -99,6 +99,8 @@ namespace UNIVidaPortalWeb.Convocatorias
             services.AddScoped<IConvocatoriaService, ConvocatoriaService>();
             services.AddScoped<INotificacionService, NotificacionService>();
             services.AddScoped<IPostulacionService, PostulacionService>();
+            services.AddScoped<IExperienciaPuntosService, ExperienciaPuntosService>();
+            services.AddScoped<INivelFormacionPuntosService, NivelFormacionPuntosService>();
             //Parametrica
             services.AddScoped<IParEstadoConvocatoriaService, ParEstadoConvocatoriaService>();
             services.AddScoped<IParEstadoPostulacionService, ParEstadoPostulacionService>();
@@ -108,6 +110,7 @@ namespace UNIVidaPortalWeb.Convocatorias
             services.AddScoped<IParParentescoService, ParParentescoService>();
             services.AddScoped<IParProgramaService, ParProgramaService>();
             services.AddScoped<IParTipoCapacitacionService, ParTipoCapacitacionService>();
+            
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
 

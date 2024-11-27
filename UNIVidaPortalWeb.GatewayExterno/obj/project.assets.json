@@ -10422,24 +10422,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lchavez\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\USUARIO\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.GatewayExterno\\UNIVidaPortalWeb.GatewayExterno.csproj",
+      "projectUniqueName": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.GatewayExterno\\UNIVidaPortalWeb.GatewayExterno.csproj",
       "projectName": "UNIVidaPortalWeb.GatewayExterno",
-      "projectPath": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.GatewayExterno\\UNIVidaPortalWeb.GatewayExterno.csproj",
-      "packagesPath": "C:\\Users\\lchavez\\.nuget\\packages\\",
-      "outputPath": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.GatewayExterno\\obj\\",
+      "projectPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.GatewayExterno\\UNIVidaPortalWeb.GatewayExterno.csproj",
+      "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.GatewayExterno\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\lchavez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10454,14 +10449,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj": {
-              "projectPath": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj"
+            "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj"
             },
-            "D:\\pw\\pagina-uv-back\\UnividaPortalWeb.Common.Token\\UNIVidaPortalWeb.Common.Token.csproj": {
-              "projectPath": "D:\\pw\\pagina-uv-back\\UnividaPortalWeb.Common.Token\\UNIVidaPortalWeb.Common.Token.csproj"
+            "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UnividaPortalWeb.Common.Token\\UNIVidaPortalWeb.Common.Token.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UnividaPortalWeb.Common.Token\\UNIVidaPortalWeb.Common.Token.csproj"
             },
-            "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj": {
-              "projectPath": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj"
+            "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj"
             }
           }
         }
@@ -10474,9 +10469,8 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+        "auditMode": "direct"
+      }
     },
     "frameworks": {
       "net7.0": {
@@ -10518,80 +10512,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"Azure.Identity\" 1.7.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-5mfx-4wcx-rv27",
-      "libraryId": "Azure.Identity",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"Azure.Identity\" 1.7.0 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-m5vv-6r4h-3vj9",
-      "libraryId": "Azure.Identity",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"Azure.Identity\" 1.7.0 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-wvxc-855f-jvrv",
-      "libraryId": "Azure.Identity",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"Microsoft.Data.SqlClient\" 5.1.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-98g6-xh36-x2p7",
-      "libraryId": "Microsoft.Data.SqlClient",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"System.Formats.Asn1\" 5.0.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-447r-wph3-92pm",
-      "libraryId": "System.Formats.Asn1",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"System.Net.Http.WinHttpHandler\" 4.5.2 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
-      "libraryId": "System.Net.Http.WinHttpHandler",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"System.Text.RegularExpressions\" 4.3.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-cmhx-cq75-c4mj",
-      "libraryId": "System.Text.RegularExpressions",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  }
 }

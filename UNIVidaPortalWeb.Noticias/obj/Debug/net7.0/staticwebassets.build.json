@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "WM0bRTgIGV1fw9H3+ekz5ybcQZCiS26urpmEM5VrwcI=",
+  "Hash": "8y92V7UtVjUCfOe1mOypwjocgqxXu/u3vXEdVFCoQpA=",
   "Source": "UNIVidaPortalWeb.Noticias",
   "BasePath": "_content/UNIVidaPortalWeb.Noticias",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

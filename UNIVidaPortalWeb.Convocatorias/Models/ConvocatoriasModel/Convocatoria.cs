@@ -17,6 +17,8 @@ namespace UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel
         // Relaciones
         public ParEstadoConvocatoria ParEstadoConvocatoria { get; set; }
         public ICollection<Postulacion> Postulaciones { get; set; }
+        public ICollection<NivelFormacionPuntos> NivelFormacionPuntos { get; set; }
+        public ICollection<ExperienciaPuntos> ExperienciaPuntos { get; set; }
     }
 
 }
