@@ -1,6 +1,5 @@
 ﻿
 using UNIVidaPortalWeb.Cms.Models.MenuModel;
-using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 
 namespace UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel
 {

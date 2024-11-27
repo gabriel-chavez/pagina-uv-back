@@ -25,6 +25,9 @@ namespace UNIVidaPortalWeb.Cms.Utilities
             CreateMap<SeguroDetalleRequestDTO, SeguroDetalle>();
             CreateMap<PlanRequestDTO, Plan>();
             CreateMap<MenuPrincipalRequestDTO, MenuPrincipal>();
+
+            CreateMap<BannerPaginaPrincipalDetalleRequestDTO, BannerPaginaPrincipalDetalle>();
+            CreateMap<BannerPaginaPrincipalMaestroRequestDTO, BannerPaginaPrincipalMaestro>();
         }
     }
 }

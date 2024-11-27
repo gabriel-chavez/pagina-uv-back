@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj": {}
+    "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj": {
+    "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj",
+        "projectUniqueName": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj",
         "projectName": "UNIVidaPortalWeb.Cms",
-        "projectPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\obj\\",
+        "projectPath": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\UNIVidaPortalWeb.Cms.csproj",
+        "packagesPath": "C:\\Users\\lchavez\\.nuget\\packages\\",
+        "outputPath": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lchavez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,11 +33,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj": {
-                "projectPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj"
+              "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj": {
+                "projectPath": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj"
               },
-              "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj": {
-                "projectPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj"
+              "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj": {
+                "projectPath": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj"
               }
             }
           }
@@ -46,8 +50,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net7.0": {
@@ -127,21 +132,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj": {
+    "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj",
+        "projectUniqueName": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj",
         "projectName": "UNIVidaPortalWeb.Common.Metric",
-        "projectPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\obj\\",
+        "projectPath": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\UNIVidaPortalWeb.Common.Metric.csproj",
+        "packagesPath": "C:\\Users\\lchavez\\.nuget\\packages\\",
+        "outputPath": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Metric\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lchavez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -166,8 +175,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net7.0": {
@@ -210,21 +220,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj": {
+    "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj",
+        "projectUniqueName": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj",
         "projectName": "UNIVidaPortalWeb.Common.Tracing",
-        "projectPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\obj\\",
+        "projectPath": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\UNIVidaPortalWeb.Common.Tracing.csproj",
+        "packagesPath": "C:\\Users\\lchavez\\.nuget\\packages\\",
+        "outputPath": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Common.Tracing\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lchavez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -249,8 +263,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net7.0": {
@@ -285,7 +300,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

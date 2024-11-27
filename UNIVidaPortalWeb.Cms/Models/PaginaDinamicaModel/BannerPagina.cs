@@ -1,7 +1,7 @@
-﻿using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
+﻿using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 using UNIVidaPortalWeb.Cms.Models.SeguroModel;
 
-namespace UNIVidaPortalWeb.Cms.Models.RecursoModel
+namespace UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel
 {
     public class BannerPagina : BaseDomainModel
     {

@@ -1,4 +1,5 @@
 ﻿using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
+using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 
 namespace UNIVidaPortalWeb.Cms.Models.RecursoModel
 {

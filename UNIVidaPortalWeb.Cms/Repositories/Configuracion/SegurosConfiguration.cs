@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
-using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 using UNIVidaPortalWeb.Cms.Models.SeguroModel;
 
 namespace UNIVidaPortalWeb.Cms.Repositories.Configuracion

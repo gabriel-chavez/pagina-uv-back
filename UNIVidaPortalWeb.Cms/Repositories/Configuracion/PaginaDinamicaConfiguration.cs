@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
-using UNIVidaPortalWeb.Cms.Models.MenuModel;
 using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 
@@ -13,12 +11,14 @@ namespace UNIVidaPortalWeb.Cms.Repositories.Configuracion
             //base.OnModelCreating(modelBuilder);
 
 
-            modelBuilder.Entity<PaginaDinamica>().ToTable("PaginasDinamicas", "PaginaDinamica");
-            modelBuilder.Entity<Recurso>().ToTable("Recursos", "Recurso");
+            modelBuilder.Entity<PaginaDinamica>().ToTable("PaginasDinamicas", "PaginaDinamica");            
             modelBuilder.Entity<Seccion>().ToTable("Secciones", "PaginaDinamica");
             modelBuilder.Entity<Dato>().ToTable("Datos", "PaginaDinamica");
-            modelBuilder.Entity<BannerPagina>().ToTable("BannerPagina", "Recurso");
-            
+            modelBuilder.Entity<BannerPagina>().ToTable("BannerPagina", "PaginaDinamica");
+            modelBuilder.Entity<BannerPaginaPrincipalDetalle>().ToTable("BannerPaginaPrincipalDetalle", "PaginaDinamica");
+            modelBuilder.Entity<BannerPaginaPrincipalMaestro>().ToTable("BannerPaginaPrincipalMaestro", "PaginaDinamica");
+
+            modelBuilder.Entity<Recurso>().ToTable("Recursos", "Recurso");
 
 
             // Configuración de las relaciones entre las tablas
@@ -54,7 +54,32 @@ namespace UNIVidaPortalWeb.Cms.Repositories.Configuracion
                 .WithMany(s=>s.BannerPagina)
                 .HasForeignKey(b => b.RecursoId);
 
+            modelBuilder.Entity<BannerPaginaPrincipalMaestro>()
+                .HasOne(b => b.CatEstiloBanner)
+                .WithMany()
+                .HasForeignKey(b => b.CatEstiloBannerId);
+
+            modelBuilder.Entity<BannerPaginaPrincipalMaestro>()
+               .HasOne(b => b.CatTipoBannerPaginaPrincipal)
+               .WithMany()
+               .HasForeignKey(b => b.CatTipoBannerPaginaPrincipalId);
+
+            modelBuilder.Entity<BannerPaginaPrincipalMaestro>()
+               .HasMany(bpp => bpp.BannerPaginaPrincipalDetalle)
+               .WithOne(bpd => bpd.BannerPaginaPrincipalMaestro)
+               .HasForeignKey(bpd => bpd.BannerPaginaPrincipalMaestroId)
+               .HasPrincipalKey(bpp => bpp.Id);
+
+       
+
+            modelBuilder.Entity<BannerPaginaPrincipalDetalle>()
+                .HasOne(b => b.Recurso)
+                .WithMany()
+                .HasForeignKey(b => b.RecursoId);
+
            
+
+
 
 
 

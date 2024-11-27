@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "bcko8bQdHpReM/11zJlrVy6fCF7cl4xUisrAmibryW0=",
+  "Hash": "NfS3aKdz1N1z7Vg1mc23nv7CaRtyQaFYSJVDU61hOdw=",
   "Source": "UNIVidaPortalWeb.GatewayExterno",
   "BasePath": "_content/UNIVidaPortalWeb.GatewayExterno",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

@@ -45,7 +45,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
         {
             try
             {
-                catTipoSeguro.Id = id; // Asegurarse de que el ID está establecido correctamente
+                catTipoSeguro.Id = id;
                 var catTipoSeguroActualizado = await _catTipoSeguroService.UpdateAsync(catTipoSeguro);
                 return Ok(new Resultado<CatTipoSeguro>(catTipoSeguroActualizado, true, "Tipo de seguro actualizado exitosamente"));
             }

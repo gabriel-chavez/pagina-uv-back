@@ -47,7 +47,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
         {
             try
             {
-                catTipoSeccion.Id = id; // Asegurarse de que el ID está establecido correctamente
+                catTipoSeccion.Id = id; 
                 var catTipoSeccionActualizado = await _catTipoSeccionService.UpdateAsync(catTipoSeccion);
                 return Ok(new Resultado<CatTipoSeccion>(catTipoSeccionActualizado, true, "Sección actualizada exitosamente"));
             }

@@ -88,7 +88,7 @@ namespace UNIVidaPortalWeb.Cms
             services.AddScoped<IPaginaDinamicaService, PaginaDinamicaService>();
             services.AddScoped<IRecursoService, RecursoService>();
             services.AddScoped<IDatoService, DatoService>();
-            services.AddScoped<IBannerPaginaDinamicaService, BannerPaginaService>();
+            services.AddScoped<IBannerPaginaDinamicaService, BannerPaginaDinamicaService>();
             services.AddScoped<ICatTipoRecursoService, CatTipoRecursoService>();
             services.AddScoped<ICatTipoSeccionService, CatTipoSeccionService>();
             services.AddScoped<ISeccionService, SeccionService>();
@@ -97,6 +97,11 @@ namespace UNIVidaPortalWeb.Cms
             services.AddScoped<IPlanService, PlanService>();
             services.AddScoped<IMenuPrincipalService, MenuPrincipalService>();
             services.AddScoped<ICatTipoSeguroService, CatTipoSeguroService>();
+            services.AddScoped<ICatEstiloBannerService, CatEstiloBannerService>();
+            services.AddScoped<ICatTipoBannerPaginaPrincipalService, CatTipoBannerPaginaPrincipalService>();
+            services.AddScoped<IBannerPaginaPrincipalDetalleService, BannerPaginaPrincipalDetalleService>();
+            services.AddScoped<IBannerPaginaPrincipalMaestroService, BannerPaginaPrincipalMaestroService>();
+
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
             
 

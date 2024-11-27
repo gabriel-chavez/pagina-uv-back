@@ -5,7 +5,7 @@ namespace UNIVidaPortalWeb.Cms.Services
 {
     public interface IAsyncRepository<T> where T : BaseDomainModel
     {
-        Task<IReadOnlyList<T>> GetAllAsync();
+        Task<IReadOnlyList<T>> GetAllAsync(List<Expression<Func<T, object>>> includes = null);
 
         Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate);
 
@@ -20,7 +20,7 @@ namespace UNIVidaPortalWeb.Cms.Services
                                        bool disableTracking = true);
 
 
-        Task<T> GetByIdAsync(int id);
+        Task<T> GetByIdAsync(int id, List<Expression<Func<T, object>>> includes = null);
 
         Task<T> AddAsync(T entity);
 

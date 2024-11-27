@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Cms.DTOs.RecursosDTO;
-using UNIVidaPortalWeb.Cms.Models.RecursoModel;
+using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
 using UNIVidaPortalWeb.Cms.Utilidades;
 

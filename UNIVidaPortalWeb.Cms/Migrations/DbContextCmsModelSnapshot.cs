@@ -22,6 +22,70 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.CatalogoModel.CatEstiloBanner", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("Habilitado")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CatEstiloBanner");
+                });
+
+            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.CatalogoModel.CatTipoBannerPaginaPrincipal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("Habilitado")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CatTipoBannerPaginaPrincipal");
+                });
+
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.CatalogoModel.CatTipoRecurso", b =>
                 {
                     b.Property<int>("Id")
@@ -186,6 +250,145 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.ToTable("MenuPrincipal", "Menu");
                 });
 
+            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.BannerPagina", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("PaginaDinamicaId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("RecursoId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("SeguroId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("SubTitulo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PaginaDinamicaId");
+
+                    b.HasIndex("RecursoId");
+
+                    b.HasIndex("SeguroId");
+
+                    b.ToTable("BannerPagina", "PaginaDinamica");
+                });
+
+            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.BannerPaginaPrincipalDetalle", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BannerPaginaPrincipalMaestroId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Enlace")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("Habilitado")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<int>("RecursoId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Texto")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BannerPaginaPrincipalMaestroId");
+
+                    b.HasIndex("RecursoId");
+
+                    b.ToTable("BannerPaginaPrincipalDetalle", "PaginaDinamica");
+                });
+
+            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.BannerPaginaPrincipalMaestro", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CatEstiloBannerId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("CatTipoBannerPaginaPrincipalId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("FechaCreacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FechaModificacion")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("Habilitado")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CatEstiloBannerId");
+
+                    b.HasIndex("CatTipoBannerPaginaPrincipalId");
+
+                    b.ToTable("BannerPaginaPrincipalMaestro", "PaginaDinamica");
+                });
+
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.Dato", b =>
                 {
                     b.Property<int>("Id")
@@ -322,54 +525,6 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.ToTable("Secciones", "PaginaDinamica");
                 });
 
-            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.RecursoModel.BannerPagina", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CreadoPor")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("FechaCreacion")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<DateTime?>("FechaModificacion")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("ModificadoPor")
-                        .HasColumnType("text");
-
-                    b.Property<int?>("PaginaDinamicaId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("RecursoId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("SeguroId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("SubTitulo")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Titulo")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PaginaDinamicaId");
-
-                    b.HasIndex("RecursoId");
-
-                    b.HasIndex("SeguroId");
-
-                    b.ToTable("BannerPagina", "Recurso");
-                });
-
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.RecursoModel.Recurso", b =>
                 {
                     b.Property<int>("Id")
@@ -471,7 +626,6 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("CatTipoSeguroId")
-                        .IsRequired()
                         .HasColumnType("integer");
 
                     b.Property<string>("CreadoPor")
@@ -582,6 +736,67 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Navigation("Seguro");
                 });
 
+            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.BannerPagina", b =>
+                {
+                    b.HasOne("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.PaginaDinamica", "PaginaDinamica")
+                        .WithMany("BannerPaginas")
+                        .HasForeignKey("PaginaDinamicaId");
+
+                    b.HasOne("UNIVidaPortalWeb.Cms.Models.RecursoModel.Recurso", "Recurso")
+                        .WithMany("BannerPagina")
+                        .HasForeignKey("RecursoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UNIVidaPortalWeb.Cms.Models.SeguroModel.Seguro", "Seguro")
+                        .WithMany("BannerPagina")
+                        .HasForeignKey("SeguroId");
+
+                    b.Navigation("PaginaDinamica");
+
+                    b.Navigation("Recurso");
+
+                    b.Navigation("Seguro");
+                });
+
+            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.BannerPaginaPrincipalDetalle", b =>
+                {
+                    b.HasOne("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.BannerPaginaPrincipalMaestro", "BannerPaginaPrincipalMaestro")
+                        .WithMany("BannerPaginaPrincipalDetalle")
+                        .HasForeignKey("BannerPaginaPrincipalMaestroId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UNIVidaPortalWeb.Cms.Models.RecursoModel.Recurso", "Recurso")
+                        .WithMany()
+                        .HasForeignKey("RecursoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BannerPaginaPrincipalMaestro");
+
+                    b.Navigation("Recurso");
+                });
+
+            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.BannerPaginaPrincipalMaestro", b =>
+                {
+                    b.HasOne("UNIVidaPortalWeb.Cms.Models.CatalogoModel.CatEstiloBanner", "CatEstiloBanner")
+                        .WithMany()
+                        .HasForeignKey("CatEstiloBannerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UNIVidaPortalWeb.Cms.Models.CatalogoModel.CatTipoBannerPaginaPrincipal", "CatTipoBannerPaginaPrincipal")
+                        .WithMany()
+                        .HasForeignKey("CatTipoBannerPaginaPrincipalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CatEstiloBanner");
+
+                    b.Navigation("CatTipoBannerPaginaPrincipal");
+                });
+
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.Dato", b =>
                 {
                     b.HasOne("UNIVidaPortalWeb.Cms.Models.RecursoModel.Recurso", "Recurso")
@@ -618,29 +833,6 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                     b.Navigation("PaginaDinamica");
                 });
 
-            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.RecursoModel.BannerPagina", b =>
-                {
-                    b.HasOne("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.PaginaDinamica", "PaginaDinamica")
-                        .WithMany("BannerPaginas")
-                        .HasForeignKey("PaginaDinamicaId");
-
-                    b.HasOne("UNIVidaPortalWeb.Cms.Models.RecursoModel.Recurso", "Recurso")
-                        .WithMany("BannerPagina")
-                        .HasForeignKey("RecursoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("UNIVidaPortalWeb.Cms.Models.SeguroModel.Seguro", "Seguro")
-                        .WithMany("BannerPagina")
-                        .HasForeignKey("SeguroId");
-
-                    b.Navigation("PaginaDinamica");
-
-                    b.Navigation("Recurso");
-
-                    b.Navigation("Seguro");
-                });
-
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.RecursoModel.Recurso", b =>
                 {
                     b.HasOne("UNIVidaPortalWeb.Cms.Models.CatalogoModel.CatTipoRecurso", "CatTipoRecurso")
@@ -667,9 +859,7 @@ namespace UNIVidaPortalWeb.Cms.Migrations
                 {
                     b.HasOne("UNIVidaPortalWeb.Cms.Models.CatalogoModel.CatTipoSeguro", "CatTipoSeguro")
                         .WithMany()
-                        .HasForeignKey("CatTipoSeguroId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CatTipoSeguroId");
 
                     b.HasOne("UNIVidaPortalWeb.Cms.Models.RecursoModel.Recurso", "Recurso")
                         .WithMany()
@@ -694,6 +884,11 @@ namespace UNIVidaPortalWeb.Cms.Migrations
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.MenuModel.MenuPrincipal", b =>
                 {
                     b.Navigation("SubMenus");
+                });
+
+            modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.BannerPaginaPrincipalMaestro", b =>
+                {
+                    b.Navigation("BannerPaginaPrincipalDetalle");
                 });
 
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel.PaginaDinamica", b =>

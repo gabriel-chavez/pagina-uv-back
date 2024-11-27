@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jmZlZHovH0ZphAx/rYT67gEZX28sPaMAgv+UICr4VIk=",
+  "Hash": "G/F3UrM9jaPPLL+oQHSxV8jlWOj49JNVcfVtr33V0Xw=",
   "Source": "UNIVidaPortalWeb.Cms",
   "BasePath": "_content/UNIVidaPortalWeb.Cms",
   "Mode": "Default",
@@ -10,49 +10,219 @@
     {
       "Name": "UNIVidaPortalWeb.Cms\\wwwroot",
       "Source": "UNIVidaPortalWeb.Cms",
-      "ContentRoot": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\",
+      "ContentRoot": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\",
       "BasePath": "_content/UNIVidaPortalWeb.Cms",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\uploads\\Captura_4d5776e6-4c77-4914-9a68-c52781ef242b.PNG",
+      "Identity": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\uploads\\Captura_4d5776e6-4c77-4914-9a68-c52781ef242b.PNG",
       "SourceId": "UNIVidaPortalWeb.Cms",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\",
+      "ContentRoot": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\",
       "BasePath": "_content/UNIVidaPortalWeb.Cms",
-      "RelativePath": "uploads/Captura_4d5776e6-4c77-4914-9a68-c52781ef242b.PNG",
+      "RelativePath": "uploads/Captura_4d5776e6-4c77-4914-9a68-c52781ef242b#[.{fingerprint}]?.PNG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "5rcjl9jaun",
+      "Integrity": "UXAO9uQUPici8Igu+rZ8nzVPkE7/AJUFtd/IqGnIdfE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\Captura_4d5776e6-4c77-4914-9a68-c52781ef242b.PNG"
     },
     {
-      "Identity": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\uploads\\Captura_50128a2e.png",
+      "Identity": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\uploads\\Captura_50128a2e.png",
       "SourceId": "UNIVidaPortalWeb.Cms",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\",
+      "ContentRoot": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\",
       "BasePath": "_content/UNIVidaPortalWeb.Cms",
-      "RelativePath": "uploads/Captura_50128a2e.png",
+      "RelativePath": "uploads/Captura_50128a2e#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "5rcjl9jaun",
+      "Integrity": "UXAO9uQUPici8Igu+rZ8nzVPkE7/AJUFtd/IqGnIdfE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\Captura_50128a2e.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "uploads/Captura_4d5776e6-4c77-4914-9a68-c52781ef242b.5rcjl9jaun.PNG",
+      "AssetFile": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\uploads\\Captura_4d5776e6-4c77-4914-9a68-c52781ef242b.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "156407"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UXAO9uQUPici8Igu+rZ8nzVPkE7/AJUFtd/IqGnIdfE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 20 Nov 2024 19:50:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5rcjl9jaun"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Captura_4d5776e6-4c77-4914-9a68-c52781ef242b.PNG"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UXAO9uQUPici8Igu+rZ8nzVPkE7/AJUFtd/IqGnIdfE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Captura_4d5776e6-4c77-4914-9a68-c52781ef242b.PNG",
+      "AssetFile": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\uploads\\Captura_4d5776e6-4c77-4914-9a68-c52781ef242b.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "156407"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UXAO9uQUPici8Igu+rZ8nzVPkE7/AJUFtd/IqGnIdfE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 20 Nov 2024 19:50:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UXAO9uQUPici8Igu+rZ8nzVPkE7/AJUFtd/IqGnIdfE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Captura_50128a2e.5rcjl9jaun.png",
+      "AssetFile": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\uploads\\Captura_50128a2e.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "156407"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UXAO9uQUPici8Igu+rZ8nzVPkE7/AJUFtd/IqGnIdfE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 20 Nov 2024 19:50:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5rcjl9jaun"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Captura_50128a2e.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UXAO9uQUPici8Igu+rZ8nzVPkE7/AJUFtd/IqGnIdfE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Captura_50128a2e.png",
+      "AssetFile": "D:\\pw\\pagina-uv-back\\UNIVidaPortalWeb.Cms\\wwwroot\\uploads\\Captura_50128a2e.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "156407"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UXAO9uQUPici8Igu+rZ8nzVPkE7/AJUFtd/IqGnIdfE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 20 Nov 2024 19:50:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UXAO9uQUPici8Igu+rZ8nzVPkE7/AJUFtd/IqGnIdfE="
+        }
+      ]
     }
   ]
 }

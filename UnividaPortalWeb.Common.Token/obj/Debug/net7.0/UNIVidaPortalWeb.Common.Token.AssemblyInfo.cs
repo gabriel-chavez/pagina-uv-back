@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UNIVidaPortalWeb.Common.Token")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42de615626fffadb3179e683f0b00178741b6b17")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9dbcf16b94596e53c8e5d0912f7fe3d9b3421170")]
 [assembly: System.Reflection.AssemblyProductAttribute("UNIVidaPortalWeb.Common.Token")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UNIVidaPortalWeb.Common.Token")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

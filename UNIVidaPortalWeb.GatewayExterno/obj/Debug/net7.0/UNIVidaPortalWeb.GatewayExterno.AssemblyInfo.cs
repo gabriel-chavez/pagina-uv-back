@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UNIVidaPortalWeb.GatewayExterno")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ad6477e242a3135ddb33d804a60416c5af569f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9dbcf16b94596e53c8e5d0912f7fe3d9b3421170")]
 [assembly: System.Reflection.AssemblyProductAttribute("UNIVidaPortalWeb.GatewayExterno")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UNIVidaPortalWeb.GatewayExterno")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

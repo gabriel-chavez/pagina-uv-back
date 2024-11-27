@@ -14,7 +14,7 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
         public RepositoryBase(DbContextConvocatorias context)
         {
             _context = context;
-           
+
 
         }
 
@@ -85,8 +85,8 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
             {
                 throw new ArgumentNullException(nameof(entity), "La entidad no puede ser nula.");
             }
-           
-          
+
+
             entity.FechaCreacion = DateTime.Now;
             try
             {
@@ -95,7 +95,7 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
                 return entity;
             }
             catch (DbUpdateException ex)
-            {               
+            {
                 throw new ApplicationException("Error al intentar guardar la entidad.", ex);
             }
         }
@@ -116,7 +116,7 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
                 return entity;
             }
             catch (DbUpdateException ex)
-            {                
+            {
                 throw new ApplicationException("Error al intentar guardar los cambios de la entidad.", ex);
             }
         }
@@ -134,7 +134,7 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException ex)
-            {                
+            {
                 throw new ApplicationException("Error al intentar eliminar la entidad.", ex);
             }
         }
@@ -145,7 +145,7 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
             if (entity == null)
             {
                 throw new NotFoundException($"No se encontró {typeof(T).Name} con ID {id}");
-            }           
+            }
 
             try
             {
@@ -183,8 +183,8 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
             {
                 query = includes.Aggregate(query, (current, include) => current.Include(include));
             }
-
-            return await query.ToListAsync();
+            return await query.OrderByDescending(item => item.Id).ToListAsync();
+            // return await query.ToListAsync();
         }
 
         public async Task<T> GetByIdAsync(int id, List<Expression<Func<T, object>>> includes = null)
@@ -195,8 +195,9 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
             {
                 query = includes.Aggregate(query, (current, include) => current.Include(include));
             }
-
-            var entity = await query.FirstOrDefaultAsync(e => e.Id == id);
+            var entity = await query.OrderByDescending(e => e.Id)
+                       .FirstOrDefaultAsync(e => e.Id == id);
+            //            var entity = await query.FirstOrDefaultAsync(e => e.Id == id);
 
             if (entity == null)
             {

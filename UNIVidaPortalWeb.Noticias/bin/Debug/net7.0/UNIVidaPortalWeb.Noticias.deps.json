@@ -1895,7 +1895,10 @@
           "Microsoft.Extensions.Configuration.Binder": "7.0.0"
         },
         "runtime": {
-          "UNIVidaPortalWeb.Common.Metric.dll": {}
+          "UNIVidaPortalWeb.Common.Metric.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "UNIVidaPortalWeb.Common.Tracing/1.0.0": {
@@ -1905,7 +1908,10 @@
           "Microsoft.Extensions.DependencyInjection": "7.0.0"
         },
         "runtime": {
-          "UNIVidaPortalWeb.Common.Tracing.dll": {}
+          "UNIVidaPortalWeb.Common.Tracing.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

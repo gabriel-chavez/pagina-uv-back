@@ -18,29 +18,29 @@ namespace UNIVidaPortalWeb.Cms.Controllers.CatalogoControllers
           
         }
        
-        [HttpGet("no-encontrado")]
-        public IActionResult ObtenerNoEncontrado()
-        {
-            throw new NotFoundException();
-        }
+        //[HttpGet("no-encontrado")]
+        //public IActionResult ObtenerNoEncontrado()
+        //{
+        //    throw new NotFoundException();
+        //}
 
-        [HttpPost("validacion")]
-        public IActionResult Crear([FromBody] MyModelPrueba modelo)
-        {
-            //CON ValidationFilter Ya no es necesario esto
-            //if (!ModelState.IsValid)
-            //{
-            //    return BadRequest(ModelState);
-            //}
+        //[HttpPost("validacion")]
+        //public IActionResult Crear([FromBody] MyModelPrueba modelo)
+        //{
+        //    //CON ValidationFilter Ya no es necesario esto
+        //    //if (!ModelState.IsValid)
+        //    //{
+        //    //    return BadRequest(ModelState);
+        //    //}
 
-            return Ok(modelo);
-        }
+        //    return Ok(modelo);
+        //}
 
-        [HttpGet("error-no-controlado")]
-        public IActionResult ObtenerErrorNoControlado()
-        {
-            throw new Exception();
-        }
+        //[HttpGet("error-no-controlado")]
+        //public IActionResult ObtenerErrorNoControlado()
+        //{
+        //    throw new Exception();
+        //}
         [HttpGet]
         public async Task<ActionResult> ObtenerTodos()
         {

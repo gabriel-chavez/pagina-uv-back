@@ -13,15 +13,7 @@ namespace UNIVidaPortalWeb.Cms.Services
         public RepositoryBase(DbContextCms context)
         {
             _context = context;
-           
-
         }
-
-        public async Task<IReadOnlyList<T>> GetAllAsync()
-        {
-            return await _context.Set<T>().ToListAsync();
-        }
-
         public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate)
         {
             return await _context.Set<T>().Where(predicate).ToListAsync();
@@ -66,26 +58,14 @@ namespace UNIVidaPortalWeb.Cms.Services
             return await query.ToListAsync();
         }
 
-        public virtual async Task<T> GetByIdAsync(int id)
-        {
-            var entity = await _context.Set<T>().FindAsync(id);
-
-            if (entity == null)
-            {
-                throw new NotFoundException($"No se encontró {typeof(T).Name} con ID {id}");
-            }
-
-            return entity;
-        }
-
         public async Task<T> AddAsync(T entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException(nameof(entity), "La entidad no puede ser nula.");
             }
-           
-          
+
+
             entity.FechaCreacion = DateTime.Now;
             try
             {
@@ -94,7 +74,7 @@ namespace UNIVidaPortalWeb.Cms.Services
                 return entity;
             }
             catch (DbUpdateException ex)
-            {               
+            {
                 throw new ApplicationException("Error al intentar guardar la entidad.", ex);
             }
         }
@@ -115,7 +95,7 @@ namespace UNIVidaPortalWeb.Cms.Services
                 return entity;
             }
             catch (DbUpdateException ex)
-            {                
+            {
                 throw new ApplicationException("Error al intentar guardar los cambios de la entidad.", ex);
             }
         }
@@ -133,7 +113,7 @@ namespace UNIVidaPortalWeb.Cms.Services
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException ex)
-            {                
+            {
                 throw new ApplicationException("Error al intentar eliminar la entidad.", ex);
             }
         }
@@ -144,7 +124,7 @@ namespace UNIVidaPortalWeb.Cms.Services
             if (entity == null)
             {
                 throw new NotFoundException($"No se encontró {typeof(T).Name} con ID {id}");
-            }           
+            }
 
             try
             {
@@ -173,7 +153,44 @@ namespace UNIVidaPortalWeb.Cms.Services
         {
             _context.Set<T>().Remove(entity);
         }
+        /*Metodos para obtener con todas sus entidades referenciadas*/
+        public async Task<IReadOnlyList<T>> GetAllAsync(List<Expression<Func<T, object>>> includes = null)
+        {
+            IQueryable<T> query = _context.Set<T>();
 
-       
+            if (includes != null)
+            {
+                query = includes.Aggregate(query, (current, include) => current.Include(include));
+            }
+            return await query.OrderByDescending(item => item.Id).ToListAsync();
+
+            //return await query.ToListAsync();
+        }
+
+        public async Task<T> GetByIdAsync(int id, List<Expression<Func<T, object>>> includes = null)
+        {
+            IQueryable<T> query = _context.Set<T>();
+
+            if (includes != null)
+            {
+                query = includes.Aggregate(query, (current, include) => current.Include(include));
+            }
+
+            var entity = await query.OrderByDescending(e => e.Id)
+                        .FirstOrDefaultAsync(e => e.Id == id);
+
+
+            if (entity == null)
+            {
+                throw new NotFoundException($"No se encontró {typeof(T).Name} con ID {id}");
+            }
+
+            return entity;
+        }
+
+
+
+
+
     }
 }

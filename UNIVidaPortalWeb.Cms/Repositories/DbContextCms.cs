@@ -25,6 +25,8 @@ namespace UNIVidaPortalWeb.Cms.Repositories
         public DbSet<Seccion> Secciones { get; set; }
         public DbSet<Dato> Datos { get; set; }
         public DbSet<BannerPagina> BannersPaginasDinamicas { get; set; }
+        public DbSet<BannerPaginaPrincipalDetalle> BannerPaginaPrincipalDetalle { get; set; }
+        public DbSet<BannerPaginaPrincipalMaestro> BannerPaginaPrincipalMaestro { get; set; }
 
         // Definición de DbSets, que representan las tablas de Seguros
         public DbSet<Plan> Planes { get; set; }

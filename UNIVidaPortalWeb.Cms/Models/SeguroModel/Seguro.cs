@@ -1,5 +1,6 @@
 ﻿using UNIVidaPortalWeb.Cms.Models.CatalogoModel;
 using UNIVidaPortalWeb.Cms.Models.MenuModel;
+using UNIVidaPortalWeb.Cms.Models.PaginaDinamicaModel;
 using UNIVidaPortalWeb.Cms.Models.RecursoModel;
 
 namespace UNIVidaPortalWeb.Cms.Models.SeguroModel
