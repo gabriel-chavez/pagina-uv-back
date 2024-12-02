@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UNIVidaPortalWeb.Noticias")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27fa02c19046425bfaeda6c48db3c1df2d3dc4d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d0b9e61fcaed7d45bc964d3c71730a28150af9c")]
 [assembly: System.Reflection.AssemblyProductAttribute("UNIVidaPortalWeb.Noticias")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UNIVidaPortalWeb.Noticias")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

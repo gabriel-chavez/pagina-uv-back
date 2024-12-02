@@ -23,11 +23,18 @@ namespace UNIVidaPortalWeb.GatewayExterno
             /*Start - Cors*/
             services.AddCors(o => o.AddPolicy(clientPolicy, builder =>
             {
-                builder.AllowAnyOrigin()
+                builder.WithOrigins("http://localhost:3000", "http://localhost:3001")
                        .AllowAnyMethod()
-                       .AllowAnyHeader();
-
+                       .AllowAnyHeader()
+                       .AllowCredentials(); // Permite enviar cookies con las solicitudes
             }));
+            //services.AddCors(o => o.AddPolicy(clientPolicy, builder =>
+            //{
+            //    builder.AllowAnyOrigin()
+            //           .AllowAnyMethod()
+            //           .AllowAnyHeader();
+
+            //}));
             services.AddRouting(r => r.SuppressCheckForUnhandledSecurityMetadata = true);
             /*End - Cors*/
             /*Start - Tracer distributed*/

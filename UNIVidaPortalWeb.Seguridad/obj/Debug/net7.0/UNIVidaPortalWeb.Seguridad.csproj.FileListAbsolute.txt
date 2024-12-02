@@ -271,3 +271,7 @@ C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\obj\Debug\net7.0\UNIVidaPortalWeb.Seguridad.pdb
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\obj\Debug\net7.0\UNIVidaPortalWeb.Seguridad.genruntimeconfig.cache
 C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\obj\Debug\net7.0\ref\UNIVidaPortalWeb.Seguridad.dll
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\bin\Debug\net7.0\UNIVidaPortalWeb.Seguridad.staticwebassets.endpoints.json
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\obj\Debug\net7.0\staticwebassets.build.endpoints.json
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\obj\Debug\net7.0\staticwebassets\msbuild.UNIVidaPortalWeb.Seguridad.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\USUARIO\Documents\Pagina Web\pagina-uv-back\UNIVidaPortalWeb.Seguridad\obj\Debug\net7.0\staticwebassets.upToDateCheck.txt

@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "6wgXH0GuN/cSX9w7zNekhJMwhiwvGPgkYQnlEOdY5FU=",
+  "Hash": "0s9EBc0ZKB47R/0CsHx/W43mWXjkf7DSrMc7mbJtkro=",
   "Source": "UNIVidaPortalWeb.Convocatorias",
   "BasePath": "_content/UNIVidaPortalWeb.Convocatorias",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

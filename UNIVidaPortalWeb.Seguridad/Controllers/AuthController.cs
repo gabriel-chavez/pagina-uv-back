@@ -39,11 +39,31 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
             }
 
             var token = JwtToken.Create(_opcionesJwt);
-            Response.Headers.Add("access-control-expose-headers", "Authorization");
-            Response.Headers.Add("Authorization", token);
+            
+            Response.Cookies.Append("jwt", token, new CookieOptions
+            {
+                HttpOnly = true, 
+                Secure = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production", // Solo en producción
+                SameSite = SameSiteMode.Strict,                
+                Path = "/"
+            });
 
             var datos = new { token };
             var resultado = new Resultado<object>(datos, true, "Inicio de sesión exitoso");
+            return Ok(resultado);
+        }
+        [HttpPost("logout")]
+        public IActionResult CerrarSesion()
+        {
+            Response.Cookies.Delete("jwt", new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production", 
+                SameSite = SameSiteMode.Strict,
+                Path = "/"
+            });
+
+            var resultado = new Resultado(true, "Sesión cerrada exitosamente");
             return Ok(resultado);
         }
 

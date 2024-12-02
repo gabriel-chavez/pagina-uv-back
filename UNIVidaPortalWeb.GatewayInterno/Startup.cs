@@ -27,11 +27,18 @@ namespace UNIVidaPortalWeb.GatewayInterno
             /*Start - Cors*/
             services.AddCors(o => o.AddPolicy(clientPolicy, builder =>
             {
-                builder.AllowAnyOrigin()
+                builder.WithOrigins("http://localhost:3000", "http://localhost:3001")
                        .AllowAnyMethod()
-                       .AllowAnyHeader();
-
+                       .AllowAnyHeader()
+                       .AllowCredentials(); // Permite enviar cookies con las solicitudes
             }));
+            //services.AddCors(o => o.AddPolicy(clientPolicy, builder =>
+            //{
+            //    builder.AllowAnyOrigin()
+            //           .AllowAnyMethod()
+            //           .AllowAnyHeader();
+
+            //}));
             services.AddRouting(r => r.SuppressCheckForUnhandledSecurityMetadata = true);
             /*End - Cors*/
             /*Start - Tracer distributed*/
@@ -46,6 +53,39 @@ namespace UNIVidaPortalWeb.GatewayInterno
         // Configuración del pipeline de middleware
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.Use(async (context, next) =>
+            {
+                // Verificar si la cookie "jwt" existe
+                var token = context.Request.Cookies["jwt"];
+
+                // Si la cookie contiene un token, agregarlo al encabezado Authorization
+                if (!string.IsNullOrEmpty(token))
+                {
+                    context.Request.Headers["Authorization"] = $"Bearer {token}";
+                    Console.WriteLine("Token extraído de la cookie: " + token);
+                }
+                else
+                {
+                    Console.WriteLine("No se encontró la cookie jwt.");
+                }
+
+                // Continuar con la siguiente parte del middleware
+                await next();
+            });
+            //app.Use(async (context, next) =>
+            //{
+            //    var token = context.Request.Headers["Authorization"];
+            //    if (!string.IsNullOrEmpty(token))
+            //    {
+            //        Console.WriteLine("Token recibido: " + token);
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("No se recibió token.");
+            //    }
+
+            //    await next();
+            //});
 
             // Habilitar Swagger UI
             app.Map("/swagger/v1/swagger.json", b =>

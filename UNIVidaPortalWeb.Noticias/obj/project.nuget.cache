@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "c3B1SzTVrlk=",
+  "dgSpecHash": "5Dv51FpmnLs=",
   "success": true,
   "projectFilePath": "C:\\Users\\USUARIO\\Documents\\Pagina Web\\pagina-uv-back\\UNIVidaPortalWeb.Noticias\\UNIVidaPortalWeb.Noticias.csproj",
   "expectedPackageFiles": [
@@ -199,5 +199,56 @@
     "C:\\Users\\USUARIO\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"Google.Protobuf\" 3.14.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-77rm-9x9h-xj3g",
+      "libraryId": "Google.Protobuf",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"System.Net.Http\" 4.3.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-7jgj-8wvc-jh57",
+      "libraryId": "System.Net.Http",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"System.Net.Http.WinHttpHandler\" 4.5.2 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
+      "libraryId": "System.Net.Http.WinHttpHandler",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"System.Text.Json\" 7.0.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w",
+      "libraryId": "System.Text.Json",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"System.Text.RegularExpressions\" 4.3.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-cmhx-cq75-c4mj",
+      "libraryId": "System.Text.RegularExpressions",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
