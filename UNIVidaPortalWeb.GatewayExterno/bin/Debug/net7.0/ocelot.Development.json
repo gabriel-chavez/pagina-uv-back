@@ -185,11 +185,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Capacitacion/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "MY-KEY-JWT",
-      //  "AllowedScopes": []
-      //}
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      }
     },
     //--- Conocimiento idioma ---
     {
@@ -202,11 +202,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ConocimientoIdioma/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "MY-KEY-JWT",
-      //  "AllowedScopes": []
-      //}
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      }
     },
     //--- Conocimiento sistemas ---
     {
@@ -219,11 +219,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ConocimientoSistemas/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "MY-KEY-JWT",
-      //  "AllowedScopes": []
-      //}
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      }
     },
     //--- Experiencia laboral ---
     {
@@ -236,11 +236,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ExperienciaLaboral/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "MY-KEY-JWT",
-      //  "AllowedScopes": []
-      //}
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      }
     },
     //--- Formación académica ---
     {
@@ -253,11 +253,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/FormacionAcademica/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "MY-KEY-JWT",
-      //  "AllowedScopes": []
-      //}
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      }
     },
     //--- Referencia Laboral ---
     {
@@ -270,11 +270,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ReferenciaLaboral/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "MY-KEY-JWT",
-      //  "AllowedScopes": []
-      //}
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      }
     },
     //--- Referencia Personal ---
     {
@@ -287,11 +287,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ReferenciaPersonal/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "MY-KEY-JWT",
-      //  "AllowedScopes": []
-      //}
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      }
     },
     //--- Postulante ---
     {
@@ -305,11 +305,11 @@
       ],
       "UpstreamPathTemplate": "/api/Postulante/{everything}",
 
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "MY-KEY-JWT",
-      //  "AllowedScopes": []
-      //}
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      }
     },
     //--- POSTULACION ---
     {
@@ -322,11 +322,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Postulacion",
-      "UpstreamHttpMethod": [ "POST" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "MY-KEY-JWT",
-      //  "AllowedScopes": []
-      //}
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      }
     },
     //--- PARAMETRICAS ---
     {
