@@ -189,6 +189,10 @@
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "MY-KEY-JWT",
         "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
       }
     },
     //--- Conocimiento idioma ---
@@ -206,6 +210,10 @@
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "MY-KEY-JWT",
         "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
       }
     },
     //--- Conocimiento sistemas ---
@@ -223,6 +231,10 @@
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "MY-KEY-JWT",
         "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
       }
     },
     //--- Experiencia laboral ---
@@ -240,6 +252,10 @@
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "MY-KEY-JWT",
         "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
       }
     },
     //--- Formación académica ---
@@ -257,6 +273,10 @@
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "MY-KEY-JWT",
         "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
       }
     },
     //--- Referencia Laboral ---
@@ -274,6 +294,10 @@
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "MY-KEY-JWT",
         "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
       }
     },
     //--- Referencia Personal ---
@@ -291,6 +315,10 @@
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "MY-KEY-JWT",
         "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
       }
     },
     //--- Postulante ---
@@ -309,6 +337,10 @@
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "MY-KEY-JWT",
         "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
       }
     },
     //--- POSTULACION ---
@@ -326,6 +358,10 @@
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "MY-KEY-JWT",
         "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
       }
     },
     //--- PARAMETRICAS ---
@@ -343,6 +379,10 @@
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "MY-KEY-JWT",
         "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
       }
     }
 

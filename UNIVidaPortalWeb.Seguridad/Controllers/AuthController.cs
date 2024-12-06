@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using System.Security.Claims;
 using UNIVidaPortalWeb.Common.Token.Src;
 using UNIVidaPortalWeb.Seguridad.Models;
 using UNIVidaPortalWeb.Seguridad.Services;
@@ -37,14 +38,21 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
             {
                 return Unauthorized(new Resultado(false, "Credenciales incorrectas"));
             }
+            var usuario = _servicioAcceso.ObtenerPerfilUsuario(solicitud.UserName);
+            var userId = usuario.UserId.ToString();
+            var username = usuario.Username;
+            var claims = new List<Claim>
+            {
+                new Claim("userId", userId),
+                new Claim("username", username)
+            };
+            var token = JwtToken.Create(_opcionesJwt, claims);
 
-            var token = JwtToken.Create(_opcionesJwt);
-            
             Response.Cookies.Append("jwt", token, new CookieOptions
             {
-                HttpOnly = true, 
+                HttpOnly = true,
                 Secure = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production", // Solo en producción
-                SameSite = SameSiteMode.Strict,                
+                SameSite = SameSiteMode.Strict,
                 Path = "/"
             });
 
@@ -58,7 +66,7 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
             Response.Cookies.Delete("jwt", new CookieOptions
             {
                 HttpOnly = true,
-                Secure = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production", 
+                Secure = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production",
                 SameSite = SameSiteMode.Strict,
                 Path = "/"
             });

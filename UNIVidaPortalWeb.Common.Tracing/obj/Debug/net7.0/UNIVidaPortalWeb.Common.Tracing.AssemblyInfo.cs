@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UNIVidaPortalWeb.Common.Tracing")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+312c0cd71cb7bd05206eb5a0e2039539a8db9f19")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+644350e4ab7296e0b40d92ac3f84188b6857be77")]
 [assembly: System.Reflection.AssemblyProductAttribute("UNIVidaPortalWeb.Common.Tracing")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UNIVidaPortalWeb.Common.Tracing")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
