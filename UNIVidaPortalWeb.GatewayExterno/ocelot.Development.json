@@ -1,4 +1,5 @@
 {
+ 
   "Routes": [
     // --- Seguridad ---
 
@@ -24,7 +25,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/auth/login",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "Key": "loginusuario"
     },
     {
       "DownstreamPathTemplate": "/api/auth/registrar",
@@ -322,6 +324,34 @@
       }
     },
     //--- Postulante ---
+    {
+      "DownstreamPathTemplate": "/api/Postulante/ObtenerPorUsuario/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Postulante/ObtenerPorUsuario/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "Key": "obtiene_postulante"
+    },
+    //prueba
+    //{
+    //  "DownstreamPathTemplate": "/api/Postulante",
+    //  "DownstreamScheme": "http",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 5005
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/api/Postulante",
+    //  "UpstreamHttpMethod": [ "GET" ],
+    //  "Key": "obtienepostulantenuevo"
+    //},
+
     {
       "DownstreamPathTemplate": "/api/Postulante/{everything}",
       "DownstreamScheme": "http",

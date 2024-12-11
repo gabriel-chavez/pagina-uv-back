@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using UNIVidaPortalWeb.Convocatorias.Models.ConvocatoriasModel;
-
-namespace UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel
+﻿namespace UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel
 {
     public class Postulante : BaseDomainModel
     {
@@ -21,6 +18,7 @@ namespace UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel
         public string Telefono { get; set; }
         public string TelefonoMovil { get; set; }
         public string Fotografia { get; set; }
+        public int? UsuarioId { get; set; }
 
         // Relaciones
         public ICollection<FormacionAcademica> FormacionesAcademicas { get; set; }

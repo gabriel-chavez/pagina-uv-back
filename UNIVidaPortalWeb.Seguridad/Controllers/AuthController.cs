@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+
 using System.Security.Claims;
+using System.Text.Json;
 using UNIVidaPortalWeb.Common.Token.Src;
 using UNIVidaPortalWeb.Seguridad.Models;
+using UNIVidaPortalWeb.Seguridad.Models.UNIVidaPortalWeb.Convocatorias.Utilidades;
 using UNIVidaPortalWeb.Seguridad.Services;
 using UNIVidaPortalWeb.Seguridad.Utilities;
 
@@ -38,13 +41,30 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
             {
                 return Unauthorized(new Resultado(false, "Credenciales incorrectas"));
             }
+            
             var usuario = _servicioAcceso.ObtenerPerfilUsuario(solicitud.UserName);
-            var userId = usuario.UserId.ToString();
+            var userId = usuario.UserId;
             var username = usuario.Username;
+            var postulanteId = 0;
+            var respuesta = _servicioAcceso.ObtenerPostulanteId(userId).Result;
+            var options = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase, // Convierte nombres automáticamente
+                PropertyNameCaseInsensitive = true // Ignora mayúsculas/minúsculas al deserializar
+            };
+            var datosPostulante = JsonSerializer.Deserialize<Resultado<DatosPostulante>>(respuesta, options);
+
+
+
+            if (datosPostulante.Exito)
+            {
+                postulanteId = datosPostulante.Datos.Id;
+            }
             var claims = new List<Claim>
             {
-                new Claim("userId", userId),
-                new Claim("username", username)
+                new Claim("userId", userId.ToString()),
+                new Claim("username", username),
+                new Claim("postulanteId", postulanteId.ToString())
             };
             var token = JwtToken.Create(_opcionesJwt, claims);
 
@@ -56,7 +76,11 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
                 Path = "/"
             });
 
-            var datos = new { token };
+            var datos = new
+            {
+                token,
+                postulanteId
+            };
             var resultado = new Resultado<object>(datos, true, "Inicio de sesión exitoso");
             return Ok(resultado);
         }

@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace UNIVidaPortalWeb.Seguridad.Utilities
+﻿namespace UNIVidaPortalWeb.GatewayExterno.Utilities
 {
     public class Resultado
     {
@@ -25,7 +23,7 @@ namespace UNIVidaPortalWeb.Seguridad.Utilities
 
     public class Resultado<T> : Resultado
     {
-
+        // Propiedad de solo lectura
         public T? Datos { get; }
 
         public Resultado(bool exito, string mensaje) : base(exito, mensaje)
@@ -35,7 +33,7 @@ namespace UNIVidaPortalWeb.Seguridad.Utilities
         public Resultado(bool exito) : base(exito)
         {
         }
-        [JsonConstructor]
+
         public Resultado(T datos, bool exito, string mensaje) : base(exito, mensaje)
         {
             Datos = datos;

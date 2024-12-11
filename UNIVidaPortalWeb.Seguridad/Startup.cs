@@ -6,7 +6,7 @@ using UNIVidaPortalWeb.Seguridad.Respositories;
 using UNIVidaPortalWeb.Seguridad.Services;
 using UNIVidaPortalWeb.Common.Tracing.Src;
 using UNIVidaPortalWeb.Common.Metric.Registry;
-
+using UNIVidaPortalWeb.Common.Http.Src;
 namespace UNIVidaPortalWeb.Seguridad
 {
     public class Startup
@@ -56,6 +56,8 @@ namespace UNIVidaPortalWeb.Seguridad
                });
             services.AddScoped<IAccessService, AccessService>();
             services.Configure<JwtOptions>(Configuration.GetSection("jwt"));
+            services.AddHttpClient();
+            services.AddProxyHttp();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

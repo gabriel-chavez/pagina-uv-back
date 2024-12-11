@@ -2,15 +2,24 @@
 using UNIVidaPortalWeb.Seguridad.Models;
 using UNIVidaPortalWeb.Seguridad.Respositories;
 using System.Security.Cryptography;
+using UNIVidaPortalWeb.Common.Http.Src;
+using Polly;
+using Polly.CircuitBreaker;
+
 
 namespace UNIVidaPortalWeb.Seguridad.Services
 {
     public class AccessService : IAccessService
     {
         public readonly ContextDatabase _contextoBaseDatos;
-        public AccessService(ContextDatabase contextoBaseDatos)
+        private readonly IConfiguration _configuration;
+        private readonly IHttpClient _httpClient;
+
+        public AccessService(ContextDatabase contextoBaseDatos, IConfiguration configuration, IHttpClient httpClient)
         {
             _contextoBaseDatos = contextoBaseDatos;
+            _configuration = configuration;
+            _httpClient = httpClient;
         }
 
         public IEnumerable<AccessModel> ObtenerTodos()
@@ -56,10 +65,41 @@ namespace UNIVidaPortalWeb.Seguridad.Services
             _contextoBaseDatos.SaveChanges();
             return true;
         }
-
+        
         public AccessModel ObtenerPerfilUsuario(string nombreUsuario)
         {
             return _contextoBaseDatos.Access.FirstOrDefault(x => x.Username == nombreUsuario);
         }
+        public async Task<string> ObtenerPostulanteId(int usuarioId)
+        {
+            string uri = _configuration["proxy:urlConvocatoria"];
+            var response = await _httpClient.GetStringAsync(uri+usuarioId);
+            
+            return response;
+        }
+       
+
+
+
+
+
+
+
+
+            //string uri = _configuration["proxy:urlConvocatoria"];
+
+            //HttpResponseMessage response = _httpClient.GetAsync(uri  + usuarioId).GetAwaiter().GetResult();
+
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    string responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+            //    Console.WriteLine("Respuesta exitosa: " + responseBody);
+            //}
+
+            //response.EnsureSuccessStatusCode();
+            //return response;
+        
+
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using UNIVidaPortalWeb.Convocatorias.Exceptions;
 using UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs;
 using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
@@ -32,6 +33,19 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         public async Task<ActionResult> ObtenerPostulante(int id)
         {
             var postulante = await _postulanteService.GetByIdAsync(id);
+            var resultado = new Resultado<Postulante>(postulante, true, "Postulante obtenido correctamente");
+            return Ok(resultado);
+        }
+        [HttpGet("ObtenerPorUsuario/{usuarioId}")]
+        public async Task<ActionResult> ObtenerPostulantePorUsuario(int usuarioId)
+        {
+            
+            var postulantes = await _postulanteService.GetAsync(x=>x.UsuarioId== usuarioId);
+            var postulante = postulantes.FirstOrDefault();
+            if (postulante == null)
+            {
+                throw new NotFoundException("No se encontró el postulante.");
+            }
             var resultado = new Resultado<Postulante>(postulante, true, "Postulante obtenido correctamente");
             return Ok(resultado);
         }

@@ -4,6 +4,8 @@ using UNIVidaPortalWeb.Common.Metric.Registry;
 using UNIVidaPortalWeb.Common.Token.Src;
 using UNIVidaPortalWeb.Common.Tracing.Src;
 
+
+
 namespace UNIVidaPortalWeb.GatewayExterno
 {
     public class Startup
@@ -45,32 +47,32 @@ namespace UNIVidaPortalWeb.GatewayExterno
             services.AddTransient<IMetricsRegistry, MetricsRegistry>();
             /*End Metrics*/
 
-            services.AddOcelot();
+            services.AddOcelot();                
 
         }
 
         // Configuración del pipeline de middleware
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.Use(async (context, next) =>
-            {
-                // Verificar si la cookie "jwt" existe
-                var token = context.Request.Cookies["jwt"];
+            //app.Use(async (context, next) =>
+            //{
+            //    // Verificar si la cookie "jwt" existe
+            //    var token = context.Request.Cookies["jwt"];
 
-                // Si la cookie contiene un token, agregarlo al encabezado Authorization
-                if (!string.IsNullOrEmpty(token))
-                {
-                    context.Request.Headers["Authorization"] = $"Bearer {token}";
-                    Console.WriteLine("Token extraído de la cookie: " + token);
-                }
-                else
-                {
-                    Console.WriteLine("No se encontró la cookie jwt.");
-                }
+            //    // Si la cookie contiene un token, agregarlo al encabezado Authorization
+            //    if (!string.IsNullOrEmpty(token))
+            //    {
+            //        context.Request.Headers["Authorization"] = $"Bearer {token}";
+            //        Console.WriteLine("Token extraído de la cookie: " + token);
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("No se encontró la cookie jwt.");
+            //    }
 
-                // Continuar con la siguiente parte del middleware
-                await next();
-            });
+            //    // Continuar con la siguiente parte del middleware
+            //    await next();
+            //});
 
             // Habilitar Swagger UI
             app.Map("/swagger/v1/swagger.json", b =>
@@ -98,8 +100,9 @@ namespace UNIVidaPortalWeb.GatewayExterno
             /*End - Cors*/
 
             app.UseOcelot().Wait();
+  
 
-          
+
         }
     }
 
