@@ -1,3 +1,4 @@
 docker-compose -f docker-compose-databases.yml -p unividaportalweb-databases up -d
 docker-compose -f docker-compose-services.yml -p unividaportalweb-services up -d
+docker-compose -f docker-compose-microservicios.yml -p unividaportalweb-servicios-backend up -d
 

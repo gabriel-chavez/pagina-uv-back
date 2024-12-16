@@ -1,0 +1,66 @@
+version: "3.8"
+
+services:
+  gateway_externo:
+    build:
+      context: ./UNIVidaPortalWeb.GatewayExterno
+      dockerfile: Dockerfile
+    container_name: gateway_externo
+    ports:
+      - "5000:5000"
+    networks:
+      - unividaportalweb
+
+  gateway_interno:
+    build:
+      context: ./UNIVidaPortalWeb.GatewayInterno
+      dockerfile: Dockerfile
+    container_name: gateway_interno
+    ports:
+      - "5001:5001"
+    networks:
+      - unividaportalweb
+
+  seguridad:
+    build:
+      context: ./UNIVidaPortalWeb.Seguridad
+      dockerfile: Dockerfile
+    container_name: seguridad
+    ports:
+      - "5002:5002"
+    networks:
+      - unividaportalweb
+
+  cms:
+    build:
+      context: ./UNIVidaPortalWeb.Cms
+      dockerfile: Dockerfile
+    container_name: cms
+    ports:
+      - "5003:5003"
+    networks:
+      - unividaportalweb
+
+  noticias:
+    build:
+      context: ./UNIVidaPortalWeb.Noticias
+      dockerfile: Dockerfile
+    container_name: noticias
+    ports:
+      - "5004:5004"
+    networks:
+      - unividaportalweb
+
+  convocatorias:
+    build:
+      context: ./UNIVidaPortalWeb.Convocatorias
+      dockerfile: Dockerfile
+    container_name: convocatorias
+    ports:
+      - "5005:5005"
+    networks:
+      - unividaportalweb
+
+networks:
+  unividaportalweb:
+    external: true
