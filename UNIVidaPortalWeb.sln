@@ -9,12 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{7A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{9CA936D3-E40F-4765-A476-600BAFE14968}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{484E16E5-D730-47DC-9C35-2AD04B2AC45E}"
-	ProjectSection(SolutionItems) = preProject
-		scripts\docker-compose-databases.yml = scripts\docker-compose-databases.yml
-		scripts\docker-compose-services.yml = scripts\docker-compose-services.yml
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cms", "Cms", "{C9B991C4-B978-423E-9901-41102E6FCBF7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNIVidaPortalWeb.Cms", "UNIVidaPortalWeb.Cms\UNIVidaPortalWeb.Cms.csproj", "{F639ABC2-E2B8-432B-940A-5F0542F62CFD}"
@@ -44,6 +38,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNIVidaPortalWeb.Common.Metric", "UNIVidaPortalWeb.Common.Metric\UNIVidaPortalWeb.Common.Metric.csproj", "{4437AA75-8F22-4A0E-89AC-AC3E3569BF32}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNIVidaPortalWeb.Common.Http", "UNIVidaPortalWeb.Common.Http\UNIVidaPortalWeb.Common.Http.csproj", "{01A58B31-C2F5-47C7-85FC-1FB61278611E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-compose", "docker-compose", "{FC120955-5B93-4BF1-B41B-2EE2EB67D7A9}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose-databases.yml = docker-compose-databases.yml
+		docker-compose-microservicios.yml = docker-compose-microservicios.yml
+		docker-compose-services.yml = docker-compose-services.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
