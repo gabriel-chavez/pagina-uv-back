@@ -27,7 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="..\UNIVidaPortalWeb.Common.Http\UNIVidaPortalWeb.Common.Http.csproj" />
     <ProjectReference Include="..\UNIVidaPortalWeb.Common.Metric\UNIVidaPortalWeb.Common.Metric.csproj" />
-    <ProjectReference Include="..\UnividaPortalWeb.Common.Token\UNIVidaPortalWeb.Common.Token.csproj" />
+    <ProjectReference Include="..\UNIVidaPortalWeb.Common.Token\UNIVidaPortalWeb.Common.Token.csproj" />
     <ProjectReference Include="..\UNIVidaPortalWeb.Common.Tracing\UNIVidaPortalWeb.Common.Tracing.csproj" />
   </ItemGroup>
 

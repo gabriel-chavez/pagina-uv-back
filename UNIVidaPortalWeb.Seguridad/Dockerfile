@@ -13,7 +13,7 @@ WORKDIR /src
 COPY ["UNIVidaPortalWeb.Seguridad/UNIVidaPortalWeb.Seguridad.csproj", "UNIVidaPortalWeb.Seguridad/"]
 COPY ["UNIVidaPortalWeb.Common.Http/UNIVidaPortalWeb.Common.Http.csproj", "UNIVidaPortalWeb.Common.Http/"]
 COPY ["UNIVidaPortalWeb.Common.Metric/UNIVidaPortalWeb.Common.Metric.csproj", "UNIVidaPortalWeb.Common.Metric/"]
-COPY ["UnividaPortalWeb.Common.Token/UNIVidaPortalWeb.Common.Token.csproj", "UnividaPortalWeb.Common.Token/"]
+COPY ["UNIVidaPortalWeb.Common.Token/UNIVidaPortalWeb.Common.Token.csproj", "UNIVidaPortalWeb.Common.Token/"]
 COPY ["UNIVidaPortalWeb.Common.Tracing/UNIVidaPortalWeb.Common.Tracing.csproj", "UNIVidaPortalWeb.Common.Tracing/"]
 RUN dotnet restore "./UNIVidaPortalWeb.Seguridad/UNIVidaPortalWeb.Seguridad.csproj"
 COPY . .

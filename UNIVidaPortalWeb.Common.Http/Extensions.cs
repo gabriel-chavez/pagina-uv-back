@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace Aforo255.Cross.Http
+namespace UNIVidaPortalWeb.Common.Http
 {
     public static class Extensions
     {
