@@ -128,11 +128,11 @@ namespace UNIVidaPortalWeb.Cms
 
             Log.Information("Iniciando la aplicación...");
             app.UseMiddleware<ExceptionMiddleware>();
-            if (env.IsDevelopment())
-            {
+          //  if (env.IsDevelopment())
+            //{
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            }
+            //}
             app.UseRouting();
 
             //app.UseCors("AllowSpecificOrigin");
