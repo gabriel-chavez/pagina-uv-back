@@ -1,4 +1,3 @@
-version: "3.5"
 
 services:
   gateway_externo:
@@ -63,4 +62,4 @@ services:
 
 networks:
   unividaportalweb:
-    external: true
+    name: portalweb

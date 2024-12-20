@@ -17,5 +17,12 @@
       <ProjectReference Include="..\UNIVidaPortalWeb.Common.Tracing\UNIVidaPortalWeb.Common.Tracing.csproj" />
        <PackageReference Include="OpenTracing.Contrib.NetCore" Version="0.9.0" />
     </ItemGroup>
+    <ItemGroup>
+      <Content Update="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
 
 </Project>
