@@ -1,4 +1,3 @@
-
 services:
   gateway_externo:
     build:
@@ -6,7 +5,7 @@ services:
       dockerfile: UNIVidaPortalWeb.GatewayExterno/Dockerfile
     container_name: gateway_externo
     ports:
-      - "5000:5000"
+      - "5000:80"
     networks:
       - unividaportalweb
 
@@ -16,7 +15,7 @@ services:
       dockerfile: UNIVidaPortalWeb.GatewayInterno/Dockerfile
     container_name: gateway_interno
     ports:
-      - "5001:5001"
+      - "5001:80"
     networks:
       - unividaportalweb
 
@@ -26,7 +25,7 @@ services:
       dockerfile: UNIVidaPortalWeb.Seguridad/Dockerfile
     container_name: seguridad
     ports:
-      - "5002:5002"
+      - "5002:80"
     networks:
       - unividaportalweb
 
@@ -35,8 +34,10 @@ services:
       context: .
       dockerfile: UNIVidaPortalWeb.Cms/Dockerfile
     container_name: cms
+    environment:
+      - ASPNETCORE_URLS=http://+:80
     ports:
-      - "5003:5003"
+      - "5003:80"
     networks:
       - unividaportalweb
 
@@ -46,7 +47,7 @@ services:
       dockerfile: UNIVidaPortalWeb.Noticias/Dockerfile
     container_name: noticias
     ports:
-      - "5004:5004"
+      - "5004:80"
     networks:
       - unividaportalweb
 
@@ -56,7 +57,7 @@ services:
       dockerfile: UNIVidaPortalWeb.Convocatorias/Dockerfile
     container_name: convocatorias
     ports:
-      - "5005:5005"
+      - "5005:80"
     networks:
       - unividaportalweb
 
