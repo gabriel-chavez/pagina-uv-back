@@ -302,7 +302,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "seguridad",
           "Port": 5002
         }
       ],
@@ -314,7 +314,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "seguridad",
           "Port": 5002
         }
       ],
@@ -326,7 +326,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "seguridad",
           "Port": 5002
         }
       ],
@@ -338,7 +338,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "seguridad",
           "Port": 5002
         }
       ],
@@ -350,7 +350,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "seguridad",
           "Port": 5002
         }
       ],
@@ -364,7 +364,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -380,7 +380,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -396,7 +396,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -412,7 +412,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -428,7 +428,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -444,7 +444,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -460,7 +460,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -476,7 +476,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -492,7 +492,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -508,7 +508,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -524,7 +524,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -540,7 +540,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -556,7 +556,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -572,7 +572,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -588,7 +588,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
@@ -604,7 +604,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "cms",
           "Port": 5003
         }
       ],
