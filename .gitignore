@@ -16,7 +16,8 @@ obj/
 **/obj/
 
 # Ignorar archivos de configuración sensibles
-# appsettings.json
+appsettings.json
+ocelot.json
 secret-keys.txt
 
 #nuevo----------
