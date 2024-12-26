@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "http": {
+    "Local.Account": {
       "commandName": "Project",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

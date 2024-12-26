@@ -5,6 +5,7 @@ using UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs;
 using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
 using UNIVidaPortalWeb.Convocatorias.Utilidades;
+using Microsoft.Extensions.Primitives;
 
 namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
 {
@@ -53,7 +54,13 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPost]
         public async Task<ActionResult> CrearPostulante(PostulanteRequestDTO postulanteDto)
         {
+            if (!Request.Headers.TryGetValue("claims_userId", out var userIdHeader) || !int.TryParse(userIdHeader, out var userId))
+            {
+                return BadRequest("El encabezado 'claims_userId' no está presente o no contiene un valor válido.");
+            }
+
             var postulante = _mapper.Map<Postulante>(postulanteDto);
+            postulante.UsuarioId = userId;
             var postulanteCreado = await _postulanteService.AddAsync(postulante);
             var resultado = new Resultado<Postulante>(postulanteCreado, true, "Postulante creado correctamente");
             return CreatedAtAction(nameof(ObtenerPostulante), new { id = postulanteCreado.Id }, resultado);
