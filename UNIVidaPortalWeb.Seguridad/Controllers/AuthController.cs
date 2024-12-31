@@ -110,6 +110,8 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
             usuario.Username = nuevoUsuario.Username;
             usuario.Email = nuevoUsuario.Email;
             usuario.Password = nuevoUsuario.Password;
+            usuario.TokenExpira = DateTime.MinValue;
+            usuario.TokenRecuperacion = "";
             _servicioAcceso.RegistrarUsuario(usuario);
             return Ok(new Resultado(true, "Usuario registrado con éxito."));
         }
