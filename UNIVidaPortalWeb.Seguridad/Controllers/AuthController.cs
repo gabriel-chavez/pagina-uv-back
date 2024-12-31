@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-
 using System.Security.Claims;
 using System.Text.Json;
 using UNIVidaPortalWeb.Common.Token.Src;
@@ -18,12 +17,16 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
     {
         private readonly IAccessService _servicioAcceso;
         private readonly JwtOptions _opcionesJwt;
+       
+
 
         public AuthController(IAccessService servicioAcceso,
             IOptionsSnapshot<JwtOptions> opcionesJwt)
         {
             _servicioAcceso = servicioAcceso;
             _opcionesJwt = opcionesJwt.Value;
+       
+
         }
 
         [HttpGet]
@@ -37,20 +40,20 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
         [HttpPost("login")]
         public IActionResult IniciarSesion([FromBody] AuthRequest solicitud)
         {
-            if (!_servicioAcceso.Validar(solicitud.UserName, solicitud.Password))
+            var userId = _servicioAcceso.Validar(solicitud.UserNameEmail, solicitud.Password);
+
+            if (userId == null)
             {
                 return Unauthorized(new Resultado(false, "Credenciales incorrectas"));
             }
-            
-            var usuario = _servicioAcceso.ObtenerPerfilUsuario(solicitud.UserName);
-            var userId = usuario.UserId;
-            var username = usuario.Username;
+            var usuario = _servicioAcceso.ObtenerPerfilUsuario(solicitud.UserNameEmail);
+            var email = usuario.Email;
             var postulanteId = 0;
-            var respuesta = _servicioAcceso.ObtenerPostulanteId(userId).Result;
+            var respuesta = _servicioAcceso.ObtenerPostulanteId(userId.Value).Result;
             var options = new JsonSerializerOptions
             {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase, // Convierte nombres automáticamente
-                PropertyNameCaseInsensitive = true // Ignora mayúsculas/minúsculas al deserializar
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                PropertyNameCaseInsensitive = true
             };
             var datosPostulante = JsonSerializer.Deserialize<Resultado<DatosPostulante>>(respuesta, options);
 
@@ -62,8 +65,8 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
             }
             var claims = new List<Claim>
             {
-                new Claim("userId", userId.ToString()),
-                new Claim("username", username),
+                new Claim("userId", userId.Value.ToString()),
+                new Claim("userEmail", email),
                 new Claim("postulanteId", postulanteId.ToString())
             };
             var token = JwtToken.Create(_opcionesJwt, claims);
@@ -102,29 +105,70 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
         [HttpPost("registrar")]
         public IActionResult RegistrarUsuario([FromBody] AccessModel nuevoUsuario)
         {
-            if (!_servicioAcceso.RegistrarUsuario(nuevoUsuario))
-            {
-                return BadRequest(new Resultado(false, "El usuario ya existe"));
-            }
-
-            return Ok(new Resultado(true, "Usuario registrado exitosamente"));
+            _servicioAcceso.RegistrarUsuario(nuevoUsuario);
+            return Ok(new Resultado(true, "Usuario registrado con éxito."));
         }
 
         [HttpPost("cambiar-contraseña")]
         public IActionResult CambiarContraseña([FromBody] ChangePasswordRequest solicitud)
         {
-            if (!_servicioAcceso.CambiarContraseña(solicitud.UserName, solicitud.NewPassword))
+            var userId = _servicioAcceso.Validar(solicitud.UserNameEmail, solicitud.Password);
+
+            if (userId == null)
+            {
+                return Unauthorized(new Resultado(false, "Credenciales incorrectas"));
+            }
+
+            if (!_servicioAcceso.CambiarContraseña(userId.Value, solicitud.NewPassword))
             {
                 return NotFound(new Resultado(false, "Usuario no encontrado"));
             }
 
             return Ok(new Resultado(true, "Contraseña cambiada exitosamente"));
         }
+        [HttpPost("RecuperarContraseña")]
+        public IActionResult RecuperarContraseña([FromBody] RecuperarContraseñaRequest request)
+        {
+            var resultado = _servicioAcceso.IniciarRecuperacionContraseña(request.Email);
+
+            if (!resultado.Exito)
+            {
+                return NotFound(resultado);
+            }
+
+            return Ok(resultado);
+        }
+        //[HttpPost("RestablecerContraseña")]
+        //public IActionResult RestablecerContraseña([FromBody] RestablecerContraseñaRequest request)
+        //{
+        //    var resultado = _servicioAcceso.RestablecerContraseña(request.Token, request.NuevaContraseña);
+
+        //    if (!resultado.Exito)
+        //    {
+        //        return BadRequest(resultado);
+        //    }
+
+        //    return Ok(resultado);
+        //}
+
+
+        //[HttpPost("enviar-correo")]
+        //public IActionResult EnviarCorreo([FromBody] EnviarCorreoRequest request)
+        //{
+        //    var resultado = _emailService.EnviarCorreo(request.To, request.Subject, request.Body);
+
+        //    if (resultado.Exito)
+        //    {
+        //        return Ok(resultado);
+        //    }
+
+        //    return BadRequest(resultado);
+        //}
 
         [HttpGet("perfil")]
-        public IActionResult ObtenerPerfilUsuario(string nombreUsuario)
+        public IActionResult ObtenerPerfilUsuario(string nombreUsuarioEmail)
         {
-            var perfil = _servicioAcceso.ObtenerPerfilUsuario(nombreUsuario);
+            var perfil = _servicioAcceso.ObtenerPerfilUsuario(nombreUsuarioEmail);
             if (perfil == null)
             {
                 return NotFound(new Resultado(false, "Usuario no encontrado"));
