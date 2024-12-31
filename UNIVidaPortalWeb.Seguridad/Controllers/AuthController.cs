@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using System.Security.Claims;
 using System.Text.Json;
 using UNIVidaPortalWeb.Common.Token.Src;
+using UNIVidaPortalWeb.Seguridad.DTOs;
 using UNIVidaPortalWeb.Seguridad.Models;
 using UNIVidaPortalWeb.Seguridad.Models.UNIVidaPortalWeb.Convocatorias.Utilidades;
 using UNIVidaPortalWeb.Seguridad.Services;
@@ -17,7 +18,7 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
     {
         private readonly IAccessService _servicioAcceso;
         private readonly JwtOptions _opcionesJwt;
-       
+
 
 
         public AuthController(IAccessService servicioAcceso,
@@ -25,7 +26,7 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
         {
             _servicioAcceso = servicioAcceso;
             _opcionesJwt = opcionesJwt.Value;
-       
+
 
         }
 
@@ -103,9 +104,13 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
         }
 
         [HttpPost("registrar")]
-        public IActionResult RegistrarUsuario([FromBody] AccessModel nuevoUsuario)
+        public IActionResult RegistrarUsuario([FromBody] AccessRequestDTO nuevoUsuario)
         {
-            _servicioAcceso.RegistrarUsuario(nuevoUsuario);
+            AccessModel usuario = new AccessModel();
+            usuario.Username = nuevoUsuario.Username;
+            usuario.Email = nuevoUsuario.Email;
+            usuario.Password = nuevoUsuario.Password;
+            _servicioAcceso.RegistrarUsuario(usuario);
             return Ok(new Resultado(true, "Usuario registrado con éxito."));
         }
 

@@ -1,436 +1,435 @@
-//{
+{
 
-//  "Routes": [
-//    // --- Seguridad ---
+  "Routes": [
+    // --- Seguridad ---
 
-//    {
-//      "DownstreamPathTemplate": "/api/auth/logout",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "seguridad",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/auth/logout",
-//      "UpstreamHttpMethod": [ "POST" ]
-//    },
-//    {
-//      "DownstreamPathTemplate": "/api/auth/login",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "seguridad",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/auth/login",
-//      "UpstreamHttpMethod": [ "POST" ],
-//      "Key": "loginusuario"
-//    },
-//    {
-//      "DownstreamPathTemplate": "/api/auth/registrar",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "seguridad1",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/auth/registrar",
-//      "UpstreamHttpMethod": [ "POST" ]
-//    },
-//    {
-//      "DownstreamPathTemplate": "/api/auth/cambiar-contraseña",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "seguridad",
-//          "Port": 5002
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/auth/cambiar-contraseña",
-//      "UpstreamHttpMethod": [ "POST" ]
-//    },
-//    {
-//      "DownstreamPathTemplate": "/api/auth/perfil",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "seguridad",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/auth/perfil",
-//      "UpstreamHttpMethod": [ "GET" ]
-//    },
-//    //--- FIN Seguridad ---
-//    // --- Paginas Dinamicas ---
-//    {
-//      "DownstreamPathTemplate": "/api/PaginasDinamicas/paginaPorRuta/{ruta}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "cms",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/PaginasDinamicas/paginaPorRuta/{ruta}",
-//      "UpstreamHttpMethod": [ "GET" ]
-//    },
-//    {
-//      "DownstreamPathTemplate": "/api/PaginasDinamicas",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "cms",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/PaginasDinamicas",
-//      "UpstreamHttpMethod": [ "GET" ]
-//    },
+    {
+      "DownstreamPathTemplate": "/api/auth/logout",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "seguridad",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/auth/logout",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/auth/login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "seguridad",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/auth/login",
+      "UpstreamHttpMethod": [ "POST" ],
+      "Key": "loginusuario"
+    },
+    {
+      "DownstreamPathTemplate": "/api/auth/registrar",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "seguridad1",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/auth/registrar",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/auth/cambiar-contraseña",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "seguridad",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/api/auth/cambiar-contraseña",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/auth/perfil",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "seguridad",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/auth/perfil",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    //--- FIN Seguridad ---
+    // --- Paginas Dinamicas ---
+    {
+      "DownstreamPathTemplate": "/api/PaginasDinamicas/paginaPorRuta/{ruta}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cms",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/PaginasDinamicas/paginaPorRuta/{ruta}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/PaginasDinamicas",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cms",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/PaginasDinamicas",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
 
-//    // --- Nuestros Seguros ---
-//    {
-//      "DownstreamPathTemplate": "/api/Seguro",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "cms",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/Seguro",
-//      "UpstreamHttpMethod": [ "GET" ]
-//    },
-//    {
-//      "DownstreamPathTemplate": "/api/Seguro/ObtenerPorRuta/{ruta}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "cms",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/Seguro/ObtenerPorRuta/{ruta}",
-//      "UpstreamHttpMethod": [ "GET" ]
-//    },
+    // --- Nuestros Seguros ---
+    {
+      "DownstreamPathTemplate": "/api/Seguro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cms",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Seguro",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Seguro/ObtenerPorRuta/{ruta}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cms",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Seguro/ObtenerPorRuta/{ruta}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
 
-//    // --- Menu ---
-//    {
-//      "DownstreamPathTemplate": "/api/MenuPrincipal",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "cms",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/MenuPrincipal",
-//      "UpstreamHttpMethod": [ "GET" ]
+    // --- Menu ---
+    {
+      "DownstreamPathTemplate": "/api/MenuPrincipal",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cms",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/MenuPrincipal",
+      "UpstreamHttpMethod": [ "GET" ]
 
-//    },
-//    // --- Banner Pagina principal ---
-//    {
-//      "DownstreamPathTemplate": "/api/BannerPaginaPrincipalMaestro/habilitados/{id}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "cms",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/BannerPaginaPrincipalMaestro/habilitados/{id}",
-//      "UpstreamHttpMethod": [ "GET" ]
+    },
+    // --- Banner Pagina principal ---
+    {
+      "DownstreamPathTemplate": "/api/BannerPaginaPrincipalMaestro/habilitados/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cms",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/BannerPaginaPrincipalMaestro/habilitados/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
 
-//    },
+    },
 
-//    // --- Convocatorias ---
-//    {
-//      "DownstreamPathTemplate": "/api/Convocatoria/vigentes",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "convocatorias",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/Convocatoria/vigentes",
-//      "UpstreamHttpMethod": [ "GET" ]
-//    },
-//    {
-//      "DownstreamPathTemplate": "/api/Convocatoria",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "cms",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/Convocatoria",
-//      "UpstreamHttpMethod": [ "GET" ]
-//    },
-//    {
-//      "DownstreamPathTemplate": "/api/Convocatoria/{id}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "convocatorias",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/Convocatoria/{id}",
-//      "UpstreamHttpMethod": [ "GET" ]
-//    },
-//    /************************************************************
-//     --- CON SEGURIDAD --
-//***********************************************************/
+    // --- Convocatorias ---
+    {
+      "DownstreamPathTemplate": "/api/Convocatoria/vigentes",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "convocatorias",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Convocatoria/vigentes",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Convocatoria",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cms",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Convocatoria",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Convocatoria/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "convocatorias",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Convocatoria/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    /************************************************************
+     --- CON SEGURIDAD --
+***********************************************************/
 
 
-//    //--- Capacitación ---
-//    {
-//      "DownstreamPathTemplate": "/api/Capacitacion/{everything}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "convocatorias",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/Capacitacion/{everything}",
-//      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-//      "AuthenticationOptions": {
-//        "AuthenticationProviderKey": "MY-KEY-JWT",
-//        "AllowedScopes": []
-//      },
-//      "AddHeadersToRequest": {
-//        "claims_username": "Claims[username] > value > |",
-//        "claims_userId": "Claims[userId] > value > |"
-//      }
-//    },
-//    //--- Conocimiento idioma ---
-//    {
-//      "DownstreamPathTemplate": "/api/ConocimientoIdioma/{everything}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "convocatorias",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/ConocimientoIdioma/{everything}",
-//      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-//      "AuthenticationOptions": {
-//        "AuthenticationProviderKey": "MY-KEY-JWT",
-//        "AllowedScopes": []
-//      },
-//      "AddHeadersToRequest": {
-//        "claims_username": "Claims[username] > value > |",
-//        "claims_userId": "Claims[userId] > value > |"
-//      }
-//    },
-//    //--- Conocimiento sistemas ---
-//    {
-//      "DownstreamPathTemplate": "/api/ConocimientoSistemas/{everything}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "convocatorias",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/ConocimientoSistemas/{everything}",
-//      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-//      "AuthenticationOptions": {
-//        "AuthenticationProviderKey": "MY-KEY-JWT",
-//        "AllowedScopes": []
-//      },
-//      "AddHeadersToRequest": {
-//        "claims_username": "Claims[username] > value > |",
-//        "claims_userId": "Claims[userId] > value > |"
-//      }
-//    },
-//    //--- Experiencia laboral ---
-//    {
-//      "DownstreamPathTemplate": "/api/ExperienciaLaboral/{everything}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "convocatorias",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/ExperienciaLaboral/{everything}",
-//      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-//      "AuthenticationOptions": {
-//        "AuthenticationProviderKey": "MY-KEY-JWT",
-//        "AllowedScopes": []
-//      },
-//      "AddHeadersToRequest": {
-//        "claims_username": "Claims[username] > value > |",
-//        "claims_userId": "Claims[userId] > value > |"
-//      }
-//    },
-//    //--- Formación académica ---
-//    {
-//      "DownstreamPathTemplate": "/api/FormacionAcademica/{everything}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "convocatorias",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/FormacionAcademica/{everything}",
-//      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-//      "AuthenticationOptions": {
-//        "AuthenticationProviderKey": "MY-KEY-JWT",
-//        "AllowedScopes": []
-//      },
-//      "AddHeadersToRequest": {
-//        "claims_username": "Claims[username] > value > |",
-//        "claims_userId": "Claims[userId] > value > |"
-//      }
-//    },
-//    //--- Referencia Laboral ---
-//    {
-//      "DownstreamPathTemplate": "/api/ReferenciaLaboral/{everything}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "convocatorias",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/ReferenciaLaboral/{everything}",
-//      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-//      "AuthenticationOptions": {
-//        "AuthenticationProviderKey": "MY-KEY-JWT",
-//        "AllowedScopes": []
-//      },
-//      "AddHeadersToRequest": {
-//        "claims_username": "Claims[username] > value > |",
-//        "claims_userId": "Claims[userId] > value > |"
-//      }
-//    },
-//    //--- Referencia Personal ---
-//    {
-//      "DownstreamPathTemplate": "/api/ReferenciaPersonal/{everything}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "convocatorias",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/ReferenciaPersonal/{everything}",
-//      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-//      "AuthenticationOptions": {
-//        "AuthenticationProviderKey": "MY-KEY-JWT",
-//        "AllowedScopes": []
-//      },
-//      "AddHeadersToRequest": {
-//        "claims_username": "Claims[username] > value > |",
-//        "claims_userId": "Claims[userId] > value > |"
-//      }
-//    },
-//    //--- Postulante ---
-//    {
-//      "DownstreamPathTemplate": "/api/Postulante/ObtenerPorUsuario/{id}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "convocatorias",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/Postulante/ObtenerPorUsuario/{id}",
-//      "UpstreamHttpMethod": [ "GET" ],
-//      "Key": "obtiene_postulante"
-//    },
-//    //prueba
-//    //{
-//    //  "DownstreamPathTemplate": "/api/Postulante",
-//    //  "DownstreamScheme": "http",
-//    //  "DownstreamHostAndPorts": [
-//    //    {
-//    //      "Host": "localhost",
-//    //      "Port": 80
-//    //    }
-//    //  ],
-//    //  "UpstreamPathTemplate": "/api/Postulante",
-//    //  "UpstreamHttpMethod": [ "GET" ],
-//    //  "Key": "obtienepostulantenuevo"
-//    //},
+    //--- Capacitación ---
+    {
+      "DownstreamPathTemplate": "/api/Capacitacion/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "convocatorias",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Capacitacion/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
+      }
+    },
+    //--- Conocimiento idioma ---
+    {
+      "DownstreamPathTemplate": "/api/ConocimientoIdioma/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "convocatorias",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ConocimientoIdioma/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
+      }
+    },
+    //--- Conocimiento sistemas ---
+    {
+      "DownstreamPathTemplate": "/api/ConocimientoSistemas/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "convocatorias",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ConocimientoSistemas/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
+      }
+    },
+    //--- Experiencia laboral ---
+    {
+      "DownstreamPathTemplate": "/api/ExperienciaLaboral/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "convocatorias",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ExperienciaLaboral/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
+      }
+    },
+    //--- Formación académica ---
+    {
+      "DownstreamPathTemplate": "/api/FormacionAcademica/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "convocatorias",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/FormacionAcademica/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
+      }
+    },
+    //--- Referencia Laboral ---
+    {
+      "DownstreamPathTemplate": "/api/ReferenciaLaboral/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "convocatorias",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ReferenciaLaboral/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
+      }
+    },
+    //--- Referencia Personal ---
+    {
+      "DownstreamPathTemplate": "/api/ReferenciaPersonal/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "convocatorias",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ReferenciaPersonal/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
+      }
+    },
+    //--- Postulante ---
+    {
+      "DownstreamPathTemplate": "/api/Postulante/ObtenerPorUsuario/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "convocatorias",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Postulante/ObtenerPorUsuario/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "Key": "obtiene_postulante"
+    },
+    //prueba
+    //{
+    //  "DownstreamPathTemplate": "/api/Postulante",
+    //  "DownstreamScheme": "http",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 80
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/api/Postulante",
+    //  "UpstreamHttpMethod": [ "GET" ],
+    //  "Key": "obtienepostulantenuevo"
+    //},
 
-//    {
-//      "DownstreamPathTemplate": "/api/Postulante/{everything}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "convocatorias",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/Postulante/{everything}",
+    {
+      "DownstreamPathTemplate": "/api/Postulante/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "convocatorias",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Postulante/{everything}",
 
-//      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-//      "AuthenticationOptions": {
-//        "AuthenticationProviderKey": "MY-KEY-JWT",
-//        "AllowedScopes": []
-//      },
-//      "AddHeadersToRequest": {
-//        "claims_username": "Claims[username] > value > |",
-//        "claims_userId": "Claims[userId] > value > |"
-//      }
-//    },
-//    //--- POSTULACION ---
-//    {
-//      "DownstreamPathTemplate": "/api/Postulacion",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "convocatorias",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/Postulacion",
-//      "UpstreamHttpMethod": [ "POST" ],
-//      "AuthenticationOptions": {
-//        "AuthenticationProviderKey": "MY-KEY-JWT",
-//        "AllowedScopes": []
-//      },
-//      "AddHeadersToRequest": {
-//        "claims_username": "Claims[username] > value > |",
-//        "claims_userId": "Claims[userId] > value > |"
-//      }
-//    },
-//    //--- PARAMETRICAS ---
-//    {
-//      "DownstreamPathTemplate": "/api/Par{everything}",
-//      "DownstreamScheme": "http",
-//      "DownstreamHostAndPorts": [
-//        {
-//          "Host": "convocatorias",
-//          "Port": 80
-//        }
-//      ],
-//      "UpstreamPathTemplate": "/api/Par{everything}",
-//      "UpstreamHttpMethod": [ "GET" ],
-//      "AuthenticationOptions": {
-//        "AuthenticationProviderKey": "MY-KEY-JWT",
-//        "AllowedScopes": []
-//      },
-//      "AddHeadersToRequest": {
-//        "claims_username": "Claims[username] > value > |",
-//        "claims_userId": "Claims[userId] > value > |"
-//      }
-//    }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
+      }
+    },
+    //--- POSTULACION ---
+    {
+      "DownstreamPathTemplate": "/api/Postulacion",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "convocatorias",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Postulacion",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
+      }
+    },
+    //--- PARAMETRICAS ---
+    {
+      "DownstreamPathTemplate": "/api/Par{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "convocatorias",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Par{everything}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "claims_username": "Claims[username] > value > |",
+        "claims_userId": "Claims[userId] > value > |"
+      }
+    }
 
-//  ],
-//  "GlobalConfiguration": {
-//    "BaseUrl": "http://localhost:5000"
-//  }
-//}
-{}
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000"
+  }
+}
