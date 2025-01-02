@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Security.Claims;
 using System.Text.Json;
+using UNIVidaPortalWeb.Common.Email.Src;
 using UNIVidaPortalWeb.Common.Token.Src;
 using UNIVidaPortalWeb.Seguridad.DTOs;
 using UNIVidaPortalWeb.Seguridad.Models;
@@ -18,14 +19,16 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
     {
         private readonly IAccessService _servicioAcceso;
         private readonly JwtOptions _opcionesJwt;
+        private readonly EmailService _emailService;
 
 
 
         public AuthController(IAccessService servicioAcceso,
-            IOptionsSnapshot<JwtOptions> opcionesJwt)
+            IOptionsSnapshot<JwtOptions> opcionesJwt, EmailService emailService)
         {
             _servicioAcceso = servicioAcceso;
             _opcionesJwt = opcionesJwt.Value;
+            _emailService = emailService;
 
 
         }
@@ -159,18 +162,18 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
         //}
 
 
-        //[HttpPost("enviar-correo")]
-        //public IActionResult EnviarCorreo([FromBody] EnviarCorreoRequest request)
-        //{
-        //    var resultado = _emailService.EnviarCorreo(request.To, request.Subject, request.Body);
+        [HttpPost("enviar-correo")]
+        public IActionResult EnviarCorreo([FromBody] EnviarCorreoRequest request)
+        {
+            var resultado = _emailService.EnviarCorreo(request.To, request.Subject, request.Body);
 
-        //    if (resultado.Exito)
-        //    {
-        //        return Ok(resultado);
-        //    }
+            //if (resultado.Exito)
+            //{
+            //    return Ok(resultado);
+            //}
 
-        //    return BadRequest(resultado);
-        //}
+            return BadRequest(resultado);
+        }
 
         [HttpGet("perfil")]
         public IActionResult ObtenerPerfilUsuario(string nombreUsuarioEmail)

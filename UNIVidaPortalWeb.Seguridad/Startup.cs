@@ -8,6 +8,7 @@ using UNIVidaPortalWeb.Common.Tracing.Src;
 using UNIVidaPortalWeb.Common.Metric.Registry;
 using UNIVidaPortalWeb.Common.Http.Src;
 using UNIVidaPortalWeb.Seguridad.Utilities;
+using UNIVidaPortalWeb.Common.Email.Src;
 namespace UNIVidaPortalWeb.Seguridad
 {
     public class Startup
@@ -59,9 +60,14 @@ namespace UNIVidaPortalWeb.Seguridad
             services.Configure<JwtOptions>(Configuration.GetSection("jwt"));
             services.AddHttpClient();
             services.AddProxyHttp();
-            // === REGISTRO DEL SERVICIO DE EMAIL ===
-            //services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
-            //services.AddTransient<EmailService>();
+            /*configuración de email*/
+            var emailSettings = Configuration.GetSection("EmailSettings").Get<EmailSettings>();
+            services.AddHttpClient<EmailService>(client =>
+            {
+                client.BaseAddress = new Uri(emailSettings.Endpoint);
+            });
+            services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
