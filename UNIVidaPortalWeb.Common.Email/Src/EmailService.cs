@@ -28,7 +28,7 @@ namespace UNIVidaPortalWeb.Common.Email.Src
                             <to>{to}</to>
                             <from>{_settings.Usuario}</from>
                             <subject>{subject}</subject>
-                            <body>{message}</body>
+                            <body><![CDATA[{message}]]></body>
                             <smtpCliente>{_settings.SmtpCliente}</smtpCliente>
                             <puerto>{_settings.Puerto}</puerto>
                             <usuario>{_settings.Usuario}</usuario>
@@ -49,10 +49,11 @@ namespace UNIVidaPortalWeb.Common.Email.Src
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception($"Error en el servidor: {response.StatusCode} - {responseBody}");
+                    return false;
+                             
                 }
-
                 return true;
+
             }
             catch (HttpRequestException ex)
             {

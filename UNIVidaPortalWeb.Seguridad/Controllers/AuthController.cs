@@ -136,7 +136,7 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
 
             return Ok(new Resultado(true, "Contraseña cambiada exitosamente"));
         }
-        [HttpPost("RecuperarContraseña")]
+        [HttpPost("RecuperarContrasena")]
         public IActionResult RecuperarContraseña([FromBody] RecuperarContraseñaRequest request)
         {
             var resultado = _servicioAcceso.IniciarRecuperacionContraseña(request.Email);
@@ -148,7 +148,7 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
 
             return Ok(resultado);
         }
-        [HttpPost("RestablecerContraseña")]
+        [HttpPost("RestablecerContrasena")]
         public IActionResult RestablecerContraseña([FromBody] RestablecerContraseñaRequest request)
         {
             var resultado = _servicioAcceso.RestablecerContraseña(request.Token, request.NuevaContraseña);

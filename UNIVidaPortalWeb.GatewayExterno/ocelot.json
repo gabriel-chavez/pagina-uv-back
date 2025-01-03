@@ -2,7 +2,30 @@
 
   "Routes": [
     // --- Seguridad ---
-
+    {
+      "DownstreamPathTemplate": "/api/auth/RestablecerContrasena",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "seguridad",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/api/auth/RestablecerContrasena",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/auth/RecuperarContrasena",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "seguridad",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/api/auth/RecuperarContrasena",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
     {
       "DownstreamPathTemplate": "/api/auth/logout",
       "DownstreamScheme": "http",

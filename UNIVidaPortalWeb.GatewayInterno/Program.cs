@@ -7,13 +7,20 @@ Host.CreateDefaultBuilder(args)
     .ConfigureAppConfiguration((hostingContext, config) =>
     {
         var env = hostingContext.HostingEnvironment;
+        var envFilePath = Path.Combine(Directory.GetCurrentDirectory(), $"ocelot.{env.EnvironmentName}.json");
 
-        // Configurar archivos de configuración
-        config
-            .AddJsonFile($"ocelot.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
-            .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true)
-            .AddEnvironmentVariables();
+        if (File.Exists(envFilePath))
+        {
+            config.AddJsonFile(envFilePath, optional: false, reloadOnChange: true);
+        }
+        else
+        {
+            config.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+        }
+
+        config.AddEnvironmentVariables();
     })
+
     .ConfigureWebHostDefaults(webHostBuilder =>
     {
         // Configurar AppMetrics

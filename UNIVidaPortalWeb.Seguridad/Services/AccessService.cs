@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using UNIVidaPortalWeb.Seguridad.Utilities;
 using UNIVidaPortalWeb.Seguridad.Exceptions;
 using UNIVidaPortalWeb.Common.Email.Src;
+using System.Diagnostics.Eventing.Reader;
 
 
 namespace UNIVidaPortalWeb.Seguridad.Services
@@ -128,19 +129,76 @@ namespace UNIVidaPortalWeb.Seguridad.Services
             {
                 return new Resultado(false, "El correo electrónico no está registrado.");
             }
-            
+
             var token = Guid.NewGuid().ToString();
 
             usuario.TokenRecuperacion = token;
-            usuario.TokenExpira = DateTime.UtcNow.AddHours(1);  // Token expira en 1 hora
+            usuario.TokenExpira = DateTime.UtcNow.AddHours(1);
             _contextoBaseDatos.SaveChanges();
 
-            // Enviar correo con enlace de recuperación
-            var enlaceRecuperacion = $"/recuperar?token={token}";
-            _emailService.EnviarCorreo(usuario.Email,"recuperar", enlaceRecuperacion);
+            var urlPagina = _configuration["urlPagina"];
+            var enlaceRecuperacion = $"{urlPagina}/recuperar?token={token}";
 
-            return new Resultado(true, "Se ha enviado un enlace de recuperación a su correo electrónico.");
+            string cuerpoCorreo = $@"
+                <html>
+                <head>
+                    <style>
+                        .container {{
+                            font-family: Arial, sans-serif;
+                            text-align: center;
+                            margin: 40px auto;
+                            padding: 20px;
+                            max-width: 600px;
+                            border: 1px solid #ddd;
+                            border-radius: 8px;
+                            background-color: #f9f9f9;
+                        }}
+                        .btn {{
+                            background-color: #007bff;
+                            color: white;
+                            padding: 10px 20px;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            display: inline-block;
+                            margin-top: 20px;
+                        }}
+                        .footer {{
+                            margin-top: 30px;
+                            font-size: 12px;
+                            color: #777;
+                        }}
+                    </style>
+                </head>
+                <body>
+                    <div class='container'>
+                        <h2>Hola {usuario.Username},</h2>
+                        <p>Hemos recibido una solicitud para restablecer tu contraseña.</p>
+                        <p>Si no realizaste esta solicitud, puedes ignorar este mensaje.</p>
+                        <p>Para restablecer tu contraseña, haz clic en el botón de abajo:</p>
+                        <a href='{enlaceRecuperacion}' class='btn'>Restablecer contraseña</a>
+                        <p>O también puedes copiar y pegar el siguiente enlace en tu navegador:</p>
+                        <p>{enlaceRecuperacion}</p>
+                        <div class='footer'>
+                            <p>Si tienes algún problema, no dudes en contactarnos.</p>
+                            <p>&copy; {DateTime.Now.ToString("yyyy")} - Univida S.A.</p>
+                        </div>
+                    </div>
+                </body>
+                </html>";
+            var correoEnmascarado = EnmascararCorreo(usuario.Email);
+            
+            if (_emailService.EnviarCorreo(usuario.Email, "Recuperar contraseña", cuerpoCorreo))
+            {
+                return new Resultado(true, $"Se ha enviado un enlace de recuperación a su correo electrónico ({correoEnmascarado}).");
+            }
+            else
+            {
+                return new Resultado(true, "No se pudo enviar el correo, intente nuevamente mas tarde.");
+            }
+
+            
         }
+
         public Resultado RestablecerContraseña(string token, string nuevaContraseña)
         {
             var usuario = _contextoBaseDatos.Access.FirstOrDefault(x => x.TokenRecuperacion == token && x.TokenExpira > DateTime.UtcNow);
@@ -150,13 +208,11 @@ namespace UNIVidaPortalWeb.Seguridad.Services
                 return new Resultado(false, "El token no es válido o ha expirado.");
             }
 
-            // Validar longitud mínima de la contraseña
             if (!EsContraseñaValida(nuevaContraseña))
             {
                 throw new ValidationException("La contraseña debe tener al menos 5 caracteres, una letra mayúscula, una minúscula, un número y un carácter especial.");
             }
-
-            // Encriptar y actualizar la contraseña
+            
             usuario.Password = EncriptarContraseña(nuevaContraseña);
             usuario.TokenRecuperacion = "";  // Invalida el token después de usarlo
             usuario.TokenExpira = DateTime.MinValue;
@@ -165,26 +221,25 @@ namespace UNIVidaPortalWeb.Seguridad.Services
             return new Resultado(true, "Contraseña actualizada correctamente.");
         }
 
+        private string EnmascararCorreo(string email)
+        {
+            var partes = email.Split('@');
+            if (partes.Length == 2)
+            {
+                var nombre = partes[0];
+                var dominio = partes[1];
 
-
-
-
-
-
-        //string uri = _configuration["proxy:urlConvocatoria"];
-
-        //HttpResponseMessage response = _httpClient.GetAsync(uri  + usuarioId).GetAwaiter().GetResult();
-
-        //if (response.IsSuccessStatusCode)
-        //{
-        //    string responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-        //    Console.WriteLine("Respuesta exitosa: " + responseBody);
-        //}
-
-        //response.EnsureSuccessStatusCode();
-        //return response;
-
-
+                if (nombre.Length > 3)
+                {
+                    return $"{nombre.Substring(0, 3)}***@{dominio}";
+                }
+                else
+                {
+                    return $"{nombre.Substring(0, 1)}***@{dominio}";
+                }
+            }
+            return email;
+        }
 
     }
 }
