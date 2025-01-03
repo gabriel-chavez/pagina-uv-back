@@ -8,6 +8,7 @@ using Polly.CircuitBreaker;
 using System.Text.RegularExpressions;
 using UNIVidaPortalWeb.Seguridad.Utilities;
 using UNIVidaPortalWeb.Seguridad.Exceptions;
+using UNIVidaPortalWeb.Common.Email.Src;
 
 
 namespace UNIVidaPortalWeb.Seguridad.Services
@@ -17,12 +18,14 @@ namespace UNIVidaPortalWeb.Seguridad.Services
         public readonly ContextDatabase _contextoBaseDatos;
         private readonly IConfiguration _configuration;
         private readonly IHttpClient _httpClient;
+        private readonly EmailService _emailService;
 
-        public AccessService(ContextDatabase contextoBaseDatos, IConfiguration configuration, IHttpClient httpClient)
+        public AccessService(ContextDatabase contextoBaseDatos, IConfiguration configuration, IHttpClient httpClient, EmailService emailService)
         {
             _contextoBaseDatos = contextoBaseDatos;
             _configuration = configuration;
             _httpClient = httpClient;
+            _emailService=emailService;
         }
 
         public IEnumerable<AccessModel> ObtenerTodos()
@@ -133,8 +136,8 @@ namespace UNIVidaPortalWeb.Seguridad.Services
             _contextoBaseDatos.SaveChanges();
 
             // Enviar correo con enlace de recuperación
-            //var enlaceRecuperacion = $"{_servicioCorreo.ObtenerUrlFrontend()}/recuperar?token={token}";
-            //_servicioCorreo.EnviarCorreoRecuperacion(usuario.Email, enlaceRecuperacion);
+            var enlaceRecuperacion = $"/recuperar?token={token}";
+            _emailService.EnviarCorreo(usuario.Email,"recuperar", enlaceRecuperacion);
 
             return new Resultado(true, "Se ha enviado un enlace de recuperación a su correo electrónico.");
         }
@@ -148,14 +151,14 @@ namespace UNIVidaPortalWeb.Seguridad.Services
             }
 
             // Validar longitud mínima de la contraseña
-            if (nuevaContraseña.Length < 8)
+            if (!EsContraseñaValida(nuevaContraseña))
             {
-                throw new ValidationException("La contraseña debe tener al menos 8 caracteres.");
+                throw new ValidationException("La contraseña debe tener al menos 5 caracteres, una letra mayúscula, una minúscula, un número y un carácter especial.");
             }
 
             // Encriptar y actualizar la contraseña
             usuario.Password = EncriptarContraseña(nuevaContraseña);
-            usuario.TokenRecuperacion = null;  // Invalida el token después de usarlo
+            usuario.TokenRecuperacion = "";  // Invalida el token después de usarlo
             usuario.TokenExpira = DateTime.MinValue;
             _contextoBaseDatos.SaveChanges();
 

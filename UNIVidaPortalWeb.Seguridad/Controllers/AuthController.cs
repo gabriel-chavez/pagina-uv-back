@@ -148,18 +148,18 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
 
             return Ok(resultado);
         }
-        //[HttpPost("RestablecerContraseña")]
-        //public IActionResult RestablecerContraseña([FromBody] RestablecerContraseñaRequest request)
-        //{
-        //    var resultado = _servicioAcceso.RestablecerContraseña(request.Token, request.NuevaContraseña);
+        [HttpPost("RestablecerContraseña")]
+        public IActionResult RestablecerContraseña([FromBody] RestablecerContraseñaRequest request)
+        {
+            var resultado = _servicioAcceso.RestablecerContraseña(request.Token, request.NuevaContraseña);
 
-        //    if (!resultado.Exito)
-        //    {
-        //        return BadRequest(resultado);
-        //    }
+            if (!resultado.Exito)
+            {
+                return BadRequest(resultado);
+            }
 
-        //    return Ok(resultado);
-        //}
+            return Ok(resultado);
+        }
 
 
         [HttpPost("enviar-correo")]
@@ -167,10 +167,10 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
         {
             var resultado = _emailService.EnviarCorreo(request.To, request.Subject, request.Body);
 
-            //if (resultado.Exito)
-            //{
-            //    return Ok(resultado);
-            //}
+            if (resultado)
+            {
+               return Ok(resultado);
+           }
 
             return BadRequest(resultado);
         }
