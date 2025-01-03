@@ -137,7 +137,7 @@ namespace UNIVidaPortalWeb.Seguridad.Services
             _contextoBaseDatos.SaveChanges();
 
             var urlPagina = _configuration["urlPagina"];
-            var enlaceRecuperacion = $"{urlPagina}/recuperar?token={token}";
+            var enlaceRecuperacion = $"{urlPagina}/reestablecer-contrasena?token={token}";
 
             string cuerpoCorreo = $@"
                 <html>
