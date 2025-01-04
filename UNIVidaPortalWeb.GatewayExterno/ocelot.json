@@ -228,7 +228,7 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[username] > value > |",
+        "claims_username": "Claims[userEmail] > value > |",
         "claims_userId": "Claims[userId] > value > |"
       }
     },
@@ -249,7 +249,7 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[username] > value > |",
+        "claims_username": "Claims[userEmail] > value > |",
         "claims_userId": "Claims[userId] > value > |"
       }
     },
@@ -270,7 +270,7 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[username] > value > |",
+        "claims_username": "Claims[userEmail] > value > |",
         "claims_userId": "Claims[userId] > value > |"
       }
     },
@@ -291,7 +291,7 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[username] > value > |",
+        "claims_username": "Claims[userEmail] > value > |",
         "claims_userId": "Claims[userId] > value > |"
       }
     },
@@ -312,7 +312,7 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[username] > value > |",
+        "claims_username": "Claims[userEmail] > value > |",
         "claims_userId": "Claims[userId] > value > |"
       }
     },
@@ -333,7 +333,7 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[username] > value > |",
+        "claims_username": "Claims[userEmail] > value > |",
         "claims_userId": "Claims[userId] > value > |"
       }
     },
@@ -354,7 +354,7 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[username] > value > |",
+        "claims_username": "Claims[userEmail] > value > |",
         "claims_userId": "Claims[userId] > value > |"
       }
     },
@@ -404,7 +404,7 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[username] > value > |",
+        "claims_username": "Claims[userEmail] > value > |",
         "claims_userId": "Claims[userId] > value > |"
       }
     },
@@ -425,7 +425,7 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[username] > value > |",
+        "claims_username": "Claims[userEmail] > value > |",
         "claims_userId": "Claims[userId] > value > |"
       }
     },
@@ -446,7 +446,7 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[username] > value > |",
+        "claims_username": "Claims[userEmail] > value > |",
         "claims_userId": "Claims[userId] > value > |"
       }
     }
