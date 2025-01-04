@@ -25,26 +25,34 @@ namespace UNIVidaPortalWeb.Cms.Controllers.MenuControllers
         [HttpGet]
         public async Task<ActionResult> ObtenerMenus()
         {
+            var todosLosMenus = await _menuPrincipalService.GetAllAsync();
+
+            // Ordenar menús principales y submenús por el campo Orden
+            var menus = todosLosMenus
+                .Where(x => x.IdPadre == null && x.Visible)
+                .OrderBy(x => x.Orden) // Ordenar los menús principales por Orden
+                .Select(menu =>
+                {
+                    menu.SubMenus = menu.SubMenus
+                        .Where(sub => sub.Visible)
+                        .OrderBy(sub => sub.Orden) // Ordenar submenús por Orden
+                        .ToList();
+                    return menu;
+                })
+                .ToList();
+
+            var resultado = new Resultado<IEnumerable<MenuPrincipal>>(menus, true, "Menús obtenidos correctamente");
+
+            return Ok(resultado);
+        }
+        [HttpGet("todos")]
+        public async Task<ActionResult> ObtenerMenusTodos()
+        {
             //var menus = await _menuPrincipalService.GetAllAsync();
             var todosLosMenus = await _menuPrincipalService.GetAllAsync();
-            var menus = todosLosMenus.Where(x => x.IdPadre == null).ToList();
-            //var menusOrdenados = await _menuPrincipalService.GetAsync(
-            //    predicate: null,
-            //    orderBy: b => b.OrderBy(x => x.Orden),
-            //    includeString: null,
-            //    disableTracking: true
-            //);
-            //var menus = await _menuPrincipalService.GetAsync(
-            //    predicate: x => x.IdPadre == null,
-            //    orderBy: q => q.OrderBy(x => x.Orden),
-            //    includes: new List<Expression<Func<MenuPrincipal, object>>>
-            //    {
-            //        x => x.SubMenus
-            //    },
-            //    disableTracking: true
-            //);
-
-
+            var menus = todosLosMenus
+                .Where(x => x.IdPadre == null)
+                .ToList();
 
             var resultado = new Resultado<IEnumerable<MenuPrincipal>>(menus, true, "Menús obtenidos correctamente");
 
