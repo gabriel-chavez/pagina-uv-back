@@ -2,3 +2,15 @@ docker-compose -f docker-compose-databases.yml -p unividaportalweb-databases up 
 docker-compose -f docker-compose-services.yml -p unividaportalweb-services up -d
 docker-compose -f docker-compose-microservicios.yml -p unividaportalweb-servicios-backend up -d
 
+actualizar solo un servicio
+construir la imagen
+docker-compose -f docker-compose-microservicios.yml -p unividaportalweb-servicios-backend build gateway_externo
+detener contenedor
+docker-compose -f docker-compose-microservicios.yml -p unividaportalweb-servicios-backend stop gateway_externo
+levantar servicio
+docker-compose -f docker-compose-microservicios.yml -p unividaportalweb-servicios-backend up -d gateway_externo
+
+
+verificar 
+docker-compose ps
+docker-compose logs -f gateway_externo
