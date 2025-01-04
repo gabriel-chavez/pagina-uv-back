@@ -25,7 +25,7 @@ namespace UNIVidaPortalWeb.GatewayExterno
             /*Start - Cors*/
             services.AddCors(o => o.AddPolicy(clientPolicy, builder =>
             {
-                builder.WithOrigins("http://localhost:3000", "http://localhost:3001", "http://172.16.0.30:3000", "https://pagina-web.univida.bo:3000")
+                builder.WithOrigins("http://localhost:3000", "http://localhost:3001", "http://172.16.0.30:3000", "http://pagina-web.univida.bo:3000", "http://pagina-web.univida.bo:3000")
                        .AllowAnyMethod()
                        .AllowAnyHeader()
                        .AllowCredentials(); // Permite enviar cookies con las solicitudes
