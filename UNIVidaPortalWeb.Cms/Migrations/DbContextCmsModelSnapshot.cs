@@ -51,7 +51,7 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CatEstiloBanner");
+                    b.ToTable("CatEstiloBanner", "Catalogo");
                 });
 
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.CatalogoModel.CatTipoBannerPaginaPrincipal", b =>
@@ -83,7 +83,7 @@ namespace UNIVidaPortalWeb.Cms.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CatTipoBannerPaginaPrincipal");
+                    b.ToTable("CatTipoBannerPaginaPrincipal", "Catalogo");
                 });
 
             modelBuilder.Entity("UNIVidaPortalWeb.Cms.Models.CatalogoModel.CatTipoRecurso", b =>

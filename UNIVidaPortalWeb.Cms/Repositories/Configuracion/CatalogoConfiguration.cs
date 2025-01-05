@@ -13,6 +13,8 @@ namespace UNIVidaPortalWeb.Cms.Repositories.Configuracion
             modelBuilder.Entity<CatTipoRecurso>().ToTable("CatTipoRecurso", "Catalogo");
             modelBuilder.Entity<CatTipoSeccion>().ToTable("CatTipoSeccion", "Catalogo");
             modelBuilder.Entity<CatTipoSeguro>().ToTable("CatTipoSeguro", "Catalogo");
+            modelBuilder.Entity<CatEstiloBanner>().ToTable("CatEstiloBanner", "Catalogo");
+            modelBuilder.Entity<CatTipoBannerPaginaPrincipal>().ToTable("CatTipoBannerPaginaPrincipal", "Catalogo");
 
 
             modelBuilder.Entity<Recurso>()

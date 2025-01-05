@@ -19,6 +19,9 @@ namespace UNIVidaPortalWeb.Cms.Repositories
         public DbSet<CatTipoSeccion> CatTipoSecciones { get; set; }
         public DbSet<CatTipoSeguro> CatTipoSeguro { get; set; }
 
+        public DbSet<CatEstiloBanner> CatEstiloBanner { get; set; }
+        public DbSet<CatTipoBannerPaginaPrincipal> CatTipoBannerPaginaPrincipal { get; set; }
+
         // Definición de DbSets, que representan las tablas de Paginas dinamicas
         public DbSet<PaginaDinamica> PaginasDinamicas { get; set; }
         public DbSet<Recurso> Recursos { get; set; }
