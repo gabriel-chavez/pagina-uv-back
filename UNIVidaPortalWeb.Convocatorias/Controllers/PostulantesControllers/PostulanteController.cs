@@ -70,6 +70,7 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPost("guardar-imagen")]
         public async Task<ActionResult> GuardarImagen([FromForm] IFormFile fotografia)
         {
+
             if (fotografia == null || fotografia.Length == 0)
             {
                 return BadRequest("Debe subir una imagen válida.");
@@ -84,7 +85,14 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPut("{id}")]
         public async Task<IActionResult> ActualizarPostulante(int id, PostulanteRequestDTO postulanteDto)
         {
+            if (!Request.Headers.TryGetValue("claims_userId", out var userIdHeader) || !int.TryParse(userIdHeader, out var userId))
+            {
+                return BadRequest("El encabezado 'claims_userId' no está presente o no contiene un valor válido.");
+            }
+
             var postulante = _mapper.Map<Postulante>(postulanteDto);
+            postulante.UsuarioId = userId;
+
             postulante.Id = id;
             await _postulanteService.UpdateAsync(postulante);
 

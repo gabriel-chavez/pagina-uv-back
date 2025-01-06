@@ -56,7 +56,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "seguridad1",
+          "Host": "seguridad",
           "Port": 80
         }
       ],
