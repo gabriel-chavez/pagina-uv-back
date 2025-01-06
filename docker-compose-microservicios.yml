@@ -1,4 +1,19 @@
 services:
+  nginx_proxy:
+    build:
+      context: ./UNIVidaPortalWeb.ProxyInverso 
+      dockerfile: Dockerfile
+    container_name: nginx_proxy
+    ports:
+      - "6000:6000"  # HTTPS para gateway_externo
+      - "6001:6001"  # HTTPS para gateway_interno
+    networks:
+      - unividaportalweb
+    volumes:
+      - ./UNIVidaPortalWeb.ProxyInverso/nginx.conf:/etc/nginx/nginx.conf
+      - ./UNIVidaPortalWeb.ProxyInverso/certs:/etc/nginx/certs
+    restart: always
+
   gateway_externo:
     build:
       context: .
