@@ -48,6 +48,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-compose", "docker-co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNIVidaPortalWeb.Common.Email", "UNIVidaPortalWeb.Common.Email\UNIVidaPortalWeb.Common.Email.csproj", "{0AF059BA-617F-4AC8-A02C-09217ED902C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNIVidaPortalWeb.Common.Log", "UNIVidaPortalWeb.Common.Log\UNIVidaPortalWeb.Common.Log.csproj", "{B9687370-BECC-4A82-8220-E90720F8B49F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +100,10 @@ Global
 		{0AF059BA-617F-4AC8-A02C-09217ED902C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AF059BA-617F-4AC8-A02C-09217ED902C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AF059BA-617F-4AC8-A02C-09217ED902C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9687370-BECC-4A82-8220-E90720F8B49F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9687370-BECC-4A82-8220-E90720F8B49F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9687370-BECC-4A82-8220-E90720F8B49F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9687370-BECC-4A82-8220-E90720F8B49F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,6 +125,7 @@ Global
 		{4437AA75-8F22-4A0E-89AC-AC3E3569BF32} = {8606145B-DFA1-4C6F-8A87-2A7878E3BAEC}
 		{01A58B31-C2F5-47C7-85FC-1FB61278611E} = {8606145B-DFA1-4C6F-8A87-2A7878E3BAEC}
 		{0AF059BA-617F-4AC8-A02C-09217ED902C9} = {8606145B-DFA1-4C6F-8A87-2A7878E3BAEC}
+		{B9687370-BECC-4A82-8220-E90720F8B49F} = {8606145B-DFA1-4C6F-8A87-2A7878E3BAEC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C492E30-637D-4AF2-B48E-843EA91B422D}
