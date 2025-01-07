@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Google.Protobuf.WellKnownTypes;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 using System.Text.Json;
@@ -106,6 +107,8 @@ namespace UNIVidaPortalWeb.Cms
             
 
             services.AddAutoMapper(typeof(Program));
+
+          
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -144,6 +147,9 @@ namespace UNIVidaPortalWeb.Cms
             {
                 endpoints.MapControllers();
             });
+            //loggin
+
+           // app.UseLogSeq();
         }
     }
 
