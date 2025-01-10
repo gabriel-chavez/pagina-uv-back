@@ -16,6 +16,7 @@ using UNIVidaPortalWeb.Cms.Services.RecursoServices;
 using UNIVidaPortalWeb.Cms.Services.SeguroServices;
 using UNIVidaPortalWeb.Common.Metric.Registry;
 using UNIVidaPortalWeb.Common.Tracing.Src;
+using UNIVidaPortalWeb.Common.Log.Src;
 
 namespace UNIVidaPortalWeb.Cms
 {
@@ -149,7 +150,7 @@ namespace UNIVidaPortalWeb.Cms
             });
             //loggin
 
-           // app.UseLogSeq();
+            app.UseLogSeq();
         }
     }
 
