@@ -75,6 +75,7 @@ namespace UNIVidaPortalWeb.Convocatorias
             services.AddDbContext<DbContextConvocatorias>(options =>
             {                
                 options.UseNpgsql(Configuration["cn:postgresConvocatorias"])
+                .EnableSensitiveDataLogging()
                 .LogTo(Console.WriteLine, LogLevel.Information);  // Habilita el logging de BD
             });
             /*Start - Tracer distributed*/

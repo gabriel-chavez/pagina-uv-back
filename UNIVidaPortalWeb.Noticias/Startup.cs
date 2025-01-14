@@ -65,7 +65,7 @@ namespace UNIVidaPortalWeb.Noticias
             // Configuración de contexto de base de datos
             services.AddDbContext<DbContextNoticias>(options =>
             {
-                options.UseNpgsql(Configuration["cn:postgresNoticias"]);
+                options.UseNpgsql(Configuration["cn:postgresNoticias"]).EnableSensitiveDataLogging();
             });
             /*Start - Tracer distributed*/
             services.AddJaeger();
