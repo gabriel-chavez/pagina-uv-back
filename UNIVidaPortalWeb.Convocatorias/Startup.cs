@@ -10,6 +10,10 @@ using UNIVidaPortalWeb.Convocatorias.Services.ConvocatoriasServices;
 using UNIVidaPortalWeb.Convocatorias.Services.ParametricasServices;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
 using UNIVidaPortalWeb.Common.Metric.Registry;
+using UNIVidaPortalWeb.Convocatorias.Utilities;
+using Microsoft.Extensions.DependencyInjection;
+using OpenTracing.Util;
+using OpenTracing;
 
 
 namespace UNIVidaPortalWeb.Convocatorias
@@ -70,20 +74,27 @@ namespace UNIVidaPortalWeb.Convocatorias
             // Configuración de Swagger
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+            //interceptor de tracer
+            services.AddScoped<TracingDbCommandInterceptor>();
 
             // Configuración de contexto de base de datos
-            services.AddDbContext<DbContextConvocatorias>(options =>
+            services.AddDbContext<DbContextConvocatorias>((serviceProvider, options) =>
             {                
+                var tracingInterceptor = serviceProvider.GetRequiredService<TracingDbCommandInterceptor>();
+
                 options.UseNpgsql(Configuration["cn:postgresConvocatorias"])
-                .EnableSensitiveDataLogging()
-                .LogTo(Console.WriteLine, LogLevel.Information);  // Habilita el logging de BD
+                       .AddInterceptors(tracingInterceptor) // Agrega el interceptor
+                       .EnableSensitiveDataLogging()
+                       .LogTo(Console.WriteLine, LogLevel.Information);
             });
             /*Start - Tracer distributed*/
             services.AddJaeger();
             services.AddOpenTracing();
+            services.AddSingleton<ITracer>(sp => GlobalTracer.Instance);
+
             /*End - Tracer distributed*/
             /*Start Metrics*/
-           // services.AddTransient<IMetricsRegistry, MetricsRegistry>();
+            // services.AddTransient<IMetricsRegistry, MetricsRegistry>();
             /*End Metrics*/
 
             // Registro de servicios
