@@ -62,7 +62,7 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
             var postulantePorId = await _postulanteService.GetAsync(x => x.UsuarioId == userId);
             
 
-            if (postulantePorId!=null)
+            if (postulantePorId.Count>0)
             {
                 return BadRequest("Ya existe un postulante con el id "+ userId);
             }
