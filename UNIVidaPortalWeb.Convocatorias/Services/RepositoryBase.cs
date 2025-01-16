@@ -108,10 +108,10 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
             }
 
             entity.FechaModificacion = DateTime.Now;
-            var existingEntity = await _context.Set<T>().FindAsync(entity.Id);
-            if (existingEntity == null)
+            var exists = await _context.Set<T>().AnyAsync(e => EF.Property<int>(e, "Id") == entity.Id);
+            if (!exists)
             {
-                throw new NotFoundException("El registro solicitado para actualizar no existe en la base de datos. Por favor, asegúrese de que el identificador es válido y que el registro no ha sido eliminado.");
+                throw new NotFoundException("El registro solicitado para actualizar no existe en la base de datos.");
             }
             try
             {
@@ -151,10 +151,11 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
             {
                 throw new NotFoundException($"No se encontró {typeof(T).Name} con ID {id}");
             }
-            var existingEntity = await _context.Set<T>().FindAsync(entity.Id);
-            if (existingEntity == null)
+            entity.FechaModificacion = DateTime.Now;
+            var exists = await _context.Set<T>().AnyAsync(e => EF.Property<int>(e, "Id") == entity.Id);
+            if (!exists)
             {
-                throw new NotFoundException("El registro solicitado para eliminar no existe en la base de datos. Por favor, asegúrese de que el identificador es válido.");
+                throw new NotFoundException("El registro solicitado para actualizar no existe en la base de datos.");
             }
             try
             {
