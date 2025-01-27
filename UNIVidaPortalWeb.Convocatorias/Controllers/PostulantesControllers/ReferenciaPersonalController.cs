@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Linq.Expressions;
 using UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs;
+using UNIVidaPortalWeb.Convocatorias.Models.ParametricasModel;
 using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
 using UNIVidaPortalWeb.Convocatorias.Utilidades;
@@ -48,7 +49,11 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpGet("ObtenerPorPostulante/{id}")]
         public async Task<ActionResult> ObtenerReferenciasPorPostulante(int id)
         {
-            var referencias = await _referenciaPersonalService.GetAsync(r => r.PostulanteId == id);
+            var incluir = new List<Expression<Func<ReferenciaPersonal, object>>>
+            {
+                c => c.ParParentesco,
+            };
+            var referencias = await _referenciaPersonalService.GetAsync(r => r.PostulanteId == id, includes: incluir);
             var resultado = new Resultado<IEnumerable<ReferenciaPersonal>>(referencias, true, "Referencias personales del postulante obtenidas correctamente");
             return Ok(resultado);
         }
