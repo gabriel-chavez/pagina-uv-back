@@ -5,8 +5,9 @@ services:
       dockerfile: Dockerfile
     container_name: nginx_proxy
     ports:
-      - "6000:6000"  # HTTPS para gateway_externo
-      - "6001:6001"  # HTTPS para gateway_interno
+      - "8443:8443"  # HTTPS para gateway_externo 5000
+      - "8444:8444"  # HTTPS para gateway_interno 5001
+      - "3000:3000"  # HTTPS para Next.js
     networks:
       - unividaportalweb
     volumes:

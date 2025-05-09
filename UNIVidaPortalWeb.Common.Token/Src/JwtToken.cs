@@ -25,5 +25,40 @@ namespace UNIVidaPortalWeb.Common.Token.Src
 
             return _token;
         }
+        public static ClaimsPrincipal Validate(string token, JwtOptions configuration)
+        {
+            try
+            {
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.UTF8.GetBytes(configuration.Key);
+
+                var validationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidateLifetime = true, // Validar la expiración del token
+                    ValidIssuer = configuration.Issuer,
+                    ValidAudience = configuration.Audience,
+                    IssuerSigningKey = new SymmetricSecurityKey(key)
+                };
+
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
+
+                // Validar que sea un JWT con el algoritmo esperado
+                if (validatedToken is JwtSecurityToken jwtToken &&
+                    jwtToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return principal;
+                }
+            }
+            catch
+            {
+                // Si hay algún error, el token no es válido
+                return null;
+            }
+
+            return null;
+        }
     }
 }

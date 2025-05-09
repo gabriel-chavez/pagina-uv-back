@@ -1,10 +1,14 @@
-﻿namespace UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel
 {
     public class Postulante : BaseDomainModel
     {
         public string Nombres { get; set; }
         public string ApellidoPaterno { get; set; }
         public string ApellidoMaterno { get; set; }
+        [Required(ErrorMessage = "El correo electrónico es obligatorio.")]
+        [EmailAddress(ErrorMessage = "El formato del correo electrónico no es válido.")]
         public string Email { get; set; }
         public string NumeroDocumento { get; set; }
         public string DocumentoExpedido { get; set; }        
@@ -15,7 +19,10 @@
         public string PaisResidencia { get; set; }
         public string Direccion { get; set; }
         public string Zona { get; set; }
+        [RegularExpression(@"^\d{7,10}$", ErrorMessage = "El teléfono debe contener entre 7 y 10 dígitos.")]
         public string Telefono { get; set; }
+
+        [RegularExpression(@"^\d{7,15}$", ErrorMessage = "El teléfono móvil debe contener entre 7 y 15 dígitos.")]
         public string TelefonoMovil { get; set; }
         public string Fotografia { get; set; }
         public int? UsuarioId { get; set; }

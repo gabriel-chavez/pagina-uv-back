@@ -54,7 +54,7 @@ namespace UNIVidaPortalWeb.Seguridad
             services.AddDbContext<ContextDatabase>(
                opt =>
                {
-                   opt.UseMySQL(Configuration["cn:mysql"]);
+                   opt.UseMySQL(Configuration["cn:mysql"]).EnableSensitiveDataLogging();
                });
             services.AddScoped<IAccessService, AccessService>();
             services.Configure<JwtOptions>(Configuration.GetSection("jwt"));

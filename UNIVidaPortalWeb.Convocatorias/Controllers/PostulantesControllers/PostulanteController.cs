@@ -59,8 +59,20 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
                 return BadRequest("El encabezado 'claims_userId' no está presente o no contiene un valor válido.");
             }
 
+            var postulantePorId = await _postulanteService.GetAsync(x => x.UsuarioId == userId);
+            
+
+            if (postulantePorId.Count>0)
+            {
+                return BadRequest("Ya existe un postulante con el id "+ userId);
+            }
+
             var postulante = _mapper.Map<Postulante>(postulanteDto);
             postulante.UsuarioId = userId;
+
+            
+
+
             var postulanteCreado = await _postulanteService.AddAsync(postulante);
             var resultado = new Resultado<Postulante>(postulanteCreado, true, "Postulante creado correctamente");
             return CreatedAtAction(nameof(ObtenerPostulante), new { id = postulanteCreado.Id }, resultado);

@@ -108,6 +108,11 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
             }
 
             entity.FechaModificacion = DateTime.Now;
+            var exists = await _context.Set<T>().AnyAsync(e => EF.Property<int>(e, "Id") == entity.Id);
+            if (!exists)
+            {
+                throw new NotFoundException("El registro solicitado para actualizar no existe en la base de datos.");
+            }
             try
             {
                 _context.Set<T>().Attach(entity);
@@ -146,7 +151,12 @@ namespace UNIVidaPortalWeb.Convocatorias.Services
             {
                 throw new NotFoundException($"No se encontró {typeof(T).Name} con ID {id}");
             }
-
+            entity.FechaModificacion = DateTime.Now;
+            var exists = await _context.Set<T>().AnyAsync(e => EF.Property<int>(e, "Id") == entity.Id);
+            if (!exists)
+            {
+                throw new NotFoundException("El registro solicitado para actualizar no existe en la base de datos.");
+            }
             try
             {
                 _context.Set<T>().Remove(entity);

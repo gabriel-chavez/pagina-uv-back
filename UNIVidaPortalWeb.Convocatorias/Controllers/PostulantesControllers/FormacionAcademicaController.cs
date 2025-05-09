@@ -52,7 +52,7 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
             {
                 c => c.ParNivelFormacion,                
             };
-            var formaciones = await _formacionAcademicaService.GetAsync(f => f.PostulanteId == id);
+            var formaciones = await _formacionAcademicaService.GetAsync(f => f.PostulanteId == id,includes: incluir);
             var resultado = new Resultado<IEnumerable<FormacionAcademica>>(formaciones, true, "Formaciones académicas del postulante obtenidas correctamente");
             return Ok(resultado);
         }
