@@ -1,4 +1,6 @@
-﻿namespace UNIVidaPortalWeb.GatewayExterno.Utilities
+﻿using Newtonsoft.Json;
+
+namespace UNIVidaPortalWeb.GatewayExterno.Utilities
 {
     public class Resultado
     {
@@ -24,8 +26,10 @@
     public class Resultado<T> : Resultado
     {
         // Propiedad de solo lectura
-        public T? Datos { get; }
+        public T? Datos { get; set; }
 
+
+        [JsonConstructor]
         public Resultado(bool exito, string mensaje) : base(exito, mensaje)
         {
         }

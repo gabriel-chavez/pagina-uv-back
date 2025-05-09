@@ -127,7 +127,7 @@ namespace UNIVidaPortalWeb.Seguridad.Services
 
             if (usuario == null)
             {
-                return new Resultado(false, "El correo electrónico no está registrado.");
+                return new Resultado(false, "Si el usuario existe, se enviará un correo de recuperación.");
             }
 
             var token = Guid.NewGuid().ToString();

@@ -3,6 +3,7 @@ using Ocelot.Middleware;
 using UNIVidaPortalWeb.Common.Metric.Registry;
 using UNIVidaPortalWeb.Common.Token.Src;
 using UNIVidaPortalWeb.Common.Tracing.Src;
+using UNIVidaPortalWeb.GatewayExterno.Middleware;
 
 
 
@@ -54,6 +55,13 @@ namespace UNIVidaPortalWeb.GatewayExterno
         // Configuración del pipeline de middleware
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // Middleware para cifrar el JWT (firmar el JWT)
+            app.UseMiddleware<MiddlewareCifradoJwt>();
+
+            // Middleware para descifrar el JWT (verificar el JWT)
+ 
+            app.UseMiddleware<MiddlewareDescifradoJwt>();
+
             //app.Use(async (context, next) =>
             //{
             //    // Verificar si la cookie "jwt" existe
