@@ -1,8 +1,7 @@
 ﻿namespace UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs
 {
     public class ConocimientoIdiomaRequestDTO
-    {
-        public int PostulanteId { get; set; }
+    {   
         public int ParIdiomaId { get; set; }
         public int ParNivelConocimientoLecturaId { get; set; }
         public int ParNivelConocimientoEscrituraId { get; set; }

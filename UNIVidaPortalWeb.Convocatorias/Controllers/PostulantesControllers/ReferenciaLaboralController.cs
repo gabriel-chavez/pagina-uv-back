@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs;
 using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
+using UNIVidaPortalWeb.Convocatorias.Services.UsuariosServices;
 using UNIVidaPortalWeb.Convocatorias.Utilidades;
 
 namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
@@ -13,11 +14,13 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
     {
         private readonly IReferenciaLaboralService _referenciaLaboralService;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
-        public ReferenciaLaboralController(IReferenciaLaboralService referenciaLaboralService, IMapper mapper)
+        public ReferenciaLaboralController(IReferenciaLaboralService referenciaLaboralService, IMapper mapper, IUserService userService)
         {
             _referenciaLaboralService = referenciaLaboralService;
             _mapper = mapper;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -36,10 +39,12 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
             return Ok(resultado);
         }
 
-        [HttpGet("ObtenerPorPostulante/{id}")]
-        public async Task<ActionResult> ObtenerReferenciasPorPostulante(int id)
+        [HttpGet("ObtenerPorPostulante")]
+        public async Task<ActionResult> ObtenerReferenciasPorPostulante()
         {
-            var referencias = await _referenciaLaboralService.GetAsync(r => r.PostulanteId == id);
+            var postulanteId = await _userService.PostulanteId();
+
+            var referencias = await _referenciaLaboralService.GetAsync(r => r.PostulanteId == postulanteId);
             var resultado = new Resultado<IEnumerable<ReferenciaLaboral>>(referencias, true, "Referencias laborales del postulante obtenidas correctamente");
             return Ok(resultado);
         }
@@ -47,7 +52,9 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPost]
         public async Task<ActionResult> CrearReferenciaLaboral(ReferenciaLaboralRequestDTO referenciaDto)
         {
+            var postulanteId = await _userService.PostulanteId();
             var referencia = _mapper.Map<ReferenciaLaboral>(referenciaDto);
+            referencia.PostulanteId = postulanteId;
             var referenciaCreada = await _referenciaLaboralService.AddAsync(referencia);
             var resultado = new Resultado<ReferenciaLaboral>(referenciaCreada, true, "Referencia laboral creada correctamente");
             return CreatedAtAction(nameof(ObtenerReferenciaLaboral), new { id = referenciaCreada.Id }, resultado);
@@ -56,7 +63,9 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPut("{id}")]
         public async Task<IActionResult> ActualizarReferenciaLaboral(int id, ReferenciaLaboralRequestDTO referenciaDto)
         {
+            var postulanteId = await _userService.PostulanteId();
             var referencia = _mapper.Map<ReferenciaLaboral>(referenciaDto);
+            referencia.PostulanteId = postulanteId;
             referencia.Id = id;
             await _referenciaLaboralService.UpdateAsync(referencia);
 

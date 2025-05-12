@@ -2,7 +2,7 @@
 {
     public class ReferenciaPersonalRequestDTO
     {
-        public int PostulanteId { get; set; }
+        
         public string Nombre { get; set; }
         public string Cargo { get; set; }
         public string Empresa { get; set; }

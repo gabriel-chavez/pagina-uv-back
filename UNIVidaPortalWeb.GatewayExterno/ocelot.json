@@ -240,8 +240,8 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[userEmail] > value > |",
-        "claims_userId": "Claims[userId] > value > |"
+        "username": "Claims[userEmail] > value > |",
+        "userId": "Claims[userId] > value > |"
       }
     },
     //--- Conocimiento idioma ---
@@ -261,8 +261,8 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[userEmail] > value > |",
-        "claims_userId": "Claims[userId] > value > |"
+        "username": "Claims[userEmail] > value > |",
+        "userId": "Claims[userId] > value > |"
       }
     },
     //--- Conocimiento sistemas ---
@@ -282,8 +282,8 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[userEmail] > value > |",
-        "claims_userId": "Claims[userId] > value > |"
+        "username": "Claims[userEmail] > value > |",
+        "userId": "Claims[userId] > value > |"
       }
     },
     //--- Experiencia laboral ---
@@ -303,8 +303,8 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[userEmail] > value > |",
-        "claims_userId": "Claims[userId] > value > |"
+        "username": "Claims[userEmail] > value > |",
+        "userId": "Claims[userId] > value > |"
       }
     },
     //--- Formación académica ---
@@ -324,8 +324,8 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[userEmail] > value > |",
-        "claims_userId": "Claims[userId] > value > |"
+        "username": "Claims[userEmail] > value > |",
+        "userId": "Claims[userId] > value > |"
       }
     },
     //--- Referencia Laboral ---
@@ -345,8 +345,8 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[userEmail] > value > |",
-        "claims_userId": "Claims[userId] > value > |"
+        "username": "Claims[userEmail] > value > |",
+        "userId": "Claims[userId] > value > |"
       }
     },
     //--- Referencia Personal ---
@@ -366,13 +366,13 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[userEmail] > value > |",
-        "claims_userId": "Claims[userId] > value > |"
+        "username": "Claims[userEmail] > value > |",
+        "userId": "Claims[userId] > value > |"
       }
     },
     //--- Postulante ---
     {
-      "DownstreamPathTemplate": "/api/Postulante/ObtenerPorUsuario/{id}",
+      "DownstreamPathTemplate": "/api/Postulante/ObtenerPorUsuario",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -380,9 +380,16 @@
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/api/Postulante/ObtenerPorUsuario/{id}",
+      "UpstreamPathTemplate": "/api/Postulante/ObtenerPorUsuario",
       "UpstreamHttpMethod": [ "GET" ],
-      "Key": "obtiene_postulante"
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MY-KEY-JWT",
+        "AllowedScopes": []
+      },
+      "AddHeadersToRequest": {
+        "username": "Claims[userEmail] > value > |",
+        "userId": "Claims[userId] > value > |"
+      }
     },
     //prueba
     //{
@@ -416,8 +423,8 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[userEmail] > value > |",
-        "claims_userId": "Claims[userId] > value > |"
+        "username": "Claims[userEmail] > value > |",
+        "userId": "Claims[userId] > value > |"
       }
     },
     //--- POSTULACION ---
@@ -437,8 +444,8 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[userEmail] > value > |",
-        "claims_userId": "Claims[userId] > value > |"
+        "username": "Claims[userEmail] > value > |",
+        "userId": "Claims[userId] > value > |"
       }
     },
     //--- PARAMETRICAS ---
@@ -458,8 +465,8 @@
         "AllowedScopes": []
       },
       "AddHeadersToRequest": {
-        "claims_username": "Claims[userEmail] > value > |",
-        "claims_userId": "Claims[userId] > value > |"
+        "username": "Claims[userEmail] > value > |",
+        "userId": "Claims[userId] > value > |"
       }
     }
 

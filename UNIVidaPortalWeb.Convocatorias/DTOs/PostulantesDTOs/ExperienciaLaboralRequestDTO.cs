@@ -2,7 +2,6 @@
 {
     public class ExperienciaLaboralRequestDTO
     {
-        public int PostulanteId { get; set; }
 
         public string Empresa { get; set; }
         public string Cargo { get; set; }

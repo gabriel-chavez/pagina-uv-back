@@ -62,26 +62,7 @@ namespace UNIVidaPortalWeb.GatewayExterno
  
             app.UseMiddleware<MiddlewareDescifradoJwt>();
 
-            //app.Use(async (context, next) =>
-            //{
-            //    // Verificar si la cookie "jwt" existe
-            //    var token = context.Request.Cookies["jwt"];
-
-            //    // Si la cookie contiene un token, agregarlo al encabezado Authorization
-            //    if (!string.IsNullOrEmpty(token))
-            //    {
-            //        context.Request.Headers["Authorization"] = $"Bearer {token}";
-            //        Console.WriteLine("Token extraído de la cookie: " + token);
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("No se encontró la cookie jwt.");
-            //    }
-
-            //    // Continuar con la siguiente parte del middleware
-            //    await next();
-            //});
-
+ 
             // Habilitar Swagger UI
             app.Map("/swagger/v1/swagger.json", b =>
             {

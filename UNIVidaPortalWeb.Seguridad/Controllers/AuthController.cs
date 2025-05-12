@@ -52,26 +52,18 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
             }
             var usuario = _servicioAcceso.ObtenerPerfilUsuario(solicitud.UserNameEmail);
             var email = usuario.Email;
-            var postulanteId = 0;
-            var respuesta = _servicioAcceso.ObtenerPostulanteId(userId.Value).Result;
-            var options = new JsonSerializerOptions
-            {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                PropertyNameCaseInsensitive = true
-            };
-            var datosPostulante = JsonSerializer.Deserialize<Resultado<DatosPostulante>>(respuesta, options);
+       
+           
+            
 
 
 
-            if (datosPostulante.Exito)
-            {
-                postulanteId = datosPostulante.Datos.Id;
-            }
+           
             var claims = new List<Claim>
             {
                 new Claim("userId", userId.Value.ToString()),
                 new Claim("userEmail", email),
-                new Claim("postulanteId", postulanteId.ToString())
+         
             };
             var token = JwtToken.Create(_opcionesJwt, claims);
 
@@ -85,8 +77,7 @@ namespace UNIVidaPortalWeb.Seguridad.Controllers
 
             var datos = new
             {
-                token,
-                postulanteId
+                token
             };
             var resultado = new Resultado<object>(datos, true, "Inicio de sesión exitoso");
             return Ok(resultado);

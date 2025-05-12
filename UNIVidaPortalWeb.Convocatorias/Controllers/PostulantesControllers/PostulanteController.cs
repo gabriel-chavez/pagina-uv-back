@@ -6,6 +6,7 @@ using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
 using UNIVidaPortalWeb.Convocatorias.Utilidades;
 using Microsoft.Extensions.Primitives;
+using UNIVidaPortalWeb.Convocatorias.Services.UsuariosServices;
 
 namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
 {
@@ -15,11 +16,13 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
     {
         private readonly IPostulanteService _postulanteService;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
-        public PostulanteController(IPostulanteService postulanteService, IMapper mapper)
+        public PostulanteController(IPostulanteService postulanteService, IMapper mapper, IUserService userService)
         {
             _postulanteService = postulanteService;
             _mapper = mapper;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -37,11 +40,11 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
             var resultado = new Resultado<Postulante>(postulante, true, "Postulante obtenido correctamente");
             return Ok(resultado);
         }
-        [HttpGet("ObtenerPorUsuario/{usuarioId}")]
-        public async Task<ActionResult> ObtenerPostulantePorUsuario(int usuarioId)
+        [HttpGet("ObtenerPorUsuario")]
+        public async Task<ActionResult> ObtenerPostulantePorUsuario()
         {
-            
-            var postulantes = await _postulanteService.GetAsync(x=>x.UsuarioId== usuarioId);
+            var userId = _userService.UserId;
+            var postulantes = await _postulanteService.GetAsync(x=>x.UsuarioId== userId);
             var postulante = postulantes.FirstOrDefault();
             if (postulante == null)
             {
@@ -54,9 +57,10 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPost]
         public async Task<ActionResult> CrearPostulante(PostulanteRequestDTO postulanteDto)
         {
-            if (!Request.Headers.TryGetValue("claims_userId", out var userIdHeader) || !int.TryParse(userIdHeader, out var userId))
+            var userId = _userService.UserId;
+            if (userId == 0)
             {
-                return BadRequest("El encabezado 'claims_userId' no está presente o no contiene un valor válido.");
+                throw new NotFoundException("El ID de usuario es obligatorio");
             }
 
             var postulantePorId = await _postulanteService.GetAsync(x => x.UsuarioId == userId);
@@ -94,21 +98,18 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
             return Ok(resultado);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> ActualizarPostulante(int id, PostulanteRequestDTO postulanteDto)
+        [HttpPut]
+        public async Task<IActionResult> ActualizarPostulante(PostulanteRequestDTO postulanteDto)
         {
-            if (!Request.Headers.TryGetValue("claims_userId", out var userIdHeader) || !int.TryParse(userIdHeader, out var userId))
-            {
-                return BadRequest("El encabezado 'claims_userId' no está presente o no contiene un valor válido.");
-            }
-
+            
+            var postulanteId = await _userService.PostulanteId();
+            var userId = _userService.UserId;
             var postulante = _mapper.Map<Postulante>(postulanteDto);
             postulante.UsuarioId = userId;
+            postulante.Id = postulanteId;
+            await _postulanteService.UpdateAsync(postulante);        
 
-            postulante.Id = id;
-            await _postulanteService.UpdateAsync(postulante);
-
-            return Ok(new Resultado(true, "Postulante actualizado correctamente"));
+            return Ok(new Resultado<Postulante>(postulante,true, "Postulante actualizado correctamente"));
         }
 
         [HttpDelete("{id}")]

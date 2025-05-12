@@ -15,7 +15,6 @@ namespace UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices
             _context = context;
         }
 
-        
         public async Task<string> GuardarImagenAsync(IFormFile archivo)
         {
             // Validar que el archivo no esté vacío
@@ -48,7 +47,20 @@ namespace UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices
             // Devuelve la ruta relativa para almacenar en la base de datos
             return $"/images/{fileName}";
         }
+        public async Task<Postulante> ObtenerPorUsuarioIdAsync(int usuarioId)
+        {
+        
+            var postulante = await _context.Set<Postulante>()
+                .AsNoTracking() 
+                .FirstOrDefaultAsync(x => x.UsuarioId == usuarioId);
 
-       
+            if (postulante == null)
+            {
+                throw new ArgumentException("El usuario no tiene registros como postulante.");
+            }
+
+            return postulante;
+        }
+
     }
 }

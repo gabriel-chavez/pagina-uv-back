@@ -14,6 +14,8 @@ using UNIVidaPortalWeb.Convocatorias.Utilities;
 using Microsoft.Extensions.DependencyInjection;
 using OpenTracing.Util;
 using OpenTracing;
+using UNIVidaPortalWeb.Convocatorias.Services.UsuariosServices;
+using UNIVidaPortalWeb.Convocatorias.Middleware;
 
 
 namespace UNIVidaPortalWeb.Convocatorias
@@ -74,6 +76,7 @@ namespace UNIVidaPortalWeb.Convocatorias
             // Configuración de Swagger
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+
             //interceptor de tracer
             services.AddScoped<TracingDbCommandInterceptor>();
 
@@ -122,7 +125,8 @@ namespace UNIVidaPortalWeb.Convocatorias
             services.AddScoped<IParParentescoService, ParParentescoService>();
             services.AddScoped<IParProgramaService, ParProgramaService>();
             services.AddScoped<IParTipoCapacitacionService, ParTipoCapacitacionService>();
-            
+            //Usuario
+            services.AddScoped<IUserService, UserService>();
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
 
@@ -159,7 +163,7 @@ namespace UNIVidaPortalWeb.Convocatorias
 
             //app.UseCors("AllowSpecificOrigin");
 
-
+            app.UseMiddleware<UserIdMiddleware>();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

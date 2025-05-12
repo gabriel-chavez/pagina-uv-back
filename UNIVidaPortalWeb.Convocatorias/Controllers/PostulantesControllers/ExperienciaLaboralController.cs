@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs;
 using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
+using UNIVidaPortalWeb.Convocatorias.Services.UsuariosServices;
 using UNIVidaPortalWeb.Convocatorias.Utilidades;
 
 namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
@@ -13,11 +14,14 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
     {
         private readonly IExperienciaLaboralService _experienciaLaboralService;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
-        public ExperienciaLaboralController(IExperienciaLaboralService experienciaLaboralService, IMapper mapper)
+        public ExperienciaLaboralController(IExperienciaLaboralService experienciaLaboralService, IMapper mapper, IUserService userService)
         {
             _experienciaLaboralService = experienciaLaboralService;
             _mapper = mapper;
+            _userService = userService;
+
         }
 
         [HttpGet]
@@ -36,10 +40,12 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
             return Ok(resultado);
         }
 
-        [HttpGet("ObtenerPorPostulante/{id}")]
-        public async Task<ActionResult> ObtenerExperienciasPorPostulante(int id)
+        [HttpGet("ObtenerPorPostulante")]
+        public async Task<ActionResult> ObtenerExperienciasPorPostulante()
         {
-            var experienciasLaborales = await _experienciaLaboralService.GetAsync(e => e.PostulanteId == id);
+            var postulanteId = await _userService.PostulanteId();
+
+            var experienciasLaborales = await _experienciaLaboralService.GetAsync(e => e.PostulanteId == postulanteId);
             var resultado = new Resultado<IEnumerable<ExperienciaLaboral>>(experienciasLaborales, true, "Listado obtenido correctamente");
             return Ok(resultado);
         }
@@ -47,7 +53,9 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPost]
         public async Task<ActionResult> CrearExperienciaLaboral(ExperienciaLaboralRequestDTO experienciaLaboralDto)
         {
+            var postulanteId = await _userService.PostulanteId();
             var experienciaLaboral = _mapper.Map<ExperienciaLaboral>(experienciaLaboralDto);
+            experienciaLaboral.PostulanteId = postulanteId;
             var experienciaLaboralCreada = await _experienciaLaboralService.AddAsync(experienciaLaboral);
             var resultado = new Resultado<ExperienciaLaboral>(experienciaLaboralCreada, true, "Experiencia laboral creada correctamente");
             return CreatedAtAction(nameof(ObtenerExperienciaLaboral), new { id = experienciaLaboralCreada.Id }, resultado);
@@ -56,7 +64,9 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPut("{id}")]
         public async Task<IActionResult> ActualizarExperienciaLaboral(int id, ExperienciaLaboralRequestDTO experienciaLaboralDto)
         {
+            var postulanteId = await _userService.PostulanteId();
             var experienciaLaboral = _mapper.Map<ExperienciaLaboral>(experienciaLaboralDto);
+            experienciaLaboral.PostulanteId = postulanteId;
             experienciaLaboral.Id = id;
             await _experienciaLaboralService.UpdateAsync(experienciaLaboral);
 

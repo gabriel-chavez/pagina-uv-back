@@ -5,6 +5,7 @@ using UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs;
 using UNIVidaPortalWeb.Convocatorias.Models.ParametricasModel;
 using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
+using UNIVidaPortalWeb.Convocatorias.Services.UsuariosServices;
 using UNIVidaPortalWeb.Convocatorias.Utilidades;
 
 namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
@@ -15,11 +16,13 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
     {
         private readonly IReferenciaPersonalService _referenciaPersonalService;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
-        public ReferenciaPersonalController(IReferenciaPersonalService referenciaPersonalService, IMapper mapper)
+        public ReferenciaPersonalController(IReferenciaPersonalService referenciaPersonalService, IMapper mapper, IUserService userService)
         {
             _referenciaPersonalService = referenciaPersonalService;
             _mapper = mapper;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -46,14 +49,15 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
             return Ok(resultado);
         }
 
-        [HttpGet("ObtenerPorPostulante/{id}")]
-        public async Task<ActionResult> ObtenerReferenciasPorPostulante(int id)
+        [HttpGet("ObtenerPorPostulante")]
+        public async Task<ActionResult> ObtenerReferenciasPorPostulante()
         {
+            var postulanteId = await _userService.PostulanteId();
             var incluir = new List<Expression<Func<ReferenciaPersonal, object>>>
             {
                 c => c.ParParentesco,
             };
-            var referencias = await _referenciaPersonalService.GetAsync(r => r.PostulanteId == id, includes: incluir);
+            var referencias = await _referenciaPersonalService.GetAsync(r => r.PostulanteId == postulanteId, includes: incluir);
             var resultado = new Resultado<IEnumerable<ReferenciaPersonal>>(referencias, true, "Referencias personales del postulante obtenidas correctamente");
             return Ok(resultado);
         }
@@ -61,7 +65,9 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPost]
         public async Task<ActionResult> CrearReferenciaPersonal(ReferenciaPersonalRequestDTO referenciaDto)
         {
+            var postulanteId = await _userService.PostulanteId();
             var referencia = _mapper.Map<ReferenciaPersonal>(referenciaDto);
+            referencia.PostulanteId = postulanteId;
             var referenciaCreada = await _referenciaPersonalService.AddAsync(referencia);
             var resultado = new Resultado<ReferenciaPersonal>(referenciaCreada, true, "Referencia personal creada correctamente");
             return CreatedAtAction(nameof(ObtenerReferenciaPersonal), new { id = referenciaCreada.Id }, resultado);
@@ -70,7 +76,9 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPut("{id}")]
         public async Task<IActionResult> ActualizarReferenciaPersonal(int id, ReferenciaPersonalRequestDTO referenciaDto)
         {
+            var postulanteId = await _userService.PostulanteId();
             var referencia = _mapper.Map<ReferenciaPersonal>(referenciaDto);
+            referencia.PostulanteId = postulanteId;
             referencia.Id = id;
             await _referenciaPersonalService.UpdateAsync(referencia);
 

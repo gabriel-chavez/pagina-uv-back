@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs;
 using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
+using UNIVidaPortalWeb.Convocatorias.Services.UsuariosServices;
 using UNIVidaPortalWeb.Convocatorias.Utilidades;
 
 namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
@@ -14,11 +15,13 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
     {
         private readonly IFormacionAcademicaService _formacionAcademicaService;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
-        public FormacionAcademicaController(IFormacionAcademicaService formacionAcademicaService, IMapper mapper)
+        public FormacionAcademicaController(IFormacionAcademicaService formacionAcademicaService, IMapper mapper, IUserService userService)
         {
             _formacionAcademicaService = formacionAcademicaService;
             _mapper = mapper;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -45,14 +48,16 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
             return Ok(resultado);
         }
 
-        [HttpGet("ObtenerPorPostulante/{id}")]
-        public async Task<ActionResult> ObtenerFormacionesPorPostulante(int id)
+        [HttpGet("ObtenerPorPostulante")]
+        public async Task<ActionResult> ObtenerFormacionesPorPostulante()
         {
             var incluir = new List<Expression<Func<FormacionAcademica, object>>>
             {
                 c => c.ParNivelFormacion,                
             };
-            var formaciones = await _formacionAcademicaService.GetAsync(f => f.PostulanteId == id,includes: incluir);
+            var postulanteId = await _userService.PostulanteId();
+
+            var formaciones = await _formacionAcademicaService.GetAsync(f => f.PostulanteId == postulanteId, includes: incluir);
             var resultado = new Resultado<IEnumerable<FormacionAcademica>>(formaciones, true, "Formaciones académicas del postulante obtenidas correctamente");
             return Ok(resultado);
         }
@@ -60,7 +65,10 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPost]
         public async Task<ActionResult> CrearFormacionAcademica(FormacionAcademicaRequestDTO formacionDto)
         {
+            var postulanteId = await _userService.PostulanteId();
+
             var formacion = _mapper.Map<FormacionAcademica>(formacionDto);
+            formacion.PostulanteId=postulanteId;
             var formacionCreada = await _formacionAcademicaService.AddAsync(formacion);
             var resultado = new Resultado<FormacionAcademica>(formacionCreada, true, "Formación académica creada correctamente");
             return CreatedAtAction(nameof(ObtenerFormacionAcademica), new { id = formacionCreada.Id }, resultado);
@@ -69,7 +77,9 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPut("{id}")]
         public async Task<IActionResult> ActualizarFormacionAcademica(int id, FormacionAcademicaRequestDTO formacionDto)
         {
+            var postulanteId = await _userService.PostulanteId();
             var formacion = _mapper.Map<FormacionAcademica>(formacionDto);
+            formacion.PostulanteId = postulanteId;
             formacion.Id = id;
             await _formacionAcademicaService.UpdateAsync(formacion);
 

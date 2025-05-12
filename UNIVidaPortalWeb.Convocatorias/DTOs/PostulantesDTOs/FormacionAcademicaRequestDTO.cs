@@ -1,8 +1,7 @@
 ﻿namespace UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs
 {
     public class FormacionAcademicaRequestDTO
-    {
-        public int PostulanteId { get; set; }
+    {        
         public int ParNivelFormacionId { get; set; }
         public string CentroEstudios { get; set; }
         public string TituloObtenido { get; set; }

@@ -1,9 +1,8 @@
 ﻿namespace UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs
 {
     public class CapacitacionRequestDTO
-    {
-        public int PostulanteId { get; set; }
-        public int ParTipoCapacitacionId { get; set; }
+    {        
+       public int ParTipoCapacitacionId { get; set; }
         public string Nombre { get; set; }
         public string CentroEstudios { get; set; }
         public string Pais { get; set; }

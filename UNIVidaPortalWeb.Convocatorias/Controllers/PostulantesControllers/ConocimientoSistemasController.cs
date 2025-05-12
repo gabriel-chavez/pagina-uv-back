@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Linq.Expressions;
 using UNIVidaPortalWeb.Convocatorias.DTOs.PostulantesDTOs;
+using UNIVidaPortalWeb.Convocatorias.Exceptions;
 using UNIVidaPortalWeb.Convocatorias.Models.PostulantesModel;
 using UNIVidaPortalWeb.Convocatorias.Services.PostulantesServices;
+using UNIVidaPortalWeb.Convocatorias.Services.UsuariosServices;
 using UNIVidaPortalWeb.Convocatorias.Utilidades;
 
 namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
@@ -14,11 +16,13 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
     {
         private readonly IConocimientoSistemasService _conocimientoSistemasService;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
-        public ConocimientoSistemasController(IConocimientoSistemasService conocimientoSistemasService, IMapper mapper)
+        public ConocimientoSistemasController(IConocimientoSistemasService conocimientoSistemasService, IMapper mapper, IUserService userService)
         {
             _conocimientoSistemasService = conocimientoSistemasService;
             _mapper = mapper;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -47,15 +51,20 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
             return Ok(resultado);
         }
 
-        [HttpGet("ObtenerPorPostulante/{id}")]
-        public async Task<ActionResult> ObtenerConocimientosPorPostulante(int id)
+        [HttpGet("ObtenerPorPostulante")]
+        public async Task<ActionResult> ObtenerConocimientosPorPostulante()
         {
+            var userId = _userService.UserId;
+            if (userId == null)
+            {
+                throw new NotFoundException("El ID de usuario es obligatorio");
+            }
             var incluir = new List<Expression<Func<ConocimientoSistemas, object>>>
             {
                 c => c.ParPrograma,
                 c => c.ParNivelConocimiento,                
             };
-            var conocimientos = await _conocimientoSistemasService.GetAsync(c => c.PostulanteId == id, includes: incluir);
+            var conocimientos = await _conocimientoSistemasService.GetAsync(c => c.Postulante.UsuarioId == userId, includes: incluir);
             var resultado = new Resultado<IEnumerable<ConocimientoSistemas>>(conocimientos, true, "Conocimientos de sistemas del postulante obtenidos correctamente");
             return Ok(resultado);
         }
@@ -63,7 +72,9 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPost]
         public async Task<ActionResult> CrearConocimientoSistemas(ConocimientoSistemasRequestDTO conocimientoDto)
         {
+            var postulanteId = await _userService.PostulanteId();
             var conocimiento = _mapper.Map<ConocimientoSistemas>(conocimientoDto);
+            conocimiento.PostulanteId = postulanteId;
             var conocimientoCreado = await _conocimientoSistemasService.AddAsync(conocimiento);
             var resultado = new Resultado<ConocimientoSistemas>(conocimientoCreado, true, "Conocimiento de sistemas creado correctamente");
             return CreatedAtAction(nameof(ObtenerConocimientoSistemas), new { id = conocimientoCreado.Id }, resultado);
@@ -72,7 +83,9 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
         [HttpPut("{id}")]
         public async Task<IActionResult> ActualizarConocimientoSistemas(int id, ConocimientoSistemasRequestDTO conocimientoDto)
         {
+            var postulanteId = await _userService.PostulanteId();
             var conocimiento = _mapper.Map<ConocimientoSistemas>(conocimientoDto);
+            conocimiento.PostulanteId = postulanteId;
             conocimiento.Id = id;
             await _conocimientoSistemasService.UpdateAsync(conocimiento);
 
