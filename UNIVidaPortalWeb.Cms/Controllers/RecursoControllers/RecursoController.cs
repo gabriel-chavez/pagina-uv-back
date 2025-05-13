@@ -164,7 +164,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
             return Ok(new Resultado(true, "Recurso eliminado correctamente"));
         }
         [HttpPost("solicitud-contacto")]
-        public Resultado SolicitudContacto(string email, string contenido)
+        public Resultado SolicitudContacto([FromBody] SolicitudContactoRequest solicitud)
         {
             // Cuerpo del correo para el personal de la empresa
             string cuerpoCorreo = $@"
@@ -191,9 +191,9 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
                     <body>
                         <div class='container'>
                             <h2>Nueva Solicitud de Contacto Recibida</h2>
-                            <p>Se ha recibido una nueva solicitud de contacto desde la dirección de correo electrónico: <strong>{email}</strong></p>
+                            <p>Se ha recibido una nueva solicitud de contacto desde la dirección de correo electrónico: <strong>{solicitud.Email}</strong></p>
                             <p>Contenido de la solicitud:</p>
-                            <blockquote>{contenido}</blockquote>
+                            <blockquote>{solicitud.Contenido}</blockquote>
                             <div class='footer'>
                                 <p>Por favor, contacta al usuario lo antes posible para atender su solicitud.</p>
                                 <p>&copy; {DateTime.Now.ToString("yyyy")} - Univida S.A.</p>
@@ -210,11 +210,11 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
             // Comprobar si el correo fue enviado correctamente
             if (correoEnviado)
             {
-                return new Resultado(true, "La solicitud de contacto ha sido enviada al personal de la empresa.");
+                return new Resultado(true, "Tu mensaje fue enviado exitosamente. Te responderemos lo antes posible.");
             }
             else
             {
-                return new Resultado(false, "No se pudo enviar el correo, intenta nuevamente más tarde.");
+                return new Resultado(false, "No se pudo enviar el mensaje, intenta nuevamente más tarde.");
             }
         }
         private string EnmascararCorreo(string email)

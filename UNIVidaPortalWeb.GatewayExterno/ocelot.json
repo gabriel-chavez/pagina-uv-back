@@ -468,6 +468,18 @@
         "username": "Claims[userEmail] > value > |",
         "userId": "Claims[userId] > value > |"
       }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Recurso/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cms",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Recurso/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]      
     }
 
   ],
