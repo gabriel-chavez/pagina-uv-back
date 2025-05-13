@@ -97,7 +97,32 @@ namespace UNIVidaPortalWeb.Convocatorias.Controllers.PostulantesControllers
             var resultado = new Resultado<string>(imageUrl, true, "Fotograía registrada correctamente");
             return Ok(resultado);
         }
+        [HttpGet("obtener-imagen/images/{nombreImagen}")]
+        public IActionResult ObtenerImagen(string nombreImagen)
+        {
+            var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", nombreImagen);
 
+            if (System.IO.File.Exists(imagePath))
+            {                
+                var extension = Path.GetExtension(imagePath).ToLowerInvariant();                
+                string mimeType = extension switch
+                {
+                    ".jpg" => "image/jpeg",
+                    ".jpeg" => "image/jpeg",
+                    ".png" => "image/png",
+                    ".gif" => "image/gif",
+                    _ => "application/octet-stream"
+                };
+
+                var fileBytes = System.IO.File.ReadAllBytes(imagePath);
+                return File(fileBytes, mimeType); 
+            }
+            else
+            {
+                // Si la imagen no se encuentra, devuelve un error 404
+                return NotFound("Imagen no encontrada");
+            }
+        }
         [HttpPut]
         public async Task<IActionResult> ActualizarPostulante(PostulanteRequestDTO postulanteDto)
         {

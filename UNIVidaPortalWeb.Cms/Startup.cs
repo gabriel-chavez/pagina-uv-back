@@ -17,6 +17,7 @@ using UNIVidaPortalWeb.Cms.Services.SeguroServices;
 using UNIVidaPortalWeb.Common.Metric.Registry;
 using UNIVidaPortalWeb.Common.Tracing.Src;
 using UNIVidaPortalWeb.Common.Log.Src;
+using UNIVidaPortalWeb.Common.Email.Src;
 
 namespace UNIVidaPortalWeb.Cms
 {
@@ -55,7 +56,7 @@ namespace UNIVidaPortalWeb.Cms
             services.AddControllers(options =>
             {
                 options.Filters.Add<ValidationFilter>();
-                options.Filters.Add<GlobalExceptionFilter>();                
+                options.Filters.Add<GlobalExceptionFilter>();
             })
                 .ConfigureApiBehaviorOptions(options =>
             {
@@ -86,6 +87,15 @@ namespace UNIVidaPortalWeb.Cms
             services.AddTransient<IMetricsRegistry, MetricsRegistry>();
             /*End Metrics*/
 
+            /*configuración de email*/
+            var emailSettings = Configuration.GetSection("EmailSettings").Get<EmailSettings>();
+            services.AddHttpClient<EmailService>(client =>
+            {
+                client.BaseAddress = new Uri(emailSettings.Endpoint);
+            });
+            services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
+            /**/
+
             // Registro de servicios
             services.AddScoped<IPaginaDinamicaService, PaginaDinamicaService>();
             services.AddScoped<IRecursoService, RecursoService>();
@@ -105,11 +115,11 @@ namespace UNIVidaPortalWeb.Cms
             services.AddScoped<IBannerPaginaPrincipalMaestroService, BannerPaginaPrincipalMaestroService>();
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
-            
+
 
             services.AddAutoMapper(typeof(Program));
 
-          
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -132,10 +142,10 @@ namespace UNIVidaPortalWeb.Cms
 
             Log.Information("Iniciando la aplicación...");
             app.UseMiddleware<ExceptionMiddleware>();
-          //  if (env.IsDevelopment())
+            //  if (env.IsDevelopment())
             //{
-                app.UseSwagger();
-                app.UseSwaggerUI();
+            app.UseSwagger();
+            app.UseSwaggerUI();
             //}
             app.UseRouting();
 

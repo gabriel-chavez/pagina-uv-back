@@ -160,7 +160,7 @@ namespace UNIVidaPortalWeb.Convocatorias
                 app.UseSwaggerUI();
             //}
             app.UseRouting();
-
+            app.UseStaticFiles();
             //app.UseCors("AllowSpecificOrigin");
 
             app.UseMiddleware<UserIdMiddleware>();

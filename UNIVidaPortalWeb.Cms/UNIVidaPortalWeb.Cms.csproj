@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UNIVidaPortalWeb.Common.Email\UNIVidaPortalWeb.Common.Email.csproj" />
     <ProjectReference Include="..\UNIVidaPortalWeb.Common.Log\UNIVidaPortalWeb.Common.Log.csproj" />
     <ProjectReference Include="..\UNIVidaPortalWeb.Common.Metric\UNIVidaPortalWeb.Common.Metric.csproj" />
     <ProjectReference Include="..\UNIVidaPortalWeb.Common.Tracing\UNIVidaPortalWeb.Common.Tracing.csproj" />

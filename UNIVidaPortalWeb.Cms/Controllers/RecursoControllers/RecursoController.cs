@@ -7,6 +7,7 @@ using UNIVidaPortalWeb.Cms.Services.DatoServices;
 using UNIVidaPortalWeb.Cms.Services.PaginaDinamicaServices;
 using UNIVidaPortalWeb.Cms.Services.RecursoServices;
 using UNIVidaPortalWeb.Cms.Utilidades;
+using UNIVidaPortalWeb.Common.Email.Src;
 
 namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
 {
@@ -19,15 +20,15 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
         private readonly IBannerPaginaDinamicaService _bannerPaginaDinamicaService;
         private readonly IMapper _mapper;
         IConfiguration _configuration;
-
-        public RecursoController(IRecursoService recursoService, IMapper mapper, IBannerPaginaDinamicaService bannerPaginaDinamicaService, IDatoService datoService, IConfiguration configuration)
+        private readonly EmailService _emailService;
+        public RecursoController(IRecursoService recursoService, IMapper mapper, IBannerPaginaDinamicaService bannerPaginaDinamicaService, IDatoService datoService, IConfiguration configuration, EmailService emailService)
         {
             _recursoService = recursoService;
             _mapper = mapper;
             _bannerPaginaDinamicaService = bannerPaginaDinamicaService;
             _datoService = datoService;
             _configuration = configuration;
-
+            _emailService = emailService;
         }
 
         [HttpGet]
@@ -60,16 +61,16 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
 
             try
             {
-                
+
                 var fileName = Path.GetFileNameWithoutExtension(archivo.FileName)
-                                    .Replace(" ", "-") 
-                                    .ToLower(); 
+                                    .Replace(" ", "-")
+                                    .ToLower();
                 var extension = Path.GetExtension(archivo.FileName).ToLower();
                 var shortGuid = Guid.NewGuid().ToString("N").Substring(0, 8); // GUID más corto
                 var uniqueFileName = $"{fileName}_{shortGuid}{extension}";
 
-             
-                ruta = ruta.TrimStart('/').Replace(" ", "-").ToLower(); 
+
+                ruta = ruta.TrimStart('/').Replace(" ", "-").ToLower();
 
                 // Obtener rutas 
                 var nextServerBasePaths = new[]
@@ -161,6 +162,79 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
 
 
             return Ok(new Resultado(true, "Recurso eliminado correctamente"));
+        }
+        [HttpPost("solicitud-contacto")]
+        public Resultado SolicitudContacto(string email, string contenido)
+        {
+            // Cuerpo del correo para el personal de la empresa
+            string cuerpoCorreo = $@"
+                    <html>
+                    <head>
+                        <style>
+                            .container {{
+                                font-family: Arial, sans-serif;
+                                text-align: center;
+                                margin: 40px auto;
+                                padding: 20px;
+                                max-width: 600px;
+                                border: 1px solid #ddd;
+                                border-radius: 8px;
+                                background-color: #f9f9f9;
+                            }}
+                            .footer {{
+                                margin-top: 30px;
+                                font-size: 12px;
+                                color: #777;
+                            }}
+                        </style>
+                    </head>
+                    <body>
+                        <div class='container'>
+                            <h2>Nueva Solicitud de Contacto Recibida</h2>
+                            <p>Se ha recibido una nueva solicitud de contacto desde la dirección de correo electrónico: <strong>{email}</strong></p>
+                            <p>Contenido de la solicitud:</p>
+                            <blockquote>{contenido}</blockquote>
+                            <div class='footer'>
+                                <p>Por favor, contacta al usuario lo antes posible para atender su solicitud.</p>
+                                <p>&copy; {DateTime.Now.ToString("yyyy")} - Univida S.A.</p>
+                            </div>
+                        </div>
+                    </body>
+                    </html>";
+
+
+            string correoSoporte = _configuration["EmailSettings:CorreoSoporte"];
+
+            bool correoEnviado = _emailService.EnviarCorreo(correoSoporte, "Nueva Solicitud de Contacto", cuerpoCorreo);
+
+            // Comprobar si el correo fue enviado correctamente
+            if (correoEnviado)
+            {
+                return new Resultado(true, "La solicitud de contacto ha sido enviada al personal de la empresa.");
+            }
+            else
+            {
+                return new Resultado(false, "No se pudo enviar el correo, intenta nuevamente más tarde.");
+            }
+        }
+        private string EnmascararCorreo(string email)
+        {
+            var partes = email.Split('@');
+            if (partes.Length == 2)
+            {
+                var nombre = partes[0];
+                var dominio = partes[1];
+
+                if (nombre.Length > 3)
+                {
+                    return $"{nombre.Substring(0, 3)}***@{dominio}";
+                }
+                else
+                {
+                    return $"{nombre.Substring(0, 1)}***@{dominio}";
+                }
+            }
+            return email;
         }
     }
 }
