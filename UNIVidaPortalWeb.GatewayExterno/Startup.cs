@@ -26,7 +26,7 @@ namespace UNIVidaPortalWeb.GatewayExterno
             /*Start - Cors*/
             services.AddCors(o => o.AddPolicy(clientPolicy, builder =>
             {
-                builder.WithOrigins("http://localhost:3000", "http://localhost:3001", "http://172.16.0.30:3000", "http://pagina-web.univida.bo:3000", "https://pagina-web.univida.bo:3000", "https://pagina.univida.bo")
+                builder.WithOrigins("http://localhost:3000", "http://localhost:3001", "http://172.16.0.30:3000", "http://pagina-web.univida.bo:3000", "https://pagina-web.univida.bo:3000", "https://pagina.univida.bo", "http://172.16.0.30:5000", "http://172.16.0.30:5001")
                        .AllowAnyMethod()
                        .AllowAnyHeader()
                        .AllowCredentials(); // Permite enviar cookies con las solicitudes
@@ -48,7 +48,7 @@ namespace UNIVidaPortalWeb.GatewayExterno
             services.AddTransient<IMetricsRegistry, MetricsRegistry>();
             /*End Metrics*/
 
-            services.AddOcelot();                
+            services.AddOcelot();
 
         }
 
@@ -59,14 +59,15 @@ namespace UNIVidaPortalWeb.GatewayExterno
             app.UseMiddleware<MiddlewareCifradoJwt>();
 
             // Middleware para descifrar el JWT (verificar el JWT)
- 
+
             app.UseMiddleware<MiddlewareDescifradoJwt>();
 
- 
+
             // Habilitar Swagger UI
             app.Map("/swagger/v1/swagger.json", b =>
             {
-                b.Run(async x => {
+                b.Run(async x =>
+                {
                     var json = File.ReadAllText("swagger.json");
                     await x.Response.WriteAsync(json);
                 });
@@ -89,7 +90,7 @@ namespace UNIVidaPortalWeb.GatewayExterno
             /*End - Cors*/
 
             app.UseOcelot().Wait();
-  
+
 
 
         }

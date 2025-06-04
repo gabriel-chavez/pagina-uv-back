@@ -74,7 +74,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
                 ruta = ruta.TrimStart('/').Replace(" ", "-").ToLower();
 
 
-                var basePath = Path.Combine("wwwroot","archivos");
+                var basePath = Path.Combine("wwwroot","assets");
 
 
 
@@ -98,8 +98,8 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
                 {
                     Nombre = fileName,
                     CatTipoRecursoId = catTipoRecursoId,
-                    //RecursoEscritorio = $"/assets/{uniqueFileName}".Replace("//", "/"), // Evitar doble slash
-                    RecursoEscritorio = filePath.Replace("\\", "/").Replace("wwwroot", "")
+                    RecursoEscritorio = $"/assets/{uniqueFileName}".Replace("//", "/"), // Evitar doble slash
+                  //  RecursoEscritorio = filePath.Replace("\\", "/").Replace("wwwroot", "")
 
                 };
 
@@ -115,7 +115,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
                 return StatusCode(500, new { success = false, message = $"Ocurrió un error al guardar el archivo: {ex.Message}" });
             }
         }
-        [HttpGet("obtener/archivos/{**rutaRelativa}")]
+        [HttpGet("obtener/{**rutaRelativa}")]
         public IActionResult ObtenerArchivo(string rutaRelativa)
         {            
             if (rutaRelativa.Contains("..") || Path.IsPathRooted(rutaRelativa))
