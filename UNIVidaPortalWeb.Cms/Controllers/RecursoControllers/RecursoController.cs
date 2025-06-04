@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.StaticFiles;
 using System.Diagnostics;
 using UNIVidaPortalWeb.Cms.DTOs.RecursosDTO;
 using UNIVidaPortalWeb.Cms.Models.RecursoModel;
@@ -72,25 +73,20 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
 
                 ruta = ruta.TrimStart('/').Replace(" ", "-").ToLower();
 
-                // Obtener rutas 
-                var nextServerBasePaths = new[]
-                {
-                    _configuration["NextServerAdmin"] ?? @"C:\path\to\server1",
-                    _configuration["NextServerPagina"] ?? @"C:\path\to\server2"
-                };
 
-                // crear los directoriosen servidores
-                foreach (var basePath in nextServerBasePaths)
-                {
-                    var uploadsFolder = Path.Combine(basePath, ruta).Replace("\\", "/"); // corregir slashes
-                    if (!Directory.Exists(uploadsFolder))
-                    {
-                        Directory.CreateDirectory(uploadsFolder);
-                    }
+                var basePath = Path.Combine("wwwroot","archivos");
 
-                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                    await GuardarArchivoAsync(archivo, filePath); // Guardar
+
+
+                var uploadsFolder = Path.Combine(basePath, ruta).Replace("\\", "/"); // corregir slashes
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
                 }
+
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                await GuardarArchivoAsync(archivo, filePath); 
+
                 int catTipoRecursoId = extension switch
                 {
                     var ext when new[] { ".jpg", ".jpeg", ".png", ".gif" }.Contains(ext) => 1,  // Imagen
@@ -102,7 +98,9 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
                 {
                     Nombre = fileName,
                     CatTipoRecursoId = catTipoRecursoId,
-                    RecursoEscritorio = $"/assets/{ruta}/{uniqueFileName}".Replace("//", "/"), // Evitar doble slash
+                    //RecursoEscritorio = $"/assets/{uniqueFileName}".Replace("//", "/"), // Evitar doble slash
+                    RecursoEscritorio = filePath.Replace("\\", "/").Replace("wwwroot", "")
+
                 };
 
                 var recurso = _mapper.Map<Recurso>(recursoDto);
@@ -117,7 +115,31 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
                 return StatusCode(500, new { success = false, message = $"Ocurrió un error al guardar el archivo: {ex.Message}" });
             }
         }
+        [HttpGet("obtener-archivo/{**rutaRelativa}")]
+        public IActionResult ObtenerArchivo(string rutaRelativa)
+        {            
+            if (rutaRelativa.Contains("..") || Path.IsPathRooted(rutaRelativa))
+            {
+                return BadRequest("Ruta inválida.");
+            }
+            
+            var basePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "archivos");
+            var fullPath = Path.Combine(basePath, rutaRelativa);
+            
+            if (!System.IO.File.Exists(fullPath))
+            {
+                return NotFound("Archivo no encontrado.");
+            }
 
+            
+            var provider = new FileExtensionContentTypeProvider();
+            if (!provider.TryGetContentType(fullPath, out var mimeType))
+            {
+                mimeType = "application/octet-stream";
+            }
+            
+            return File(System.IO.File.OpenRead(fullPath), mimeType);
+        }
 
         // Método para guardar el archivo en una ubicación
         private async Task GuardarArchivoAsync(IFormFile archivo, string filePath)

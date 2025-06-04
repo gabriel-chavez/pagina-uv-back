@@ -1,8 +1,7 @@
 {
   "Routes": [
-   
 
-    //--- Seguridad ---
+    //    --- Seguridad ---
     {
       "DownstreamPathTemplate": "/api/auth/logout",
       "DownstreamScheme": "http",
@@ -75,11 +74,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/BannerPaginaDinamicas/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/CatTipoRecurso/{everything}",
@@ -91,11 +90,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/CatTipoRecurso/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/CatTipoSeccion/{everything}",
@@ -107,11 +106,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/CatTipoSeccion/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/CatTipoSeguro/{everything}",
@@ -123,11 +122,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/CatTipoSeguro/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/CatEstiloBanner/{everything}",
@@ -139,11 +138,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/CatEstiloBanner/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/CatTipoBannerPaginaPrincipal/{everything}",
@@ -155,11 +154,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/CatTipoBannerPaginaPrincipal/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/Datos/{everything}",
@@ -171,11 +170,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Datos/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/MenuPrincipal/{everything}",
@@ -187,11 +186,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/MenuPrincipal/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/PaginasDinamicas/{everything}",
@@ -203,11 +202,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/PaginasDinamicas/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/Plan/{everything}",
@@ -219,11 +218,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Plan/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/Recurso/{everything}",
@@ -235,11 +234,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Recurso/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/Secciones/{everything}",
@@ -251,11 +250,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Secciones/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/Seguro/{everything}",
@@ -267,11 +266,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Seguro/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/SeguroDetalle/{everything}",
@@ -283,11 +282,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/SeguroDetalle/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/BannerPaginaPrincipalDetalle/{everything}",
@@ -299,11 +298,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/BannerPaginaPrincipalDetalle/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/BannerPaginaPrincipalMaestro/{everything}",
@@ -315,11 +314,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/BannerPaginaPrincipalMaestro/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     //-- FIN CMS--
     //-- NOTICIAS
@@ -349,11 +348,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ParCategoria/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ParEstado/{everything}",
@@ -365,11 +364,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ParEstado/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ParTipoRecurso/{everything}",
@@ -381,11 +380,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ParTipoRecurso/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/Recurso/{everything}",
@@ -397,11 +396,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Recursov2/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     //-- FIN NOTICIAS
     //-- CONVOCATORIAS
@@ -415,11 +414,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Capacitacion/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ConocimientoIdioma/{everything}",
@@ -431,11 +430,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ConocimientoIdioma/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ConocimientoSistemas/{everything}",
@@ -447,11 +446,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ConocimientoSistemas/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/Convocatoria/{everything}",
@@ -463,11 +462,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Convocatoria/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ExperienciaLaboral/{everything}",
@@ -479,11 +478,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ExperienciaLaboral/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/FormacionAcademica/{everything}",
@@ -495,11 +494,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/FormacionAcademica/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/Notificacion/{everything}",
@@ -511,11 +510,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Notificacion/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ParEstadoConvocatoria/{everything}",
@@ -527,11 +526,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ParEstadoConvocatoria/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ParEstadoPostulacion/{everything}",
@@ -543,11 +542,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ParEstadoPostulacion/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ParIdioma/{everything}",
@@ -559,11 +558,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ParIdioma/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ParNivelConocimiento/{everything}",
@@ -575,11 +574,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ParNivelConocimiento/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ParNivelFormacion/{everything}",
@@ -591,11 +590,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ParNivelFormacion/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ParParentesco/{everything}",
@@ -607,11 +606,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ParParentesco/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ParPrograma/{everything}",
@@ -623,11 +622,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ParPrograma/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ParTipoCapacitacion/{everything}",
@@ -639,11 +638,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ParTipoCapacitacion/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/Postulacion/{everything}",
@@ -655,11 +654,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Postulacion/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/Postulante/{everything}",
@@ -671,11 +670,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Postulante/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ReferenciaLaboral/{everything}",
@@ -687,11 +686,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ReferenciaLaboral/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     },
     {
       "DownstreamPathTemplate": "/api/ReferenciaPersonal/{everything}",
@@ -703,11 +702,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/ReferenciaPersonal/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "MY-KEY-JWT",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //  "AuthenticationOptions": {
+      //    "AuthenticationProviderKey": "MY-KEY-JWT",
+      //    "AllowedScopes": []
+      //  }
     }
 
 
