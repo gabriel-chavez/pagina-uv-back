@@ -74,7 +74,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
                 ruta = ruta.TrimStart('/').Replace(" ", "-").ToLower();
 
 
-                var basePath = Path.Combine("wwwroot","assets");
+                var basePath = Path.Combine("wwwroot","assetsuv");
 
 
 
@@ -98,7 +98,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
                 {
                     Nombre = fileName,
                     CatTipoRecursoId = catTipoRecursoId,
-                    RecursoEscritorio = $"/assets/{uniqueFileName}".Replace("//", "/"), // Evitar doble slash
+                    RecursoEscritorio = $"/assetsuv/{ruta}/{uniqueFileName}".Replace("//", "/"), // Evitar doble slash
                   //  RecursoEscritorio = filePath.Replace("\\", "/").Replace("wwwroot", "")
 
                 };
@@ -123,7 +123,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
                 return BadRequest("Ruta inválida.");
             }
             
-            var basePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "archivos");
+            var basePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "assetsuv");
             var fullPath = Path.Combine(basePath, rutaRelativa);
             
             if (!System.IO.File.Exists(fullPath))
