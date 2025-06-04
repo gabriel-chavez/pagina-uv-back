@@ -115,7 +115,7 @@ namespace UNIVidaPortalWeb.Cms.Controllers.RecursoControllers
                 return StatusCode(500, new { success = false, message = $"Ocurrió un error al guardar el archivo: {ex.Message}" });
             }
         }
-        [HttpGet("obtener-archivo/{**rutaRelativa}")]
+        [HttpGet("obtener/archivos/{**rutaRelativa}")]
         public IActionResult ObtenerArchivo(string rutaRelativa)
         {            
             if (rutaRelativa.Contains("..") || Path.IsPathRooted(rutaRelativa))
